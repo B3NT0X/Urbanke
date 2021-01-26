@@ -6,190 +6,266 @@
     <title>Urbanke</title>
 </head>
 <body>
-    <header>
-        <div class="info-box">
-            <ul>
-                <li>Mehr als 30 Jahre Erfahrung</li>
-                <li>2x in Berlin</li>
-                <li>über 25.000 Kunden</li>
-                <li>über 40.000 Gutachten</li>
-            </ul>
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col"><p>Mehr als 30 Jahre Erfahrung</p></div>
+                <div class="col"><p>2x in Berlin</p></div>
+                <div class="col"><p>über 25.000 Kunden</p></div>
+                <div class="col"><p>über 40.000 Gutachten</p></div>
+            </div>
         </div>
-        <img src="#" alt="logo">
-        <nav>
-            <ul>
-                <li><a href="#leistungen">Leistungen</a></li>
-                <li><a href="#ueber-uns">Über uns</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-                <li><a href="#termin-buchen">Termin buchen</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
+        <div class="site-header__logo">
+            <img src="#" alt="logo">
+        </div>
+
+        <div class="site-header__menu-icon">
+            <div class="site-header__menu-icon__middle"></div>
+        </div>
+
+        <div class="site-header__menu-content">
+            <nav class="primary-nav primary-nav--pul-right">
+                <ul>
+                    <li><a href="#leistungen">Leistungen</a></li>
+                    <li><a href="#ueber-uns">Über uns</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="#termin-buchen">Termin buchen</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
     <div class="large-hero">
+
+        <picture>
+            <source srcset="#">
+            <source srcset="#">
+            <img src="#" alt="hero">
+        </picture>
+
         <div class="large-hero__blue-form">
-            <img src="#" alt="hero-image">
-            <h1>Das Unabhängige Unfallgutachten für Ihr Fahrzeug</h1>
+            <h1 class="large-hero__title">Das Unabhängige Unfallgutachten für Ihr Fahrzeug</h1>
             <p>Seit 1987 sind wir als Kfz-Gutachter in Berlin für Sie tätig, um nach einem Verkehrsunfall die Höhe des entstandenen Schadens zu bestimmen. Unsere oberste Prämisse ist es, neutral, objektiv und unabhängig von Versicherungen zu agieren.</p>
             <br>
             <p>Bei uns bekommen Sie ein anerkanntes Gutachten, dass den Schaden vollständig beziffert und zur Vorlage bei der Versicherung oder vor Gericht verwendet werden kann. Ist die Schuldfrage noch ungeklärt, erhalten Sie eine kostenlose Beweissicherung und Beratung.</p>
             <br>
-            <a href="#kotakt">Kontaktieren Sie uns</a>
+            <a href="#kotakt" class="btn">Kontaktieren Sie uns</a>
         </div>
     </div>
 
-    <section id="leistungen">
-        <h2 class="headline">Wussten Sie, dass...</h2>
-        <div class="sm_blue_form">
-            <div class="sm_blue_form sm_blue_form--right-top"></div>
-            <div class="sm_blue_form sm_blue_form--right-bottom"></div>
-        </div>
-        <ul>
-            <li>dass ein Gutachten vor allem der Beweissicherung dient, um Ihren vollumfänglichen Anspruch gegenüber der Versicherung zu begründen?</li>
-            <li>dass die Kosten für das Kfz-Gutachten im Falle geklärter Schuldfrage von der Versicherung bezahlt wird?</li>
-            <li>Sie die freie Wahl haben, in welcher Werkstatt Sie Ihren Unfall reparieren lassen wollen?</li>
-            <li>Sie die freie Wahl haben, ob Sie den Schaden überhaupt reparieren lassen wollen?</li>
-            <li>man sich den Schadenersatz auch auszahlen lassen kann ohne zu reparieren?</li>
-            <li>Sie einen eigenen Sachverständigen einschalten dürfen und nicht auf die Schadensschätzung durch den Versicherer vertrauen müssen?</li>
-            <li>die Versicherung Ihnen für die Zeit der Reparatur ein Ersatzfahrzeug bzw. eine Nutzungsausfallentschädigung zahlen muss?</li>
-            <li>Sie auch die Kosten für einen Anwalt erstattet bekommen?</li>
-            <li>dass der Gutachter auch prüft, ob trotz fachgerechter Reparatur ein Minderwert verbleiben würde? Dieser steht Ihnen auch ohne Reparatur zu.</li>
-        </ul>
-        <div class="sm_blue_form">
-            <div class="sm_blue_form sm_blue_form--left-top"></div>
-            <div class="sm_blue_form sm_blue_form--left-bottom"></div>
-        </div>
+    <section id="leistungen" class="page-section">
+        <div class="wrapper">
+            <h2 class="headline">Wussten Sie, dass...</h2>
+            <div class="blue-form-container">
+                <div class="blue-form__top-left"></div>
+                <div class="blue-form__bottom-left"></div>
+            </div>
+            <ul>
+                <li>dass ein Gutachten vor allem der Beweissicherung dient, um Ihren vollumfänglichen Anspruch gegenüber der Versicherung zu begründen?</li>
+                <li>dass die Kosten für das Kfz-Gutachten im Falle geklärter Schuldfrage von der Versicherung bezahlt wird?</li>
+                <li>Sie die freie Wahl haben, in welcher Werkstatt Sie Ihren Unfall reparieren lassen wollen?</li>
+                <li>Sie die freie Wahl haben, ob Sie den Schaden überhaupt reparieren lassen wollen?</li>
+                <li>man sich den Schadenersatz auch auszahlen lassen kann ohne zu reparieren?</li>
+                <li>Sie einen eigenen Sachverständigen einschalten dürfen und nicht auf die Schadensschätzung durch den Versicherer vertrauen müssen?</li>
+                <li>die Versicherung Ihnen für die Zeit der Reparatur ein Ersatzfahrzeug bzw. eine Nutzungsausfallentschädigung zahlen muss?</li>
+                <li>Sie auch die Kosten für einen Anwalt erstattet bekommen?</li>
+                <li>dass der Gutachter auch prüft, ob trotz fachgerechter Reparatur ein Minderwert verbleiben würde? Dieser steht Ihnen auch ohne Reparatur zu.</li>
+            </ul>
+            <div class="blue-form-container blue-form-container--right">
+                <div class="blue-form-container__top-right"></div>
+                <div class="blue-form-container__bottom-right"></div>
+            </div>
 
 
-        <div id="testimoinals">
-            <h2 class="headline headline--white"></h2>
-            <div class="wrapper">
-                <div class="messagebox">
-                    <h4>Welche Rente habe ich im Schadensfall?</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptatibus perferendis provident harum amet ab quis magnam voluptatum soluta inventore.</p>
-                </div>
-                <div class="messagebox">
-                    <h4>Darf ich überhaupt einen Gutachter beauftragen?</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptatibus perferendis provident harum amet ab quis magnam voluptatum soluta inventore.</p>
-                </div>
-                <div class="messagebox">
-                    <h4>Wer hilft mir dabei fair entschädigt zu werden?</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptatibus perferendis provident harum amet ab quis magnam voluptatum soluta inventore.</p>
+            <div id="testimoinals" class="page-section page-section--blue">
+                <div class="wrapper">
+                    <h2 class="headline headline--white">Unfall! und was nun?</h2>
+                    <div class="message-wrapper">
+                        <div class="message-wrapper__messagebox">
+                            <h4 class="message-wrapper__title">Welche Rente habe ich im Schadensfall?</h4>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptatibus perferendis provident harum amet ab quis magnam voluptatum soluta inventore.</p>
+                        </div>
+                        <div class="message-wrapper__messagebox">
+                            <h4 class="message-wrapper__title">Darf ich überhaupt einen Gutachter beauftragen?</h4>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptatibus perferendis provident harum amet ab quis magnam voluptatum soluta inventore.</p>
+                        </div>
+                        <div class="message-wrapper__messagebox">
+                            <h4 class="message-wrapper__title">Wer hilft mir dabei fair entschädigt zu werden?</h4>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptatibus perferendis provident harum amet ab quis magnam voluptatum soluta inventore.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
-        <div id="trust">
-            <h2 class="headline">Vertrauen Sie auf unsere Erfahrung</h2>
-            <div class="wrapper">
-                <img src="#" alt="team">
-                <div class="messagebox messagebox--blue ">
-                    <h4>Beratung, Begutachtung und Betreuung</h4>
-                    <p>… aus einer Hand. Durch unsere jahrelange Erfahrung, kennen wir Ihre Fragen und Sorgen, aber auch Ihre Ansprüche. Sie können sicher sein, den fairen Betrag zu erhalten, der Ihnen zusteht.</p>
+            <div id="our-experience" class="page-section page-section--no-right-padding">
+                <div class="wrapper">
+                    <h2 class="headline">Vertrauen Sie auf unsere Erfahrung</h2>
+                    <picture>
+                        <source srcset="#">
+                        <source srcset="#">
+                        <img src="#" alt="team">
+                    </picture>
+                    <div class="message-wrapper message-wrapper--left">
+                        <div class="message-wrapper__messagebox message-wrapper__messagebox--blue">
+                            <h4>Beratung, Begutachtung und Betreuung</h4>
+                            <p>… aus einer Hand. Durch unsere jahrelange Erfahrung, kennen wir Ihre Fragen und Sorgen, aber auch Ihre Ansprüche. Sie können sicher sein, den fairen Betrag zu erhalten, der Ihnen zusteht.</p>
+                        </div>
+                        <div class="message-wrapper__messagebox message-wrapper__messagebox--blue">
+                            <h4>Unsere Erfahrung - Ihr Vorteil</h4>
+                            <p>Mit uns als kompetente Partner an Ihrer Seite, begegnen Sie der Versicherung auf Augenhöhe. So verschaffen Sie sich einen Vorteil und machen das Beste aus der Situation.</p>
+                        </div>
+                        <div class="message-wrapper__messagebox message-wrapper__messagebox--blue">
+                            <h4>Ein qualifiziertes Gutachten mit optimalem Ergebnis</h4>
+                            <p>Ob zur Vorlage bei der Versicherung, vor Gericht oder den Behörden - Sie bekommen ein umfassendes und offiziell anerkanntes Gutachten. Sie können sicher sein, das Thema an Experten mit Sachverstand abzugeben.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="messagebox messagebox--blue">
-                    <h4>Unsere Erfahrung - Ihr Vorteil</h4>
-                    <p>Mit uns als kompetente Partner an Ihrer Seite, begegnen Sie der Versicherung auf Augenhöhe. So verschaffen Sie sich einen Vorteil und machen das Beste aus der Situation.</p>
+            </div>
+
+
+            <div id="our-priority">
+                <h2 class="headline">Unser oberstes Gebot: Unabhängig und Neutralität</h2>
+                <picture>
+                    <source srcset="#">
+                    <source srcset="#">
+                    <img src="#" alt="">
+                </picture>
+                <div class="priority-text-box">
+                    <h4 class="priority-text-box__title">Unbeeinflusst und objektiv</h4>
+                    <p>Versicherungen sind bei der Ermittlung der Schadenersatzkosten befangen, da sie die eigene Finanzlage berücksichtigen. Bei uns erhalten Sie eine sachliche und ganzheitliche Bewertung, die all Ihre Ansprüche abdeckt.</p>
+                    <div class="priority-text-box__light-blue-form"></div>
                 </div>
-                <div class="messagebox messagebox--blue">
-                    <h4>Ein qualifiziertes Gutachten mit optimalem Ergebnis</h4>
-                    <p>Ob zur Vorlage bei der Versicherung, vor Gericht oder den Behörden - Sie bekommen ein umfassendes und offiziell anerkanntes Gutachten. Sie können sicher sein, das Thema an Experten mit Sachverstand abzugeben.</p>
+                
+                <div class="priority__text-box priority__text-box--reverse">
+                    <h4 class="priority-text-box__title">Qualifizierte Experten</h4>
+                    <p>Häufig verzichten Versicherungen auf die Erstellung eines umfangreichen Gutachtens. Die Folge: Beweise werden vernichtet und Teile Ihres Anspruchs verfallen. Mit unseren Gutachten können Sie gewiss sein, fair entschädigt zu werden.</p>
+                    <div class="priority-text-box__blue-form"></div>
+                </div>
+
+                <div class="priority-text-box">
+                    <h4 class="priority-text-box__title">Kundenorientierte Arbeitsweise</h4>
+                    <p>Vereinbaren Sie mit uns einen Termin, und wir begutachten Ihr Fahrzeug sorgfältig sowie fachkundig. Wir nehmen sämtliche Daten Ihres Fahrzeugs auf, dokumentieren den Zustand und erstellen Fotos. Ihr Ergebnis: Ein umfangreiches Gutachten, dass alle Schäden berücksichtigt.</p>
+                    <div class="priority-text-box__dark-blue-form"></div>
                 </div>
             </div>
-        </div>
 
 
-        <div id="top-priority">
-            <h2 class="headline">Unser oberstes Gebot: Unabhängig und Neutralität</h2>
-            <img src="#" alt="auto">
-            <div class="text-box">
-                <h4>Unbeeinflusst und objektiv</h4>
-                <p>Versicherungen sind bei der Ermittlung der Schadenersatzkosten befangen, da sie die eigene Finanzlage berücksichtigen. Bei uns erhalten Sie eine sachliche und ganzheitliche Bewertung, die all Ihre Ansprüche abdeckt.</p>
-            </div>
-            <div class="light_blue_form"></div>
-            <div class="text-box">
-                <h4>Qualifizierte Experten</h4>
-                <p>Häufig verzichten Versicherungen auf die Erstellung eines umfangreichen Gutachtens. Die Folge: Beweise werden vernichtet und Teile Ihres Anspruchs verfallen. Mit unseren Gutachten können Sie gewiss sein, fair entschädigt zu werden.</p>
-            </div>
-            <div class="light_blue_form"></div>
-            <div class="text-box">
-                <h4>Kundenorientierte Arbeitsweise</h4>
-                <p>Vereinbaren Sie mit uns einen Termin, und wir begutachten Ihr Fahrzeug sorgfältig sowie fachkundig. Wir nehmen sämtliche Daten Ihres Fahrzeugs auf, dokumentieren den Zustand und erstellen Fotos. Ihr Ergebnis: Ein umfangreiches Gutachten, dass alle Schäden berücksichtigt.</p>
-            </div>
-            <div class="light_blue_form"></div>
-        </div>
-
-
-        <div id="know-how">
-            <h2 class="headline">Fundiertes Know-How und Serviceorientierung</h2>
-            <div class="container">
+            <div id="know-how" class="container">
                 <div class="row">
-                   <div class="card">
-                       <img src="#" alt="icon">
-                       <p>Ob PKW, LKW oder motorisiertes Zweirad – als Kunde können Sie sich auf ein fachkundiges Gutachten verlassen.</p>
-                   </div>
-                   <div class="card">
-                       <img src="#" alt="icon">
-                       <p>Unsere Gutachter verfügen über einen Ingenieursgrad und somit über weitreichende technische Kenntnisse.</p>
-                   </div>
-                   <div class="card">
-                       <img src="#" alt="icon">
-                       <p>Wir arbeiten mit den größten Schadenserfassungssystemen, die 98 % aller Fahrzeuge abdecken.</p>
-                   </div>
-                   <div class="card">
-                       <img src="#" alt="icon">
-                       <p>Sie profitieren von einem Full-Service, denn wir versenden das Gutachten direkt an die Versicherung.</p>
-                   </div>
-                   <div class="card">
-                       <img src="#" alt="icon">
-                       <p>Dank unseres großen Teams besichtigen wir Ihr Fahrzeug meist noch am Tag der Beauftragung.</p>
-                   </div>
-                   <div class="card">
-                       <img src="#" alt="icon">
-                       <p>Unsere Sachverständigen finden Sie an mehreren Standorten in Berlin.</p>
-                   </div>
-                   <div class="card">
-                       <img src="#" alt="icon">
-                       <p>Durch die von Versicherungen unabhängige Arbeit bewerten wir die Situation absolut neutral und objektiv.</p>
-                   </div>
-                   <div class="card">
-                       <img src="#" alt="icon">
-                       <p>Dank unserer engen Zusammenarbeit mit Juristen, basieren unsere Gutachten stetig auf der aktuellsten Rechtsprechung.</p>
-                   </div>
+                    <h2 class="headline">Fundiertes Know-How und Serviceorientierung</h2>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <p>Ob PKW, LKW oder motorisiertes Zweirad – als Kunde können Sie sich auf ein fachkundiges Gutachten verlassen.</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <p>Unsere Gutachter verfügen über einen Ingenieursgrad und somit über weitreichende technische Kenntnisse.</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <p>Wir arbeiten mit den größten Schadenserfassungssystemen, die 98 % aller Fahrzeuge abdecken.</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <p>Sie profitieren von einem Full-Service, denn wir versenden das Gutachten direkt an die Versicherung.</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <p>Dank unseres großen Teams besichtigen wir Ihr Fahrzeug meist noch am Tag der Beauftragung.</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <p>Unsere Sachverständigen finden Sie an mehreren Standorten in Berlin.</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <p>Durch die von Versicherungen unabhängige Arbeit bewerten wir die Situation absolut neutral und objektiv.</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <p>Dank unserer engen Zusammenarbeit mit Juristen, basieren unsere Gutachten stetig auf der aktuellsten Rechtsprechung.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="ueber-uns">
-        <div class="large-blue-form">
+        <div class="title-blue-form">
             <p>Aus Leidenschaft für das Auto</p>
         </div>
-        <img src="#" alt="ganzes Team">
-        <div class="blue-background">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <p>
-                            <span>T</span>agtäglich passiert es, dass Versicherungen Geschädigte nach einem Verkehrsunfall unfair behandeln. Der Antrieb unseres Unternehmensgründers Gottfried Urbanke war es, hier für Gerechtigkeit zu sorgen und unseren Kunden als vertrauensvoller Ansprechpartner zur Seite zu stehen. Diese Überzeugung, die wir auch heute noch vertreten und leben, gab er an seinen Sohn weiter, der das Team seit 2006 unterstützt - zusammen mit unserem langjährigen Partner Herrn Freyberg,
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p>
-                            der die Filiale im Wedding betreut. Im Jahr 1987 entstand der Betrieb aus der Kfz-Werkstatt Gottfried Urbankes in Berlin-Wedding. Seine Begeisterung für Autos und die Beseitigung von Schäden bewegte ihn dazu, sich auf das Erstellen von automatisierten Kfz- Gutachten zu spezialisieren. Dank der hohen Zufriedenheit und Nachfrage unserer Kunden konnten wir unsere Tätigkeit seitdem regelmäßig ausweiten, weshalb wir 1996 ein Zweitbüro in Kreuzberg eröffneten.
-                        </p>
-                    </div>
+        <picture>
+            <source>
+            <source>
+            <img src="#" alt="">
+        </picture>
+        
+        <div class="container page-section--blue-bg">
+            <div class="row">
+                <div class="col">
+                    <p>
+                        <span>T</span>agtäglich passiert es, dass Versicherungen Geschädigte nach einem Verkehrsunfall unfair behandeln. Der Antrieb unseres Unternehmensgründers Gottfried Urbanke war es, hier für Gerechtigkeit zu sorgen und unseren Kunden als vertrauensvoller Ansprechpartner zur Seite zu stehen. Diese Überzeugung, die wir auch heute noch vertreten und leben, gab er an seinen Sohn weiter, der das Team seit 2006 unterstützt - zusammen mit unserem langjährigen Partner Herrn Freyberg,
+                    </p>
+                </div>
+                <div class="col">
+                    <p>
+                        der die Filiale im Wedding betreut. Im Jahr 1987 entstand der Betrieb aus der Kfz-Werkstatt Gottfried Urbankes in Berlin-Wedding. Seine Begeisterung für Autos und die Beseitigung von Schäden bewegte ihn dazu, sich auf das Erstellen von automatisierten Kfz- Gutachten zu spezialisieren. Dank der hohen Zufriedenheit und Nachfrage unserer Kunden konnten wir unsere Tätigkeit seitdem regelmäßig ausweiten, weshalb wir 1996 ein Zweitbüro in Kreuzberg eröffneten.
+                    </p>
                 </div>
             </div>
         </div>
-
+        
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="card">
-                        <img src="#" alt="mitarbeiter">
+                        <picture>
+                            <source>
+                            <source>
+                            <img src="#" alt="">
+                        </picture>
                     </div>
                     <p>Dipl.-Ing. (FH)<br> O. Freyberg</p>
                     <ul>
@@ -201,7 +277,11 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                        <img src="#" alt="mitarbeiter">
+                        <picture>
+                            <source>
+                            <source>
+                            <img src="#" alt="">
+                        </picture>
                     </div>
                     <p>Dipl.-Ing. (FH)<br> B. Feuerhahn</p>
                     <ul>
@@ -213,7 +293,11 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                        <img src="#" alt="mitarbeiter">
+                        <picture>
+                            <source>
+                            <source>
+                            <img src="#" alt="">
+                        </picture>
                     </div>
                     <p>staatl. gepr. Techniker (KFZ)<br> E. Heinicke</p>
                     <ul>
@@ -225,11 +309,15 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                        <img src="#" alt="mitarbeiter">
+                        <picture>
+                            <source>
+                            <source>
+                            <img src="#" alt="">
+                        </picture>
                     </div>
                     <p>C. White</p>
                     <ul>
-                        <li>Kfz-Sachverständiger</li>
+                        <li>Bürofachkraft</li>
                         <li>Büro-Wedding</li>
                         <li>030 494 87 88</li>
                         <li>DH@urbanke.net</li>
@@ -237,11 +325,15 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                        <img src="#" alt="mitarbeiter">
+                        <picture>
+                            <source>
+                            <source>
+                            <img src="#" alt="">
+                        </picture>
                     </div>
                     <p>C. Hiller</p>
                     <ul>
-                        <li>Kfz-Sachverständiger</li>
+                        <li>Bürofachkraft</li>
                         <li>Büro-Wedding</li>
                         <li>030 692 22 44</li>
                         <li>BL@urbanke.net</li>
@@ -249,7 +341,340 @@
                 </div>
             </div>
         </div>
+
+        <div id="banner" class="container page-section--border">
+            <div class="row">
+                <div class="col">
+                    <picture>
+                        <source>
+                        <img src="#" alt="">
+                    </picture>
+                </div>
+                <div class="col">
+                    <h3 class="section-title">Zeitnah, kompetent und zuverlässig</h3>
+                    <ul>
+                        <li>Besichtigung noch am Tag der Beauftragung in und um Berlin</li>
+                        <li>vollumfängliches anerkanntes Gutachten zur Vorlage bei der Versicherung</li>
+                        <li>Beratung, Begutachtung und Betreuung aus einer Hand</li>
+                        <li>schnelle und faire Entschädigung</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="weitere-leistungen" class="container">
+            <div class="row">
+                <h2 class="headline">weitere Leistungen</h2>
+                <h4 class="section-subtitle">Neben Unfallgutachten als unsere Kernkompetenz bieten wir zusätzlich:</h4>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <h4>Kurz-Gutachten </h4>
+                        <p>Auch bei kleinsten Schäden wie Kratzer oder Dellen werden wir für Sie tätig. Unser Kurz-Gutachten erfüllt die Kriterien eines Kostenvoranschlags. Die hierfür anfallenden Kosten, werden, trotz anderslautender Argumente, von der Versicherung übernommen.</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <h4>KFZ-Wertgutachten</h4>
+                        <p>Sie möchten Ihr Auto verkaufen, als Oldtimer versichern oder müssen dem Finanzamt oder Ihrer Versicherung nachweisen was Ihr Fahrzeug wert ist? Wir erstellen Ihnen ein umfangreiches und allseits anerkanntes Kfz-Wertgutachten (mit Fotos).</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <h4>Gebrauchtwagenprüfung</h4>
+                        <p>Minimieren Sie das Risiko beim Gebrauchtwagenkauf und lassen sie sich Ihren Favoriten von uns auf eventuelle Vorschäden, technische Mängel oder sonstige Auffälligkeiten hin untersuchen. Kosten fallen erst bei Anfahrt oder einer schriftlichen Ausarbeitung an.</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <h4>Vorschadenanalyse</h4>
+                        <p>Unter Verwendung technischer Geräte und unserer jahrelangen Erfahrung führen wir innerhalb weniger Minuten eine kostenlose Vorschaden-Analyse an Ihrem Fahrzeug durch. Außerdem können wir mit Hilfe eines Online-Abgleichs auf passende Daten von Referenzfällen zugreifen.</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <h4>Beweissicherung</h4>
+                        <p>Bei unklarer Schuldfrage oder sonstigen strittigen Fällen in Kfz-Angelegenheiten stehen wir mit Rat und Tat zur Seite. Zur juristischen Geltendmachung erstellen wir Ihnen, soweit es die technischen Erfordernisse zulassen, Beweissicherungen jeglicher Art.</p>
+                    </div>
+                    <div class="col card">
+                        <div class="card__img">
+                            <picture>
+                                <source srcset="">
+                                <img src="#" alt="">
+                            </picture>
+                        </div>
+                        <h4>Reperaturbestätigung</h4>
+                        <p>Nach behobenen Schaden, an Ihrem Fahrzeug, bekommen Sie von uns einen Reparatur-Nachweis. Damit können Sie Ihren Anspruch auf Erstattung der Nutzungsausfallentschädigung geltend machen.</p>
+                    </div>
+                </div>
+        </div>
     </section>
    
+    <section id="kontakt">
+        <div class="banner-kontakt">
+            <picture>
+                <source>
+                <img src="#" alt="">
+            </picture>
+            <div class="banner-kontakt__blaue-form">
+                <h3>Der einfache Weg zu Ihrem Gutachten</h3>
+                <ul>
+                    <li>› Termin vereinbaren online oder telefonisch. IdR. noch am Tag der Beauftragung.</li>
+                    <li>› Begutachtung bei uns vor dem Büro oder an einer gewünschten Adresse.</li>
+                    <li>› Ausarbeitung des umfangreichens Gutachtens innerhalb weniger Tage.</li>
+                    <li>› Versand an die zuständige Versicherung und eine Kopie an Sie.</li>
+                    <li>› Schadenersatz: Im optimalen Fall erhalten Sie Geld innerhalb weniger Tage.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <h2 class="headline">Das gewisse Extra – unser „Mehr“ an Leistung</h2>
+                <div class="col">
+                    <div>
+                        <picture>
+                            <source>
+                            <img src="#" alt="">
+                        </picture>
+                    </div>
+                    <div>
+                        <h4>Sie zahlen nichts</h4>
+                        <p>Die Versicherung, mit der wir direkt und unkompliziert abrechnen, übernimmt die Kosten für Ihr Gutachten.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <picture>
+                            <source>
+                            <img src="#" alt="">
+                        </picture>
+                    </div>
+                    <div>
+                        <h4>Vor-Ort Service</h4>
+                        <p>Auf Wunsch besichtigen wir Ihr Fahrzeug auch an einer von Ihnen gewünschten Adresse in Berlin und Umgebung.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <picture>
+                            <source>
+                            <img src="#" alt="">
+                        </picture>
+                    </div>
+                    <div>
+                        <h4>Jederzeit für Sie da</h4>
+                        <p>Ihre Zeit ist kostbar! Das wissen wir und bieten Ihnen nach Absprache gerne an, auch außerhalb unserer Öffnungszeiten Termine zu vereinbaren.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="banner__blaue-form">
+                <h3>Besser schnell handeln!</h3>
+                <p>Sorgen Sie für eine schnelle Beweissicherung und verhindern Sie so, dass (potentiell) entscheidende (frische) Kontaktspuren verwittern. Unmittelbar nach Begutachtung können Sie Ihr Fahrzeug reparieren lassen oder verkaufen. Einwände der Versicherung, die Schadennebenkosten unnötig in die Höhe zu treiben, greifen Sie durch die zeitnahe Inanspruchnahme eines Gutachters/schnelles Handeln vor. Verhelfen Sie sich noch heute zu Ihrem Recht!</p>
+                <a href="#" class="btn btn--white-outline">kontaktieren Sie uns</a>
+            </div>
+        </div>
+
+        <div id="our-benefits" class="container">
+            <div class="row"></div>
+            <h2 class="headline">Noch unsicher? Überzeugen Sie sich von unseren Vorteilen</h2>
+            <div class="card card--bg-light-blue">
+                <div class="col card">
+                    <h4>Gutachten auch bei Kleinschäden</h4>
+                    <p>Versicherungen verunsichern gerne mit der Bagatellschadengrenze unter der ein Gutachten nicht erstattet wird. Wir geben Ihnen eine Kostengarantie! Bei kleinsten Schäden wie Kratzer oder Dellen erstellen wir Ihnen, ähnlich eines Kostenvoranschlags, ein Kurz-Gutachten und rechnen eine geringe Gebühr direkt mit der Versicherung ab. Sollte diese sich doch einmal querstellen, berechnen wir Ihnen unsere Kosten nicht!</p>
+                </div>
+                <div class="col card">
+                    <h4>Schuldfrage nicht geklärt?</h4>
+                    <p>Profitieren Sie von unserem kostenfreien „Gutachten auf Warteliste“. Dabei notieren wir die Daten von Ihren Fahrzeug, protokollieren den Schadenumfang und sichern Beweise in Form von Fotos. Die Daten werden bei uns im System gespeichert. Können Sie später Ansprüche geltend machen, genügt ein Anruf, und wir beginnen mit der Arbeit. Ihr Vorteil: Eine umfangreiche/fundierte Beweissicherung ohne Kostenrisiko und Sie können sofort mit der Reparatur beginnen bzw. das Fahrzeug verkaufen.</p>
+                </div>
+                <picture>
+                    <source>
+                    <img src="#" alt="">
+                </picture>
+                <div class="col card">
+                    <h4>Wer profitiert von unseren Services?</h4>
+                    <p>Neben Privatkunden werden wir auch für Rechtsanwälte, Werkstätten, Taxi-Betriebe und sonstige Unternehmen tätig. Auch Gerichte geben Gutachten bei uns in Auftrag. Unser Angebot richtet sich in erster Linie an Unfallgeschädigte. Aber auch in der Kaskoversicherung kann die Hinzuziehung eines unabhängigen Gutachters sinnvoll sein, wenn es um die Durchsetzung von Ansprüchen bei einer zu geringen Schadensbemessung durch die eigene Versicherung geht.</p>
+                </div>
+                <div class="col card">
+                    <h4>Keine Kosten</h4>
+                    <p>Das Haftpflichtschadensrecht in Deutschland sieht vor, dass bei unverschuldetem Unfall, die Kosten für das Schadensgutachten, von der Versicherung des Unfallgegners als Teil des Gesamtschadens zu erstatten ist. Eine Vorausbezahlung durch sie ist nicht erforderlich, denn wir rechnen direkt mit der Versicherung ab. Als Nachweis über die durchgeführte Reparatur erstellen wir Ihnen im Nachhinein eine kostenfreie Reparaturbestätigung.</p>
+                </div>
+            </div>
+        </div>
+        <div id="kontakt-form">
+            <h2 class="headline">Gleich unverbindlich von uns beraten lassen</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p>BÜRO-WEDDING<br>
+                        Drontheimer Str. 20<br>
+                        13359 Berlin</p><br>
+                        <p>(030) 494 87 88</p><br>
+                        <p>DH@urbanke.net</p>
+                        <img src="#" alt="karte">
+                        <a href="#" class="btn btn--white-outline">zur karte</a>
+                    </div>
+                    <div class="col">
+                        <p>BÜRO-Kreuzberg<br>
+                        Blücher Str. 66a<br>
+                        10961 Berlin</p><br>
+                        <p>(030) 692 22 44</p><br>
+                        <p>BL@urbanke.net</p>
+                        <img src="#" alt="karte">
+                        <a href="#" class="btn btn--white-outline">zur karte</a>
+                    </div>
+                    <div class="col">
+                        Öffnungszeiten:
+                        <div>
+                            <p>Montag</p><p>8:00 - 18:00</p>
+                        </div>
+                        <div>
+                            <p>Dienstag</p><p>8:00 - 18:00</p>
+                        </div>
+                        <div>
+                            <p>Mittwoch</p><p>8:00 - 18:00</p>
+                        </div>
+                        <div>
+                            <p>Donnerstag</p><p>8:00 - 18:00</p>
+                        </div>
+                        <div>
+                            <p>Freitag</p><p>8:00 - 18:00</p>
+                        </div>
+                        <div>
+                            <p>Samstag</p><p>Geschlossen</p>
+                        </div>
+                        <div>
+                            <p>Sonntag</p><p>Geschlossen</p>
+                        </div>
+                        <p>und nach Vereinbarung</p>
+                        <p>Direkt einen Termin buchen:</p>
+                        <a href="#" class="btn btn--white-outline">Termin buchen</a>
+                    </div>
+                    <div class="col">
+                        <form action="#">
+                            <label for="">Büro</label>
+                            <input type="text">
+                            <label for="">Name</label>
+                            <input type="text">
+                            <label for="">Email</label>
+                            <input type="text">
+                            <label for="">Telefon</label>
+                            <input type="text">
+                            <label for="">Nachricht</label>
+                            <input type="text">
+                            <button class="btn btn--white-outline"></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="faq" class="container">
+            <div class="row">
+                <h2 class="headline">Häufig gestellte Fragen</h2>
+            <div class="accordion">          
+                <div>
+                   <input type="radio" name="acc" id="Liquorice" checked>
+                   <label for="Liquorice">Wann steht mir ein unabhängiger Gutachter zu</label>
+                   <p class="panel">
+                    Wurde Ihr Fahrzeug ohne Ihr Verschulden in einen Unfall verwickelt bzw. durch Fremdverschulden beschädigt und der Schädiger bzw. das Schädigerfahrzeug ist bekannt, (Haftpflichtfall) steht Ihnen im Prinzip immer das Recht zu einen Gutachter Ihres Vertrauens einzuschalten. Die Kosten für das Gutachten hat der Schädiger bzw. dessen Haftpflichtversicherung zu tragen. Diese können wir direkt mit der Versicherung abrechnen. Liegt ein Schaden vor, der in den Bereich Ihrer Kasko-Versicherung fällt, wenden Sie sich bitte zuerst an Ihren Versicherer. Einen unabhängigen Sachverständigen auf Versicherungskosten können Sie wählen wenn: • Sie die Zusage Ihres Versicherers haben (wichtig: Ansprechpartner notieren), • sich die Schadenbezifferung des Versicherers als fehlerhaft erweist, • der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher Nähe anbieten kann.
+                   </p>
+                </div>
+                <div>
+                    <input type="radio" name="acc" id="Liquorice" checked>
+                    <label for="Liquorice">Warum sollte ich einen unabhängigen Kfz-Gutachter beauftragen?</label>
+                    <p>
+
+                    </p>
+                </div>
+                <div>
+                    <input type="radio" name="acc" id="Liquorice" checked>
+                    <label for="Liquorice">Wie viel kostet mich das Kfz-Unfallgutachten?</label>
+                    <p>
+
+                    </p>
+                </div>
+                <div>
+                    <input type="radio" name="acc" id="Liquorice" checked>
+                    <label for="Liquorice">Was tun bei einem Bagatellschaden (geringfügiger Schaden bis ca. 700 Euro)?</label>
+                    <p>
+
+                    </p>
+                </div>
+                <div>
+                    <input type="radio" name="acc" id="Liquorice" checked>
+                    <label for="Liquorice">Was tun bei ungeklärter Schuldfrage?</label>
+                    <p>
+
+                    </p>
+                </div>
+                <div>
+                    <input type="radio" name="acc" id="Liquorice" checked>
+                    <label for="Liquorice">Steht mir auch im Kasko-Fall ein eigener Kfz Gutachter zu?</label>
+                    <p>
+
+                    </p>
+                </div>
+                <div>
+                    <input type="radio" name="acc" id="Liquorice" checked>
+                    <label for="Liquorice">Wie ist das übliche Verfahren in einem Kfz-Haftpflichtschadenfall?</label>
+                    <p>
+
+                    </p>
+                </div>
+                <div>
+                    <input type="radio" name="acc" id="Liquorice" checked>
+                    <label for="Liquorice">Was bekomme ich von der Kfz-Versicherung ausbezahlt?</label>
+                    <p>
+
+                    </p>
+                </div>
+                <div>
+                    <input type="radio" name="acc" id="Liquorice" checked>
+                    <label for="Liquorice">Gibt es eine Entschädigung, wenn mir kein Fahrzeug zur Verfügung steht?</label>
+                    <p>
+
+                    </p>
+                </div>
+                
+             </div>
+            </div> 
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>Konzept, Design & Umsetzung: Helix Media GmbH</p><br>
+                    <p>Impressum | Datenschutz | Sitemap | Downloads</p>
+                </div>
+                <div class="col">
+                    <p>Copyright © 2020 Urbanke & Partner. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
