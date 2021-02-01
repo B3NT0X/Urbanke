@@ -7,41 +7,48 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="container">
-            <div class="row">
-                <div class="col"><p>Mehr als 30 Jahre Erfahrung</p></div>
-                <div class="col"><p>2x in Berlin</p></div>
-                <div class="col"><p>über 25.000 Kunden</p></div>
-                <div class="col"><p>über 40.000 Gutachten</p></div>
-            </div>
-        </div>
-        <div class="site-header__logo">
-            <img src="#" alt="logo">
-        </div>
-
-        <div class="site-header__menu-icon">
-            <div class="site-header__menu-icon__middle"></div>
-        </div>
-
-        <div class="site-header__menu-content">
-            <nav class="primary-nav primary-nav--pul-right">
+        <div class="site-header__top-banner">
                 <ul>
-                    <li><a href="#leistungen">Leistungen</a></li>
-                    <li><a href="#ueber-uns">Über uns</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
-                    <li><a href="#termin-buchen">Termin buchen</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </nav>
+                    <div><li>Mehr als 30 Jahre Erfahrung</li></div>
+                    <div><li>2x in Berlin</li></div>
+                    <div><li>über 25.000 Kunden</li></div>
+                    <div><li>über 40.000 Gutachten</li></div>
+                </ul>  
         </div>
+        
+        <nav class="site-header__nav">
+            <div class="site-header__logo">
+                <picture>
+                    <source srcset="./assets/images/Logo.webp 1x, ./assets/images/Logo@2x.webp 2x">
+                    <source srcset="./assets/images/Logo.png 1x, ./assets/images/Logo@2x.png 2x">
+                    <img src="./assets/images/Logo.png" alt="Logo">
+                </picture>
+            </div>
+          
+                <input class="site-header__menu-btn" type="checkbox" id="menu-btn">
+                <label class="site-header__menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                <div class="site-header__form"></div>
+           
+            <ul class="site-header__menu">
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#ueber-uns">Über uns</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#termin-buchen">Termin buchen</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
     </header>
     
     <div class="large-hero">
 
         <picture>
-            <source srcset="#">
-            <source srcset="#">
-            <img src="#" alt="hero">
+            <source media="(min-width: 768px)" srcset="./assets/images/Titelbild--large.webp">
+            <source media="(min-width: 768px)" srcset="./assets/images/Titelbild--large.png">
+            <source media="(min-width: 540px)" srcset="./assets/images/Titelbild--medium.webp">
+            <source media="(min-width: 540px)" srcset="./assets/images/Titelbild--medium.png">
+            <source srcset="./assets/images/Titelbild.webp 1x, ./assets/images/Titelbild@2x.webp 2x">
+            <source srcset="./assets/images/Titelbild.png 1x, ./assets/images/Titelbild@2x.png 2x">
+            <img src="./assets/images/Titelbild.png" alt="hero">
         </picture>
 
         <div class="large-hero__blue-form">
@@ -78,7 +85,7 @@
             </div>
 
 
-            <div id="testimoinals" class="page-section page-section--blue">
+            <div id="crash" class="page-section page-section--blue">
                 <div class="wrapper">
                     <h2 class="headline headline--white">Unfall! und was nun?</h2>
                     <div class="message-wrapper">
@@ -103,10 +110,15 @@
                 <div class="wrapper">
                     <h2 class="headline">Vertrauen Sie auf unsere Erfahrung</h2>
                     <picture>
-                        <source srcset="#">
-                        <source srcset="#">
-                        <img src="#" alt="team">
+                        <source media="(min-width: 1024px)" srcset="./assets/images/trio--cropped.webp">
+                        <source media="(min-width: 1024px)" srcset="./assets/images/trio--cropped.png">
+                        <source media="(min-width: 768px)" srcset="./assets/images/trio.webp">
+                        <source media="(min-width: 768px)" srcset="./assets/images/trio.png">
+                        <source srcset="./assets/images/trio.webp 1x, ./assets/images/trio@2x.webp 2x">
+                        <source srcset="./assets/images/trio.png 1x, ./assets/images/trio@2x.png 2x">
+                        <img src="./assets/images/trio.png" alt="trio uhrbanke">
                     </picture>
+
                     <div class="message-wrapper message-wrapper--left">
                         <div class="message-wrapper__messagebox message-wrapper__messagebox--blue">
                             <h4>Beratung, Begutachtung und Betreuung</h4>
@@ -128,10 +140,11 @@
             <div id="our-priority">
                 <h2 class="headline">Unser oberstes Gebot: Unabhängig und Neutralität</h2>
                 <picture>
-                    <source srcset="#">
-                    <source srcset="#">
-                    <img src="#" alt="">
+                    <source srcset="./assets/images/unfallbegutachtung.webp 1x, ./assets/images/unfallbegutachtung@2x.webp 2x">
+                    <source srcset="./assets/images/unfallbegutachtung.png 1x, ./assets/images/unfallbegutachtung@2x.png 2x">
+                    <img src="./assets/images/unfallbegutachtung.png" alt="unfallbegutachtung">
                 </picture>
+
                 <div class="priority-text-box">
                     <h4 class="priority-text-box__title">Unbeeinflusst und objektiv</h4>
                     <p>Versicherungen sind bei der Ermittlung der Schadenersatzkosten befangen, da sie die eigene Finanzlage berücksichtigen. Bei uns erhalten Sie eine sachliche und ganzheitliche Bewertung, die all Ihre Ansprüche abdeckt.</p>
@@ -157,73 +170,49 @@
                     <h2 class="headline">Fundiertes Know-How und Serviceorientierung</h2>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/know-how--icon1.svg" alt="Mail Icon">
                         </div>
                         <p>Ob PKW, LKW oder motorisiertes Zweirad – als Kunde können Sie sich auf ein fachkundiges Gutachten verlassen.</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/know-how--icon2.svg" alt="Verkehrsmittel Icon">
                         </div>
                         <p>Unsere Gutachter verfügen über einen Ingenieursgrad und somit über weitreichende technische Kenntnisse.</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/know-how--icon3.svg" alt="Zertifikat Icon">
                         </div>
                         <p>Wir arbeiten mit den größten Schadenserfassungssystemen, die 98 % aller Fahrzeuge abdecken.</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/know-how--icon4.svg" alt="Computer Icon">
                         </div>
                         <p>Sie profitieren von einem Full-Service, denn wir versenden das Gutachten direkt an die Versicherung.</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/know-how--icon5.svg" alt="Team Icon">
                         </div>
                         <p>Dank unseres großen Teams besichtigen wir Ihr Fahrzeug meist noch am Tag der Beauftragung.</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/know-how--icon6.svg" alt="Standort Icon">
                         </div>
                         <p>Unsere Sachverständigen finden Sie an mehreren Standorten in Berlin.</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/know-how--icon7.svg" alt="Lupe Icon">
                         </div>
                         <p>Durch die von Versicherungen unabhängige Arbeit bewerten wir die Situation absolut neutral und objektiv.</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/know-how--icon8.svg" alt="Waage Icon">
                         </div>
                         <p>Dank unserer engen Zusammenarbeit mit Juristen, basieren unsere Gutachten stetig auf der aktuellsten Rechtsprechung.</p>
                     </div>
@@ -237,9 +226,9 @@
             <p>Aus Leidenschaft für das Auto</p>
         </div>
         <picture>
-            <source>
-            <source>
-            <img src="#" alt="">
+            <source srcset="./assets/images/team.webp 1x, ./assets/images/team@2x.webp 2x">
+            <source srcset="./assets/images/team.png 1x, ./assets/images/team@2x.png 2x">
+            <img src="./assets/images/team.png" alt="das Team">
         </picture>
         
         <div class="container page-section--blue-bg">
@@ -262,9 +251,9 @@
                 <div class="col">
                     <div class="card">
                         <picture>
-                            <source>
-                            <source>
-                            <img src="#" alt="">
+                            <source srcset="./assets/images/mitarbeiter1.webp 1x, ./assets/images/mitarbeiter1@2x.webp 2x">
+                            <source srcset="./assets/images/mitarbeiter1.png 1x, ./assets/images/mitarbeiter1@2x.png 2x">
+                            <img src="./assets/images/mitarbeiter1.png" alt="ein Mitarbeiter">
                         </picture>
                     </div>
                     <p>Dipl.-Ing. (FH)<br> O. Freyberg</p>
@@ -278,9 +267,9 @@
                 <div class="col">
                     <div class="card">
                         <picture>
-                            <source>
-                            <source>
-                            <img src="#" alt="">
+                            <source srcset="./assets/images/mitarbeiter2.webp 1x, ./assets/images/mitarbeiter2@2x.webp 2x">
+                            <source srcset="./assets/images/mitarbeiter2.png 1x, ./assets/images/mitarbeiter2@2x.png 2x">
+                            <img src="./assets/images/mitarbeiter2.png" alt="ein Mitarbeiter">
                         </picture>
                     </div>
                     <p>Dipl.-Ing. (FH)<br> B. Feuerhahn</p>
@@ -294,9 +283,9 @@
                 <div class="col">
                     <div class="card">
                         <picture>
-                            <source>
-                            <source>
-                            <img src="#" alt="">
+                            <source srcset="./assets/images/mitarbeiter3.webp 1x, ./assets/images/mitarbeiter3@2x.webp 2x">
+                            <source srcset="./assets/images/mitarbeiter3.png 1x, ./assets/images/mitarbeiter3@2x.png 2x">
+                            <img src="./assets/images/mitarbeiter3.png" alt="ein Mitarbeiter">
                         </picture>
                     </div>
                     <p>staatl. gepr. Techniker (KFZ)<br> E. Heinicke</p>
@@ -310,9 +299,9 @@
                 <div class="col">
                     <div class="card">
                         <picture>
-                            <source>
-                            <source>
-                            <img src="#" alt="">
+                            <source srcset="./assets/images/mitarbeiter4.webp 1x, ./assets/images/mitarbeiter4@2x.webp 2x">
+                            <source srcset="./assets/images/mitarbeiter4.png 1x, ./assets/images/mitarbeiter4@2x.png 2x">
+                            <img src="./assets/images/mitarbeiter4.png" alt="ein Mitarbeiter">
                         </picture>
                     </div>
                     <p>C. White</p>
@@ -326,9 +315,9 @@
                 <div class="col">
                     <div class="card">
                         <picture>
-                            <source>
-                            <source>
-                            <img src="#" alt="">
+                            <source srcset="./assets/images/mitarbeiter5.webp 1x, ./assets/images/mitarbeiter5@2x.webp 2x">
+                            <source srcset="./assets/images/mitarbeiter5.png 1x, ./assets/images/mitarbeiter5@2x.png 2x">
+                            <img src="./assets/images/mitarbeiter5.png" alt="ein Mitarbeiter">
                         </picture>
                     </div>
                     <p>C. Hiller</p>
@@ -345,10 +334,7 @@
         <div id="banner" class="container page-section--border">
             <div class="row">
                 <div class="col">
-                    <picture>
-                        <source>
-                        <img src="#" alt="">
-                    </picture>
+                    <img src="./assets/images/abzeichen.svg" alt="Abzeichen Icon">
                 </div>
                 <div class="col">
                     <h3 class="section-title">Zeitnah, kompetent und zuverlässig</h3>
@@ -368,60 +354,42 @@
                 <h4 class="section-subtitle">Neben Unfallgutachten als unsere Kernkompetenz bieten wir zusätzlich:</h4>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/leistungen--icon1.svg" alt="Gutachten Icon">
                         </div>
                         <h4>Kurz-Gutachten </h4>
                         <p>Auch bei kleinsten Schäden wie Kratzer oder Dellen werden wir für Sie tätig. Unser Kurz-Gutachten erfüllt die Kriterien eines Kostenvoranschlags. Die hierfür anfallenden Kosten, werden, trotz anderslautender Argumente, von der Versicherung übernommen.</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/leistungen--icon2.svg" alt="KFZ-Wertgutachten Icon">
                         </div>
                         <h4>KFZ-Wertgutachten</h4>
                         <p>Sie möchten Ihr Auto verkaufen, als Oldtimer versichern oder müssen dem Finanzamt oder Ihrer Versicherung nachweisen was Ihr Fahrzeug wert ist? Wir erstellen Ihnen ein umfangreiches und allseits anerkanntes Kfz-Wertgutachten (mit Fotos).</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/leistungen--icon3.svg" alt="Kamera Icon">
                         </div>
                         <h4>Gebrauchtwagenprüfung</h4>
                         <p>Minimieren Sie das Risiko beim Gebrauchtwagenkauf und lassen sie sich Ihren Favoriten von uns auf eventuelle Vorschäden, technische Mängel oder sonstige Auffälligkeiten hin untersuchen. Kosten fallen erst bei Anfahrt oder einer schriftlichen Ausarbeitung an.</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/leistungen--icon4.svg" alt="Todo-listen Icon">
                         </div>
                         <h4>Vorschadenanalyse</h4>
                         <p>Unter Verwendung technischer Geräte und unserer jahrelangen Erfahrung führen wir innerhalb weniger Minuten eine kostenlose Vorschaden-Analyse an Ihrem Fahrzeug durch. Außerdem können wir mit Hilfe eines Online-Abgleichs auf passende Daten von Referenzfällen zugreifen.</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/leistungen--icon5.svg" alt="Lupen Icon">
                         </div>
                         <h4>Beweissicherung</h4>
                         <p>Bei unklarer Schuldfrage oder sonstigen strittigen Fällen in Kfz-Angelegenheiten stehen wir mit Rat und Tat zur Seite. Zur juristischen Geltendmachung erstellen wir Ihnen, soweit es die technischen Erfordernisse zulassen, Beweissicherungen jeglicher Art.</p>
                     </div>
                     <div class="col card">
                         <div class="card__img">
-                            <picture>
-                                <source srcset="">
-                                <img src="#" alt="">
-                            </picture>
+                            <img src="./assets/images/leistungen--icon6.svg" alt="Reparaturlisten Icon">
                         </div>
                         <h4>Reperaturbestätigung</h4>
                         <p>Nach behobenen Schaden, an Ihrem Fahrzeug, bekommen Sie von uns einen Reparatur-Nachweis. Damit können Sie Ihren Anspruch auf Erstattung der Nutzungsausfallentschädigung geltend machen.</p>
@@ -433,8 +401,9 @@
     <section id="kontakt">
         <div class="banner-kontakt">
             <picture>
-                <source>
-                <img src="#" alt="">
+                <source srcset="./assets/images/mann--liest.webp 1x, ./assets/images/mann--liest@2x.webp 2x">
+                <source srcset="./assets/images/mann--liest.png 1x, ./assets/images/mann--liest@2x.png 2x">
+                <img src="./assets/images/mann--liest.png" alt="Mann liest zettel">
             </picture>
             <div class="banner-kontakt__blaue-form">
                 <h3>Der einfache Weg zu Ihrem Gutachten</h3>
@@ -452,10 +421,7 @@
                 <h2 class="headline">Das gewisse Extra – unser „Mehr“ an Leistung</h2>
                 <div class="col">
                     <div>
-                        <picture>
-                            <source>
-                            <img src="#" alt="">
-                        </picture>
+                        <img src="./assets/images/kontakt--icon1.svg" alt="Konversation icon">
                     </div>
                     <div>
                         <h4>Sie zahlen nichts</h4>
@@ -464,10 +430,7 @@
                 </div>
                 <div class="col">
                     <div>
-                        <picture>
-                            <source>
-                            <img src="#" alt="">
-                        </picture>
+                        <img src="./assets/images/kontakt--icon2.svg" alt="Haus icon">
                     </div>
                     <div>
                         <h4>Vor-Ort Service</h4>
@@ -476,10 +439,7 @@
                 </div>
                 <div class="col">
                     <div>
-                        <picture>
-                            <source>
-                            <img src="#" alt="">
-                        </picture>
+                        <img src="./assets/images/kontakt--icon3.svg" alt="Kalender icon">
                     </div>
                     <div>
                         <h4>Jederzeit für Sie da</h4>
@@ -494,6 +454,11 @@
                 <p>Sorgen Sie für eine schnelle Beweissicherung und verhindern Sie so, dass (potentiell) entscheidende (frische) Kontaktspuren verwittern. Unmittelbar nach Begutachtung können Sie Ihr Fahrzeug reparieren lassen oder verkaufen. Einwände der Versicherung, die Schadennebenkosten unnötig in die Höhe zu treiben, greifen Sie durch die zeitnahe Inanspruchnahme eines Gutachters/schnelles Handeln vor. Verhelfen Sie sich noch heute zu Ihrem Recht!</p>
                 <a href="#" class="btn btn--white-outline">kontaktieren Sie uns</a>
             </div>
+            <picture>
+                <source srcset="./assets/images/autoschaden--kennzeichnung.webp 1x, ./assets/images/autoschaden--kennzeichnung@2x.webp 2x">
+                <source srcset="./assets/images/autoschaden--kennzeichnung.png 1x, ./assets/images/autoschaden--kennzeichnung@2x.png 2x">
+                <img src="./assets/images/autoschaden--kennzeichnung.png" alt="Kennzeichnung des Unfallschadens">
+            </picture>
         </div>
 
         <div id="our-benefits" class="container">

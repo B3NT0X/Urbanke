@@ -1,0 +1,21 @@
+.site-header {
+    &__top-banner ul {
+        display: none;
+    }
+}
+@mixin atMedium {
+    .site-header {
+        &__top-banner ul{
+            height: 52px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #f6f6f6;
+            li {
+             list-style-image: url('../images/Häckchen.svg');
+            }
+        }
+     }
+}
+

@@ -3,15 +3,27 @@ html {
   }
   
   body {
-    font-family: 'Roboto', sans-serif;
     color: #2172C0;
   }
   
   img {
+    display: block;
     max-width: 100%;
     height: auto;
   }
   
   * {
     box-sizing: border-box;
+  }
+
+ 
+  h1, h2 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  a, p {
+    font-family: 'Roboto Slab';
+    font-weight: 400;
   }

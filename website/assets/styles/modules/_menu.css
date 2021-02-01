@@ -1,0 +1,192 @@
+.site-header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+    }
+@mixin atMedium {
+    ul {
+        overflow: visible;
+    }
+    li a {
+        color: $navLink;
+    }       
+    }
+    li a {
+        display: block;
+        padding: 20px 20px;
+        text-decoration: none;
+        
+    }
+
+
+    &__nav {
+        min-height: 64px;
+    }
+    
+    &__logo {
+        display: block;
+        float: left;
+        padding: 15px 16px 16px;
+    }
+     
+    /* menu */
+    &__menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
+    }
+    @mixin atMedium {
+        &__menu {
+            min-height: 76px;
+        }
+        
+    }
+
+    &__form{
+        position: absolute;
+        right: 0;
+        width: 100px;
+        height: 100%;
+        margin-right: -21px;
+        background-color: $footerBlue;
+        transform: skewX(-30deg);
+    }
+    @mixin atMedium {
+        &__form {
+            display: none;
+        }
+    }
+
+    &__menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        z-index: 1;
+        padding: 28px 20px;
+        position: relative;
+        user-select: none;
+    }
+
+    &__menu-icon .navicon {
+        background: $navLink;
+        display: block;
+        height: 3px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 25px;
+    }
+
+    &__menu-icon .navicon:before,
+    &__menu-icon .navicon:after {
+        background: $navLink;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+
+    &__menu-icon .navicon:before {
+        top: 8px;
+    }
+    &__menu-icon .navicon:after {
+        top: -8px;
+    }
+
+    /* menu btn */
+
+    &__menu-btn {
+        display: none;
+    }
+
+    &__menu-btn:checked ~ .site-header__menu {
+        max-height: 240px;
+    }
+    &__menu-btn:checked ~ .site-header__menu-icon .navicon {
+        background: transparent;
+    }
+    &__menu-btn:checked ~ .site-header__menu-icon .navicon:before {
+        transform: rotate(-45deg);
+    }
+    &__menu-btn:checked ~ .site-header__menu-icon .navicon:after {
+        transform: rotate(45deg);
+    }
+    & .site-header__menu-btn:checked ~ .site-header__menu-icon:not(.steps) .navicon:before, 
+    & .site-header__menu-btn:checked ~ .site-header__menu-icon:not(.steps) .navicon:after {
+        top: 0;
+    }
+
+  }
+
+
+  
+  @mixin atMedium {
+    .site-header {
+        &__menu {
+            li {
+                &:first-of-type {
+                    background-color: $lightBlue;
+                }
+                &:nth-of-type(2) {
+                    background-color: $secondaryBlue;
+                }
+                &:nth-of-type(3) {
+                    background-color: $boxBlue;
+                }
+                &:nth-of-type(4) {
+                    background-color: $mainBlue;
+                }
+                &:nth-of-type(5) {
+                    background-color: $footerBlue;
+                    margin-right: -15px;
+                }
+                @mixin atLarge {
+                &:nth-of-type(5) {
+                    width: 168px;
+                }
+                }
+                float: left;
+                transform: skew(-20deg);
+            }
+        }
+        li a {
+            display: table;
+            font-size: 0.75rem;
+            padding: 33px 25px;
+        }
+        @media screen and (min-width: 810px) {
+            li a {
+                font-size: 0.875rem;
+            }
+        }
+        @media screen and (min-width: 861px) {
+            li a {
+                font-size: 1rem;
+            }
+        }
+        @media screen and (min-width: 900px) {
+            li a {
+                font-size: 1.125rem;
+            }
+        }
+       
+        &__menu {
+            clear: none;
+            float: right;
+            max-height: none;
+        }
+        & .site-header__menu-icon {
+            display: none;
+        }
+    }
+  }
+  

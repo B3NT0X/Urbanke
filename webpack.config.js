@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const fse = require('fs-extra')
+const postcss = require('postcss-hexrgba/node_modules/postcss')
 //cssnano plugin für minfied
 //fs-extra für mehrere html files und copied folder
 //babel/core babel/preset-env babel-loader für leute mit älteren brwoser nur js
@@ -20,14 +21,15 @@ const postCSSPlugins = [require("postcss-import"),
 class RunAfterCompile {
     apply(compiler) {
         compiler.hooks.done.tap('Copy something', function() {
-            fse.copySync('./website/assets/images', './dist/assets/images')
-        })
+            fse.copySync('./website/assets/images', './dist/assets/images'),
+            fse.copySync('./website/assets/fonts', './dist/assets/fonts')
+        });
     }
 }
 
 let cssConfig = {
     test:/\.css$/i,
-    use: ['css-loader', {loader: "postcss-loader", options: {postcssOptions: {plugins: postCSSPlugins}}}]
+    use: ['css-loader', {loader:"postcss-loader", options: {postcssOptions: {plugins: postCSSPlugins}}}]
 }
 
 let config = {
@@ -37,7 +39,8 @@ let config = {
       ],
     module: {
         rules: [
-            cssConfig
+            cssConfig,
+            { test: /\.(png|woff|woff2|eot|ttf|svg|otf)$/, use: 'url-loader'}
         ]
     }
 }
