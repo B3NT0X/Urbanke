@@ -40,7 +40,7 @@ let config = {
     module: {
         rules: [
             cssConfig,
-            { test: /\.(png|woff|woff2|eot|ttf|svg|otf)$/, use: 'url-loader'}
+            { test: /\.(jpg|png|woff|woff2|eot|ttf|svg|otf)$/, use: 'url-loader'}
         ]
     }
 }

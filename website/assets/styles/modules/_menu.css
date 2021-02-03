@@ -1,4 +1,36 @@
 .site-header {
+    &__top-banner ul {
+        display: none;
+        font-size: 1.4rem;
+    }
+}
+
+@mixin atMedium {
+    .site-header {
+        &__top-banner ul{
+            font-family: 'Poppins';
+            height: 52px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #f6f6f6;
+            li {
+             list-style-image: url('../images/Häckchen.svg');
+            }
+        }
+     }
+}
+@mixin atMediumLarge {
+    .site-header {
+        &__top-banner ul{
+            font-size: 1.6rem;
+        }
+    }
+}
+
+
+.site-header {
     background-color: #fff;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
@@ -11,6 +43,7 @@
         list-style: none;
         overflow: hidden;
     }
+
 @mixin atMedium {
     ul {
         overflow: visible;
@@ -21,27 +54,53 @@
     }
     li a {
         display: block;
-        padding: 20px 20px;
+        padding: 2rem 2rem;
         text-decoration: none;
-        
     }
 
-
     &__nav {
-        min-height: 64px;
+        min-height: 100%;
     }
     
     &__logo {
         display: block;
         float: left;
-        padding: 15px 16px 16px;
+        padding: 1.5rem 1.6rem 1.6rem;
+        
+        img {
+            width: 200px;
+        }
     }
+
+
      
     /* menu */
     &__menu {
         clear: both;
         max-height: 0;
         transition: max-height .2s ease-out;
+
+        li {
+            &:nth-of-type(5) {
+                background-color: $lightBlue;
+            }
+            &:nth-of-type(4) {
+                background-color: $secondaryBlue;
+            }
+            &:nth-of-type(3) {
+                background-color: $boxBlue;
+            }
+            &:nth-of-type(2) {
+                background-color: $mainBlue;
+            }
+            &:nth-of-type(1) {
+                background-color: $footerBlue;
+            }
+            a {
+                color: $navLink;
+            }
+        }
+        
     }
     @mixin atMedium {
         &__menu {
@@ -52,12 +111,39 @@
 
     &__form{
         position: absolute;
+        top: 0;
         right: 0;
-        width: 100px;
-        height: 100%;
-        margin-right: -21px;
+        width: 80px;
+        height: 74px;
         background-color: $footerBlue;
-        transform: skewX(-30deg);
+
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: $footerBlue;
+            transform-origin: top right;
+            transform: skewX(-30deg);
+        }
+        
+        &--revert {
+            width: 188px;
+            height: 67px;
+            top: -20px;
+            left: 0;
+            background-color: $lightBlue;
+            opacity: 0.3;
+            z-index: -1;
+
+            &:after {
+                transform-origin: bottom right;
+                background-color: $lightBlue;
+            }
+        }
     }
     @mixin atMedium {
         &__form {
@@ -67,10 +153,10 @@
 
     &__menu-icon {
         cursor: pointer;
-        display: inline-block;
+        /* display: inline-block; */
         float: right;
         z-index: 1;
-        padding: 28px 20px;
+        padding: 3.5rem 3rem;
         position: relative;
         user-select: none;
     }
@@ -81,7 +167,7 @@
         height: 3px;
         position: relative;
         transition: background .2s ease-out;
-        width: 25px;
+        width: 28px;
     }
 
     &__menu-icon .navicon:before,
@@ -109,7 +195,7 @@
     }
 
     &__menu-btn:checked ~ .site-header__menu {
-        max-height: 240px;
+        max-height: 340px;
     }
     &__menu-btn:checked ~ .site-header__menu-icon .navicon {
         background: transparent;
@@ -147,7 +233,7 @@
                 }
                 &:nth-of-type(5) {
                     background-color: $footerBlue;
-                    margin-right: -15px;
+                    margin-right: -1.5rem;
                 }
                 @mixin atLarge {
                 &:nth-of-type(5) {
@@ -160,22 +246,23 @@
         }
         li a {
             display: table;
-            font-size: 0.75rem;
-            padding: 33px 25px;
+            font-size: 1.2rem;
+            padding: 3.3rem 2.5rem;
+            transform: skewX(20deg);
         }
         @media screen and (min-width: 810px) {
             li a {
-                font-size: 0.875rem;
+                font-size: 1.4rem;
             }
         }
         @media screen and (min-width: 861px) {
             li a {
-                font-size: 1rem;
+                font-size: 1.6rem;
             }
         }
         @media screen and (min-width: 900px) {
             li a {
-                font-size: 1.125rem;
+                font-size: 1.8rem;
             }
         }
        
@@ -186,6 +273,10 @@
         }
         & .site-header__menu-icon {
             display: none;
+        }
+
+        &__nav {
+            overflow-x: hidden;
         }
     }
   }

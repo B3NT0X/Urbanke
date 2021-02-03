@@ -18,11 +18,7 @@
         
         <nav class="site-header__nav">
             <div class="site-header__logo">
-                <picture>
-                    <source srcset="./assets/images/Logo.webp 1x, ./assets/images/Logo@2x.webp 2x">
-                    <source srcset="./assets/images/Logo.png 1x, ./assets/images/Logo@2x.png 2x">
-                    <img src="./assets/images/Logo.png" alt="Logo">
-                </picture>
+                <img src="./assets/images/logo.svg" alt="">
             </div>
           
                 <input class="site-header__menu-btn" type="checkbox" id="menu-btn">
@@ -41,184 +37,195 @@
     
     <div class="large-hero">
 
+        <div class="large-hero__blue-form"></div>
         <picture>
-            <source media="(min-width: 768px)" srcset="./assets/images/Titelbild--large.webp">
-            <source media="(min-width: 768px)" srcset="./assets/images/Titelbild--large.png">
+            <!-- <source media="(min-width: 768px)" srcset="./assets/images/Titelbild--large.webp">
+            <source media="(min-width: 768px)" srcset="./assets/images/Titelbild--large.jpg"> -->
             <source media="(min-width: 540px)" srcset="./assets/images/Titelbild--medium.webp">
-            <source media="(min-width: 540px)" srcset="./assets/images/Titelbild--medium.png">
+            <source media="(min-width: 540px)" srcset="./assets/images/Titelbild--medium.jpg">
             <source srcset="./assets/images/Titelbild.webp 1x, ./assets/images/Titelbild@2x.webp 2x">
-            <source srcset="./assets/images/Titelbild.png 1x, ./assets/images/Titelbild@2x.png 2x">
-            <img src="./assets/images/Titelbild.png" alt="hero">
+            <source srcset="./assets/images/Titelbild.jpg 1x, ./assets/images/Titelbild@2x.jpg 2x">
+            <img src="./assets/images/Titelbild.jpg" alt="hero">
         </picture>
-
-        <div class="large-hero__blue-form">
+    </div>
+    <div class="large-hero__content">
+        <div class="container">
             <h1 class="large-hero__title">Das Unabhängige Unfallgutachten für Ihr Fahrzeug</h1>
             <p>Seit 1987 sind wir als Kfz-Gutachter in Berlin für Sie tätig, um nach einem Verkehrsunfall die Höhe des entstandenen Schadens zu bestimmen. Unsere oberste Prämisse ist es, neutral, objektiv und unabhängig von Versicherungen zu agieren.</p>
             <br>
             <p>Bei uns bekommen Sie ein anerkanntes Gutachten, dass den Schaden vollständig beziffert und zur Vorlage bei der Versicherung oder vor Gericht verwendet werden kann. Ist die Schuldfrage noch ungeklärt, erhalten Sie eine kostenlose Beweissicherung und Beratung.</p>
-            <br>
             <a href="#kotakt" class="btn">Kontaktieren Sie uns</a>
         </div>
     </div>
-
+    
     <section id="leistungen" class="page-section">
-        <div class="wrapper">
-            <h2 class="headline">Wussten Sie, dass...</h2>
-            <div class="blue-form-container">
-                <div class="blue-form__top-left"></div>
-                <div class="blue-form__bottom-left"></div>
+            <div class="container">
+                    <h2 class="headline">Wussten Sie, dass...</h2>
+                    <div class="site-header__form site-header__form--revert"></div>
+                    <div class="blue-form-container">
+                        <div class="blue-form__top-left"></div>
+                        <div class="blue-form__bottom-left"></div>
+                    </div>
+                    <ul>
+                        <li>dass ein Gutachten vor allem der Beweissicherung dient, um Ihren vollumfänglichen Anspruch gegenüber der Versicherung zu begründen?</li>
+                        <li>dass die Kosten für das Kfz-Gutachten im Falle geklärter Schuldfrage von der Versicherung bezahlt wird?</li>
+                        <li>Sie die freie Wahl haben, in welcher Werkstatt Sie Ihren Unfall reparieren lassen wollen?</li>
+                        <li>Sie die freie Wahl haben, ob Sie den Schaden überhaupt reparieren lassen wollen?</li>
+                        <li>man sich den Schadenersatz auch auszahlen lassen kann ohne zu reparieren?</li>
+                        <li>Sie einen eigenen Sachverständigen einschalten dürfen und nicht auf die Schadensschätzung durch den Versicherer vertrauen müssen?</li>
+                        <li>die Versicherung Ihnen für die Zeit der Reparatur ein Ersatzfahrzeug bzw. eine Nutzungsausfallentschädigung zahlen muss?</li>
+                        <li>Sie auch die Kosten für einen Anwalt erstattet bekommen?</li>
+                        <li>dass der Gutachter auch prüft, ob trotz fachgerechter Reparatur ein Minderwert verbleiben würde? Dieser steht Ihnen auch ohne Reparatur zu.</li>
+                    </ul>
+                    <div class="blue-form-container blue-form-container--right">
+                        <div class="blue-form-container__top-right"></div>
+                        <div class="blue-form-container__bottom-right"></div>
+                    </div>
+        
+                    <div class="row crash">
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="./assets/images/unfall--large.webp">
+                            <source media="(min-width: 768px)" srcset="./assets/images/unfall--large.jpg">
+                            <source srcset="/assets/images/unfall--small.webp 1x, /assets/images/unfall--small@2x.webp 2x">
+                            <source srcset="/assets/images/unfall--small.jpg 1x, /assets/images/unfall--small@2x.jpg 2x">
+                            <img src="/assets/images/unfall--small.jpg" alt="unfallbild">
+                        </picture>
+
+                        <div class="wrapper">
+                            <h2 class="headline headline--white">Unfall! und was nun?</h2>
+
+                            <div class="wrapper__messagebox wrapper__messagebox--speech">
+                                    <h4 class="message-wrapper__title">Welche Rente habe ich im Schadensfall?</h4>
+                                    <p>Ein Autounfall tritt selten auf – durchschnittlich alle sieben Jahre pro Autofahrer. Viele wissen daher nicht, welche Möglichkeiten sie in diesem Fall haben. Unsicherheit und Hilflosigkeit sind die Folge.</p>
+                            </div>
+
+                            <div class="wrapper__messagebox wrapper__messagebox--speech">
+                                    <h4 class="message-wrapper__title">Darf ich überhaupt einen Gutachter beauftragen?</h4>
+                                    <p>Fehlende Sachkenntnis im Schadensfall und falsche Informationen verunsichern und verleiten dazu, die Sache aus der Hand zu geben. Begegnen Sie der Versicherung auf Augenhöhe und verhelfen Sie sich zu Ihrem Recht.</p>
+                            </div>
+
+                            <div class="wrapper__messagebox wrapper__messagebox--speech">
+                                    <h4 class="message-wrapper__title">Wer hilft mir dabei fair entschädigt zu werden?</h4>
+                                    <p>Wer in einen Unfall verwickelt ist, steht unter Stress. Dass Sie dennoch das Beste aus der Situation machen wollen, ist Ihr gutes Recht. Hier kommt es auf einen unabhängigen und erfahrenen Kfz-Gutachter an.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+        
+        
+                    <div class="our-experience" class="page-section page-section--no-right-padding">
+                        <div class="wrapper">
+                            <h2 class="headline">Vertrauen Sie auf unsere Erfahrung</h2>
+                            <picture>
+                                <source media="(min-width: 1024px)" srcset="./assets/images/trio--cropped.webp">
+                                <source media="(min-width: 1024px)" srcset="./assets/images/trio--cropped.jpg">
+                                <source media="(min-width: 768px)" srcset="./assets/images/trio.webp">
+                                <source media="(min-width: 768px)" srcset="./assets/images/trio.jpg">
+                                <source srcset="./assets/images/trio.webp 1x, ./assets/images/trio@2x.webp 2x">
+                                <source srcset="./assets/images/trio.jpg 1x, ./assets/images/trio@2x.jpg 2x">
+                                <img src="./assets/images/trio.jpg" alt="trio uhrbanke">
+                            </picture>
+        
+                            <div class="message-wrapper message-wrapper--left">
+                                <div class="message-wrapper__messagebox message-wrapper__messagebox--blue">
+                                    <h4>Beratung, Begutachtung und Betreuung</h4>
+                                    <p>… aus einer Hand. Durch unsere jahrelange Erfahrung, kennen wir Ihre Fragen und Sorgen, aber auch Ihre Ansprüche. Sie können sicher sein, den fairen Betrag zu erhalten, der Ihnen zusteht.</p>
+                                </div>
+                                <div class="message-wrapper__messagebox message-wrapper__messagebox--blue">
+                                    <h4>Unsere Erfahrung - Ihr Vorteil</h4>
+                                    <p>Mit uns als kompetente Partner an Ihrer Seite, begegnen Sie der Versicherung auf Augenhöhe. So verschaffen Sie sich einen Vorteil und machen das Beste aus der Situation.</p>
+                                </div>
+                                <div class="message-wrapper__messagebox message-wrapper__messagebox--blue">
+                                    <h4>Ein qualifiziertes Gutachten mit optimalem Ergebnis</h4>
+                                    <p>Ob zur Vorlage bei der Versicherung, vor Gericht oder den Behörden - Sie bekommen ein umfassendes und offiziell anerkanntes Gutachten. Sie können sicher sein, das Thema an Experten mit Sachverstand abzugeben.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+        
+                    <div class="our-priority">
+                        <h2 class="headline">Unser oberstes Gebot: Unabhängig und Neutralität</h2>
+                        <picture>
+                            <source srcset="./assets/images/unfallbegutachtung.webp 1x, ./assets/images/unfallbegutachtung@2x.webp 2x">
+                            <source srcset="./assets/images/unfallbegutachtung.jpg 1x, ./assets/images/unfallbegutachtung@2x.jpg 2x">
+                            <img src="./assets/images/unfallbegutachtung.jpg" alt="unfallbegutachtung">
+                        </picture>
+        
+                        <div class="priority-text-box">
+                            <h4 class="priority-text-box__title">Unbeeinflusst und objektiv</h4>
+                            <p>Versicherungen sind bei der Ermittlung der Schadenersatzkosten befangen, da sie die eigene Finanzlage berücksichtigen. Bei uns erhalten Sie eine sachliche und ganzheitliche Bewertung, die all Ihre Ansprüche abdeckt.</p>
+                            <div class="priority-text-box__light-blue-form"></div>
+                        </div>
+                        
+                        <div class="priority__text-box priority__text-box--reverse">
+                            <h4 class="priority-text-box__title">Qualifizierte Experten</h4>
+                            <p>Häufig verzichten Versicherungen auf die Erstellung eines umfangreichen Gutachtens. Die Folge: Beweise werden vernichtet und Teile Ihres Anspruchs verfallen. Mit unseren Gutachten können Sie gewiss sein, fair entschädigt zu werden.</p>
+                            <div class="priority-text-box__blue-form"></div>
+                        </div>
+        
+                        <div class="priority-text-box">
+                            <h4 class="priority-text-box__title">Kundenorientierte Arbeitsweise</h4>
+                            <p>Vereinbaren Sie mit uns einen Termin, und wir begutachten Ihr Fahrzeug sorgfältig sowie fachkundig. Wir nehmen sämtliche Daten Ihres Fahrzeugs auf, dokumentieren den Zustand und erstellen Fotos. Ihr Ergebnis: Ein umfangreiches Gutachten, dass alle Schäden berücksichtigt.</p>
+                            <div class="priority-text-box__dark-blue-form"></div>
+                        </div>
+                    </div>
+        
+        
+                    <div class="know-how" class="container">
+                        <div class="row">
+                            <h2 class="headline">Fundiertes Know-How und Serviceorientierung</h2>
+                            <div class="col card">
+                                <div class="card__img">
+                                    <img src="./assets/images/know-how--icon1.svg" alt="Mail Icon">
+                                </div>
+                                <p>Ob PKW, LKW oder motorisiertes Zweirad – als Kunde können Sie sich auf ein fachkundiges Gutachten verlassen.</p>
+                            </div>
+                            <div class="col card">
+                                <div class="card__img">
+                                    <img src="./assets/images/know-how--icon2.svg" alt="Verkehrsmittel Icon">
+                                </div>
+                                <p>Unsere Gutachter verfügen über einen Ingenieursgrad und somit über weitreichende technische Kenntnisse.</p>
+                            </div>
+                            <div class="col card">
+                                <div class="card__img">
+                                    <img src="./assets/images/know-how--icon3.svg" alt="Zertifikat Icon">
+                                </div>
+                                <p>Wir arbeiten mit den größten Schadenserfassungssystemen, die 98 % aller Fahrzeuge abdecken.</p>
+                            </div>
+                            <div class="col card">
+                                <div class="card__img">
+                                    <img src="./assets/images/know-how--icon4.svg" alt="Computer Icon">
+                                </div>
+                                <p>Sie profitieren von einem Full-Service, denn wir versenden das Gutachten direkt an die Versicherung.</p>
+                            </div>
+                            <div class="col card">
+                                <div class="card__img">
+                                    <img src="./assets/images/know-how--icon5.svg" alt="Team Icon">
+                                </div>
+                                <p>Dank unseres großen Teams besichtigen wir Ihr Fahrzeug meist noch am Tag der Beauftragung.</p>
+                            </div>
+                            <div class="col card">
+                                <div class="card__img">
+                                    <img src="./assets/images/know-how--icon6.svg" alt="Standort Icon">
+                                </div>
+                                <p>Unsere Sachverständigen finden Sie an mehreren Standorten in Berlin.</p>
+                            </div>
+                            <div class="col card">
+                                <div class="card__img">
+                                    <img src="./assets/images/know-how--icon7.svg" alt="Lupe Icon">
+                                </div>
+                                <p>Durch die von Versicherungen unabhängige Arbeit bewerten wir die Situation absolut neutral und objektiv.</p>
+                            </div>
+                            <div class="col card">
+                                <div class="card__img">
+                                    <img src="./assets/images/know-how--icon8.svg" alt="Waage Icon">
+                                </div>
+                                <p>Dank unserer engen Zusammenarbeit mit Juristen, basieren unsere Gutachten stetig auf der aktuellsten Rechtsprechung.</p>
+                            </div>
+                        </div>
+                    </div>
             </div>
-            <ul>
-                <li>dass ein Gutachten vor allem der Beweissicherung dient, um Ihren vollumfänglichen Anspruch gegenüber der Versicherung zu begründen?</li>
-                <li>dass die Kosten für das Kfz-Gutachten im Falle geklärter Schuldfrage von der Versicherung bezahlt wird?</li>
-                <li>Sie die freie Wahl haben, in welcher Werkstatt Sie Ihren Unfall reparieren lassen wollen?</li>
-                <li>Sie die freie Wahl haben, ob Sie den Schaden überhaupt reparieren lassen wollen?</li>
-                <li>man sich den Schadenersatz auch auszahlen lassen kann ohne zu reparieren?</li>
-                <li>Sie einen eigenen Sachverständigen einschalten dürfen und nicht auf die Schadensschätzung durch den Versicherer vertrauen müssen?</li>
-                <li>die Versicherung Ihnen für die Zeit der Reparatur ein Ersatzfahrzeug bzw. eine Nutzungsausfallentschädigung zahlen muss?</li>
-                <li>Sie auch die Kosten für einen Anwalt erstattet bekommen?</li>
-                <li>dass der Gutachter auch prüft, ob trotz fachgerechter Reparatur ein Minderwert verbleiben würde? Dieser steht Ihnen auch ohne Reparatur zu.</li>
-            </ul>
-            <div class="blue-form-container blue-form-container--right">
-                <div class="blue-form-container__top-right"></div>
-                <div class="blue-form-container__bottom-right"></div>
-            </div>
-
-
-            <div id="crash" class="page-section page-section--blue">
-                <div class="wrapper">
-                    <h2 class="headline headline--white">Unfall! und was nun?</h2>
-                    <div class="message-wrapper">
-                        <div class="message-wrapper__messagebox">
-                            <h4 class="message-wrapper__title">Welche Rente habe ich im Schadensfall?</h4>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptatibus perferendis provident harum amet ab quis magnam voluptatum soluta inventore.</p>
-                        </div>
-                        <div class="message-wrapper__messagebox">
-                            <h4 class="message-wrapper__title">Darf ich überhaupt einen Gutachter beauftragen?</h4>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptatibus perferendis provident harum amet ab quis magnam voluptatum soluta inventore.</p>
-                        </div>
-                        <div class="message-wrapper__messagebox">
-                            <h4 class="message-wrapper__title">Wer hilft mir dabei fair entschädigt zu werden?</h4>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam voluptatibus perferendis provident harum amet ab quis magnam voluptatum soluta inventore.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div id="our-experience" class="page-section page-section--no-right-padding">
-                <div class="wrapper">
-                    <h2 class="headline">Vertrauen Sie auf unsere Erfahrung</h2>
-                    <picture>
-                        <source media="(min-width: 1024px)" srcset="./assets/images/trio--cropped.webp">
-                        <source media="(min-width: 1024px)" srcset="./assets/images/trio--cropped.png">
-                        <source media="(min-width: 768px)" srcset="./assets/images/trio.webp">
-                        <source media="(min-width: 768px)" srcset="./assets/images/trio.png">
-                        <source srcset="./assets/images/trio.webp 1x, ./assets/images/trio@2x.webp 2x">
-                        <source srcset="./assets/images/trio.png 1x, ./assets/images/trio@2x.png 2x">
-                        <img src="./assets/images/trio.png" alt="trio uhrbanke">
-                    </picture>
-
-                    <div class="message-wrapper message-wrapper--left">
-                        <div class="message-wrapper__messagebox message-wrapper__messagebox--blue">
-                            <h4>Beratung, Begutachtung und Betreuung</h4>
-                            <p>… aus einer Hand. Durch unsere jahrelange Erfahrung, kennen wir Ihre Fragen und Sorgen, aber auch Ihre Ansprüche. Sie können sicher sein, den fairen Betrag zu erhalten, der Ihnen zusteht.</p>
-                        </div>
-                        <div class="message-wrapper__messagebox message-wrapper__messagebox--blue">
-                            <h4>Unsere Erfahrung - Ihr Vorteil</h4>
-                            <p>Mit uns als kompetente Partner an Ihrer Seite, begegnen Sie der Versicherung auf Augenhöhe. So verschaffen Sie sich einen Vorteil und machen das Beste aus der Situation.</p>
-                        </div>
-                        <div class="message-wrapper__messagebox message-wrapper__messagebox--blue">
-                            <h4>Ein qualifiziertes Gutachten mit optimalem Ergebnis</h4>
-                            <p>Ob zur Vorlage bei der Versicherung, vor Gericht oder den Behörden - Sie bekommen ein umfassendes und offiziell anerkanntes Gutachten. Sie können sicher sein, das Thema an Experten mit Sachverstand abzugeben.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div id="our-priority">
-                <h2 class="headline">Unser oberstes Gebot: Unabhängig und Neutralität</h2>
-                <picture>
-                    <source srcset="./assets/images/unfallbegutachtung.webp 1x, ./assets/images/unfallbegutachtung@2x.webp 2x">
-                    <source srcset="./assets/images/unfallbegutachtung.png 1x, ./assets/images/unfallbegutachtung@2x.png 2x">
-                    <img src="./assets/images/unfallbegutachtung.png" alt="unfallbegutachtung">
-                </picture>
-
-                <div class="priority-text-box">
-                    <h4 class="priority-text-box__title">Unbeeinflusst und objektiv</h4>
-                    <p>Versicherungen sind bei der Ermittlung der Schadenersatzkosten befangen, da sie die eigene Finanzlage berücksichtigen. Bei uns erhalten Sie eine sachliche und ganzheitliche Bewertung, die all Ihre Ansprüche abdeckt.</p>
-                    <div class="priority-text-box__light-blue-form"></div>
-                </div>
-                
-                <div class="priority__text-box priority__text-box--reverse">
-                    <h4 class="priority-text-box__title">Qualifizierte Experten</h4>
-                    <p>Häufig verzichten Versicherungen auf die Erstellung eines umfangreichen Gutachtens. Die Folge: Beweise werden vernichtet und Teile Ihres Anspruchs verfallen. Mit unseren Gutachten können Sie gewiss sein, fair entschädigt zu werden.</p>
-                    <div class="priority-text-box__blue-form"></div>
-                </div>
-
-                <div class="priority-text-box">
-                    <h4 class="priority-text-box__title">Kundenorientierte Arbeitsweise</h4>
-                    <p>Vereinbaren Sie mit uns einen Termin, und wir begutachten Ihr Fahrzeug sorgfältig sowie fachkundig. Wir nehmen sämtliche Daten Ihres Fahrzeugs auf, dokumentieren den Zustand und erstellen Fotos. Ihr Ergebnis: Ein umfangreiches Gutachten, dass alle Schäden berücksichtigt.</p>
-                    <div class="priority-text-box__dark-blue-form"></div>
-                </div>
-            </div>
-
-
-            <div id="know-how" class="container">
-                <div class="row">
-                    <h2 class="headline">Fundiertes Know-How und Serviceorientierung</h2>
-                    <div class="col card">
-                        <div class="card__img">
-                            <img src="./assets/images/know-how--icon1.svg" alt="Mail Icon">
-                        </div>
-                        <p>Ob PKW, LKW oder motorisiertes Zweirad – als Kunde können Sie sich auf ein fachkundiges Gutachten verlassen.</p>
-                    </div>
-                    <div class="col card">
-                        <div class="card__img">
-                            <img src="./assets/images/know-how--icon2.svg" alt="Verkehrsmittel Icon">
-                        </div>
-                        <p>Unsere Gutachter verfügen über einen Ingenieursgrad und somit über weitreichende technische Kenntnisse.</p>
-                    </div>
-                    <div class="col card">
-                        <div class="card__img">
-                            <img src="./assets/images/know-how--icon3.svg" alt="Zertifikat Icon">
-                        </div>
-                        <p>Wir arbeiten mit den größten Schadenserfassungssystemen, die 98 % aller Fahrzeuge abdecken.</p>
-                    </div>
-                    <div class="col card">
-                        <div class="card__img">
-                            <img src="./assets/images/know-how--icon4.svg" alt="Computer Icon">
-                        </div>
-                        <p>Sie profitieren von einem Full-Service, denn wir versenden das Gutachten direkt an die Versicherung.</p>
-                    </div>
-                    <div class="col card">
-                        <div class="card__img">
-                            <img src="./assets/images/know-how--icon5.svg" alt="Team Icon">
-                        </div>
-                        <p>Dank unseres großen Teams besichtigen wir Ihr Fahrzeug meist noch am Tag der Beauftragung.</p>
-                    </div>
-                    <div class="col card">
-                        <div class="card__img">
-                            <img src="./assets/images/know-how--icon6.svg" alt="Standort Icon">
-                        </div>
-                        <p>Unsere Sachverständigen finden Sie an mehreren Standorten in Berlin.</p>
-                    </div>
-                    <div class="col card">
-                        <div class="card__img">
-                            <img src="./assets/images/know-how--icon7.svg" alt="Lupe Icon">
-                        </div>
-                        <p>Durch die von Versicherungen unabhängige Arbeit bewerten wir die Situation absolut neutral und objektiv.</p>
-                    </div>
-                    <div class="col card">
-                        <div class="card__img">
-                            <img src="./assets/images/know-how--icon8.svg" alt="Waage Icon">
-                        </div>
-                        <p>Dank unserer engen Zusammenarbeit mit Juristen, basieren unsere Gutachten stetig auf der aktuellsten Rechtsprechung.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section id="ueber-uns">
@@ -227,8 +234,8 @@
         </div>
         <picture>
             <source srcset="./assets/images/team.webp 1x, ./assets/images/team@2x.webp 2x">
-            <source srcset="./assets/images/team.png 1x, ./assets/images/team@2x.png 2x">
-            <img src="./assets/images/team.png" alt="das Team">
+            <source srcset="./assets/images/team.jpg 1x, ./assets/images/team@2x.jpg 2x">
+            <img src="./assets/images/team.jpg" alt="das Team">
         </picture>
         
         <div class="container page-section--blue-bg">
@@ -252,8 +259,8 @@
                     <div class="card">
                         <picture>
                             <source srcset="./assets/images/mitarbeiter1.webp 1x, ./assets/images/mitarbeiter1@2x.webp 2x">
-                            <source srcset="./assets/images/mitarbeiter1.png 1x, ./assets/images/mitarbeiter1@2x.png 2x">
-                            <img src="./assets/images/mitarbeiter1.png" alt="ein Mitarbeiter">
+                            <source srcset="./assets/images/mitarbeiter1.jpg 1x, ./assets/images/mitarbeiter1@2x.jpg 2x">
+                            <img src="./assets/images/mitarbeiter1.jpg" alt="ein Mitarbeiter">
                         </picture>
                     </div>
                     <p>Dipl.-Ing. (FH)<br> O. Freyberg</p>
@@ -268,8 +275,8 @@
                     <div class="card">
                         <picture>
                             <source srcset="./assets/images/mitarbeiter2.webp 1x, ./assets/images/mitarbeiter2@2x.webp 2x">
-                            <source srcset="./assets/images/mitarbeiter2.png 1x, ./assets/images/mitarbeiter2@2x.png 2x">
-                            <img src="./assets/images/mitarbeiter2.png" alt="ein Mitarbeiter">
+                            <source srcset="./assets/images/mitarbeiter2.jpg 1x, ./assets/images/mitarbeiter2@2x.jpg 2x">
+                            <img src="./assets/images/mitarbeiter2.jpg" alt="ein Mitarbeiter">
                         </picture>
                     </div>
                     <p>Dipl.-Ing. (FH)<br> B. Feuerhahn</p>
@@ -284,8 +291,8 @@
                     <div class="card">
                         <picture>
                             <source srcset="./assets/images/mitarbeiter3.webp 1x, ./assets/images/mitarbeiter3@2x.webp 2x">
-                            <source srcset="./assets/images/mitarbeiter3.png 1x, ./assets/images/mitarbeiter3@2x.png 2x">
-                            <img src="./assets/images/mitarbeiter3.png" alt="ein Mitarbeiter">
+                            <source srcset="./assets/images/mitarbeiter3.jpg 1x, ./assets/images/mitarbeiter3@2x.jpg 2x">
+                            <img src="./assets/images/mitarbeiter3.jpg" alt="ein Mitarbeiter">
                         </picture>
                     </div>
                     <p>staatl. gepr. Techniker (KFZ)<br> E. Heinicke</p>
@@ -300,8 +307,8 @@
                     <div class="card">
                         <picture>
                             <source srcset="./assets/images/mitarbeiter4.webp 1x, ./assets/images/mitarbeiter4@2x.webp 2x">
-                            <source srcset="./assets/images/mitarbeiter4.png 1x, ./assets/images/mitarbeiter4@2x.png 2x">
-                            <img src="./assets/images/mitarbeiter4.png" alt="ein Mitarbeiter">
+                            <source srcset="./assets/images/mitarbeiter4.jpg 1x, ./assets/images/mitarbeiter4@2x.jpg 2x">
+                            <img src="./assets/images/mitarbeiter4.jpg" alt="ein Mitarbeiter">
                         </picture>
                     </div>
                     <p>C. White</p>
@@ -316,8 +323,8 @@
                     <div class="card">
                         <picture>
                             <source srcset="./assets/images/mitarbeiter5.webp 1x, ./assets/images/mitarbeiter5@2x.webp 2x">
-                            <source srcset="./assets/images/mitarbeiter5.png 1x, ./assets/images/mitarbeiter5@2x.png 2x">
-                            <img src="./assets/images/mitarbeiter5.png" alt="ein Mitarbeiter">
+                            <source srcset="./assets/images/mitarbeiter5.jpg 1x, ./assets/images/mitarbeiter5@2x.jpg 2x">
+                            <img src="./assets/images/mitarbeiter5.jpg" alt="ein Mitarbeiter">
                         </picture>
                     </div>
                     <p>C. Hiller</p>
@@ -331,7 +338,7 @@
             </div>
         </div>
 
-        <div id="banner" class="container page-section--border">
+        <div class="container banner">
             <div class="row">
                 <div class="col">
                     <img src="./assets/images/abzeichen.svg" alt="Abzeichen Icon">
@@ -348,7 +355,7 @@
             </div>
         </div>
 
-        <div id="weitere-leistungen" class="container">
+        <div class="container weitere-leistungen">
             <div class="row">
                 <h2 class="headline">weitere Leistungen</h2>
                 <h4 class="section-subtitle">Neben Unfallgutachten als unsere Kernkompetenz bieten wir zusätzlich:</h4>
@@ -402,8 +409,8 @@
         <div class="banner-kontakt">
             <picture>
                 <source srcset="./assets/images/mann--liest.webp 1x, ./assets/images/mann--liest@2x.webp 2x">
-                <source srcset="./assets/images/mann--liest.png 1x, ./assets/images/mann--liest@2x.png 2x">
-                <img src="./assets/images/mann--liest.png" alt="Mann liest zettel">
+                <source srcset="./assets/images/mann--liest.jpg 1x, ./assets/images/mann--liest@2x.jpg 2x">
+                <img src="./assets/images/mann--liest.jpg" alt="Mann liest zettel">
             </picture>
             <div class="banner-kontakt__blaue-form">
                 <h3>Der einfache Weg zu Ihrem Gutachten</h3>
@@ -456,12 +463,12 @@
             </div>
             <picture>
                 <source srcset="./assets/images/autoschaden--kennzeichnung.webp 1x, ./assets/images/autoschaden--kennzeichnung@2x.webp 2x">
-                <source srcset="./assets/images/autoschaden--kennzeichnung.png 1x, ./assets/images/autoschaden--kennzeichnung@2x.png 2x">
-                <img src="./assets/images/autoschaden--kennzeichnung.png" alt="Kennzeichnung des Unfallschadens">
+                <source srcset="./assets/images/autoschaden--kennzeichnung.jpg 1x, ./assets/images/autoschaden--kennzeichnung@2x.jpg 2x">
+                <img src="./assets/images/autoschaden--kennzeichnung.jpg" alt="Kennzeichnung des Unfallschadens">
             </picture>
         </div>
 
-        <div id="our-benefits" class="container">
+        <div class="container our-benefits">
             <div class="row"></div>
             <h2 class="headline">Noch unsicher? Überzeugen Sie sich von unseren Vorteilen</h2>
             <div class="card card--bg-light-blue">
@@ -487,7 +494,7 @@
                 </div>
             </div>
         </div>
-        <div id="kontakt-form">
+        <div class="kontakt-form">
             <h2 class="headline">Gleich unverbindlich von uns beraten lassen</h2>
             <div class="container">
                 <div class="row">
@@ -555,7 +562,7 @@
             </div>
         </div>
 
-        <div id="faq" class="container">
+        <div class="container faq">
             <div class="row">
                 <h2 class="headline">Häufig gestellte Fragen</h2>
             <div class="accordion">          

@@ -1,21 +1,77 @@
-.site-header {
-    &__top-banner ul {
-        display: none;
+.large-hero {
+    position: relative;
+    padding-top: 7.4rem;
+
+    @mixin atMedium {
+        &{
+            padding-top: 10.34rem;
+        }       
     }
-}
-@mixin atMedium {
-    .site-header {
-        &__top-banner ul{
-            height: 52px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-            background-color: #f6f6f6;
-            li {
-             list-style-image: url('../images/Häckchen.svg');
-            }
+    &__blue-form {
+        position: absolute;
+        top: 0;
+        width: 27%;
+        height: 100%;
+        opacity: 0.7;
+        background-color: $footerBlue;
+       
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            /* z-index: -1; */
+            background-color: $footerBlue;
+            transform-origin: bottom left;
+            transform: skew(-28deg, 0deg);
         }
-     }
+    }
+  
+    @media screen and (min-width: 1074px) {
+        &__content {
+            position: absolute;
+            top: 137px;
+            max-width: 300px;
+            padding-left: 1.6rem;
+            font-size: 1.4rem;
+            color: $navLink;
+    
+        }
+    }
+    
+    @media screen and (max-width: 1074px) {
+        &__content {
+            display: none;
+        }
+    }
+
+    @mixin atMediumRev {
+        &__content  {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: 1075px) {
+        &__content {
+            max-width: 400px;
+            font-size: 1.6rem;
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        &__content {
+            max-width: 440px;
+        }
+        &__title {
+            font-size: 4.1rem;
+        }
+    }
+
+
 }
+
+
+
 

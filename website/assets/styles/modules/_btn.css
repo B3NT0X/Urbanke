@@ -1,4 +1,35 @@
-a {
-    color: $footerBlue;
-    font-size: 0.62rem;
+.btn {
+    font-family: 'Poppins';
+    position: relative;
+    display: block;
+    color: $navLink;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-top: 44px;
+    padding: 1rem;
+    border: 2px solid $navLink;
+    border-right-style: hidden;
+    border-top-style: hidden;
+    border-bottom-style: hidden;
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 65%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        /* z-index: -1; */
+        border: 2px solid $navLink;
+        border-left-style: hidden;
+        transform-origin: bottom left;
+        transform: skew(-28deg, 0deg);
+    }
+}
+
+@media screen and (max-width: 988px) {
+    .btn {
+        margin-top: 0;
+    }
 }

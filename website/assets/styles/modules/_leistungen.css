@@ -1,0 +1,76 @@
+#leistungen {
+    position: relative;
+
+   ul {
+       list-style-type: none;
+   }
+
+   ul li {
+       font-size: 1.8rem;
+       padding-bottom: 2.4rem;
+
+       &:before {
+           content: '-';
+           position: absolute;
+           margin-left: -2rem;
+       }
+   }
+
+  ul li:first-of-type {
+        padding-top: 2.1rem;
+   }
+
+   .crash {
+       .wrapper {
+           width: 100%;
+           background-color:$crashBlue;
+           color: $navLink;
+
+           .headline--white {
+               color: $navLink;
+           }
+
+           &__messagebox {
+               h4 {
+                   font-size: 2.1rem;
+               }
+                position: relative;
+                width: 280px;
+                margin: 20px auto;
+                background-color: $crashBlue;
+                border: 2px solid $navLink;
+                padding: 1rem;
+               &--speech:before {
+                   content: '';
+                   position: absolute;
+                   width: 0;
+                   height: 0;
+                   left: -34px;
+                   top: -2px;
+                   transform: rotate(91deg);
+                   border: 17px solid;
+                   border-color: #fff transparent transparent #fff;
+               }
+               &--speech:after {
+                   content: '';
+                   position: absolute;
+                   width: 0;
+                   height: 0;
+                   top: 0px;
+                   left: -29px;
+                   bottom: -31px;
+                   transform: rotate(90deg);
+                   border: 15px solid;
+                   border-color: $crashBlue transparent transparent $crashBlue;
+               }
+           }   
+       }
+   }
+
+
+
+
+
+
+}
+
