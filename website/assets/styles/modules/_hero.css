@@ -2,11 +2,6 @@
     position: relative;
     padding-top: 7.4rem;
 
-    @mixin atMedium {
-        &{
-            padding-top: 10.34rem;
-        }       
-    }
     &__blue-form {
         position: absolute;
         top: 0;
@@ -29,6 +24,63 @@
             transform: skew(-28deg, 0deg);
         }
     }
+
+    @mixin atMedium {
+        &__content {
+            position: relative;
+        }
+        &__blue-form {
+            display: none;
+        }
+        &__triangle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 300px 200px 0 0;
+            border-color: $footerBlue transparent transparent transparent;
+            opacity: 0.8;
+
+        &--revert {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 300px 200px;
+            border-color: transparent transparent $mainBlue transparent;
+        }
+        &--lighter {
+            border-color: $lightBlue transparent transparent transparent;
+            border-width: 450px 278px 0 0;
+        }
+        &--mirror {
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 450px 0 0 278px;
+            border-color: transparent transparent transparent $lightBlue;
+        }
+        }
+    }
+
+    @mixin atMedium {
+        &{
+            padding-top: 10.34rem;
+        }
+
+        &__text {
+            max-width: 550px;
+        }
+        
+        &__title {
+            font-size: 5.6rem;
+        }                
+        
+    }
   
     @media screen and (min-width: 1074px) {
         &__content {
@@ -42,11 +94,11 @@
         }
     }
     
-    @media screen and (max-width: 1074px) {
+    /* @media screen and (max-width: 1074px) {
         &__content {
             display: none;
         }
-    }
+    } */
 
     @mixin atMediumRev {
         &__content  {
@@ -68,8 +120,6 @@
             font-size: 4.1rem;
         }
     }
-
-
 }
 
 

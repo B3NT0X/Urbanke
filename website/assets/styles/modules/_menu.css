@@ -1,7 +1,11 @@
 .site-header {
     &__top-banner ul {
         display: none;
-        font-size: 1.4rem;
+
+        li {
+            font-family: 'Poppins';
+            font-size:1.4rem;
+        }
     }
 }
 
@@ -44,7 +48,7 @@
         overflow: hidden;
     }
 
-@mixin atMedium {
+@mixin atLarge {
     ul {
         overflow: visible;
     }
@@ -59,6 +63,7 @@
     }
 
     &__nav {
+        position: relative;
         min-height: 100%;
     }
     
@@ -102,7 +107,7 @@
         }
         
     }
-    @mixin atMedium {
+    @mixin atLarge {
         &__menu {
             min-height: 76px;
         }
@@ -144,8 +149,29 @@
                 background-color: $lightBlue;
             }
         }
+        @mixin atMedium {
+            &--revert {
+                display: none;
+            }
+            &--lighter {
+                display: none;
+            }
+            
+        }
+
+        &--lighter {
+            width: 138px;
+            top: 61%;
+            transform: translateY(-50%);
+            background-color: $lightBlue;
+            opacity: 0.5;
+
+            &:after {
+                background-color: $lightBlue;
+            }
+        }
     }
-    @mixin atMedium {
+    @mixin atLarge {
         &__form {
             display: none;
         }
@@ -215,7 +241,7 @@
 
 
   
-  @mixin atMedium {
+  @mixin atLarge {
     .site-header {
         &__menu {
             li {
