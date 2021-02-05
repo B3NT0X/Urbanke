@@ -88,7 +88,19 @@
                
            }   
        }
-   
+       @media screen and (min-width: 600px) {
+           &__wrapper &__messagebox {
+               width: 380px;
+           }
+           &__md-container {
+            width: 100%;
+            li {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+           }
+       }
        @mixin atMedium {
            & {
                margin-top: 6.6rem;
@@ -101,6 +113,11 @@
 
            &__md-title-container {
                position: relative;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
 
                .headline--picture {
                    display: block !important;
@@ -152,7 +169,45 @@
 
        }
 
+       @mixin atMediumLarge {
+           &__list {
+               max-width: 575px;
+               padding-right: 8.4rem;
+           }
 
+           .large-hero {
+               &__triangle--lighter {
+                    border-color: $secondaryBlue transparent transparent transparent;
+                    border-width: 550px 370px 0 0;
+                    opacity: 0.8;
+               }
+               &__triangle--mirror {
+                    border-color: transparent transparent transparent $secondaryBlue;
+                    border-width: 550px 0 0 370px;
+                    opacity: 0.8;
+               }
+           }
+
+           &__wrapper &__messagebox {
+                margin-right: 8.4rem;
+                margin-bottom: 3.2rem;
+
+                &:first-child {
+                    margin-top: 4rem;
+                }
+                &:last-child {
+                    margin-bottom: 4rem;
+                }
+                &:first-child, &:last-child {
+                    margin-right: 14.8rem
+                }
+           }
+
+           &__question-icon {
+               font-size: 50rem;
+               padding-left: 7.5rem;
+           }
+       }
 
 
 

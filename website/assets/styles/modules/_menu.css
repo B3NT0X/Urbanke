@@ -136,9 +136,8 @@
         }
         
         &--revert {
-            width: 188px;
+            width: 50%;
             height: 67px;
-            top: -20px;
             left: 0;
             background-color: $lightBlue;
             opacity: 0.3;

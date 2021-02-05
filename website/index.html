@@ -39,13 +39,11 @@
         <div class="large-hero__blue-form"></div>
         <div class="large-hero__triangle"></div>
         <picture>
-            <!-- <source media="(min-width: 768px)" srcset="./assets/images/Titelbild--large.webp">
-            <source media="(min-width: 768px)" srcset="./assets/images/Titelbild--large.jpg"> -->
-            <source media="(min-width: 540px)" srcset="./assets/images/Titelbild--medium.webp">
-            <source media="(min-width: 540px)" srcset="./assets/images/Titelbild--medium.jpg">
-            <source srcset="./assets/images/Titelbild.webp 1x, ./assets/images/Titelbild@2x.webp 2x">
-            <source srcset="./assets/images/Titelbild.jpg 1x, ./assets/images/Titelbild@2x.jpg 2x">
-            <img src="./assets/images/Titelbild.jpg" alt="hero">
+            <source media="(min-width: 1920px)" srcset="./assets/images/Titelbild--large.webp">
+            <source media="(min-width: 1920px)" srcset="./assets/images/Titelbild--large.jpg">
+            <source srcset="./assets/images/Titelbild--medium.webp">
+            <source srcset="./assets/images/Titelbild--medium.jpg">
+            <img class="large-hero__heroimg" src="./assets/images/Titelbild--medium.jpg" alt="hero">
         </picture>
     </div>
     <div class="large-hero__content">
@@ -54,9 +52,17 @@
             <p class="large-hero__text">Seit 1987 sind wir als Kfz-Gutachter in Berlin für Sie tätig, um nach einem Verkehrsunfall die Höhe des entstandenen Schadens zu bestimmen. Unsere oberste Prämisse ist es, neutral, objektiv und unabhängig von Versicherungen zu agieren.</p>
             <br>
             <p class="large-hero__text">Bei uns bekommen Sie ein anerkanntes Gutachten, dass den Schaden vollständig beziffert und zur Vorlage bei der Versicherung oder vor Gericht verwendet werden kann. Ist die Schuldfrage noch ungeklärt, erhalten Sie eine kostenlose Beweissicherung und Beratung.</p>
-            <a href="#kotakt" class="btn">Kontaktieren Sie uns</a>
+            
+            <a class="btn" href="#">
+                <div class="btn__container">
+                    <div class="btn__rectangle"><p class="btn__text">kontaktieren Sie uns</p></div>
+                    <div class="btn__triangle">
+                        <div class="btn__inner-triangle"></div>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="large-hero__triangle large-hero__triangle--revert"></div>
+        <div class="large-hero__triangle--revert"></div>
     </div>
     
     <section class="leistungen">
@@ -71,8 +77,8 @@
                     </div>
 
                     <div class="leistungen__md-container">
-                        <div class="large-hero__triangle large-hero__triangle--lighter"></div>
-                        <div class="large-hero__triangle large-hero__triangle--mirror"></div>
+                        <div class="large-hero__triangle--lighter"></div>
+                        <div class="large-hero__triangle--mirror"></div>
 
                     <ul class="leistungen__list">
                         <li>dass ein Gutachten vor allem der Beweissicherung dient, um Ihren vollumfänglichen Anspruch gegenüber der Versicherung zu begründen?</li>
@@ -102,8 +108,8 @@
                             <div class="leistungen__md-title-container">
                             <h2 class="headline headline--white headline--picture" style="display: none;">Unfall!<br> und was nun?</h2>
                         <picture>
-                            <source media="(min-width: 768px)" srcset="./assets/images/unfall--large.webp">
-                            <source media="(min-width: 768px)" srcset="./assets/images/unfall--large.jpg">
+                            <source media="(min-width: 375px)" srcset="./assets/images/unfall--large.webp">
+                            <source media="(min-width: 375px)" srcset="./assets/images/unfall--large.jpg">
                             <source srcset="/assets/images/unfall--small.webp 1x, /assets/images/unfall--small@2x.webp 2x">
                             <source srcset="/assets/images/unfall--small.jpg 1x, /assets/images/unfall--small@2x.jpg 2x">
                             <img src="/assets/images/unfall--small.jpg" alt="unfallbild">
@@ -563,18 +569,23 @@
                         <a href="#" class="btn btn--white-outline">Termin buchen</a>
                     </div>
                     <div class="col">
-                        <form action="#">
-                            <label for="">Büro</label>
-                            <input type="text">
-                            <label for="">Name</label>
-                            <input type="text">
-                            <label for="">Email</label>
-                            <input type="text">
-                            <label for="">Telefon</label>
-                            <input type="text">
-                            <label for="">Nachricht</label>
-                            <input type="text">
-                            <button class="btn btn--white-outline"></button>
+                        <form action="/assets/form.php" method="post">                  
+                            <select name="office" class="custom-arrow" id="form-sex">
+                                <option value="" disabled selected>Büro</option>
+                                <option>Wedding</option>
+                                <option>...</option>
+                                <option>...</option>
+                                <option>...</option>
+                            </select>
+                            <input  type="text" name="name" id="form-prename" placeholder="Name" autocomplete="off" maxlength="60" required>
+                            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" autocomplete="off" maxlength="60" required> 
+                            <input type="tel" name="phone" pattern="^[0-9-+\s()]*$" placeholder="Ihre Telefonnummer" autocomplete="off" maxlength="40" required>
+                            <textarea name="message" placeholder="Ihre Nachricht" maxlength="500"></textarea>
+                            <button type="submit" name="submit" value="submit">Senden</button>
+                            <label class="ohnohoney" for="name"></label>
+                            <input class="ohnohoney" autocomplete="off" type="text" id="name" name="realname" placeholder="Your name here">
+                            <label class="ohnohoney" for="email"></label>
+                            <input class="ohnohoney" autocomplete="off" type="email" id="email" name="realemail" placeholder="Your e-mail here">
                         </form>
                     </div>
                 </div>

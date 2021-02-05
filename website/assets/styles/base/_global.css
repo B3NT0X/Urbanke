@@ -64,6 +64,7 @@ h4 {
   @media screen and (min-width: 768px) {
     & {
       font-size: 3.6rem;
+      line-height: 1.6;
 
       &--left {
         text-align: left;

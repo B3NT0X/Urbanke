@@ -1,37 +1,75 @@
 .btn {
-    font-family: 'Poppins';
-    position: relative;
     display: inline-block;
-    color: $footerBlue;
-    font-size: 1.6rem;
-    font-style: italic;
     text-decoration: none;
     text-transform: uppercase;
-    margin: 4.4rem 0 3.9rem 3.2rem;
-    padding: 1rem;
-    border: 2px solid $footerBlue;
-    border-right-style: hidden;
-    border-top-style: hidden;
-    border-bottom-style: hidden;
-
-    &:after {
-        content: '';
-        position: absolute;
-        display: block;
+    margin: 4.4rem 0 3.9rem 0rem;
+   
+    &__container {
+        position: relative;
         width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        /* z-index: -1; */
-        border: 2px solid $footerBlue;
-        border-left-style: hidden;
-        transform-origin: bottom left;
-        transform: skew(-28deg, 0deg);
+      }
+      &__rectangle{ 
+          position: relative; 
+          float: left;
+          height: 48px; 
+          width: 240px; 
+          background-color: #fff;
+          border: 2px solid $footerBlue;
+          border-right: 0;
+      }
+      
+      &__triangle {
+          position: relative;
+          float: left;
+          width: 0;
+          height: 0;
+          border-top: 48px solid $footerBlue;
+          border-right: 39px solid transparent;
+          border-left-style: hidden;
+      
+      }
+      &__inner-triangle {
+          position: absolute;
+          bottom: 1px;
+          left: -1px;
+          width: 0;
+          height: 0;
+          border-top: 45px solid #fff;
+          border-right: 36px solid transparent;
+      }
+      
+      &__text{
+        font-family: 'Poppins';
+        color: $footerBlue;
+        font-size: 1.6rem;
+        font-style: italic;
+        text-align: center;
+      }
+      
+      @mixin atLarge {
+        &__rectangle {
+            background-color: transparent;
+            border: 2px solid $navLink;
+        }
+        &__text {
+            color: $navLink;
+        }
+        &__triangle {
+            border-top: 48px solid $navLink;
+          
+        }
+        &__inner-triangle {
+            left: -2px;
+            border-top: 45px solid $crashBlue;
+           
+        }
     }
 }
 
-@media screen and (max-width: 767px) {
+
+
+/* @media screen and (max-width: 767px) {
     .btn {
         margin-top: 0;
     }
-}
+} */

@@ -2,45 +2,48 @@
     position: relative;
     padding-top: 7.4rem;
 
-    &__blue-form {
+    &__heroimg {
+        min-height: 283px;
+        object-fit: cover;
+        object-position: 80%;
+    }
+
+    &__triangle {
         position: absolute;
         top: 0;
-        width: 27%;
-        height: 100%;
-        opacity: 0.7;
-        background-color: $footerBlue;
-       
-        &:after {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            /* z-index: -1; */
-            background-color: $footerBlue;
-            transform-origin: bottom left;
-            transform: skew(-28deg, 0deg);
-        }
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 300px 190px 0 0;
+        border-color: $footerBlue transparent transparent transparent;
+        opacity: 0.8;
     }
 
     @mixin atMedium {
+        &{
+            padding-top: 10.34rem;
+        }
+
+        &__text {
+            max-width: 550px;
+        }
+        
+        &__title {
+            font-size: 5.6rem;
+        }    
+
         &__content {
             position: relative;
         }
-        &__blue-form {
-            display: none;
-        }
-        &__triangle {
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 300px 200px 0 0;
-            border-color: $footerBlue transparent transparent transparent;
-            opacity: 0.8;
 
+        &__heroimg {
+            min-height: 738px;
+        }
+
+        &__triangle {
+            border-width: 600px 320px 0 0;
+            
         &--revert {
             position: absolute;
             bottom: 0;
@@ -52,6 +55,10 @@
             border-color: transparent transparent $mainBlue transparent;
         }
         &--lighter {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
             border-color: $lightBlue transparent transparent transparent;
             border-width: 450px 278px 0 0;
         }
@@ -67,38 +74,66 @@
         }
     }
 
-    @mixin atMedium {
-        &{
-            padding-top: 10.34rem;
+    @mixin atMediumLarge {
+        &__triangle {
+            border-width: 645px 476px 0 0;
+            &--revert {
+                top: -38px;
+                border-width: 0 0 619px 300px;
+            }
+        }
+    }
+
+    @mixin atLarge {
+        &__heroimg {
+            object-position: center;
+        }
+        &__title {
+            color: $navLink;
+            font-size: 4.1rem;
+            line-height: 1.5;
+        }
+        &__triangle {
+            display: none;
+            
+            &--revert {
+                display: none;
+            }
+        }
+        
+        &__blue-form {
+            position: absolute;
+            top: 0;
+            width: 30%;
+            height: 100%;
+            opacity: 0.7;
+            background-color: $footerBlue;
+           
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                /* z-index: -1; */
+                background-color: $footerBlue;
+                transform-origin: bottom left;
+                transform: skew(-23deg, 0deg);
+            }
         }
 
-        &__text {
-            max-width: 550px;
-        }
-        
-        &__title {
-            font-size: 5.6rem;
-        }                
-        
-    }
-  
-    @media screen and (min-width: 1074px) {
         &__content {
             position: absolute;
             top: 137px;
-            max-width: 300px;
+            max-width: 450px;
             padding-left: 1.6rem;
             font-size: 1.4rem;
             color: $navLink;
     
         }
     }
-    
-    /* @media screen and (max-width: 1074px) {
-        &__content {
-            display: none;
-        }
-    } */
 
     @mixin atMediumRev {
         &__content  {
@@ -115,9 +150,6 @@
     @media screen and (min-width: 1200px) {
         &__content {
             max-width: 440px;
-        }
-        &__title {
-            font-size: 4.1rem;
         }
     }
 }
