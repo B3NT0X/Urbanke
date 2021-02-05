@@ -3,13 +3,8 @@
 
    &__list {
        list-style-type: none;
-
-       @mixin atMedium {
-        & {
-            margin-top: 0;
-        }
     }
-   }
+   
 
    &__list li {
        font-size: 1.8rem;
@@ -133,6 +128,7 @@
            &__list {
                 max-width: 440px;
                 margin-left: auto;
+                margin-top: 0;
                 padding-left: 0;
                 padding-right: 3.2rem;
            }
@@ -208,6 +204,113 @@
                padding-left: 7.5rem;
            }
        }
+
+       @mixin atExtraLarge {
+        &__list {
+            margin-right: auto;
+            padding-right: 0;
+            transform: skewX(34deg);
+            li {
+                transform: skewX(-30deg);
+            }
+        }
+        .large-hero__triangle--lighter,  .large-hero__triangle--mirror {
+            display: none;
+        }
+
+        &__md-container {
+            position: relative;
+            .leistungen__form_top-left {           
+                position: absolute;
+                top: 20%;
+                left: 0;
+                width: 160px;
+                height: 230px;
+                opacity: 0.7;
+                background-color: $lightBlue;
+            
+            &--right {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 160px;
+                height: 230px;
+                opacity: 0.7;
+                background-color: $lightBlue;
+
+                &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: $lightBlue;
+                transform-origin: top left;
+                transform: skew(33deg, 0deg);
+                }
+            }
+                &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: $lightBlue;
+                transform-origin: top left;
+                transform: skew(33deg, 0deg);            
+                }
+            }
+        .leistungen__form_bottom-left {
+            position: absolute;
+                top: 0;
+                right: 0;
+                width: 160px;
+                height: 230px;
+                opacity: 0.7;
+                background-color: $secondaryBlue;
+
+                &--right {
+                    position: absolute;
+                    top: 20%;
+                    right: 0;
+                    width: 160px;
+                    height: 230px;
+                    opacity: 0.7;
+                    background-color: $secondaryBlue;
+    
+                    &::after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                    background-color: $secondaryBlue;
+                    transform-origin: bottom left;
+                    transform: skew(33deg, 0deg);
+                    }
+                }
+                    
+                &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: $secondaryBlue;
+                transform-origin: bottom left;
+                transform: skew(33deg, 0deg);            
+                }
+            }
+        }
+    }
 
 
 

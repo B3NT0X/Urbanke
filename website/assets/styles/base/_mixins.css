@@ -8,11 +8,6 @@
       @mixin-content;
     }
   }
-  @define-mixin atMediumRev {
-    @media (max-width: 768px) {
-      @mixin-content;
-    }
-  }
   @define-mixin atMediumLarge {
     @media (min-width: 992px) {
       @mixin-content;
@@ -20,6 +15,11 @@
   }
   @define-mixin atLarge {
     @media (min-width: 1024px) {
+      @mixin-content;
+    }
+  }
+  @define-mixin atExtraLarge {
+    @media (min-width: 1200px) {
       @mixin-content;
     }
   }

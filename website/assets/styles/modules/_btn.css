@@ -48,7 +48,7 @@
       
       @mixin atLarge {
         &__rectangle {
-            background-color: transparent;
+            background-color: $crashBlue;
             border: 2px solid $navLink;
         }
         &__text {

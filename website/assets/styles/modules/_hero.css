@@ -135,23 +135,8 @@
         }
     }
 
-    @mixin atMediumRev {
-        &__content  {
-            display: block;
-        }
-    }
+    
 
-    @media screen and (min-width: 1075px) {
-        &__content {
-            max-width: 400px;
-            font-size: 1.6rem;
-        }
-    }
-    @media screen and (min-width: 1200px) {
-        &__content {
-            max-width: 440px;
-        }
-    }
 }
 
 
