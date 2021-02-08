@@ -66,12 +66,13 @@
     </div>
     
     <section class="leistungen">
-                    <div class="container-fluid">
+                    <div class="container-fluid leistungen__container">
                     <div class="row">
                             <h2 class="col-12 headline headline--left">Wussten Sie, dass...</h2>
                             <div class="site-header__form site-header__form--revert"></div>
  
                             <div class="leistungen__md-container">
+                                <h2 class="headline headline--xl">Wussten Sie, dass...</h2>
                                 <div class="large-hero__triangle--lighter"></div>
                                 <div class="large-hero__triangle--mirror"></div>
 
@@ -109,36 +110,38 @@
                     <div class="container-fluid leistungen__crash">
                         <div class="row">
                             <div class="leistungen__md-title-container">
-                            <h2 class="headline headline--white headline--picture" style="display: none;">Unfall!<br> und was nun?</h2>
-                        <picture>
-                            <source media="(min-width: 375px)" srcset="./assets/images/unfall--large.webp">
-                            <source media="(min-width: 375px)" srcset="./assets/images/unfall--large.jpg">
-                            <source srcset="/assets/images/unfall--small.webp 1x, /assets/images/unfall--small@2x.webp 2x">
-                            <source srcset="/assets/images/unfall--small.jpg 1x, /assets/images/unfall--small@2x.jpg 2x">
-                            <img src="/assets/images/unfall--small.jpg" alt="unfallbild">
-                        </picture>
-                    </div>
-                        <div class="leistungen__wrapper">
-                            <h2 class="headline headline--white">Unfall! und was nun?</h2>
-                            <span class="leistungen__question-icon" style="display: none;">?</span>
-                            <div class="leistungen__md-container">
-                            <div class="leistungen__messagebox leistungen__messagebox--speech">
-                                    <h4 class="leistungen__title">Welche Rente habe ich im Schadensfall?</h4>
-                                    <p class="leistungen__message-text">Ein Autounfall tritt selten auf – durchschnittlich alle sieben Jahre pro Autofahrer. Viele wissen daher nicht, welche Möglichkeiten sie in diesem Fall haben. Unsicherheit und Hilflosigkeit sind die Folge.</p>
+                                <h2 class="headline headline--white headline--picture">Unfall!<br> und was nun?</h2>
+                                
+                                <picture>
+                                    <source media="(min-width: 375px)" srcset="./assets/images/unfall--large.webp">
+                                    <source media="(min-width: 375px)" srcset="./assets/images/unfall--large.jpg">
+                                    <source srcset="/assets/images/unfall--small.webp 1x, /assets/images/unfall--small@2x.webp 2x">
+                                    <source srcset="/assets/images/unfall--small.jpg 1x, /assets/images/unfall--small@2x.jpg 2x">
+                                    <img src="/assets/images/unfall--small.jpg" alt="unfallbild">
+                                </picture>
+                                <div class="leistungen__wrapper">
+                                    <h2 class="headline headline--white">Unfall! und was nun?</h2>
+                                    <span class="leistungen__question-icon">?</span>
+                                    <!-- <div class="leistungen__md-container"> -->
+                                        <div class="leistungen__messagebox leistungen__messagebox--speech">
+                                                <h4 class="leistungen__title">Welche Rente habe ich im Schadensfall?</h4>
+                                                <p class="leistungen__message-text">Ein Autounfall tritt selten auf – durchschnittlich alle sieben Jahre pro Autofahrer. Viele wissen daher nicht, welche Möglichkeiten sie in diesem Fall haben. Unsicherheit und Hilflosigkeit sind die Folge.</p>
+                                        </div>
+    
+                                        <div class="leistungen__messagebox leistungen__messagebox--speech">
+                                                <h4 class="leistungen__title">Darf ich überhaupt einen Gutachter beauftragen?</h4>
+                                                <p class="leistungen__message-text">Fehlende Sachkenntnis im Schadensfall und falsche Informationen verunsichern und verleiten dazu, die Sache aus der Hand zu geben. Begegnen Sie der Versicherung auf Augenhöhe und verhelfen Sie sich zu Ihrem Recht.</p>
+                                        </div>
+    
+                                        <div class="leistungen__messagebox leistungen__messagebox--speech">
+                                            <h4 class="leistungen__title">Wer hilft mir dabei fair entschädigt zu werden?</h4>
+                                            <p class="leistungen__message-text">Wer in einen Unfall verwickelt ist, steht unter Stress. Dass Sie dennoch das Beste aus der Situation machen wollen, ist Ihr gutes Recht. Hier kommt es auf einen unabhängigen und erfahrenen Kfz-Gutachter an.</p>
+                                        </div>
+                                    <!-- </div> -->
+                                </div>
                             </div>
-
-                            <div class="leistungen__messagebox leistungen__messagebox--speech">
-                                    <h4 class="leistungen__title">Darf ich überhaupt einen Gutachter beauftragen?</h4>
-                                    <p class="leistungen__message-text">Fehlende Sachkenntnis im Schadensfall und falsche Informationen verunsichern und verleiten dazu, die Sache aus der Hand zu geben. Begegnen Sie der Versicherung auf Augenhöhe und verhelfen Sie sich zu Ihrem Recht.</p>
-                            </div>
-
-                            <div class="leistungen__messagebox leistungen__messagebox--speech">
-                                    <h4 class="leistungen__title">Wer hilft mir dabei fair entschädigt zu werden?</h4>
-                                    <p class="leistungen__message-text">Wer in einen Unfall verwickelt ist, steht unter Stress. Dass Sie dennoch das Beste aus der Situation machen wollen, ist Ihr gutes Recht. Hier kommt es auf einen unabhängigen und erfahrenen Kfz-Gutachter an.</p>
-                            </div>
+                            
                         </div>
-                        </div>
-                    </div>
                     </div>
                     
         
@@ -572,23 +575,26 @@
                         <a href="#" class="btn btn--white-outline">Termin buchen</a>
                     </div>
                     <div class="col">
-                        <form action="/assets/form.php" method="post">                  
-                            <select name="office" class="custom-arrow" id="form-sex">
+                        <form action="form.php" method="post" id="formular">                  
+                            <select name="office" class="custom-arrow">
                                 <option value="" disabled selected>Büro</option>
                                 <option>Wedding</option>
                                 <option>...</option>
                                 <option>...</option>
                                 <option>...</option>
                             </select>
-                            <input  type="text" name="name" id="form-prename" placeholder="Name" autocomplete="off" maxlength="60" required>
-                            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" autocomplete="off" maxlength="60" required> 
-                            <input type="tel" name="phone" pattern="^[0-9-+\s()]*$" placeholder="Ihre Telefonnummer" autocomplete="off" maxlength="40" required>
-                            <textarea name="message" placeholder="Ihre Nachricht" maxlength="500"></textarea>
+                            <input  type="text" name="name" placeholder="Name" autocomplete="off">
+                            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" autocomplete="off"> 
+                            <input type="tel" name="phone" pattern="^[0-9-+\s()]*$" placeholder="Ihre Telefonnummer" autocomplete="off">
+                            <textarea name="message" placeholder="Ihre Nachricht"></textarea>
                             <button type="submit" name="submit" value="submit">Senden</button>
                             <label class="ohnohoney" for="name"></label>
                             <input class="ohnohoney" autocomplete="off" type="text" id="name" name="realname" placeholder="Your name here">
                             <label class="ohnohoney" for="email"></label>
                             <input class="ohnohoney" autocomplete="off" type="email" id="email" name="realemail" placeholder="Your e-mail here">
+                            <!-- <?php 
+                                if ($meldung) { ?> <p><?php echo implode("<br>", $meldung) ?></p>
+                            <?php } ?> -->
                         </form>
                     </div>
                 </div>
@@ -681,5 +687,11 @@
             </div>
         </div>
     </footer>
+    <script>
+       const form = document.querySelector('#formular');
+       form.addEventListener('submit', event => {
+           event.preventDefault();
+       });
+    </script>
 </body>
 </html>

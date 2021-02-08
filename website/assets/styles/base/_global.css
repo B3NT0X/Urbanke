@@ -61,15 +61,55 @@ h4 {
     color: #fff
   }
 
+  &--picture {
+    display: none;
+  }
+
   @media screen and (min-width: 768px) {
     & {
       font-size: 3.6rem;
       line-height: 1.6;
-
-      &--left {
-        text-align: left;
-      }
     }    
+    
+    &--left {
+      text-align: left;
+    }
+
+    &--white {
+      display: none;
+    }
+
+    &--picture {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+  
+    &--left {
+      display: none;
+    }
+
+    &--xl {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: left;
+      padding-top: 7rem;
+      padding-bottom: 6rem;
+    }
+
+    &--white {
+      display: block;
+    }
+
+    &--picture {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    &--xl { 
+     display: none;
+    }
   }
 }
 

@@ -25,6 +25,7 @@
         }
      }
 }
+
 @mixin atMediumLarge {
     .site-header {
         &__top-banner ul{
@@ -49,13 +50,21 @@
     }
 
 @mixin atLarge {
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     ul {
         overflow: visible;
     }
+
     li a {
         color: $navLink;
-    }       
+        }       
     }
+
     li a {
         display: block;
         padding: 2rem 2rem;
@@ -70,15 +79,13 @@
     &__logo {
         display: block;
         float: left;
-        padding: 1.5rem 1.6rem 1.6rem;
+        padding-left: 3.2rem;
         
         img {
             width: 200px;
         }
     }
 
-
-     
     /* menu */
     &__menu {
         clear: both;
@@ -246,19 +253,34 @@
             li {
                 &:first-of-type {
                     background-color: $lightBlue;
+                    &:hover {
+                        background-color: color($lightBlue shade(10%));
+                    }
                 }
                 &:nth-of-type(2) {
                     background-color: $secondaryBlue;
+                    &:hover {
+                        background-color: color($secondaryBlue shade(10%));
+                    }
                 }
                 &:nth-of-type(3) {
                     background-color: $boxBlue;
+                    &:hover {
+                        background-color: color($boxBlue shade(10%));
+                    }
                 }
                 &:nth-of-type(4) {
                     background-color: $mainBlue;
+                    &:hover {
+                        background-color: color($mainBlue shade(10%));
+                    }
                 }
                 &:nth-of-type(5) {
                     background-color: $footerBlue;
-                    margin-right: -1.5rem;
+                    margin-right: -1.8rem;
+                    &:hover {
+                        background-color: color($footerBlue shade(10%));
+                    }
                 }
                 @mixin atLarge {
                 &:nth-of-type(5) {

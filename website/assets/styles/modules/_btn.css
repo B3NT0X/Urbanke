@@ -50,18 +50,27 @@
         &__rectangle {
             background-color: $crashBlue;
             border: 2px solid $navLink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                background-color: color($crashBlue shade(20%));
+            }
         }
         &__text {
             color: $navLink;
         }
         &__triangle {
             border-top: 48px solid $navLink;
-          
+            
         }
         &__inner-triangle {
             left: -2px;
             border-top: 45px solid $crashBlue;
-           
+            &:hover {
+                border-top-color: color($crashBlue shade(20%));
+            }
         }
     }
 }
