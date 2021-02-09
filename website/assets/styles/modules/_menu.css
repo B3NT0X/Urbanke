@@ -79,10 +79,10 @@
     &__logo {
         display: block;
         float: left;
-        padding-left: 3.2rem;
+        padding: 1.9rem;
         
         img {
-            width: 200px;
+            min-width: 180px;
         }
     }
 
@@ -150,20 +150,10 @@
             background-color: $lightBlue;
             opacity: 0.3;
             z-index: -1;
-
             &:after {
                 transform-origin: bottom right;
                 background-color: $lightBlue;
             }
-        }
-        @mixin atMedium {
-            &--revert {
-                display: none;
-            }
-            &--lighter {
-                display: none;
-            }
-            
         }
 
         &--lighter {
@@ -172,12 +162,49 @@
             transform: translateY(-50%);
             background-color: $lightBlue;
             opacity: 0.5;
-
             &:after {
                 background-color: $lightBlue;
             }
         }
+
+        &--our-priority {
+            width: 150px;
+            height: 250px;
+            top: -15px;
+            right: -15px;
+            background-color: $lightBlue;
+            z-index: -1;
+            &:after {
+                transform-origin: top right;
+                transform: skewX(-30deg);
+                background-color: $lightBlue;
+            }
+        }
+
+        &--our-priority-revert {
+            width: 150px;
+            height: 250px;
+            top: -15px;
+            left: -15px;
+            background-color: $lightBlue;
+            z-index: -1;
+            &:after {
+                transform-origin: top left;
+                transform: skewX(30deg);
+                background-color: $lightBlue;
+            }
+        }
+
+        @mixin atMedium {
+            &--revert {
+                display: none;
+            }
+            &--lighter {
+                display: none;
+            }   
+        }
     }
+
     @mixin atLarge {
         &__form {
             display: none;

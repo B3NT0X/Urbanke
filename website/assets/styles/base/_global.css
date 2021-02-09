@@ -8,7 +8,7 @@ html {
 }
   
 body {
-  color: #2172C0;
+  color:#0055A6;
 }
 
 img {
@@ -65,6 +65,10 @@ h4 {
 
   &--picture {
     display: none;
+  }
+
+  &--left {
+    text-align: left;
   }
 
   @media screen and (min-width: 768px) {
