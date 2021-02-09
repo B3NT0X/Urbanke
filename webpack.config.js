@@ -4,7 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const fse = require('fs-extra')
-const postcss = require('postcss-hexrgba/node_modules/postcss')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+// const postcss = require('postcss-hexrgba/node_modules/postcss')
 //cssnano plugin für minfied
 //fs-extra für mehrere html files und copied folder
 //babel/core babel/preset-env babel-loader für leute mit älteren brwoser nur js
@@ -72,7 +73,9 @@ if(currentTask == 'build') {
     }
     config.mode = "production"
     config.optimization = {
-        splitChunks: {chunks: 'all'}
+        splitChunks: {chunks: 'all'},
+        minimize: true,
+        minimzer: [`...`, new CssMinimizerPlugin()]
     }
     config.plugins.push(
         new CleanWebpackPlugin(), 

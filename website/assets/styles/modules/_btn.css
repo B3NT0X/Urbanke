@@ -8,14 +8,18 @@
         position: relative;
         width: 100%;
       }
+
       &__rectangle{ 
-          position: relative; 
-          float: left;
-          height: 48px; 
-          width: 240px; 
-          background-color: #fff;
-          border: 2px solid $footerBlue;
-          border-right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative; 
+        float: left;
+        height: 48px; 
+        width: 240px; 
+        background-color: #fff;
+        border: 2px solid $footerBlue;
+        border-right: 0;
       }
       
       &__triangle {
@@ -28,6 +32,7 @@
           border-left-style: hidden;
       
       }
+
       &__inner-triangle {
           position: absolute;
           bottom: 1px;
@@ -50,21 +55,21 @@
         &__rectangle {
             background-color: $crashBlue;
             border: 2px solid $navLink;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
             &:hover {
                 background-color: color($crashBlue shade(20%));
             }
         }
+
         &__text {
             color: $navLink;
         }
+
         &__triangle {
             border-top: 48px solid $navLink;
             
         }
+
         &__inner-triangle {
             left: -2px;
             border-top: 45px solid $crashBlue;
