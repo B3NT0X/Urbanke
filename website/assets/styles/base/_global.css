@@ -77,8 +77,9 @@ h4 {
       line-height: 1.6;
     }    
     
-    &--left {
-      text-align: left;
+    &--md-center {
+      text-align: center;
+      margin: 0 auto;
     }
 
     &--white {
@@ -91,7 +92,7 @@ h4 {
   }
   @media screen and (min-width: 1200px) {
   
-    &--left {
+    &--none {
       display: none;
     }
 

@@ -47,6 +47,11 @@
         display: none;
     }
 
+    &__nopadding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
     &__wrapper {
         display: inline-block;
         width: 100%;
@@ -124,6 +129,28 @@
             }
         }   
     }
+
+    &__our-priority {
+        overflow: hidden;
+
+        &-container {
+            position: relative;
+            padding-left: 15px;
+            padding-right: 15px;
+            max-width: 385px;
+            margin: 0 auto;
+        }
+       
+        &-text-box {
+            padding-bottom: 2.4rem;
+        }
+    }
+
+    &__unfallbegutachtungImg {
+        min-width: 100%;
+    }
+
+    
 
     @media screen and (min-width: 600px) {
         &__wrapper &__messagebox {
@@ -230,24 +257,42 @@
             }      
         }
     }
+
+    &__our-priority-container {
+        min-width: 100%;
+        margin: auto;
+    }
+
+    &__our-priority-text-box  {
+        max-width: 385px;
+        padding: 8.4rem 0 2.4rem;
+        margin-left: 9.8rem;
+    
+        &--reverse {
+            max-width: 367px;
+            margin-left: auto;
+            margin-right: 10.7rem;
+        }
+    }
 }
 
-@media screen and (max-width: 768px) {
-    &__wrapper &__messagebox {
-        margin: 2rem auto;
-        max-width: 350px;
+    @media screen and (max-width: 768px) {
+        &__wrapper &__messagebox {
+            margin: 2rem auto;
+            max-width: 350px;
+        }
     }
-}
-@media screen and (max-width: 415px) {
-    &__wrapper &__messagebox {
-        margin: 3.2rem 1.5rem 3.2rem 3rem;
-        max-width: 350px;
+    @media screen and (max-width: 415px) {
+        &__wrapper &__messagebox {
+            margin: 3.2rem 1.5rem 3.2rem 3rem;
+            max-width: 350px;
+        }
+        &__wrapper--white &__messagebox {
+            margin: 3.2rem 3rem 3.2rem 1.5rem;
+            max-width: 350px;
+        }
     }
-    &__wrapper--white &__messagebox {
-        margin: 3.2rem 3rem 3.2rem 1.5rem;
-        max-width: 350px;
-    }
-}
+
     @mixin atMediumLarge {
         &__list {
             max-width: 575px;
@@ -314,6 +359,13 @@
             display: none;
     }
 
+    &__question-icon {
+        &--question-mark {
+            display: none;
+        }   
+        
+    }
+
     &__md-title-container &__wrapper {
         background: url('../images/unfall--large.jpg') no-repeat center;
         background-size: cover;
@@ -336,12 +388,14 @@
             transform: skewX(-33deg);
         }
     }
+
     .large-hero__triangle--lighter,  .large-hero__triangle--mirror {
         display: none;
     }
 
     &__md-container {
         overflow-x: hidden;
+
         .leistungen__form_top-left {           
             position: absolute;
             bottom: 0;
@@ -437,6 +491,26 @@
             }
         }
     }
+
+    &__our-priority-container {
+        max-width: 100%;
+    }
+
+    &__unfallbegutachtungImg {
+        min-height: 832px;
+        object-fit: cover;
+    } 
+    
+    &__our-priority-text-box {
+        padding-top: 5.4rem;
+        margin-left: 0;
+        padding-bottom: 0;
+        
+        &--reverse {
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
 }
 
 @media screen and (min-width: 1400px) {
@@ -447,7 +521,9 @@
     }
 
     &__question-icon {
-        display: none;
+        &--right {
+            display: none;
+        }
     }
 
     &__wrapper &__messagebox {
@@ -481,12 +557,15 @@
                 }
             }
         }
+
+        &__our-priority-text-box {
+            margin-left: 6rem;
+            &--reverse {
+                margin-left: auto;
+            }
+        }
     }
 }
 
-.our-priority {
-    &__text-box {
-        position: relative;
-        padding-bottom: 2.4rem;
-    }
-}
+
+
