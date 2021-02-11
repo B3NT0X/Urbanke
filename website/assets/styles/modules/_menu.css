@@ -186,8 +186,8 @@
         &--our-priority-revert {
             width: 190px;
             height: 247px;
-            top: 30%;
-            left: -15px;
+            top: 28%;
+            left: -6px;
             margin-left: -19rem;
             background-color: $secondaryBlue;
             opacity: 0.2;
@@ -215,6 +215,20 @@
             }
         }
 
+        &--ueber-uns {
+            position: relative;
+            top: 0;
+            width: 80%;
+            height: 100%;
+            padding: 0.8rem;
+            background-color: $mainBlue;
+            opacity: 1;
+            &:after {
+                background-color: $mainBlue;
+                z-index: -1;
+            }
+        }
+
         @mixin atMedium {
             &--revert {
                 display: none;
@@ -225,7 +239,7 @@
             }   
 
             &--our-priority {
-                top: 6%;
+                top: 9%;
                 right: 7%;
                 background-color: $lightBlue;
                 opacity: 1;
@@ -236,7 +250,7 @@
             }
 
             &--our-priority-revert {
-                top: 40%;
+                top: 39%;
                 left: 5%;
                 margin-left: -11rem;
                 background-color: $secondaryBlue;

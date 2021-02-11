@@ -64,14 +64,14 @@
 
         .leistungen__messagebox {
             position: relative;
-            /* width: 280px; */
             margin: 2rem 2.8rem;
             background-color: $crashBlue;
             border: 2px solid $navLink;
-            padding: 2rem;
+            padding: 1.9rem 2.4rem;
 
             &--lightBg {
                 background-color: $mainBlue;
+                border: none; 
             }
         
         .leistungen__message-text {
@@ -135,8 +135,8 @@
 
         &-container {
             position: relative;
-            padding-left: 15px;
-            padding-right: 15px;
+            /* padding-left: 15px;
+            padding-right: 15px; */
             max-width: 385px;
             margin: 0 auto;
         }
@@ -150,7 +150,33 @@
         min-width: 100%;
     }
 
-    
+    &__dropshadow {
+        filter: drop-shadow(0px 3px 6px #00000029);
+    }
+    &__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto 2.4rem;
+        padding: 0 2.9rem;
+        background: #fff;
+
+        clip-path: 
+            polygon(
+            20px 0%, 
+            100% 0%, 
+            100% 0%, 
+            100% calc(100% - 20px), 
+            calc(100% - 20px) 100%, 
+            0 100%, 
+            0px 100%, 
+            0% 20px
+            );  
+        }
 
     @media screen and (min-width: 600px) {
         &__wrapper &__messagebox {
@@ -170,6 +196,8 @@
             min-width: 100%;
         }
     }
+
+
     @mixin atMedium {
         & {
             margin-top: 6.6rem;
@@ -284,14 +312,16 @@
     }
     @media screen and (max-width: 415px) {
         &__wrapper &__messagebox {
-            margin: 3.2rem 1.5rem 3.2rem 3rem;
+            margin: 3.2rem .8rem 3.2rem 3rem;
             max-width: 350px;
         }
         &__wrapper--white &__messagebox {
-            margin: 3.2rem 3rem 3.2rem 1.5rem;
+            margin: 3.2rem 3rem 3.2rem .8rem;
             max-width: 350px;
         }
     }
+
+
 
     @mixin atMediumLarge {
         &__list {
@@ -347,6 +377,8 @@
         }
     }
 
+
+
     @mixin atExtraLarge {
     & {
         margin-top: 0;
@@ -367,11 +399,23 @@
     }
 
     &__md-title-container &__wrapper {
-        background: url('../images/unfall--large.jpg') no-repeat center;
+        background: linear-gradient(rgba(#00407D, .8), rgba(#00407D, .8)), url('../images/unfall--desktop.jpg') no-repeat center;
+        background: 
+            linear-gradient(rgba(#00407D, .8), rgba(#00407D, .8)),
+            image-set(
+                url('../images/unfall--desktop.webp') 1x,
+                url('../images/unfall--desktop@2x.webp') 2x
+            ),
+            image-set(
+                url('../images/unfall--desktop.jpg') 1x,
+                url('../images/unfall--desktop@2x.jpg') 2x
+                );
+ 
         background-size: cover;
     }
 
     &__md-title-container {
+
         img {
             min-height: 1000px;
             object-fit: cover;
@@ -513,6 +557,8 @@
     }
 }
 
+
+
 @media screen and (min-width: 1400px) {
     &__trioImg {
         min-width: auto;
@@ -563,6 +609,10 @@
             &--reverse {
                 margin-left: auto;
             }
+        }
+
+        .leistungen__wrapper .leistungen__messagebox--right:before {
+            display: none;
         }
     }
 }
