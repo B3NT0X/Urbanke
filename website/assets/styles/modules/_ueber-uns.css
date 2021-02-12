@@ -1,3 +1,145 @@
 .ueber-uns {
     position: relative;
+
+    &__blue-bg {
+        margin-top: 0.8rem;
+        background-color: $mainBlue;
+        color: #fff;   
+        
+        @mixin atMedium {
+            & {
+                padding: 3rem 4.8rem !important;
+            }
+        }
+    }
+
+    &__text-container {
+        max-width: 672px;
+        margin: 0 auto !important;
+
+        @mixin atExtraLarge {
+            & {
+                max-width: 1092px;
+            }
+        }
+    }
+
+    &__capital-letter {
+        font-size: 5rem;
+        float: left;
+        line-height: 4.8rem;
+        padding-right: 0.5rem;
+    }
+
+
+        &__mitarbeiterImg {
+            margin: 0 auto;
+        }
+
+        &__name {
+            font-family: 'Poppins';
+            font-size: 2.4rem;
+            color: $footerBlue;
+        }
+
+        &__abschluss {
+           font-size: 1.6rem;
+           color: $boxBlue;
+
+        }
+
+        &__column-center {
+            text-align: center;
+            padding-top: 6.1rem;
+        }
+
+        &__bereich {
+            color: $boxBlue;
+            margin-top: 0;
+            margin-bottom: 1.1rem;
+        }
+
+        &__liste {
+            list-style: none;
+            color: $boxBlue;
+            padding-left: 0;
+            
+            li {
+                text-align: left;
+                max-width: 136px;
+                margin: 0 auto;
+                padding-left: 1.8rem;
+                padding-bottom: 1.4rem
+            }
+
+            li:first-of-type {
+                list-style-image: url('../images/013-location.svg');
+            }
+
+            li:nth-of-type(2) {
+                list-style-image: url('../images/004-phone.svg');
+            }
+            li:last-of-type {
+                list-style-image: url('../images/001-mail.svg');
+            }
+        }
+
+        &__banner {
+            margin-top: 8.8rem;
+            background-color: #F6F6F6;
+            border-top: 8px solid #00407D;
+            border-bottom: 8px solid #00407D;
+
+            .ueber-uns__title {
+                text-align: left;
+                max-width: 93%;
+                margin: 3.9rem auto;
+            }
+
+            .ueber-uns__abzeichenImg {
+                margin: 0 auto;
+                padding-top: 2rem;
+                padding-bottom: 4.1rem;
+            }
+
+            ul li {
+                list-style-image: url('../images/haeckchen.svg');
+                padding-left: 2rem;
+                padding-bottom: 2.4rem;
+            }
+
+            @mixin atMedium {
+                .ueber-uns__text-column {
+                    padding: 6.7rem 2.8rem 0 6.7rem;     
+                }
+            }
+
+            @mixin atMediumLarge {
+                .ueber-uns__title {
+                    font-size: 2.8rem;
+                    padding-top: 2.8rem;
+                }
+
+                .ueber-uns__text-column {
+                    padding: 0;
+                    min-width: 632px; 
+                }
+
+                .ueber-uns__img-column {
+                   max-width: 30%;
+                   padding: 0 5.8rem;
+                   display: flex;
+                   align-items: center;
+                }
+
+                .ueber-uns__abzeichenImg {
+                    padding: 0;
+                }
+
+                ul li:last-of-type {
+                    padding-bottom: 6.9rem;
+                }
+            }
+        }
+    
 }

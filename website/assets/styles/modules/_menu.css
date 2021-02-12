@@ -20,7 +20,7 @@
             align-items: center;
             background-color: #f6f6f6;
             li {
-             list-style-image: url('../images/Häckchen.svg');
+             list-style-image: url('../images/haeckchen.svg');
             }
         }
      }
@@ -215,12 +215,14 @@
             }
         }
 
-        &--ueber-uns {
+        &--ueber-uns { 
+            display: block !important;
             position: relative;
             top: 0;
-            width: 80%;
-            height: 100%;
-            padding: 0.8rem;
+            width: 85vw;
+            max-height: 100%;
+            padding: 0.8rem 1.6rem;
+            margin-bottom: 0.8rem;
             background-color: $mainBlue;
             opacity: 1;
             &:after {
@@ -297,28 +299,34 @@
 
         @mixin atExtraLarge {
             &--our-priority {
-                width: 236px;
+                width: 50%;
                 right: 0%;
               
             }
     
             &--our-priority-revert {
-                width: 143px;
+                width: 30%;
                 left: 0;
             }
     
             &--our-priority-custom {
-                width: 288px; 
+                width: 50%; 
                 right: 0;
+            }
+
+            &--ueber-uns {
+                position: absolute;
+                top: 1vh;
+                left: 0;
+                width: 60vw;
+                height: 80px;
+                padding: 0;
+                margin-bottom: 0;
+                z-index: 1;
+                opacity: 0.8;
             }
         }
     }
-
-    /* @mixin atLarge {
-        &__form {
-            display: none;
-        }
-    } */
 
     &__menu-icon {
         cursor: pointer;
@@ -391,13 +399,13 @@
                 &:first-of-type {
                     background-color: $lightBlue;
                     &:hover {
-                        background-color: color($lightBlue shade(10%));
+                        background-color: color($lightBlue shade(3%));
                     }
                 }
                 &:nth-of-type(2) {
                     background-color: $secondaryBlue;
                     &:hover {
-                        background-color: color($secondaryBlue shade(10%));
+                        background-color: color($secondaryBlue shade(5%));
                     }
                 }
                 &:nth-of-type(3) {

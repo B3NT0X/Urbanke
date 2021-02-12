@@ -178,6 +178,29 @@
             );  
         }
 
+        &__know-how {
+            padding-bottom: 6.4rem;
+            @mixin atMedium {
+                & {
+                    padding-bottom: 9.7rem
+                }
+            }
+            @mixin atMediumLarge {
+                & {
+                    padding-bottom: 11.3rem;
+                }
+            }
+            @mixin atExtraLarge {
+                & {
+                    padding-bottom: 12.8rem;
+                }
+            }
+        }
+
+
+/**** Breakpoints Start ****/
+
+
     @media screen and (min-width: 600px) {
         &__wrapper &__messagebox {
             max-width: 380px;
@@ -256,10 +279,6 @@
                 transform: translateY(50%);
             }
         }
-
-        /* &__wrapper .headline {
-            display: none;
-        } */
 
         &__wrapper &__messagebox {
             max-width: 480px;
