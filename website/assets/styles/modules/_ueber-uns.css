@@ -141,5 +141,36 @@
                 }
             }
         }
-    
+
+        &__weitere-leistungen  {
+            @media screen and (max-width: 575px) {
+                & {
+                    max-width: 98%;
+                }
+            }
+            h2 {
+                margin-bottom: 0;
+            }
+        }
+        &__subtitle {
+            display: none;
+
+            @mixin atMedium {
+                & {
+                    display: block;
+                    text-align: center;
+                    color: $boxBlue;
+                }
+            }
+
+            @mixin atExtraLarge {
+                & {
+                    margin-bottom: 8.8rem;
+                }
+                .ueber-uns__xl-none {
+                    display: none;
+                }
+            }
+        }
+        
 }

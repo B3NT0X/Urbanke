@@ -1,0 +1,17 @@
+.kontakt {
+  h3, ul li {
+      color: #fff;
+      text-align: left;
+  }
+  ul {
+      list-style: none;
+      padding-left: 0;
+      transform: skewX(-38deg);
+
+      li {
+          padding-bottom: 1.6rem;
+          transform: skewX(38deg);
+      }
+      
+  }
+}
