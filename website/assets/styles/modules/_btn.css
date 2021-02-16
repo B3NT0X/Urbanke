@@ -4,6 +4,9 @@
     text-transform: uppercase;
     margin: 4.4rem 0 3.9rem 0rem;
    
+    &--kontakt {
+        margin: 0 0 2rem;
+    }
     /* &__container {
         position: relative;
         width: 100%;
@@ -43,6 +46,21 @@
             }
             &:hover {
                 background-color: $footerBlue;
+            }
+            &:hover:before {
+                background-color: #fff;
+            }
+        }
+
+        &--kontakt {
+            background-color: #fff;
+
+            &:before {
+                background-color: $crashBlue;
+            }
+
+            &:hover {
+                background-color: $crashBlue;
             }
             &:hover:before {
                 background-color: #fff;
@@ -104,6 +122,14 @@
                 color: $footerBlue;
             }
         }
+
+        &--kontakt {
+            color: #fff;
+
+            &:hover {
+                color: $crashBlue;
+            }
+        }
       }
       
       @mixin atLarge {
@@ -115,7 +141,9 @@
                 background-color: color($crashBlue shade(20%));
             }
         } */
-
+        & {
+            margin-top: 1rem;
+        }
         &__text {
             color: $navLink;
         }

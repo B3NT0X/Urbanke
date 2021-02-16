@@ -188,6 +188,8 @@
                 @mixin atMedium {
                     & {
                         flex-direction: row;
+                        padding: 0 0 1rem;
+                        min-height: 200px;
                     }
                     .ueber-uns__text {
                         max-width: 531px;
@@ -224,13 +226,40 @@
                     0 20px
                     );   
 
+                @mixin atMedium {
+                    & {
+                        margin-top: 0.8rem;
+                        clip-path: polygon(
+                            10% 0, 
+                            100% 0, 
+                            100% 0, 
+                            100% 100%, 
+                            100% 100%, 
+                            0 100%, 
+                            0 100%, 
+                            0 35%
+                            )
+                    }
+                }
+
                 @mixin atMediumLarge {
                     & {
                         clip-path: polygon(
                             25% 0, 
                             100% 0%, 
                             100% 100%, 
-                            0% 100%
+                            4% 100%
+                            );
+                    }
+                }
+
+                @mixin atExtraLarge {
+                    & {
+                        clip-path: polygon(
+                            24% 0, 
+                            100% 0%, 
+                            100% 100%, 
+                            1% 100%
                             );
                     }
                 }

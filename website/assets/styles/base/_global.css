@@ -53,9 +53,103 @@ h4 {
 
 .headline {
   text-transform: uppercase;
-  padding: 3rem;
+  /* padding: 3rem; */
   margin-left: auto;
   margin-right: auto;
+
+  &--white {
+    color: #fff
+  }
+
+  &--picture {
+    display: none;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--xl-width {
+    max-width: 570px;
+  }
+
+  &--big {
+    font-size: 3.6rem;
+  }
+
+  &--kontakt {
+    min-width: 100%;
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+    margin-left: 0;
+    text-transform: none;
+  }
+
+  &--weitere-leistungen {
+    padding: 4.1rem;
+
+    @media screen and (min-width: 768px) {
+      & {
+        padding: 4.4rem 4rem 0.6rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &--know-how {
+    padding: 7.1rem 1.6rem 7.2rem;
+  }
+
+  &--priority {
+    margin-top: 0;
+    padding: 0.3rem 1.6rem 2rem;
+
+    @media screen and (min-width: 768px) {
+      & {
+        padding: 8.2rem 3.2rem 6.7rem;
+      }
+    }
+  }
+
+  &--experience {
+    padding: 4rem 1.6rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    & {
+      font-size: 3.6rem;
+      line-height: 1.6;
+    }    
+
+    &--kontakt {
+      font-size: 2.8rem;
+      text-align: center;
+    }
+    
+    &--md-center {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    &--md-none {
+      display: none;
+    }
+
+    &--picture {
+      display: block;
+    }
+
+    &--space {
+      padding: 7rem 0 8.5rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    &--kontakt {
+      padding-top: 3rem;
+      padding-left: 14.8rem;
+    }
+  }
 
   &--ueber-uns {
     position: absolute;
@@ -89,37 +183,6 @@ h4 {
     }
   }
 
-  &--white {
-    color: #fff
-  }
-
-  &--picture {
-    display: none;
-  }
-
-  &--left {
-    text-align: left;
-  }
-
-  @media screen and (min-width: 768px) {
-    & {
-      font-size: 3.6rem;
-      line-height: 1.6;
-    }    
-    
-    &--md-center {
-      text-align: center;
-      margin: 0 auto;
-    }
-
-    &--white {
-      display: none;
-    }
-
-    &--picture {
-      display: block;
-    }
-  }
   @media screen and (min-width: 1200px) {
   
     &--none {

@@ -2,6 +2,10 @@
     position: relative;
     padding-top: 7.4rem;
 
+    &__content {
+        padding-left: 1.6rem;
+    }
+
     &__heroimg {
         min-height: 283px;
         object-fit: cover;
@@ -20,9 +24,13 @@
         opacity: 0.8;
     }
 
+    &__title {
+        line-height: 1.3;
+    }
+
     @mixin atMedium {
         &{
-            padding-top: 10.34rem;
+            padding-top: 12.6rem;
         }
 
         &__text {
@@ -85,14 +93,37 @@
     }
 
     @mixin atLarge {
+        & {
+            padding-top: 14.5rem;
+        }
+
+        &__content {
+            position: absolute;
+            top: 20%;
+            max-width: 44%;
+            padding-left: 2%;
+            font-size: 1.4rem;
+            color: $navLink;
+        }
+        
         &__heroimg {
             object-position: center;
         }
+        
         &__title {
             color: $navLink;
             font-size: 4.1rem;
             line-height: 1.5;
         }
+
+        &__text {
+            max-width: 80%;
+
+            &:nth-of-type(2) {
+                max-width: 70%;
+            }
+        }
+        
         &__triangle {
             display: none;
             
@@ -123,15 +154,11 @@
                 transform: skew(-23deg, 0deg);
             }
         }
+    }
 
+    @mixin atExtraLarge {
         &__content {
-            position: absolute;
-            top: 137px;
-            max-width: 450px;
-            padding-left: 1.6rem;
-            font-size: 1.4rem;
-            color: $navLink;
-    
+            top: 25%;
         }
     }
 
