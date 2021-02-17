@@ -1,10 +1,59 @@
 .kontakt {
     &__unfall-banner {
-        background-color: $crashBlue;
+        .kontakt__unfallImg {
+            min-width: 100%;
+        }
+        @mixin atExtraLarge {
+            & {
+                /* background: url('../images/autoschaden--desktop.jpg') no-repeat;
+                background-size: 48% 100%;
+                background-position-x: 100%; */
+                background: url('../images/autoschaden--desktop.jpg') no-repeat;
+                background: 
+                    image-set(
+                        url('../images/autoschaden--desktop.webp') 1x,
+                        url('../images/autoschaden--desktop@2x.webp') 2x
+                    ),
+                    image-set(
+                        url('../images/autoschaden--desktop.jpg') 1x,
+                        url('../images/autoschaden--desktop@2x.jpg') 2x
+                        );
+                background-size: 48% 100%;
+                background-position-x: 100%;
 
+                .kontakt__unfallImg {
+                    display: none;
+                }
+            }
+        }
         .kontakt__form {
+            background-color: $crashBlue;
             color: #fff;
             padding: 1rem 1.6rem;
+            p {
+                max-width: 639px;
+            }
+            @mixin atMediumLarge {
+                & {
+                    clip-path: polygon(
+                        0 0, 
+                        99% 0, 
+                        70% 100%, 
+                        0% 100%);
+                    margin-top: 0.8rem;
+                    padding-left: 6.8rem;
+                }
+            }
+
+            @mixin atExtraLarge {
+                & {
+                    clip-path: polygon(
+                        0 0, 
+                        72% 0, 
+                        52% 100%, 
+                        0% 100%);
+                }
+            }
         }
     }
     @mixin atMediumLarge {
@@ -86,6 +135,17 @@
             & {
                 display: none;
             }
+        }
+    }
+
+    &__ausrufezeichen {
+        display: none;
+
+        @mixin atExtraLarge {
+            display: block;
+            position: absolute;
+            font-family: 'Poppins';
+            font-size: 5.6rem;
         }
     }
 }

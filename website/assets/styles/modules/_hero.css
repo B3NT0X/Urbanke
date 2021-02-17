@@ -22,6 +22,12 @@
         border-width: 300px 190px 0 0;
         border-color: $footerBlue transparent transparent transparent;
         opacity: 0.8;
+
+        @media screen and (max-width: 544px) {
+            & {
+                display: none;
+            }
+        }
     }
 
     &__title {

@@ -219,14 +219,21 @@
             display: block !important;
             position: relative;
             top: 0;
-            width: 85vw;
-            max-height: 100%;
+            width: 82vw;
+            min-height: 80px;
             margin-bottom: 0.8rem;
             background-color: $mainBlue;
             opacity: 1;
             &:after {
                 background-color: $mainBlue;
                 z-index: -1;
+            }
+
+            @mixin atMedium {
+                min-height: 104px;
+            }
+            @mixin atExtraLarge {
+                min-height: 80px;
             }
         }
 

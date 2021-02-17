@@ -264,6 +264,83 @@
                     }
                 }
             }
+
+            &--kontakt-outer {
+                min-width: 100%;
+                background-color: $lightBlue;
+                padding: 2.4rem 0.8rem 0;
+
+                @mixin atMedium {
+                    padding: 4rem 0 1.6rem;
+                }
+
+                @mixin atExtraLarge {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    max-width: 100%;
+                    padding-bottom: 4rem;
+                }
+            }
+
+            &--kontakt-inner {
+                min-height: auto;
+                max-width: 556px;
+                padding: 1.9rem 2.5rem;
+                text-align: left;
+
+                @mixin atMedium {
+                    &:not(:nth-of-type(4)) {
+                        margin-bottom: 4.8rem;
+                    } 
+                }
+                
+                &:nth-of-type(2), &:nth-of-type(3) {
+                    clip-path: polygon(
+                        0 0, calc(100% - 20px) 0%, 
+                        100% 20px, 
+                        100% 100%, 
+                        20px 100%, 
+                        0% calc(100% - 20px));
+                }
+
+                h4 {
+                    min-width: 100%;
+                }
+
+                @mixin atMediumLarge {
+                    &:nth-of-type(1), &:nth-of-type(3) {
+                        margin-right: auto;
+                        margin-left: 6.8rem;
+                    }
+
+                    &:nth-of-type(2), &:nth-of-type(4) {
+                        margin-left: auto;
+                        margin-right: 6.8rem;
+                    }
+                }
+
+                @mixin atExtraLarge {
+                    height: 320px;
+                    margin-bottom: 0 !important; 
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+
+                    &:nth-of-type(1) {
+                        margin-left: auto;
+                        margin-right: 3.2rem !important;
+                        margin-bottom: 3.2rem !important;
+                    }
+                    &:nth-of-type(2) {
+                        margin-right: auto;
+                        margin-bottom: 3.2rem !important;
+                    }
+                    &:nth-of-type(3) {
+                        margin-right: auto;
+                        margin-right: 3.2rem !important;
+                    }
+                }
+
+            }
         }
 
         &__know-how {
@@ -325,16 +402,6 @@
 
             img {
                 width: 100%;
-            }
-
-            .headline--picture {
-                /* display: block; */
-                position: absolute;
-                top: 0;
-                right: 0;
-                padding: 5rem 5.6rem;
-                max-width: 420px;
-                text-align: left;
             }
         }
 

@@ -87,8 +87,8 @@
         &__banner {
             margin-top: 8.8rem;
             background-color: #F6F6F6;
-            border-top: 8px solid #00407D;
-            border-bottom: 8px solid #00407D;
+            border-top: 8px solid $crashBlue;
+            border-bottom: 8px solid $crashBlue;
 
             .ueber-uns__title {
                 text-align: left;
@@ -150,6 +150,20 @@
         }
 
         &__weitere-leistungen  {
+            padding-bottom: 4.4rem;
+            
+            @mixin atMedium {
+                & {
+                    padding-bottom: 9.6rem;
+                }
+            }
+
+            @mixin atExtraLarge {
+                & {
+                    padding-bottom: 16.8rem;
+                }
+            }
+
             @media screen and (max-width: 575px) {
                 & {
                     max-width: 98%;
@@ -159,6 +173,7 @@
                 margin-bottom: 0;
             } */
         }
+
         &__subtitle {
             display: none;
 
@@ -173,7 +188,7 @@
 
             @mixin atExtraLarge {
                 & {
-                    margin-bottom: 8.8rem;
+                    padding-bottom: 8.8rem;
                 }
             }
         }
