@@ -140,7 +140,7 @@
             max-width: 385px;
             margin: 0 auto;
         }
-       
+
         &-text-box {
             padding-bottom: 2.4rem;
         }
@@ -275,12 +275,30 @@
                 }
 
                 @mixin atExtraLarge {
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    max-width: 100%;
                     padding-bottom: 4rem;
                 }
             }
+
+            &--kontakt-wrapper {
+                @mixin atMedium {
+                    min-width: 100%;
+                }
+
+               @mixin atExtraLarge {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    max-width: 100%;
+                    margin: 0 auto;
+               }
+
+               @media screen and (min-width: 1700px) {
+                   max-width: 1144px;
+                   min-width: auto;
+               }
+            } 
 
             &--kontakt-inner {
                 min-height: auto;
@@ -326,20 +344,26 @@
                     margin-right: 0 !important;
 
                     &:nth-of-type(1) {
-                        margin-left: auto;
+                        flex: 1;
+                        flex-basis: 100%;
                         margin-right: 3.2rem !important;
                         margin-bottom: 3.2rem !important;
                     }
                     &:nth-of-type(2) {
-                        margin-right: auto;
+                        flex: 1;
+                        flex-basis: 100%;
                         margin-bottom: 3.2rem !important;
                     }
                     &:nth-of-type(3) {
-                        margin-right: auto;
+                        flex: 1;
+                        flex-basis: 100%;
                         margin-right: 3.2rem !important;
                     }
+                    &:nth-of-type(4) {
+                        flex: 1;
+                        flex-basis: 100%;
+                    }
                 }
-
             }
         }
 
@@ -710,8 +734,18 @@
         }
     }
 
+    &__our-priority-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
     &__our-priority-container {
-        max-width: 100%;
+        flex: 0 0 50%;
+        min-width: 50%;
+    }
+
+    &__our-priority-column {
+        flex: 0 0 50%;
     }
 
     &__unfallbegutachtungImg {
@@ -721,7 +755,7 @@
     
     &__our-priority-text-box {
         padding-top: 5.4rem;
-        margin-left: 0;
+        margin-left: 1.6rem;
         padding-bottom: 0;
         
         &--reverse {

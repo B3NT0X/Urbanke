@@ -5,10 +5,7 @@
         }
         @mixin atExtraLarge {
             & {
-                /* background: url('../images/autoschaden--desktop.jpg') no-repeat;
-                background-size: 48% 100%;
-                background-position-x: 100%; */
-                background: url('../images/autoschaden--desktop.jpg') no-repeat;
+                background: url('../images/autoschaden--desktop.jpg');
                 background: 
                     image-set(
                         url('../images/autoschaden--desktop.webp') 1x,
@@ -18,8 +15,9 @@
                         url('../images/autoschaden--desktop.jpg') 1x,
                         url('../images/autoschaden--desktop@2x.jpg') 2x
                         );
-                background-size: 48% 100%;
-                background-position-x: 100%;
+                background-size: 48%;
+                background-repeat: no-repeat;
+                background-position: right center;
 
                 .kontakt__unfallImg {
                     display: none;
@@ -147,5 +145,33 @@
             font-family: 'Poppins';
             font-size: 5.6rem;
         }
+    }
+
+    &__form-container {
+        background-color: $footerBlue;
+        color: #fff;
+
+        .kontakt__text-wrapper {
+            padding: 3.9rem 4.5rem 2.8rem;
+        }
+
+        .kontakt__narrow {
+            padding: 0;
+        }
+        
+        form textarea {
+            width: 100%;
+        }
+        form input, form select{
+            width: 100%;
+            padding: .5rem;
+            margin-bottom: 2rem;
+        }
+        .ohnohoney {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+    
     }
 }
