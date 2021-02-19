@@ -148,30 +148,143 @@
     }
 
     &__form-container {
+        overflow-x: hidden;
         background-color: $footerBlue;
         color: #fff;
 
         .kontakt__text-wrapper {
             padding: 3.9rem 4.5rem 2.8rem;
+
+            @mixin atMedium {
+                padding: 0;
+
+                ul {
+                    padding-left: 0;
+                }
+            }
+
+            &--lineheight li{
+                line-height: 1;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .customPadding {
+                padding-right: 2.1rem;
+            }
+            .customPaddingdown {
+                padding-bottom: 7.5rem;
+            }
         }
 
         .kontakt__narrow {
             padding: 0;
         }
+
+        ul {
+            max-width: 252px;
+        }
         
         form textarea {
             width: 100%;
+            min-height: 101px;
+            resize: vertical;
         }
         form input, form select{
+            font-family: 'Roboto Slab';
             width: 100%;
             padding: .5rem;
+            margin-top: 0.7rem;
             margin-bottom: 2rem;
         }
+
+        form label {
+            font-family: 'Robot Slab';
+            font-size: 1.6rem;
+        }
+
         .ohnohoney {
             position: absolute;
             opacity: 0;
             z-index: -1;
         }
     
+    }
+
+
+    &__accordion--tab input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+      }
+    &__accordion {
+        overflow: hidden;
+    }
+    &__accordion--tab {
+        width: 100%;
+        color: white;
+        overflow: hidden;
+        &-label {
+          display: flex;
+          justify-content: space-between;
+          padding: 1.6rem;
+          background: $mainBlue;
+          font-family: 'Roboto Slab';
+          font-size: 1.4rem;
+          font-weight: bold;
+          cursor: pointer;
+          /* Icon */
+          &:hover {
+            background-color: color($mainBlue shade(10%));
+          }
+          &::after {
+            content: "\276F";
+            width: 1em;
+            height: 1em;
+            text-align: center;
+            transition: all .35s;
+          }
+        }
+        &-content {
+          max-height: 0;
+          padding: 0 1em;
+          color: $mainBlue;
+          background: white;
+          transition: all .35s;
+        }
+      }
+
+
+    &__accordion--tab input:checked {
+        + .kontakt__accordion--tab-label {
+        background-color: color($mainBlue shade(10%));
+        &::after {
+            transform: rotate(90deg);
+        }
+        }
+        ~ .kontakt__accordion--tab-content {
+        max-height: 100vh;
+        padding: 1em;
+        }
+    }
+
+    &__faq {
+        padding-bottom: 6.4rem;
+    }
+
+
+  
+
+}
+
+footer {
+    width: 100%;
+    background-color: $crashBlue;
+    color: #fff;
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        color: #fff;
     }
 }

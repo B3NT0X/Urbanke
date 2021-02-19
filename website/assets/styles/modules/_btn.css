@@ -7,10 +7,14 @@
     &--kontakt {
         margin: 0 0 2rem;
     }
-    /* &__container {
-        position: relative;
-        width: 100%;
-      } */
+
+    &--kontakt-form {
+        margin: 3rem 0 8rem;
+    }
+
+    &--customMarginTop {
+        margin-top: 2.1rem;
+    }
 
       &__container {
         width: 285px;
@@ -66,42 +70,42 @@
                 background-color: #fff;
             }
         }
+
+        &--kontakt-form {
+            width: 197px;
+            min-height: 40px;
+            margin-left: 4.5rem;
+            background-color: #fff;
+            clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
+
+            &::before {
+                background-color: $footerBlue;
+            }
+            &:hover {
+                background-color: $footerBlue;
+            }
+            &:hover:before {
+                background-color: #fff;
+            }
+        }
+
+        &--kontakt-submit {
+            clip-path: polygon(0 0, 100% 0%, 86% 100%, 0% 100%);
+            background-color: $footerBlue;
+            color: #fff;
+            height: 34px;
+            width: 95% !important;
+            margin: 3px 0px 0 3px !important;
+            border: none;
+           &:hover {
+               color: $footerBlue;
+           }
+        }
+
+        &--mgl0 {
+            margin-left: 0;
+        }
     }
-        
-
-      /* &__rectangle{ 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative; 
-        float: left;
-        height: 48px; 
-        width: 240px; 
-        background-color: #fff;
-        border: 2px solid $footerBlue;
-        border-right: 0;
-      }
-      
-      &__triangle {
-          position: relative;
-          float: left;
-          width: 0;
-          height: 0;
-          border-top: 48px solid $footerBlue;
-          border-right: 39px solid transparent;
-          border-left-style: hidden;
-      
-      }
-
-      &__inner-triangle {
-          position: absolute;
-          bottom: 1px;
-          left: -1px;
-          width: 0;
-          height: 0;
-          border-top: 45px solid #fff;
-          border-right: 36px solid transparent;
-      } */
       
       &__text{
         font-family: 'Poppins';
@@ -125,6 +129,7 @@
 
         &--kontakt {
             color: #fff;
+            margin: 0;
 
             &:hover {
                 color: $crashBlue;
@@ -133,40 +138,11 @@
       }
       
       @mixin atLarge {
-        /* &__rectangle {
-            background-color: $crashBlue;
-            border: 2px solid $navLink;
-
-            &:hover {
-                background-color: color($crashBlue shade(20%));
-            }
-        } */
         & {
             margin-top: 1rem;
         }
         &__text {
             color: $navLink;
         }
-
-        /* &__triangle {
-            border-top: 48px solid $navLink;
-            
-        }
-
-        &__inner-triangle {
-            left: -2px;
-            border-top: 45px solid $crashBlue;
-            &:hover {
-                border-top-color: color($crashBlue shade(20%));
-            }
-        } */
     }
 }
-
-
-
-/* @media screen and (max-width: 767px) {
-    .btn {
-        margin-top: 0;
-    }
-} */
