@@ -27,11 +27,11 @@
             <div class="site-header__form"></div>
            
             <ul class="site-header__menu">
-                <li><a href="#leistungen">Leistungen</a></li>
-                <li><a href="#ueber-uns">Über uns</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-                <li><a href="#termin-buchen">Termin buchen</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a class="site-header__menu-item" href="#leistungen">Leistungen</a></li>
+                <li><a class="site-header__menu-item" href="#ueber-uns">Über uns</a></li>
+                <li><a class="site-header__menu-item" href="#kontakt">Kontakt</a></li>
+                <li><a class="site-header__menu-item" href="#termin-buchen">Termin buchen</a></li>
+                <li><a class="site-header__menu-item" href="#faq">FAQ</a></li>
             </ul>
         </nav>
     </header>
@@ -67,7 +67,7 @@
         <div class="large-hero__triangle--revert"></div>
     </div>
     
-    <section class="leistungen">
+    <section id="leistungen" class="leistungen">
                     <div class="container-fluid leistungen__container">
                     <div class="row">
                             <h2 class="col-12 headline headline--left headline--none">Wussten Sie, dass...</h2>
@@ -298,7 +298,7 @@
                     </div>   
     </section>
 
-    <section class="ueber-uns">
+    <section id="ueber-uns" class="ueber-uns">
         <h2 class="headline headline--left headline--white headline--ueber-uns">Aus Leidenschaft für das Auto</h2>
         <div class="site-header__form site-header__form--revert site-header__form--ueber-uns"></div>
 
@@ -504,7 +504,7 @@
         </div>
     </section>
    
-    <section class="kontakt">
+    <section id="kontakt" class="kontakt">
         <div class="kontakt__banner">
             <picture>
                 <source media="(min-width: 1024px)" data-srcset="assets/images/lesender_mann--desktop.webp 1x, assets/images/lesender_mann--desktop@2x.webp 2x">
@@ -604,11 +604,11 @@
         </div>
 
 
-        <div class="kontakt__kontakt-form"> 
+        <div id="termin-buchen" class="kontakt__kontakt-form"> 
             <h2 class="text-md-center headline headline--kontakt-form">Gleich unverbindlich von uns beraten lassen</h2>
             <div class="kontakt__form-container">
                 <div class="container">
-                <div class="row">
+                <div class="row mx-auto">
                     <div class="col-12 col-md-6 col-xl-3">
                         <div class="kontakt__text-wrapper">
                                 <p>BÜRO-WEDDING<br>
@@ -679,7 +679,7 @@
                     <div class="col-12 col-md-6 col-xl-3">
                         <form action="formMail.php" method="post" id="formular">                         
                             <label for="office">Büro*</label>
-                            <select id="office" name="office" class="custom-arrow" required>
+                            <select id="office" name="office" required>
                                 <option>Wedding</option>
                                 <option>Kreuzberg</option>
                             </select>
@@ -695,12 +695,12 @@
                             <label for="message">Nachricht</label>
                             <textarea id="message" name="message" maxlength="500"></textarea>
 
-                            <a class="btn btn--kontakt-form btn--customMarginTop" href="#">
+                            <a id="form-btn" class="btn btn--kontakt-form btn--customMarginTop" type="submit" name="submit">
                                 <div class="btn__container btn__container--kontakt-form btn__container--mgl0">
-                                    <input class="btn__container btn__container--kontakt-submit" type="submit" name="submit" value="Absenden">
+                                    <p class="btn__text btn__text--kontakt">Absenden</p>
                                 </div>
                             </a>
-
+                    
                             <label class="ohnohoney" for="realname"></label>
                             <input class="ohnohoney" autocomplete="off" type="text" id="realname" name="realname" placeholder="Your name here">
                             <label class="ohnohoney" for="realemail"></label>
@@ -713,8 +713,8 @@
     </div>
        
 
-        <div class="container kontakt__faq">
-            <div class="row">
+        <div id="faq" class="container kontakt__faq">
+            <!-- <div class="row"> -->
                 <h2 class="headline">Häufig gestellte Fragen</h2>
                     <div class="kontakt__accordion">          
                         
@@ -800,18 +800,18 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            <!-- </div>  -->
         </div>
     </section>
 
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 footer__st-color">
                     <p>Konzept, Design & Umsetzung: Helix Media GmbH</p>
                 </div>  
-                <div class="col-12 col-xl-6">
-                    <p><a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">Sitemap</a> | <a href="#">Downloads</a></p>
+                <div class="col-12 col-xl-6 footer__delimiter">
+                    <p><a href="#">Impressum</a> <span>|</span> <a href="#">Datenschutz</a> <span>|</span> <a href="#">Sitemap</a> <span>|</span> <a href="#">Downloads</a></p>
                 </div>
                 <div class="col-12 col-xl-6">
                     <p>Copyright © 2020 Urbanke & Partner. Alle Rechte vorbehalten.</p>
@@ -819,11 +819,25 @@
             </div>
         </div>
     </footer>
+
     <script>
-       const form = document.querySelector('#formular');
-       form.addEventListener('submit', event => {
-           event.preventDefault();
-       });
+        const menuBtn = document.querySelector('#menu-btn');
+        const MenuItems = document.querySelectorAll('.site-header__menu-item');
+        
+        MenuItems.forEach(MenuItem => {
+                MenuItem.addEventListener('click', () => {
+                    menuBtn.checked = false;
+            });
+            });
+
+
+        const formId = document.querySelector('#formular');
+        const formBtn = document.querySelector('#form-btn');
+        
+        formBtn.addEventListener('click', () => {
+            formId.submit();
+        });
+
     </script>
 </body>
 </html>

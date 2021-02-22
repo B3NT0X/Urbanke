@@ -91,9 +91,13 @@
     ul {
         list-style: none;
         padding-left: 0;
+        margin-bottom: 0;
         
         li {
-            padding-bottom: 1.6rem;
+            &:first-of-type {
+                padding-bottom: 1.5rem;
+            }
+            padding-bottom: 1rem;
             
         }
 
@@ -148,18 +152,23 @@
     }
 
     &__form-container {
-        overflow-x: hidden;
         background-color: $footerBlue;
         color: #fff;
 
         .kontakt__text-wrapper {
-            padding: 3.9rem 4.5rem 2.8rem;
+            padding: 0 4.5rem 0rem;
 
             @mixin atMedium {
                 padding: 0;
 
                 ul {
                     padding-left: 0;
+                }
+            }
+
+            @mixin atExtraLarge {
+                ul {
+                    margin-top: 1.6rem;
                 }
             }
 
@@ -174,6 +183,14 @@
             }
             .customPaddingdown {
                 padding-bottom: 7.5rem;
+
+                @mixin atMedium {
+                    padding-bottom: 11rem;
+                }
+
+                @mixin atExtraLarge {
+                    padding-bottom: 12.3rem;
+                }
             }
         }
 
@@ -189,6 +206,7 @@
             width: 100%;
             min-height: 101px;
             resize: vertical;
+            border: none;
         }
         form input, form select{
             font-family: 'Roboto Slab';
@@ -196,6 +214,7 @@
             padding: .5rem;
             margin-top: 0.7rem;
             margin-bottom: 2rem;
+            border: none;
         }
 
         form label {
@@ -203,8 +222,22 @@
             font-size: 1.6rem;
         }
 
+        @mixin atMedium {
+            form {
+                max-width: 250px;
+            }
+        }
+
+        @mixin atExtraLarge {
+            form {
+                padding-top: 1.6rem;
+            }
+        }
+
         .ohnohoney {
             position: absolute;
+            right: 0;
+            bottom: 0;
             opacity: 0;
             z-index: -1;
         }
@@ -286,5 +319,14 @@ footer {
     a {
         text-decoration: none;
         color: #fff;
+    }
+
+    .footer__st-color p {
+        color: $footerBlue;
+    }
+
+    .footer__delimiter span {
+        padding-left: .8rem;
+        padding-right: .8rem;
     }
 }
