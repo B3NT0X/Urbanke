@@ -1,5 +1,5 @@
 .large-hero {
-    position: relative;
+    /* position: relative;
     padding-top: 7.1rem;
 
     &__content {
@@ -34,8 +34,8 @@
         line-height: 1.3;
     }
 
-    @mixin atMedium {
-        &{
+  */  @mixin atMedium {
+        /* &{
             padding-top: 12.6rem;
         }
 
@@ -53,12 +53,12 @@
 
         &__heroimg {
             min-height: 738px;
-        }
+        }  */
 
         &__triangle {
-            border-width: 600px 320px 0 0;
+            /* border-width: 600px 320px 0 0; */
             
-        &--revert {
+        /* &--revert {
             position: absolute;
             bottom: 0;
             right: 0;
@@ -67,7 +67,7 @@
             border-style: solid;
             border-width: 0 0 300px 200px;
             border-color: transparent transparent $mainBlue transparent;
-        }
+        } */
         &--lighter {
             position: absolute;
             width: 0;
@@ -88,7 +88,7 @@
         }
     }
 
-    @mixin atMediumLarge {
+    /* @mixin atMediumLarge {
         &__triangle {
             border-width: 645px 476px 0 0;
             &--revert {
@@ -96,14 +96,14 @@
                 border-width: 0 0 619px 300px;
             }
         }
-    }
+    } */
 
     @mixin atLarge {
-        & {
+        /* & {
             padding-top: 14.5rem;
-        }
+        } */
 
-        &__content {
+        /* &__content {
             position: absolute;
             top: 20%;
             max-width: 44%;
@@ -128,17 +128,17 @@
             &:nth-of-type(2) {
                 max-width: 70%;
             }
-        }
+        } */
         
-        &__triangle {
+        /* &__triangle {
             display: none;
             
             &--revert {
                 display: none;
             }
-        }
+        } */
         
-        &__blue-form {
+        /* &__blue-form {
             position: absolute;
             top: 0;
             width: 33%;
@@ -154,22 +154,18 @@
                 height: 100%;
                 top: 0;
                 left: 0;
-                /* z-index: -1; */
                 background-color: $footerBlue;
                 transform-origin: bottom left;
                 transform: skew(-23deg, 0deg);
             }
-        }
+        } */
     }
 
-    @mixin atExtraLarge {
+    /* @mixin atExtraLarge {
         &__content {
             top: 25%;
         }
-    }
-
-    
-
+    } */
 }
 
 

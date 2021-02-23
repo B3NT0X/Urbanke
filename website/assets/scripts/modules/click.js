@@ -1,15 +1,25 @@
 class Click {
 constructor() {
-    // this.content = document.querySelector('.site-header__content');
-    //this.events();
+    this.formId = document.querySelector('#formular');
+    this.formBtn = document.querySelector('#form-btn');
+    this.menuBtn = document.querySelector('#menu-btn');
+    this.menuItems = document.querySelectorAll('.site-header__menu-item');
+    this.menuUncheck();
+    this.formSubmit();
 }
 
-events() {
-    //this.content.addEventListener('click', () => this.action());
+menuUncheck() {
+    this.menuItems.forEach(menuItem => {
+        menuItem.addEventListener('click', () => {
+            this.menuBtn.checked = false;
+    });
+    });
 }
 
-action() {
-   // this.content.style.backgroundColor = 'orange';
+formSubmit() {
+    this.formBtn.addEventListener('click', () => {
+        this.formId.submit();
+    });
 }
 }
 
