@@ -101,6 +101,10 @@
             transform: skewX(-30deg);
         }
 
+        .site-header li a {
+            font-size: 1.2rem;
+        }
+
         @media screen and (min-width: 810px) {
             .site-header li a {
                 font-size: 1.4rem;
@@ -130,7 +134,7 @@
                color: #fff;
                padding: 3.3rem 2.5rem;
             }
-            .site-header__form {
+            .site-header__form--menu{
                 display: none;
             }
         }
@@ -156,15 +160,10 @@
         .site-header__menu li:nth-of-type(1) {
             background-color: #0055A6;
         }
-        .site-header__menu a {
+
+        .site-header__menu li a {
             color: #fff;
         }
-
-        /* @media screen and (min-width: 1024px) {
-            .site-header__menu {
-                min-height: 76px;
-            }
-        } */
 
         .site-header__menu-icon {
             cursor: pointer;
@@ -234,12 +233,11 @@
                 max-height: none;
             }
             .site-header__menu li {
+                display: table;
                 float: left;
                 transform: skew(-20deg);
             }
-            .site-header__menu ul li a {
-                display: table;
-                font-size: 1.2rem;
+            .site-header__menu li a {
                 transform: skewX(20deg);
             }
             .site-header__menu li:first-of-type {
@@ -267,6 +265,7 @@
                 background-color: rgb(30, 103, 173);
             }
             .site-header__menu li:nth-of-type(5) {
+                width: 168px;
                 background-color: #0055A6;
                 margin-right: -1.8rem;
             }
@@ -287,6 +286,7 @@
             object-fit: cover;
             object-position: 100%;
         }
+
         .large-hero__title {
             line-height: 1.3;
         }
@@ -301,9 +301,15 @@
             border-color: #0055A6 transparent transparent transparent;
             opacity: 0.8;
         }
+        
         @media screen and (max-width: 544px) {
             .large-hero__triangle {
                 display: none;
+            }
+        }
+        @media screen and (min-width: 673px) {
+            .large-hero__heroimg {
+               min-height: 456px;
             }
         }
         @media screen and (min-width: 768px) {
@@ -429,7 +435,7 @@
             <input class="site-header__menu-btn" type="checkbox" id="menu-btn">
             <label class="site-header__menu-icon" for="menu-btn"><span class="navicon"></span></label>
 
-            <div class="site-header__form"></div>
+            <div class="site-header__form site-header__form--menu"></div>
            
             <ul class="site-header__menu">
                 <li><a class="site-header__menu-item" href="#leistungen">Leistungen</a></li>
@@ -876,7 +882,7 @@
                         </div>
                     </div>
 
-                    <div class="col leistungen__card leistungen__card--weitere-leistungen">
+                    <div class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen">
                         <div class="ueber-uns__img">
                             <img class="lazyload" data-src="assets/images/leistungen--icon4.svg" alt="Todo-listen Icon">
                         </div>
@@ -960,7 +966,7 @@
                 </div>
             </div>
 
-        <div class="kontakt__unfall-banner">    
+        <div id="test" class="kontakt__unfall-banner">    
                 <picture>
                     <source media="(min-width: 1008px)" data-srcset="assets/images/autoschaden--desktop.webp 1x, assets/images/autoschaden--desktop@2x.webp 2x">
                     <source media="(min-width: 1008px)" data-srcset="assets/images/autoschaden--desktop.jpg 1x, assets/images/autoschaden--desktop@2x.jpg 2x">
@@ -1125,82 +1131,335 @@
                         
                     <div class="kontakt__accordion--tab">
                         <input type="radio" id="acc" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc">Wann steht mir ein unabhängiger Gutachter zu</label>
+                        <label class="kontakt__accordion--tab-label" for="acc">Was ist ein Gutachten und wozu benötige ich das?</label>
                         <div class="kontakt__accordion--tab-content">
                                 <p class="panel">
-                                Wurde Ihr Fahrzeug ohne Ihr Verschulden in einen Unfall verwickelt bzw. durch Fremdverschulden beschädigt und der Schädiger bzw. das Schädigerfahrzeug ist bekannt, (Haftpflichtfall) steht Ihnen im Prinzip immer das Recht zu einen Gutachter Ihres Vertrauens einzuschalten. Die Kosten für das Gutachten hat der Schädiger bzw. dessen Haftpflichtversicherung zu tragen. Diese können wir direkt mit der Versicherung abrechnen. Liegt ein Schaden vor, der in den Bereich Ihrer Kasko-Versicherung fällt, wenden Sie sich bitte zuerst an Ihren Versicherer. Einen unabhängigen Sachverständigen auf Versicherungskosten können Sie wählen wenn: • Sie die Zusage Ihres Versicherers haben (wichtig: Ansprechpartner notieren), • sich die Schadenbezifferung des Versicherers als fehlerhaft erweist, • der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher Nähe anbieten kann.
+                                    Das Gutachten hat zwei wesentliche Funktionen. Zum einen dient es der
+                                    Beweissicherung, zum anderen wird mit dem Gutachten der zur Schadenersatzleistung
+                                    erforderliche Geldbetrag ermittelt.
+                                    Unsere Gutachten sind modern und umfassend erarbeitet. Wir erfassen alle
+                                    wesentlichen Fahrzeug- und Schadendaten, beschreiben den Schadenumfang sowie
+                                    eventuelle Vorschäden, prüfen die Plausibilität, erstellen Fotos und ermitteln sämtliche
+                                    fahrzeugbezogene Schadensersatzkosten, die Sie vom Unfallgegner bzw. dessen
+                                    Versicherung beanspruchen können. Unsere Gutachten sind allgemein anerkannt und
+                                    eignen sich zur gerichtlichen Durchsetzung.
                             </p>
                         </div>
                     </div>
                     <div class="kontakt__accordion--tab">
                         <input type="radio" id="acc1" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc1">Warum sollte ich einen unabhängigen Kfz-Gutachter beauftragen?</label>
+                        <label class="kontakt__accordion--tab-label" for="acc1">Wann brauche ich ein Gutachten?</label>
                         <div class="kontakt__accordion--tab-content">
                                 <p class="panel">
-                                Wurde Ihr Fahrzeug ohne Ihr Verschulden in einen Unfall verwickelt bzw. durch Fremdverschulden beschädigt und der Schädiger bzw. das Schädigerfahrzeug ist bekannt, (Haftpflichtfall) steht Ihnen im Prinzip immer das Recht zu einen Gutachter Ihres Vertrauens einzuschalten. Die Kosten für das Gutachten hat der Schädiger bzw. dessen Haftpflichtversicherung zu tragen. Diese können wir direkt mit der Versicherung abrechnen. Liegt ein Schaden vor, der in den Bereich Ihrer Kasko-Versicherung fällt, wenden Sie sich bitte zuerst an Ihren Versicherer. Einen unabhängigen Sachverständigen auf Versicherungskosten können Sie wählen wenn: • Sie die Zusage Ihres Versicherers haben (wichtig: Ansprechpartner notieren), • sich die Schadenbezifferung des Versicherers als fehlerhaft erweist, • der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher Nähe anbieten kann.
+                                    Im Falle eines unverschuldeten Verkehrsunfalls können Sie den eingetretenen
+                                    Schaden von einem unabhängigen Kfz-Sachverständigen auf Kosten des
+                                    Verursachers bzw. seiner Versicherung schätzen lassen. Das Gutachten dient auch
+                                    zur Beweissicherung der eingetretenen Schäden, was im Streitfall bei einer
+                                    gerichtlichen Auseinandersetzung hilfreich sein kann.
+                                    Vor allem die Unabhängigkeit des Kfz-Sachverständigen gewährleistet eine neutrale
+                                    und vollumfängliche Bezifferung aller fahrzeugbezogenen Schadenspositionen.
                             </p>
                         </div>
                     </div>
                     <div class="kontakt__accordion--tab">
                         <input type="radio" id="acc2" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc2">Wie viel kostet mich das Kfz-Unfallgutachten?</label>
+                        <label class="kontakt__accordion--tab-label" for="acc2">Wann brauche ich ein Gutachten?</label>
                         <div class="kontakt__accordion--tab-content">
                                 <p class="panel">
-                                Wurde Ihr Fahrzeug ohne Ihr Verschulden in einen Unfall verwickelt bzw. durch Fremdverschulden beschädigt und der Schädiger bzw. das Schädigerfahrzeug ist bekannt, (Haftpflichtfall) steht Ihnen im Prinzip immer das Recht zu einen Gutachter Ihres Vertrauens einzuschalten. Die Kosten für das Gutachten hat der Schädiger bzw. dessen Haftpflichtversicherung zu tragen. Diese können wir direkt mit der Versicherung abrechnen. Liegt ein Schaden vor, der in den Bereich Ihrer Kasko-Versicherung fällt, wenden Sie sich bitte zuerst an Ihren Versicherer. Einen unabhängigen Sachverständigen auf Versicherungskosten können Sie wählen wenn: • Sie die Zusage Ihres Versicherers haben (wichtig: Ansprechpartner notieren), • sich die Schadenbezifferung des Versicherers als fehlerhaft erweist, • der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher Nähe anbieten kann.
+                                    Im Falle eines unverschuldeten Verkehrsunfalls können Sie den eingetretenen
+                                    Schaden von einem unabhängigen Kfz-Sachverständigen auf Kosten des
+                                    Verursachers bzw. seiner Versicherung schätzen lassen. Das Gutachten dient auch
+                                    zur Beweissicherung der eingetretenen Schäden, was im Streitfall bei einer
+                                    gerichtlichen Auseinandersetzung hilfreich sein kann.
+                                    Vor allem die Unabhängigkeit des Kfz-Sachverständigen gewährleistet eine neutrale
+                                    und vollumfängliche Bezifferung aller fahrzeugbezogenen Schadenspositionen.
                             </p>
                         </div>
                     </div>
                     <div class="kontakt__accordion--tab">
                         <input type="radio" id="acc3" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc3">Was tun bei einem Bagatellschaden (geringfügiger Schaden bis ca. 700 Euro)?</label>
+                        <label class="kontakt__accordion--tab-label" for="acc3">Wer bezahlt das Gutachten?</label>
                         <div class="kontakt__accordion--tab-content">
                                 <p class="panel">
-                                Wurde Ihr Fahrzeug ohne Ihr Verschulden in einen Unfall verwickelt bzw. durch Fremdverschulden beschädigt und der Schädiger bzw. das Schädigerfahrzeug ist bekannt, (Haftpflichtfall) steht Ihnen im Prinzip immer das Recht zu einen Gutachter Ihres Vertrauens einzuschalten. Die Kosten für das Gutachten hat der Schädiger bzw. dessen Haftpflichtversicherung zu tragen. Diese können wir direkt mit der Versicherung abrechnen. Liegt ein Schaden vor, der in den Bereich Ihrer Kasko-Versicherung fällt, wenden Sie sich bitte zuerst an Ihren Versicherer. Einen unabhängigen Sachverständigen auf Versicherungskosten können Sie wählen wenn: • Sie die Zusage Ihres Versicherers haben (wichtig: Ansprechpartner notieren), • sich die Schadenbezifferung des Versicherers als fehlerhaft erweist, • der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher Nähe anbieten kann.
+                                    Im Kfz-Haftpflichtschadenfall, also wenn ein anderer einen Schaden an Ihrem
+                                    Fahrzeug verursacht hat, sind die Kosten für das Gutachten Teil des
+                                    Gesamtschadens. Sie müssen auch nicht in Vorleistung gehen. Das
+                                    Sachverständigenhonorar können wir mittels einer sicherungsweisen
+                                    Abtretungserklärung direkt mit dem eintrittspflichtigen Versicherer abrechnen.
                             </p>
                         </div>
                     </div>
                     <div class="kontakt__accordion--tab">
                         <input type="radio" id="acc4" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc4">Was tun bei ungeklärter Schuldfrage?</label>
+                        <label class="kontakt__accordion--tab-label" for="acc4">Wieviel kostet ein Gutachten?</label>
                         <div class="kontakt__accordion--tab-content">
                                 <p class="panel">
-                                Wurde Ihr Fahrzeug ohne Ihr Verschulden in einen Unfall verwickelt bzw. durch Fremdverschulden beschädigt und der Schädiger bzw. das Schädigerfahrzeug ist bekannt, (Haftpflichtfall) steht Ihnen im Prinzip immer das Recht zu einen Gutachter Ihres Vertrauens einzuschalten. Die Kosten für das Gutachten hat der Schädiger bzw. dessen Haftpflichtversicherung zu tragen. Diese können wir direkt mit der Versicherung abrechnen. Liegt ein Schaden vor, der in den Bereich Ihrer Kasko-Versicherung fällt, wenden Sie sich bitte zuerst an Ihren Versicherer. Einen unabhängigen Sachverständigen auf Versicherungskosten können Sie wählen wenn: • Sie die Zusage Ihres Versicherers haben (wichtig: Ansprechpartner notieren), • sich die Schadenbezifferung des Versicherers als fehlerhaft erweist, • der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher Nähe anbieten kann.
+                                    Das Sachverständigenhonorar richtet sich nach der Schadenshöhe. Eine einheitliche
+                                    Honorarforderung wie bei Rechtsanwälten gibt es nicht. Unser Honorar entspricht der
+                                    Üblichkeit. Die Bemessung orientiert sich an der aktuellen BVSK Honorarbefragung
+                                    2018 und entspricht somit der BGH Rechtsprechung BGH 28.02.2017 Az.VI ZR
+                                    76/16).
                             </p>
                         </div>
                     </div>
                     <div class="kontakt__accordion--tab">
                         <input type="radio" id="acc5" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc5">Steht mir auch im Kasko-Fall ein eigener Kfz Gutachter zu?</label>
+                        <label class="kontakt__accordion--tab-label" for="acc5">Die Versicherung hat mein Fahrzeug schon besichtigt.
+                            Kann ich mir trotzdem eine zweite Meinung einholen?</label>
                         <div class="kontakt__accordion--tab-content">
                                 <p class="panel">
-                                Wurde Ihr Fahrzeug ohne Ihr Verschulden in einen Unfall verwickelt bzw. durch Fremdverschulden beschädigt und der Schädiger bzw. das Schädigerfahrzeug ist bekannt, (Haftpflichtfall) steht Ihnen im Prinzip immer das Recht zu einen Gutachter Ihres Vertrauens einzuschalten. Die Kosten für das Gutachten hat der Schädiger bzw. dessen Haftpflichtversicherung zu tragen. Diese können wir direkt mit der Versicherung abrechnen. Liegt ein Schaden vor, der in den Bereich Ihrer Kasko-Versicherung fällt, wenden Sie sich bitte zuerst an Ihren Versicherer. Einen unabhängigen Sachverständigen auf Versicherungskosten können Sie wählen wenn: • Sie die Zusage Ihres Versicherers haben (wichtig: Ansprechpartner notieren), • sich die Schadenbezifferung des Versicherers als fehlerhaft erweist, • der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher Nähe anbieten kann.
+                                    Ja. Eine bereits durchgeführte Besichtigung Ihres Fahrzeugs durch die Versicherung
+                                    tangiert Ihr Recht auf einen eigens beauftragten unabhängigen Kfz-Gutachter nicht.
+                                    Das gilt auch dann, wenn Ihnen die Schadensbezifferung der Versicherung bereits
+                                    vorliegt.
+                                    Selbst wenn das eigene Gutachten zu dem gleichen Ergebnis kommt, muss es von
+                                    der Versicherung erstattet werden.
                             </p>
                         </div>
                     </div>
                     <div class="kontakt__accordion--tab">
                         <input type="radio" id="acc6" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc6">Wie ist das übliche Verfahren in einem Kfz-Haftpflichtschadenfall?</label>
+                        <label class="kontakt__accordion--tab-label" for="acc6">Was ist bei einem Kaskoschaden zu beachten?</label>
                         <div class="kontakt__accordion--tab-content">
                                 <p class="panel">
-                                Wurde Ihr Fahrzeug ohne Ihr Verschulden in einen Unfall verwickelt bzw. durch Fremdverschulden beschädigt und der Schädiger bzw. das Schädigerfahrzeug ist bekannt, (Haftpflichtfall) steht Ihnen im Prinzip immer das Recht zu einen Gutachter Ihres Vertrauens einzuschalten. Die Kosten für das Gutachten hat der Schädiger bzw. dessen Haftpflichtversicherung zu tragen. Diese können wir direkt mit der Versicherung abrechnen. Liegt ein Schaden vor, der in den Bereich Ihrer Kasko-Versicherung fällt, wenden Sie sich bitte zuerst an Ihren Versicherer. Einen unabhängigen Sachverständigen auf Versicherungskosten können Sie wählen wenn: • Sie die Zusage Ihres Versicherers haben (wichtig: Ansprechpartner notieren), • sich die Schadenbezifferung des Versicherers als fehlerhaft erweist, • der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher Nähe anbieten kann.
-                            </p>
+                                    Bei Kasko- oder Teilkasko-Fällen, also wenn die eigene Fahrzeugversicherung in
+                                    Anspruch genommen wird, gilt das Vertragsrecht. In der Regel sind die Kosten für
+                                    einen eigens beauftragten Kfz-Gutachter nicht in den Vertragsbedingungen
+                                    eingeschlossen. Wenden Sie sich daher bitte zuerst an Ihren Versicherer. Einen
+                                    unabhängigen Kfz-Sachverständigen auf Versicherungskosten können Sie wählen
+                                    wenn:       
+                                </p>
+                                <ul>
+                                    <li>Sie die Zusage Ihres Versicherers haben (möglichst schriftlich geben lassen),</li>
+                                    <li>sich die Schadensbezifferung des Versicherers als zu gering oder fehlerhaft
+                                        erweist,</li>
+                                    <li>der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher
+                                        Nähe anbieten kann.</li>
+                                </ul>
+                                <p>Es kann sich auch lohnen ein Kfz-Gutachten auf eigene Kosten zu beauftragen,
+                                    wenn die Versicherung das Gutachtenergebnis übernimmt.</p>
                         </div>
                     </div>
                     <div class="kontakt__accordion--tab">
                         <input type="radio" id="acc7" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc7">Was bekomme ich von der Kfz-Versicherung ausbezahlt?</label>
+                        <label class="kontakt__accordion--tab-label" for="acc7">Reicht nicht ein Kostenvoranschlag einer Werkstatt?</label>
                         <div class="kontakt__accordion--tab-content">
                                 <p class="panel">
-                                Wurde Ihr Fahrzeug ohne Ihr Verschulden in einen Unfall verwickelt bzw. durch Fremdverschulden beschädigt und der Schädiger bzw. das Schädigerfahrzeug ist bekannt, (Haftpflichtfall) steht Ihnen im Prinzip immer das Recht zu einen Gutachter Ihres Vertrauens einzuschalten. Die Kosten für das Gutachten hat der Schädiger bzw. dessen Haftpflichtversicherung zu tragen. Diese können wir direkt mit der Versicherung abrechnen. Liegt ein Schaden vor, der in den Bereich Ihrer Kasko-Versicherung fällt, wenden Sie sich bitte zuerst an Ihren Versicherer. Einen unabhängigen Sachverständigen auf Versicherungskosten können Sie wählen wenn: • Sie die Zusage Ihres Versicherers haben (wichtig: Ansprechpartner notieren), • sich die Schadenbezifferung des Versicherers als fehlerhaft erweist, • der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher Nähe anbieten kann.
+                                    Häufig verlangen Versicherungen lediglich ein Kostenvoranschlag zur Ermittlung der
+                                    Reparaturkosten. Damit spart diese bares Geld, möglicherweise auf Ihre Kosten.
+                                    Denn, ein Kostenvoranschlag enthält keine Angaben zum merkantilen Minderwert,
+                                    nimmt keinerlei Differenzierung zu überlagernden Alt- und Vorschäden vor und
+                                    umfasst keine Angaben zu Nebenkosten wie Nutzungsausfall oder voraussichtliche
+                                    Werkstatt Standzeit.
+                                    Zuletzt hat ein Kostenvoranschlag keine beweissichernde Funktion, da er in der
+                                    Regel keine Fotodokumentation umfasst.
                             </p>
                         </div>
                     </div>
                     <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc8" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc8">Gibt es eine Entschädigung, wenn mir kein Fahrzeug zur Verfügung steht?</label>
+                        <input type="radio" id="acc22" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc22">Was mache ich bei Kleinschäden wie Kratzer oder Dellen?</label>
                         <div class="kontakt__accordion--tab-content">
                                 <p class="panel">
-                                Wurde Ihr Fahrzeug ohne Ihr Verschulden in einen Unfall verwickelt bzw. durch Fremdverschulden beschädigt und der Schädiger bzw. das Schädigerfahrzeug ist bekannt, (Haftpflichtfall) steht Ihnen im Prinzip immer das Recht zu einen Gutachter Ihres Vertrauens einzuschalten. Die Kosten für das Gutachten hat der Schädiger bzw. dessen Haftpflichtversicherung zu tragen. Diese können wir direkt mit der Versicherung abrechnen. Liegt ein Schaden vor, der in den Bereich Ihrer Kasko-Versicherung fällt, wenden Sie sich bitte zuerst an Ihren Versicherer. Einen unabhängigen Sachverständigen auf Versicherungskosten können Sie wählen wenn: • Sie die Zusage Ihres Versicherers haben (wichtig: Ansprechpartner notieren), • sich die Schadenbezifferung des Versicherers als fehlerhaft erweist, • der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher Nähe anbieten kann.
+                                    Bei Schäden unterhalb der Bagatellschadengrenze (~750 Euro) erstellen wir Ihnen
+                                    ein Kurz-Gutachten. Dieses umfasst neben der Schadensbezifferung auch eine
+                                    beweissichernde Fotodokumentation sowie eine Kausalitätsprüfung.
+                                    Die Kosten unserer Kurzgutachten entsprechen denen eines Kostenvoranschlags
+                                    und werden von den Versicherungen übernommen. Eine direktabrechnung unserer
+                                    Kosten bieten wir auch bei bagatellschäden gerne an.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc23" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc23">Die Schuldfrage ist nicht geklärt. Was kann ich tun?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Bei ungeklärter Schuldfrage oder unbekanntem Verursacher besteht für Sie das Risiko,
+                                    dass Sie auf den Kosten für das Gutachten sitzen bleiben. Wir bieten Ihnen deshalb eine
+                                    Vorab-Beweisaufnahme an. Hierbei erstellen wir Fotos vom Fahrzeug und von den
+                                    Beschädigungen, nehmen sämtliche Daten auf und speichern diese in unserem System.
+                                    <span>Die komplette Aufnahme ist für Sie bis dahin kostenlos</span>. Können Sie später Ansprüche
+                                    geltend machen, genügt eine kurze telefonische Beauftragung zur Ausarbeitung des
+                                    Gutachtens. Die dann erst entstehenden Gebühren rechnen wir direkt mit der
+                                    Versicherung des Unfallgegners ab.
+                            </p>
+                        </div>
+                    </div>
+                    <h2>Vor-Gutachten</h2>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc24" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc24">Wo wird mein Fahrzeug besichtigt?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Zur Begutachtung können Sie Ihr Fahrzeug an eines unserer Büroadressen
+                                    vorfahren. Natürlich kann ein Besichtigungstermin auch bei Ihnen zu Hause, auf Ihrer
+                                    Arbeit oder in einer Werkstatt Ihrer Wahl vereinbart werden.
+                                    In Einzelfällen kann eine weitere Besichtigung Ihres Fahrzeugs im teilweise
+                                    demontierten Zustand ratsam sein, um den vollständigen Schadenumfang zu
+                                    erfassen.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc25" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc25">Wie lange dauert die Besichtigung?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Der Aufwand der Besichtigung ist abhängig vom Schadenumfang. In der Regel
+                                    reichen 15-30 Minuten hierfür aus.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc26" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc26">Wie schnell bekomme ich einen Termin?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Nutzen Sie den Vorteil der Flexibilität unserer beiden Büros. Wir garantieren die
+                                    Besichtigung Ihres Fahrzeugs in Berlin und Umgebung noch am selben, spätestens
+                                    aber am Folgewerktag.
+                                    Wenn gewünscht, können Sie auch einen Besichtigungstermin außerhalb der
+                                    Bürozeiten mit unseren Sachverständigen vereinbaren.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc27" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc27">Was muss ich zur Besichtigung mitbringen?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Bezüglich Ihrem Fahrzeug benötigen wir mindestens:
+                                </p>
+                                <ul>
+                                    <li>Zulassungsbescheinigung Teil I oder Teil II,</li>
+                                    <li>Eigentumsnachweis / Kaufvertrag (wenn Sie nicht Halter des Fahrzeugs
+                                        sind),</li>
+                                    <li>Polizeiliche Unfallmitteilung und/oder Daten zum Unfallverursacher.</li>
+                                    <li>Gegebenenfalls: Reparatur oder Wartungsbelege sowie Belege über frühere
+                                        Schäden an Ihrem Fahrzeug.</li>
+                                </ul>
+                        </div>
+                    </div>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc28" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc28">Darf ich mein Fahrzeug vor der Besichtigung reinigen?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Es ist empfehlenswert, den Schadensbereich zunächst in unverändertem Zustand
+                                    vom Kfz-Sachverständigen dokumentieren zu lassen. Abwaschbare Kontaktmängel
+                                    stellen zwar keine Schäden im eigentlich Sinn dar, können aber wichtig für die
+                                    Einordnung der Plausibilität des Schadenanspruchs sein.
+                                    Sofern eine Reinigung zur weiteren Begutachtung notwendig ist, kann diese im Zuge
+                                    der Besichtigung erfolgen.
+                            </p>
+                        </div>
+                    </div>
+                    <h2>Nach-Gutachten</h2>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc29" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc29">Wie lange dauert es bis das Gutachten fertig ist?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Die Bearbeitungszeit hängt vom Schadenumfang ab. In der Regel erstellen wir Ihr
+                                    Gutachten innerhalb weniger Tage. Die Bearbeitung von Bagatellschäden, für die wir
+                                    ein Kurz-Gutachten erstellen, ist in der Regel innerhalb eines Werktags möglich.
+                                    Damit Sie Ihr Gutachten noch schneller erhalten, senden wir Ihnen dieses auf
+                                    Wunsch gerne per E-Mail zu.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc30" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc30">Wie lange dauert es bis ich mein Geld erhalte?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Auf die Bearbeitungsdauer der Versicherungen haben wir leider keinen Einfluss. Bei
+                                    geklärter Schuldfrage ist ein Zeitraum von ca. 4 Wochen üblich. Im optimalen Fall
+                                    erfolgt die Erstattung auch schon nach wenigen Tagen.<br>
+                                    Ist die Schuldfrage offen oder der Unfallgegner hat den Schaden nicht bei seiner
+                                    Versicherung gemeldet, wird gegebenenfalls die Akte der Polizei angefordert. Die
+                                    Herausgabe erfolgt in Berlin erfahrungsgemäß erst nach etwa 6-8 Wochen. Sofern
+                                    die Polizei selbst noch ermittelt, kann die Herausgabe auch Monate in Anspruch
+                                    nehmen. Bei gerichtlicher Auseinandersetzung ist der Abschluss des Vorgangs abhängig von
+                                    der Verfahrensdauer.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc31" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc31">Wann kann ich mein Fahrzeug reparieren/verkaufen?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Nach Erhalt des Gutachtens können Sie die Reparatur oder den Verkauf ihres
+                                    Fahrzeugs in die Wege leiten.
+                                    Sofern Wir ihnen die Reparaturwürdigkeit bereits bei der Besichtigung bestätigen,
+                                    können Sie unmittelbar nach Abschluss der Besichtigung mit der Wiederherstellung
+                                    beginnen. Im eindeutigen Totalschadenfall sollten mit dem Verkauf des Fahrzeugs
+                                    bis zum Erhalt des Gutachtens warten, um sicher zu gehen nicht unter Restwert zu
+                                    veräußern. Grundsätzlich sind Sie nicht verpflichtet auf Erlaubnis der Versicherung
+                                    zu warten.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc32" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc32">Mein Fahrzeug hat einen Reparaturfall erlitten. Was
+                            bekomme ich?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Im Reparaturfall bekommen Sie die Kosten erstattet, die zur Wiederherstellung des
+                                    Schadens erforderlich sind. Grundsätzlich sind Sie nicht zur Reparatur verpflichtet
+                                    und können sich die Reparaturkosten abzgl. der Mehrwertsteuer auch einfach
+                                    auszahlen lassen (fiktive Abrechnung).
+                                    Darüber hinaus haben Sie auch bei der fiktiven Abrechnung gegebenenfalls
+                                    Anspruch auf eine Wertminderung. Nach Durchführung der Reparatur können Sie
+                                    zudem eine Nutzungsausfallentschädigung für die Zeit, die der Wagen Ihnen nicht
+                                    zur Verfügung steht, einfordern. Eine allgemeine Kostenpauschale steht Ihnen immer
+                                    zu.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc33" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc33">Muss ich mein Fahrzeug reparieren?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Nein. Sofern das Gutachten die Empfehlung der Wiederherstellung ausspricht, können
+                                    Sie die theoretisch erforderlichen Reparaturkosten verlangen, ohne Ihr Fahrzeug
+                                    tatsächlich reparieren zu lassen.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc34" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc34">Mein Fahrzeug hat einen Totalschaden erlitten. Was
+                            bekomme ich?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Ein Totalschadenfall liegt im Wesentlichen dann vor, wenn die
+                                    Wiederherstellungskosten höher sind als die Kosten für eine Ersatzbeschaffung
+                                    eines vergleichbaren Gebrauchtfahrzeugs. In diesem Fall erstattet Ihnen die
+                                    Versicherung die Kosten für den Wiederbeschaffungsaufwand. Dieser besteht bei
+                                    fiktiver Abrechnung aus der Differenz zwischen dem netto Wiederbeschaffungswert
+                                    des Fahrzeugs unmittelbar vor dem Schadenereignis sowie dem Restwert des
+                                    Fahrzeugs nach Schadeneintritt. Gegebenenfalls können Sie weitere Nebenkosten wie Ab- und Anmeldekosten,
+                                    Kosten für erforderliche Umbauarbeiten und eine Nutzungsausfallentschädigung
+                                    geltend machen.
+                                    Die Beurteilung, ob und wann ein Totalschaden vorliegt ist nicht immer eindeutig.
+                                    Lassen Sie sich hierzu von uns beraten.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="kontakt__accordion--tab">
+                        <input type="radio" id="acc35" name="rd">
+                        <label class="kontakt__accordion--tab-label" for="acc35">Bei Totalschaden: Muss ich mein Fahrzeug verkaufen?</label>
+                        <div class="kontakt__accordion--tab-content">
+                                <p class="panel">
+                                    Nein, Sie sind nicht verpflichtet Ihr Fahrzeug abzugeben. Ein möglicherweise von der
+                                    Versicherung abgegebenes Verkaufsangebot (Restwertangebot) dient lediglich der
+                                    fiktiven Abrechnung. Sie haben die freie Wahl, ob und an wann Sie ihr Fahrzeug
+                                    verkaufen möchten.
                             </p>
                         </div>
                     </div>

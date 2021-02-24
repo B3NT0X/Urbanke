@@ -222,6 +222,13 @@
             font-size: 1.6rem;
         }
 
+        form input:invalid {
+            border-color: red;
+        }
+        form input:valid {
+            border-color: green;
+        }
+
         @mixin atMedium {
             form {
                 max-width: 250px;
@@ -268,7 +275,7 @@
           cursor: pointer;
           /* Icon */
           &:hover {
-            background-color: color($mainBlue shade(10%));
+            background-color: color(#2172C0 shade(10%));
           }
           &::after {
             content: "\276F";
@@ -290,7 +297,7 @@
 
     &__accordion--tab input:checked {
         + .kontakt__accordion--tab-label {
-        background-color: color($mainBlue shade(10%));
+        background-color: color(#2172C0 shade(10%));
         &::after {
             transform: rotate(90deg);
         }

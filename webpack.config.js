@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const fse = require('fs-extra')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
+
 //cssnano plugin für minfied
 //fs-extra für mehrere html files und copied folder
 //babel/core babel/preset-env babel-loader für leute mit älteren brwoser nur js
@@ -41,7 +42,17 @@ let config = {
     module: {
         rules: [
             cssConfig,
-            { test: /\.(jpg|webp|woff|woff2|eot|ttf|svg|otf)$/, use: 'url-loader'}
+            { 
+                test: /\.(jpg|webp|svg|woff|woff2|eot|ttf)$/, 
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000,
+                        name: 'images/[name].[ext]'
+                        }
+                    }
+                ]
+            }
         ]
     }
 }
@@ -69,13 +80,14 @@ if(currentTask == 'build') {
     config.output = {
         filename: '[name].[chunkhash].js',
         chunkFilename: '[name].[chunkhash].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: ''
     }
     config.mode = "production"
     config.optimization = {
         splitChunks: {chunks: 'all'},
         minimize: true,
-        minimizer: [`...`, new CssMinimizerPlugin()]
+        minimizer: [`...`, new CssMinimizerPlugin({parallel: true})]
     }
     config.plugins.push(
         new CleanWebpackPlugin(), 
