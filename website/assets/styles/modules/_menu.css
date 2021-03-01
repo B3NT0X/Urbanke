@@ -1,479 +1,219 @@
 .site-header {
-    /* &__top-banner ul {
+  &__form {
+    &--revert {
+      width: 50%;
+      height: 67px;
+      top: 0.5vh;
+      left: 0;
+      background-color: $lightBlue;
+      opacity: 0.3;
+      z-index: -1;
+      &:after {
+        transform-origin: bottom right;
+        background-color: $lightBlue;
+      }
+    }
+
+    &--lighter {
+      width: 138px;
+      top: 61%;
+      transform: translateY(-50%);
+      background-color: $lightBlue;
+      opacity: 0.5;
+      &:after {
+        background-color: $lightBlue;
+      }
+    }
+
+    &--our-priority {
+      width: 190px;
+      height: 247px;
+      top: 24px;
+      right: 10px;
+      margin-right: -19rem;
+      background-color: $secondaryBlue;
+      opacity: 0.2;
+      z-index: -1;
+      &:after {
+        transform-origin: top right;
+        transform: skewX(-30deg);
+        background-color: $secondaryBlue;
+      }
+    }
+
+    &--our-priority-revert {
+      width: 190px;
+      height: 247px;
+      top: 34.5%;
+      left: 10px;
+      margin-left: -19rem;
+      background-color: $secondaryBlue;
+      opacity: 0.2;
+      z-index: -1;
+      &:after {
+        transform-origin: bottom left;
+        transform: skewX(-30deg);
+        background-color: $secondaryBlue;
+      }
+    }
+
+    &--our-priority-custom {
+      width: 258px;
+      height: 304px;
+      top: 65%;
+      right: 0;
+      margin-right: -19rem;
+      background-color: $secondaryBlue;
+      opacity: 0.2;
+      z-index: -1;
+      &:after {
+        transform-origin: top right;
+        transform: skewX(-30deg);
+        background-color: $secondaryBlue;
+      }
+    }
+
+    &--ueber-uns {
+      display: block !important;
+      position: relative;
+      top: 0;
+      width: 82vw;
+      min-height: 80px;
+      margin-bottom: 0.8rem;
+      background-color: $mainBlue;
+      opacity: 1;
+      &:after {
+        background-color: $mainBlue;
+        z-index: -1;
+      }
+
+      @mixin atMedium {
+        min-height: 104px;
+      }
+      @mixin atExtraLarge {
+        min-height: 80px;
+      }
+    }
+
+    @mixin atMedium {
+      &--revert {
         display: none;
+      }
 
-        li {
-            font-family: 'Poppins';
-            font-size:1.4rem;
-        }
-    }
-}
+      &--lighter {
+        display: none;
+      }
 
-@mixin atMedium {
-    .site-header {
-        &__top-banner ul{
-            font-family: 'Poppins';
-            height: 52px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-            background-color: #f6f6f6;
-            li {
-             list-style-image: url('../images/haeckchen.svg');
-            }
-        }
-     }
-}
-
-@mixin atMediumLarge {
-    .site-header {
-        &__top-banner ul{
-            font-size: 1.6rem;
-        }
-    }
-}
-
-
-.site-header {
-    background-color: #fff;
-    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-    position: fixed;
-    width: 100%;
-    z-index: 3;
-
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        overflow: hidden;
-    }
-
-@mixin atLarge {
-    &__nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    ul {
-        overflow: visible;
-    }
-
-    li a {
-        color: $navLink;
-        }       
-    }
-
-    li a {
-        display: block;
-        padding: 2rem 2rem;
-        text-decoration: none;
-    }
-
-    &__nav {
-        position: relative;
-        min-height: 100%;
-    }
-    
-    &__logo {
-        display: block;
-        float: left;
-        padding: 1.9rem;
-        
-        img {
-            min-width: 180px;
-        }
-    } */
-
-    /* menu */
-    /* &__menu {
-        clear: both;
-        max-height: 0;
-        transition: max-height .2s ease-out;
-
-        li {
-            &:nth-of-type(5) {
-                background-color: $lightBlue;
-            }
-            &:nth-of-type(4) {
-                background-color: $secondaryBlue;
-            }
-            &:nth-of-type(3) {
-                background-color: $boxBlue;
-            }
-            &:nth-of-type(2) {
-                background-color: $mainBlue;
-            }
-            &:nth-of-type(1) {
-                background-color: $footerBlue;
-            }
-            a {
-                color: $navLink;
-            }
-        }
-        
-    } */
-
-    /* @mixin atLarge {
-        &__menu {
-            min-height: 76px;
-        }
-        
-    } */
-
-    &__form {
-        /* position: absolute;
-        top: 0;
-        right: 0;
-        width: 80px;
-        height: 74px;
-        background-color: $footerBlue;
+      &--our-priority {
+        top: 0%;
+        right: 7%;
+        background-color: $lightBlue;
+        opacity: 1;
 
         &:after {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: $footerBlue;
-            transform-origin: top right;
-            transform: skewX(-30deg);
-        } */
-        
-        &--revert {
-            width: 50%;
-            height: 67px;
-            top: 0.5vh;
-            left: 0;
-            background-color: $lightBlue;
-            opacity: 0.3;
-            z-index: -1;
-            &:after {
-                transform-origin: bottom right;
-                background-color: $lightBlue;
-            }
+          background-color: $lightBlue;
         }
+      }
 
-        &--lighter {
-            width: 138px;
-            top: 61%;
-            transform: translateY(-50%);
-            background-color: $lightBlue;
-            opacity: 0.5;
-            &:after {
-                background-color: $lightBlue;
-            }
+      &--our-priority-revert {
+        top: 30%;
+        left: 5%;
+        margin-left: -11rem;
+        background-color: $secondaryBlue;
+        opacity: 1;
+
+        &:after {
+          background-color: $secondaryBlue;
         }
+      }
 
-        &--our-priority {
-            width: 190px;
-            height: 230px;
-            top: 0px;
-            right: -15px;
-            margin-right: -19rem;
-            background-color: $secondaryBlue;
-            opacity: 0.2;
-            z-index: -1;
-            &:after {
-                transform-origin: top right;
-                transform: skewX(-30deg);
-                background-color: $secondaryBlue;
-            }
+      &--our-priority-custom {
+        width: 278px;
+        height: 288px;
+        top: 72%;
+        right: 6%;
+        margin-right: -232px;
+        background-color: $boxBlue;
+        opacity: 1;
+
+        &:after {
+          background-color: $boxBlue;
         }
-
-        &--our-priority-revert {
-            width: 190px;
-            height: 247px;
-            top: 28%;
-            left: -6px;
-            margin-left: -19rem;
-            background-color: $secondaryBlue;
-            opacity: 0.2;
-            z-index: -1;
-            &:after {
-                transform-origin: bottom left;
-                transform: skewX(-30deg);
-                background-color: $secondaryBlue;
-            }
-        }
-
-        &--our-priority-custom {
-            width: 258px;
-            height: 304px;
-            top: 63%;
-            right: 0;
-            margin-right: -19rem;
-            background-color: $secondaryBlue;
-            opacity: 0.2;
-            z-index: -1;
-            &:after {
-                transform-origin: top right;
-                transform: skewX(-30deg);
-                background-color: $secondaryBlue;
-            }
-        }
-
-        &--ueber-uns { 
-            display: block !important;
-            position: relative;
-            top: 0;
-            width: 82vw;
-            min-height: 80px;
-            margin-bottom: 0.8rem;
-            background-color: $mainBlue;
-            opacity: 1;
-            &:after {
-                background-color: $mainBlue;
-                z-index: -1;
-            }
-
-            @mixin atMedium {
-                min-height: 104px;
-            }
-            @mixin atExtraLarge {
-                min-height: 80px;
-            }
-        }
-
-        @mixin atMedium {
-            &--revert {
-                display: none;
-            }
-            
-            &--lighter {
-                display: none;
-            }   
-
-            &--our-priority {
-                top: 9%;
-                right: 7%;
-                background-color: $lightBlue;
-                opacity: 1;
-
-                &:after {
-                    background-color: $lightBlue;
-                }
-            }
-
-            &--our-priority-revert {
-                top: 39%;
-                left: 5%;
-                margin-left: -11rem;
-                background-color: $secondaryBlue;
-                opacity: 1;
-
-                &:after {
-                    background-color: $secondaryBlue;
-                }
-            }
-
-            &--our-priority-custom {
-                width: 278px;
-                height: 288px;
-                top: 72%;
-                right: 6%;
-                margin-right: -232px;
-                background-color: $boxBlue;
-                opacity: 1;
-
-                &:after {
-                   
-                    background-color: $boxBlue;
-                }
-            }
-        }
-
-        @mixin atMediumLarge {
-            &--our-priority {
-                width: 336px;
-                right: 0%;
-              
-            }
-    
-            &--our-priority-revert {
-                width: 420px;
-                left: 0;
-            }
-    
-            &--our-priority-custom {
-                width: 488px; 
-                right: 0;
-            }
-        }
-
-        @mixin atExtraLarge {
-            &--our-priority {
-                width: 50%;
-                right: 0%;
-              
-            }
-    
-            &--our-priority-revert {
-                width: 30%;
-                left: 0;
-            }
-    
-            &--our-priority-custom {
-                width: 50%; 
-                right: 0;
-            }
-
-            &--ueber-uns {
-                position: absolute;
-                top: 1vh;
-                left: 0;
-                width: 60vw;
-                height: 80px;
-                padding: 0;
-                margin-bottom: 0;
-                z-index: 1;
-                opacity: 0.8;
-            }
-        }
+      }
     }
 
-    /* &__menu-icon {
-        cursor: pointer;
-        float: right;
-        z-index: 1;
-        padding: 3.5rem 3rem;
-        position: relative;
-        user-select: none;
+    @mixin atMediumLarge {
+      &--our-priority {
+        width: 336px;
+        right: 0%;
+      }
+
+      &--our-priority-revert {
+        width: 420px;
+        left: 0;
+      }
+
+      &--our-priority-custom {
+        width: 488px;
+        right: 0;
+      }
     }
 
-    &__menu-icon .navicon {
-        background: $navLink;
-        display: block;
-        height: 3px;
-        position: relative;
-        transition: background .2s ease-out;
-        width: 28px;
-    }
+    @mixin atExtraLarge {
+      &--our-priority {
+        width: 50%;
+        top: 5%;
+        right: 0%;
+      }
 
-    &__menu-icon .navicon:before,
-    &__menu-icon .navicon:after {
-        background: $navLink;
-        content: '';
-        display: block;
-        height: 100%;
+      &--our-priority-revert {
+        width: 30%;
+        top: 36%;
+        left: 0;
+      }
+
+      &--our-priority-custom {
+        width: 50%;
+        right: 0;
+      }
+
+      &--ueber-uns {
         position: absolute;
-        transition: all .2s ease-out;
-        width: 100%;
+        top: 1vh;
+        left: 0;
+        width: 60vw;
+        height: 80px;
+        padding: 0;
+        margin-bottom: 0;
+        z-index: 1;
+        opacity: 0.8;
+      }
     }
 
-    &__menu-icon .navicon:before {
-        top: 8px;
+    @media screen and (min-width: 1500px) {
+      &--ueber-uns {
+        top: 5vh;
+        width: 45vw;
+        height: 104px;
+      }
     }
-    &__menu-icon .navicon:after {
-        top: -8px;
-    }
-
-    /* menu btn */
-
-    /* &__menu-btn {
-        display: none;
-    }
-
-    &__menu-btn:checked ~ .site-header__menu {
-        max-height: 340px;
-    }
-    &__menu-btn:checked ~ .site-header__menu-icon .navicon {
-        background: transparent;
-    }
-    &__menu-btn:checked ~ .site-header__menu-icon .navicon:before {
-        transform: rotate(-45deg);
-    }
-    &__menu-btn:checked ~ .site-header__menu-icon .navicon:after {
-        transform: rotate(45deg);
-    }
-    & .site-header__menu-btn:checked ~ .site-header__menu-icon:not(.steps) .navicon:before, 
-    & .site-header__menu-btn:checked ~ .site-header__menu-icon:not(.steps) .navicon:after {
-        top: 0;
+    @media screen and (min-width: 1500px) {
+      &--ueber-uns {
+        width: 41vw;
+      }
     }
 
-  }
+    @media screen and (min-width: 1900px) {
+      &--our-priority {
+          width: 37%;
+      }
+      &--our-priority-revert {
+        width: 49%;
+      }
 
-
-  @mixin atLarge {
-    .site-header {
-        &__menu {
-            li {
-                float: left;
-                transform: skew(-20deg);
-
-                &:first-of-type {
-                    background-color: $lightBlue;
-                    &:hover {
-                        background-color: color($lightBlue shade(3%));
-                    }
-                }
-                &:nth-of-type(2) {
-                    background-color: $secondaryBlue;
-                    &:hover {
-                        background-color: color($secondaryBlue shade(5%));
-                    }
-                }
-                &:nth-of-type(3) {
-                    background-color: $boxBlue;
-                    &:hover {
-                        background-color: color($boxBlue shade(10%));
-                    }
-                }
-                &:nth-of-type(4) {
-                    background-color: $mainBlue;
-                    &:hover {
-                        background-color: color($mainBlue shade(10%));
-                    }
-                }
-                &:nth-of-type(5) {
-                    width: 168px;
-                    background-color: $footerBlue;
-                    margin-right: -1.8rem;
-                    &:hover {
-                        background-color: color($footerBlue shade(10%));
-                    }
-                }
-            }
-        }
-
-        li a {
-            display: table;
-            font-size: 1.2rem;
-            padding: 3.3rem 2.5rem;
-            transform: skewX(20deg);
-        }
-       
-        &__menu {
-            clear: none;
-            float: right;
-            max-height: none;
-        }
-        & .site-header__menu-icon {
-            display: none;
-        }
-
-        &__nav {
-            overflow-x: hidden;
-        }
+      &--our-priority-custom {
+        width: 48%;
+      }
     }
   }
-
-@media screen and (min-width: 810px) {
-    .site-header li a {
-        font-size: 1.4rem;
-    }
 }
-@media screen and (min-width: 861px) {
-    .site-header li a {
-        font-size: 1.6rem;
-    }
-}
-@media screen and (min-width: 900px) {
-    .site-header li a {
-        font-size: 1.8rem;
-    }*/
-} 
-   

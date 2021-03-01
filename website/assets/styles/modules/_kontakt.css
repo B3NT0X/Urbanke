@@ -1,339 +1,450 @@
+#kontakt {
+  scroll-margin-top: 100px;
+}
+#termin-buchen {
+  scroll-margin-top: 100px;
+}
+#faq {
+  scroll-margin-top: 100px;
+}
 .kontakt {
-    &__unfall-banner {
-        .kontakt__unfallImg {
-            min-width: 100%;
-        }
-        @mixin atExtraLarge {
-            & {
-                background: url('../images/autoschaden--desktop.jpg');
-                background: 
-                    image-set(
-                        url('../images/autoschaden--desktop.webp') 1x,
-                        url('../images/autoschaden--desktop@2x.webp') 2x
-                    ),
-                    image-set(
-                        url('../images/autoschaden--desktop.jpg') 1x,
-                        url('../images/autoschaden--desktop@2x.jpg') 2x
-                        );
-                background-size: 48%;
-                background-repeat: no-repeat;
-                background-position: right center;
-
-                .kontakt__unfallImg {
-                    display: none;
-                }
-            }
-        }
-        .kontakt__form {
-            background-color: $crashBlue;
-            color: #fff;
-            padding: 1rem 1.6rem;
-            p {
-                max-width: 639px;
-            }
-            @mixin atMediumLarge {
-                & {
-                    clip-path: polygon(
-                        0 0, 
-                        99% 0, 
-                        70% 100%, 
-                        0% 100%);
-                    margin-top: 0.8rem;
-                    padding-left: 6.8rem;
-                }
-            }
-
-            @mixin atExtraLarge {
-                & {
-                    clip-path: polygon(
-                        0 0, 
-                        72% 0, 
-                        52% 100%, 
-                        0% 100%);
-                }
-            }
-        }
+  &__banner {
+    .kontakt__mann-liestImg {
+      /* min-width: 360px; */
+      min-height: 168px;
+      object-fit: cover;
     }
-    @mixin atMediumLarge {
-        .leistungen__card--kontakt {
-            ul {
-                transform: skewX(-30deg);
-                padding-left: 8.6rem;
-                padding-bottom: 4.5rem; 
+  }
+  &__unfall-banner {
+    .kontakt__unfallImg {
+      min-width: 100%;
+    }
+    @mixin atExtraLarge {
+      & {
+        background: url("../images/autoschaden--desktop.jpg");
+        background: image-set(
+            url("../images/autoschaden--desktop.webp") 1x,
+            url("../images/autoschaden--desktop@2x.webp") 2x
+          ),
+          image-set(
+            url("../images/autoschaden--desktop.jpg") 1x,
+            url("../images/autoschaden--desktop@2x.jpg") 2x
+          );
+        background-repeat: no-repeat;
+        background-position: right center;
 
-                li {
-                    transform: skewX(30deg);
-                    padding-bottom: 1rem;
-                }
-            }
+        .kontakt__unfallImg {
+          display: none;
         }
+      }
+    }
+    @media screen and (min-width: 1900px) {
+      & {
+        background-size: 50%;
+      }
+    }
+
+    .kontakt__form {
+      background-color: $crashBlue;
+      color: #fff;
+      padding: 1rem 1.6rem;
+      p {
+        max-width: 639px;
+      }
+      @mixin atMediumLarge {
+        & {
+          clip-path: polygon(0 0, 99% 0, 70% 100%, 0% 100%);
+          height: 471px;
+          margin-top: 0.8rem;
+          padding-left: 6.8rem;
+        }
+      }
+
+      @mixin atExtraLarge {
+        & {
+          clip-path: polygon(0 0, 72% 0, 52% 100%, 0% 100%);
+          height: 450px;
+        }
+      }
+      @media screen and (min-width: 1400px) {
+        & {
+          height: 471px;
+        }
+      }
+      @media screen and (min-width: 1900px) {
+        & {
+          height: 544px;
+          padding-top: 7.4rem;
+          padding-left: 28.1rem;
+        }
+      }
+    }
+  }
+  @mixin atMediumLarge {
+    .leistungen__card--kontakt {
+      ul {
+        transform: skewX(-30deg);
+        padding-left: 8.6rem;
+        padding-bottom: 4.5rem;
+
+        li {
+          transform: skewX(30deg);
+          padding-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  @mixin atExtraLarge {
+    &__banner {
+      position: relative;
+
+      .leistungen__card--kontakt {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 880px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @media screen and (min-width: 1900px) {
+    .leistungen__card--kontakt {
+      width: 1048px;
+    }
+  }
+
+  h3,
+  ul li {
+    color: #fff;
+    text-align: left;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+      &:first-of-type {
+        padding-bottom: 1.5rem;
+      }
+      padding-bottom: 1rem;
+    }
+
+    @mixin atMedium {
+      & {
+        padding-left: 5rem;
+      }
+    }
+
+    @mixin atMediumLarge {
+      & {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__trio p {
+    max-width: 348px;
+    margin: 0 auto;
+    padding-bottom: 10.8rem;
+  }
+  @mixin atMediumLarge {
+    &__trio:first-of-type p {
+      padding-bottom: 9.2rem;
+    }
+    &__trio:nth-of-type(2) p,
+    &__trio:last-of-type p {
+      padding-bottom: 8.4rem;
+    }
+  }
+  @mixin atExtraLarge {
+    &__trio p {
+      padding-bottom: 20.52rem !important;
+    }
+  }
+
+  &__break-none {
+    display: none;
+
+    @mixin atMedium {
+      & {
+        display: block;
+      }
     }
 
     @mixin atExtraLarge {
-        &__banner {
-            position: relative;
-    
-            .leistungen__card--kontakt {
-                position: absolute;
-                top: 50%;
-                right: 0;
-                width: 880px;
-                transform: translateY(-50%);
-            }
+      & {
+        display: none;
+      }
+    }
+  }
+
+  &__ausrufezeichen {
+    display: none;
+
+    @mixin atExtraLarge {
+      display: block;
+      position: absolute;
+      font-family: "Poppins";
+      font-size: 5.6rem;
+      padding-right: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  &__form-container {
+    background-color: $footerBlue;
+    color: #fff;
+
+    .kontakt__custom-container {
+      @mixin atMedium {
+        max-width: 604px;
+        margin: 0 auto;
+      }
+      @mixin atMediumLarge {
+        max-width: 656px;
+        margin: 0 auto;
+      }
+      @mixin atExtraLarge {
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+      @media screen and (min-width: 1300px) {
+        max-width: 1253px;
+        margin: 0 auto;
+        padding: 6.3rem 0 2rem;
+      }
+
+      /* @mixin atMedium {
+        .kontakt__inner-column:nth-child(odd) {
+          padding-right: 3.7rem;
         }
+        .kontakt__inner-column:nth-child(even) {
+          padding-left: 3.7rem;
+        }
+      }
+      @mixin atMediumLarge {
+        .kontakt__inner-column:nth-child(odd) {
+          padding-right: 6.3rem;
+        }
+        .kontakt__inner-column:nth-child(even) {
+          padding-left: 6.3rem;
+        }
+      }
+      @mixin atExtraLarge {
+        .kontakt__inner-column:nth-child(odd) {
+          padding-right: 0rem;
+        }
+        .kontakt__inner-column:nth-child(even) {
+          padding-left: 0rem;
+        }
+      }
+      @media screen and (min-width: 1300px) {
+        .kontakt__inner-column:nth-child(1) {
+          padding-right: 7.4rem;
+        }
+        .kontakt__inner-column:nth-child(2) {
+          padding-right: 7.4rem;
+        }
+        .kontakt__inner-column:nth-child(3) {
+          padding-right: 7.4rem;
+        }
+      } */
+    }
+    .kontakt__text-wrapper {
+      padding: 0 4.5rem 0rem;
+
+      @mixin atMedium {
+        padding: 0;
+
+        ul {
+          padding-left: 0;
+        }
+      }
+
+      @mixin atExtraLarge {
+        ul {
+          margin-top: 1.6rem;
+        }
+      }
+
+      &--lineheight li {
+        line-height: 1;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .customPadding {
+        padding-right: 2.1rem;
+      }
+      .customPaddingdown {
+        padding-bottom: 7.5rem;
+
+        @mixin atMedium {
+          padding-bottom: 11rem;
+        }
+
+        @mixin atExtraLarge {
+          padding-bottom: 12.3rem;
+        }
+      }
     }
 
-    h3, ul li {
-        color: #fff;
-        text-align: left;
+    .kontakt__karteImg {
+      width: 344px;
+      @mixin atMedium {
+        width: 250px;
+      }
+    }
+
+    .kontakt__narrow {
+      padding: 0;
     }
 
     ul {
-        list-style: none;
-        padding-left: 0;
-        margin-bottom: 0;
-        
-        li {
-            &:first-of-type {
-                padding-bottom: 1.5rem;
-            }
-            padding-bottom: 1rem;
-            
-        }
-
-        @mixin atMedium {
-            & {
-                padding-left: 5rem;
-            }
-        }
-
-        @mixin atMediumLarge {
-            & {
-                padding-left: 0;
-            }
-        }
-        
+      max-width: 252px;
     }
 
-    &__trio p{
-        max-width: 348px;
-        margin: 0 auto;
-
-        &:first-of-type {
-            padding-bottom: 9.2rem;
-        }
+    form textarea {
+      width: 100%;
+      min-height: 101px;
+      resize: vertical;
+      border: none;
+    }
+    form input,
+    form select {
+      font-family: "Roboto Slab";
+      width: 100%;
+      height: 24px;
+      padding: 0.5rem;
+      margin-top: 0.7rem;
+      margin-bottom: 2rem;
+      border: none;
     }
 
-    &__break-none {
-        display: none;
-
-        @mixin atMedium {
-            & {
-                display: block;
-            }
-        }
-
-        @mixin atExtraLarge {
-            & {
-                display: none;
-            }
-        }
+    form label {
+      font-family: "Roboto Slab";
+      font-size: 1.6rem;
     }
 
-    &__ausrufezeichen {
-        display: none;
-
-        @mixin atExtraLarge {
-            display: block;
-            position: absolute;
-            font-family: 'Poppins';
-            font-size: 5.6rem;
-        }
+    form input:invalid {
+      border-color: red;
+    }
+    form input:valid {
+      border-color: green;
     }
 
-    &__form-container {
-        background-color: $footerBlue;
-        color: #fff;
-
-        .kontakt__text-wrapper {
-            padding: 0 4.5rem 0rem;
-
-            @mixin atMedium {
-                padding: 0;
-
-                ul {
-                    padding-left: 0;
-                }
-            }
-
-            @mixin atExtraLarge {
-                ul {
-                    margin-top: 1.6rem;
-                }
-            }
-
-            &--lineheight li{
-                line-height: 1;
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .customPadding {
-                padding-right: 2.1rem;
-            }
-            .customPaddingdown {
-                padding-bottom: 7.5rem;
-
-                @mixin atMedium {
-                    padding-bottom: 11rem;
-                }
-
-                @mixin atExtraLarge {
-                    padding-bottom: 12.3rem;
-                }
-            }
-        }
-
-        .kontakt__narrow {
-            padding: 0;
-        }
-
-        ul {
-            max-width: 252px;
-        }
-        
-        form textarea {
-            width: 100%;
-            min-height: 101px;
-            resize: vertical;
-            border: none;
-        }
-        form input, form select{
-            font-family: 'Roboto Slab';
-            width: 100%;
-            padding: .5rem;
-            margin-top: 0.7rem;
-            margin-bottom: 2rem;
-            border: none;
-        }
-
-        form label {
-            font-family: 'Robot Slab';
-            font-size: 1.6rem;
-        }
-
-        form input:invalid {
-            border-color: red;
-        }
-        form input:valid {
-            border-color: green;
-        }
-
-        @mixin atMedium {
-            form {
-                max-width: 250px;
-            }
-        }
-
-        @mixin atExtraLarge {
-            form {
-                padding-top: 1.6rem;
-            }
-        }
-
-        .ohnohoney {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            opacity: 0;
-            z-index: -1;
-        }
-    
-    }
-
-
-    &__accordion--tab input {
-        position: absolute;
-        opacity: 0;
-        z-index: -1;
+    @mixin atMedium {
+      form {
+        max-width: 250px;
       }
-    &__accordion {
-        overflow: hidden;
     }
-    &__accordion--tab {
-        width: 100%;
-        color: white;
-        overflow: hidden;
-        &-label {
-          display: flex;
-          justify-content: space-between;
-          padding: 1.6rem;
-          background: $mainBlue;
-          font-family: 'Roboto Slab';
-          font-size: 1.4rem;
-          font-weight: bold;
-          cursor: pointer;
-          /* Icon */
-          &:hover {
-            background-color: color(#2172C0 shade(10%));
-          }
-          &::after {
-            content: "\276F";
-            width: 1em;
-            height: 1em;
-            text-align: center;
-            transition: all .35s;
-          }
-        }
-        &-content {
-          max-height: 0;
-          padding: 0 1em;
-          color: $mainBlue;
-          background: white;
-          transition: all .35s;
-        }
+
+    @mixin atExtraLarge {
+      form {
+        padding-top: 1.6rem;
+        max-width: 275px;
       }
-
-
-    &__accordion--tab input:checked {
-        + .kontakt__accordion--tab-label {
-        background-color: color(#2172C0 shade(10%));
-        &::after {
-            transform: rotate(90deg);
-        }
-        }
-        ~ .kontakt__accordion--tab-content {
-        max-height: 100vh;
-        padding: 1em;
-        }
     }
 
-    &__faq {
-        padding-bottom: 6.4rem;
+    .ohnohoney {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      z-index: -1;
     }
+  }
 
+  &__accordion--tab input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  &__accordion {
+    overflow: hidden;
+  }
+  &__accordion--tab {
+    width: 100%;
+    color: white;
+    overflow: hidden;
+    &-label {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.6rem;
+      background: $mainBlue;
+      font-family: "Roboto Slab";
+      font-size: 1.4rem;
+      cursor: pointer;
+      /* Icon */
+      &:hover {
+        background-color: color(#2172c0 shade(10%));
+      }
+      &::after {
+        content: "\276F";
+        width: 1em;
+        height: 1em;
+        text-align: center;
+        transition: all 0.35s;
+      }
+    }
+    &-content {
+      max-height: 0;
+      color: $mainBlue;
+      background: white;
+      transition: all 0.35s;
 
-  
+      ul {
+        list-style-type: initial;
+        margin-left: 2rem;
+      }
+      ul li {
+        color: $mainBlue;
+      }
+    }
+  }
 
+  &__accordion--tab input:checked {
+    + .kontakt__accordion--tab-label {
+      background-color: color(#2172c0 shade(10%));
+      &::after {
+        transform: rotate(90deg);
+      }
+    }
+    ~ .kontakt__accordion--tab-content {
+      max-height: 100vh;
+      padding: 2.5rem;
+    }
+  }
+
+  &__faq-bg {
+    width: 100%;
+    background-color: #f6f6f6;
+    padding-top: 3.2rem;
+  }
+  &__faq {
+    padding-bottom: 6.4rem;
+    max-width: 695px;
+    margin: 0 auto;
+  }
 }
 
 footer {
-    width: 100%;
-    background-color: $crashBlue;
+  width: 100%;
+  background-color: $crashBlue;
+  color: #fff;
+  text-align: center;
+
+  a {
+    text-decoration: none;
     color: #fff;
-    text-align: center;
+  }
 
-    a {
-        text-decoration: none;
-        color: #fff;
-    }
-
-    .footer__st-color p {
-        color: $footerBlue;
-    }
-
-    .footer__delimiter span {
-        padding-left: .8rem;
-        padding-right: .8rem;
-    }
+  .footer__delimiter span {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
 }

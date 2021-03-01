@@ -1,1487 +1,2361 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Urbanke</title>
-    <style>    
-        *{
-            box-sizing: border-box;
-        }
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 62.5%;
-        }
-        body {
-            color:#0055A6;
-        }
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
+      html {
+        scroll-behavior: smooth;
+        font-size: 62.5%;
+      }
+      body {
+        color: #0055a6;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
 
+      .site-header .site-header__top-banner ul {
+        display: none;
+      }
+      .site-header .site-header__top-banner ul li {
+        font-family: "Poppins";
+        font-size: 1.4rem;
+        font-style: italic;
+        color: #2172c0;
+      }
+
+      @media screen and (min-width: 768px) {
         .site-header .site-header__top-banner ul {
-            display:none;
+          font-family: "Poppins";
+          height: 52px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          background-color: #f6f6f6;
         }
-        .site-header .site-header__top-banner ul li{
-            font-family: 'Poppins';
-            font-size:1.4rem;
+        .site-header .site-header__top-banner ul li:before {
+          content: '';
+          display: inline-block;
+          margin-right: 1rem;
+          background-image: url("assets/images/haeckchen.svg");
+          background-size: 11px 14px;
+          width: 11px;
+          height: 14px;
         }
-        @media screen and (min-width: 768px) {
-            .site-header .site-header__top-banner ul {
-                font-family: 'Poppins';
-                height: 52px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                align-items: center;
-                background-color: #f6f6f6;
-            }
-            .site-header .site-header__top-banner ul li {
-                list-style-image: url('assets/images/haeckchen.svg');
-            }
+      }
+      @media screen and (min-width: 992px) {
+        .site-header .site-header__top-banner ul li {
+          font-size: 1.6rem;
         }
-        @media screen and (min-width: 992px) {
-            .site-header .site-header__top-banner ul {
-                font-size: 1.6rem;
-            }
-        }
+      }
 
-        .site-header {
-            background-color: #fff;
-            box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-            position: fixed;
-            width: 100%;
-            z-index: 3;
+      .site-header {
+        background-color: #fff;
+        box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+      }
+      .site-header ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+      }
+      .site-header ul li a {
+        display: block;
+        padding: 2rem 2rem;
+        text-decoration: none;
+      }
+      .site-header__nav {
+        position: relative;
+        min-height: 100%;
+      }
+      .site-header__logo {
+        display: block;
+        float: left;
+        padding: 1.5rem 0 1.5rem 1.6rem;
+      }
+      @media screen and (min-width: 768px) {
+        .site-header__logo {
+          padding: 1.8rem 0 1.6rem 1.9rem;
+        }
+      }
+      .site-header__logo img {
+        width: 164px;
+        height: 33px;
+      }
+      @media screen and (min-width: 768px) {
+        .site-header__logo img {
+          width: 220px;
+          height: 43px;
+          object-fit: cover;
+        }
+      }
+
+      .site-header__form {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80px;
+        height: 64px;
+        background-color: #0055a6;
+      }
+      @media screen and (min-width: 768px) {
+        .site-header__form {
+          height: 80px;
+        }
+      }
+      .site-header__form:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #0055a6;
+        transform-origin: top right;
+        transform: skewX(-30deg);
+      }
+
+      .site-header li a {
+        font-size: 1.6rem;
+      }
+
+      @media screen and (min-width: 810px) {
+        .site-header li a {
+          font-size: 1.4rem;
+        }
+      }
+      @media screen and (min-width: 861px) {
+        .site-header li a {
+          font-size: 1.6rem;
+        }
+      }
+      @media screen and (min-width: 900px) {
+        .site-header li a {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        .site-header__nav {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
         }
         .site-header ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            overflow: hidden;
+          overflow: visible;
         }
-        .site-header ul li a{
-            display: block;
-            padding: 2rem 2rem;
-            text-decoration: none;
-            }
-        .site-header__nav {
-            position: relative;
-            min-height: 100%;
+        .site-header ul li a {
+          color: #fff;
+          padding: 3.3rem 2.5rem;
         }
-        .site-header__logo {
-            display: block;
-            float: left;
-            padding: 1.9rem;
+        .site-header__form--menu {
+          display: none;
         }
-        .site-header__logo img {
-            min-width: 180px;
-        }
+      }
 
-        .site-header__form {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 80px;
-            height: 74px;
-            background-color: #0055A6;
+      @media screen and (min-width: 1400px) {
+        .site-header ul li a {
+          padding: 2.5rem 6.5rem 3rem;
         }
-        .site-header__form:after {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: #0055A6;
-            transform-origin: top right;
-            transform: skewX(-30deg);
+        .site-header ul li:last-of-type a {
+          padding-right: 14.3rem;
         }
+      }
 
-        .site-header li a {
-            font-size: 1.2rem;
-        }
+      /* Menu */
+      .site-header__menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+      }
+      .site-header__menu li:nth-of-type(5) {
+        background-color: #a6ccf0;
+      }
+      .site-header__menu li:nth-of-type(4) {
+        background-color: #79b2e8;
+      }
+      .site-header__menu li:nth-of-type(3) {
+        background-color: #418fd9;
+      }
+      .site-header__menu li:nth-of-type(2) {
+        background-color: #2172c0;
+      }
+      .site-header__menu li:nth-of-type(1) {
+        background-color: #0055a6;
+      }
 
-        @media screen and (min-width: 810px) {
-            .site-header li a {
-                font-size: 1.4rem;
-            }
-        }
-        @media screen and (min-width: 861px) {
-            .site-header li a {
-                font-size: 1.6rem;
-            }
-        }
-        @media screen and (min-width: 900px) {
-            .site-header li a {
-                font-size: 1.8rem;
-            }
-        }
+      .site-header__menu li a {
+        color: #fff;
+      }
 
-        @media screen and (min-width: 1024px) {
-            .site-header__nav {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .site-header ul {
-                overflow: visible;
-            }
-            .site-header ul li a{
-               color: #fff;
-               padding: 3.3rem 2.5rem;
-            }
-            .site-header__form--menu{
-                display: none;
-            }
+      .site-header__menu-icon {
+        cursor: pointer;
+        float: right;
+        z-index: 1;
+        padding: 3rem 2.6rem;
+        position: relative;
+        user-select: none;
+      }
+      @media screen and (min-width: 768px) {
+        .site-header__menu-icon {
+          padding: 3.8rem 2.6rem;
         }
+      }
+      .site-header__menu-icon .navicon {
+        background-color: #fff;
+        display: block;
+        height: 3px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 28px;
+      }
 
-        /* Menu */
+      .site-header__menu-icon .navicon:before,
+      .site-header__menu-icon .navicon:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transition: all 0.2s ease-out;
+      }
+
+      .site-header__menu-icon .navicon:before {
+        top: 8px;
+      }
+      .site-header__menu-icon .navicon:after {
+        top: -8px;
+      }
+
+      /* menu btn */
+
+      .site-header__menu-btn {
+        display: none;
+      }
+
+      .site-header__menu-btn:checked ~ .site-header__menu {
+        max-height: 340px;
+      }
+      .site-header__menu-btn:checked ~ .site-header__menu-icon .navicon {
+        background: transparent;
+      }
+      .site-header__menu-btn:checked ~ .site-header__menu-icon .navicon:before {
+        transform: rotate(-45deg);
+      }
+      .site-header__menu-btn:checked ~ .site-header__menu-icon .navicon:after {
+        transform: rotate(45deg);
+      }
+      .site-header
+        .site-header__menu-btn:checked
+        ~ .site-header__menu-icon:not(.steps)
+        .navicon:before,
+      .site-header
+        .site-header__menu-btn:checked
+        ~ .site-header__menu-icon:not(.steps)
+        .navicon:after {
+        top: 0;
+      }
+
+      @media screen and (min-width: 1024px) {
+        .site-header__menu-icon {
+          display: none;
+        }
         .site-header__menu {
-            clear: both;
-            max-height: 0;
-            transition: max-height .2s ease-out;
+          clear: none;
+          float: right;
+          max-height: none;
         }
-        .site-header__menu li:nth-of-type(5) {
-            background-color: #A6CCF0;
+        .site-header__menu li {
+          display: table;
+          float: left;
+          transform: skew(-30deg);
         }
-        .site-header__menu li:nth-of-type(4) {
-            background-color: #79B2E8;
+        .site-header__menu li a {
+          transform: skewX(30deg);
         }
-        .site-header__menu li:nth-of-type(3) {
-            background-color: #418FD9;
+        .site-header__menu li:first-of-type {
+          background-color: #a6ccf0;
+        }
+        .site-header__menu li:first-of-type:hover {
+          background-color: rgb(161, 198, 233);
         }
         .site-header__menu li:nth-of-type(2) {
-            background-color: #2172C0;
+          background-color: #79b2e8;
         }
-        .site-header__menu li:nth-of-type(1) {
-            background-color: #0055A6;
+        .site-header__menu li:nth-of-type(2):hover {
+          background-color: rgb(115, 169, 220);
         }
+        .site-header__menu li:nth-of-type(3) {
+          background-color: #418fd9;
+        }
+        .site-header__menu li:nth-of-type(3):hover {
+          background-color: rgb(59, 129, 195);
+        }
+        .site-header__menu li:nth-of-type(4) {
+          background-color: #2172c0;
+        }
+        .site-header__menu li:nth-of-type(4):hover {
+          background-color: rgb(30, 103, 173);
+        }
+        .site-header__menu li:nth-of-type(5) {
+          width: 168px;
+          background-color: #0055a6;
+          margin-right: -2.8rem;
+        }
+        .site-header__menu li:nth-of-type(5):hover {
+          background-color: rgb(0, 77, 149);
+        }
+      }
 
-        .site-header__menu li a {
-            color: #fff;
-        }
+      .large-hero {
+        position: relative;
+        padding-top: 6rem;
+      }
+      .large-hero__content {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+      }
+      .large-hero__heroimg {
+        width: 100%;
+        min-height: 283px;
+        object-fit: cover;
+        object-position: 100%;
+      }
 
-        .site-header__menu-icon {
-            cursor: pointer;
-            float: right;
-            z-index: 1;
-            padding: 3.5rem 3rem;
-            position: relative;
-            user-select: none;
-        }
-        .site-header__menu-icon .navicon {
-            background-color: #fff;
-            display: block;
-            height: 3px;
-            position: relative;
-            transition: background .2s ease-out;
-            width: 28px;
-        }
+      .large-hero__title {
+        line-height: 1.3;
+      }
+      .large-hero__triangle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 300px 190px 0 0;
+        border-color: #0055a6 transparent transparent transparent;
+        opacity: 0.8;
+      }
 
-        .site-header__menu-icon .navicon:before,
-        .site-header__menu-icon .navicon:after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            transition: all .2s ease-out;
+      @media screen and (max-width: 544px) {
+        .large-hero__triangle {
+          display: none;
         }
-
-        .site-header__menu-icon .navicon:before {
-            top: 8px;
-        }
-        .site-header__menu-icon .navicon:after {
-            top: -8px;
-        }
-
-        /* menu btn */
-
-        .site-header__menu-btn {
-            display: none;
-        }
-
-        .site-header__menu-btn:checked ~ .site-header__menu {
-            max-height: 340px;
-        }
-        .site-header__menu-btn:checked ~ .site-header__menu-icon .navicon {
-            background: transparent;
-        }
-        .site-header__menu-btn:checked ~ .site-header__menu-icon .navicon:before {
-            transform: rotate(-45deg);
-        }
-        .site-header__menu-btn:checked ~ .site-header__menu-icon .navicon:after {
-            transform: rotate(45deg);
-        }
-        .site-header .site-header__menu-btn:checked ~ .site-header__menu-icon:not(.steps) .navicon:before, 
-        .site-header .site-header__menu-btn:checked ~ .site-header__menu-icon:not(.steps) .navicon:after {
-            top: 0;
-        }
-
-        @media screen and (min-width: 1024px) {
-            .site-header__menu-icon {
-            display: none;
-            }
-            .site-header__menu {
-                clear: none;
-                float: right;
-                max-height: none;
-            }
-            .site-header__menu li {
-                display: table;
-                float: left;
-                transform: skew(-20deg);
-            }
-            .site-header__menu li a {
-                transform: skewX(20deg);
-            }
-            .site-header__menu li:first-of-type {
-                background-color: #A6CCF0;
-            }
-            .site-header__menu li:first-of-type:hover {
-                background-color:rgb(161, 198, 233);
-            }
-            .site-header__menu li:nth-of-type(2) {
-                background-color: #79B2E8;
-            }
-            .site-header__menu li:nth-of-type(2):hover {
-                background-color:rgb(115, 169, 220);
-            }
-            .site-header__menu li:nth-of-type(3) {
-                background-color: #418FD9;
-            }
-            .site-header__menu li:nth-of-type(3):hover {
-                background-color: rgb(59, 129, 195);
-            }
-            .site-header__menu li:nth-of-type(4) {
-                background-color: #2172C0;
-            }
-            .site-header__menu li:nth-of-type(4):hover {
-                background-color: rgb(30, 103, 173);
-            }
-            .site-header__menu li:nth-of-type(5) {
-                width: 168px;
-                background-color: #0055A6;
-                margin-right: -1.8rem;
-            }
-            .site-header__menu li:nth-of-type(5):hover {
-                background-color: rgb(0, 77, 149);
-            }  
-        }
-
-        .large-hero {
-            position: relative;
-            padding-top: 7.1rem;
-        }
-        .large-hero__content {
-            padding-left: 1.6rem;
-        }
+      }
+      @media screen and (min-width: 673px) {
         .large-hero__heroimg {
-            min-height: 283px;
-            object-fit: cover;
-            object-position: 100%;
+          min-height: 456px;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        .large-hero {
+          padding-top: 12.6rem;
+        }
+        .large-hero__text {
+          max-width: 550px;
         }
 
         .large-hero__title {
-            line-height: 1.3;
+          font-size: 5.6rem;
+        }
+
+        .large-hero__content {
+          position: relative;
+        }
+
+        .large-hero__heroimg {
+          min-height: 738px;
         }
         .large-hero__triangle {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 300px 190px 0 0;
-            border-color: #0055A6 transparent transparent transparent;
-            opacity: 0.8;
+          border-width: 600px 320px 0 0;
+        }
+        .large-hero__triangle--revert {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 0 300px 200px;
+          border-color: transparent transparent #2172c0 transparent;
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        .large-hero__triangle {
+          border-width: 645px 476px 0 0;
+        }
+        .large-hero__triangle--revert {
+          top: -38px;
+          border-width: 0 0 619px 300px;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        .large-hero {
+          padding-top: 14.5rem;
+        }
+        /* .large-hero__content {
+          position: absolute;
+          top: 20%;
+          max-width: 58%;
+          padding-left: 2%;
+          font-size: 1.4rem;
+          color: #fff;
+        } */
+        .large-hero__heroimg {
+          object-position: center;
+        }
+        .large-hero__title {
+          max-width: 720px;
+        }
+        .large-hero__text {
+          max-width: 80%;
+        }
+        .large-hero__text:nth-of-type(2) {
+          max-width: 70%;
+        }
+        .large-hero__triangle {
+          display: none;
+        }
+        /* .large-hero__triangle--revert {
+          display: none;
+        } */
+        .large-hero__blue-form {
+          position: absolute;
+          top: 0;
+          clip-path: polygon(0 0, 100% 0, 0% 100%, 0% 100%);
+          width: 47.5vw;
+          height: 100%;
+          opacity: 0.7;
+          background-color: #0055a6;
         }
         
-        @media screen and (max-width: 544px) {
-            .large-hero__triangle {
-                display: none;
-            }
-        }
-        @media screen and (min-width: 673px) {
-            .large-hero__heroimg {
-               min-height: 456px;
-            }
-        }
-        @media screen and (min-width: 768px) {
-            .large-hero {
-                padding-top: 12.6rem;
-            }
-            .large-hero__text {
-                max-width: 550px;
-            }
-        
-            .large-hero__title {
-                font-size: 5.6rem;
-            }    
-
-            .large-hero__content {
-                position: relative;
-            }
-
-            .large-hero__heroimg {
-                min-height: 738px;
-            }
-            .large-hero__triangle {
-                border-width: 600px 320px 0 0;
-            }
-            .large-hero__triangle--revert {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 0 0 300px 200px;
-                border-color: transparent transparent #2172C0 transparent;
-            }
-        }
-
-        @media screen and (min-width: 992px) {
-            .large-hero__triangle {
-                border-width: 645px 476px 0 0;
-            }
-            .large-hero__triangle--revert {
-                top: -38px;
-                border-width: 0 0 619px 300px;
-            }
-        }
-        @media screen and (min-width: 1024px) {
-            .large-hero {
-                padding-top: 14.5rem;
-            }
-            .large-hero__content {
-                position: absolute;
-                top: 20%;
-                max-width: 44%;
-                padding-left: 2%;
-                font-size: 1.4rem;
-                color: #fff;
-            }
-            .large-hero__heroimg {
-                object-position: center;
-            }
-            .large-hero__title {
-                color: #fff;
-                font-size: 4.1rem;
-                line-height: 1.5;
-            }
-            .large-hero__text {
-                max-width: 80%;
-            }
-            .large-hero__text:nth-of-type(2) {
-                max-width: 70%;
-            }
-            .large-hero__triangle {
-                display: none;
-            }
-            .large-hero__triangle--revert {
-                display: none;
-            }
-            .large-hero__blue-form {
+      }
+      @media screen and (min-width: 1200px) {
+          .large-hero__blue-form {
+            width: 70vw;
+            clip-path: polygon(0 0, 100% 0, 30% 100%, 0% 100%);
+          }
+          .large-hero__triangle--revert {
+          display: none;
+          }
+          .large-hero__content {
             position: absolute;
-            top: 0;
-            width: 33%;
-            height: 100%;
-            opacity: 0.7;
-            background-color: #0055A6;
-            }
-            .large-hero__blue-form:after {
-                content: '';
-                position: absolute;
-                display: block;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                background-color: #0055A6;
-                transform-origin: bottom left;
-                transform: skew(-23deg, 0deg);
-            }
+            top: 20%;
+            max-width: 58%;
+            padding-left: 2%;
+            font-size: 1.4rem;
+            color: #fff;
+          }
+          .large-hero__title {
+          color: #fff;
+          font-size: 4.1rem;
+          line-height: 1.5;
+        }
+        }
+        @media screen and (min-width: 1900px) {
+          .large-hero__blue-form {
+            width: 57vw;
+          }
         }
 
-        @media screen and (min-width: 1200px) {
-            .large-hero__content {
-                top: 25%;
-            }
+      @media screen and (min-width: 1200px) {
+        .large-hero__content {
+          max-width: 46%;
         }
+      }
+      @media screen and (min-width: 1400px) {
+        .large-hero {
+          padding-top: 13.4rem;
+        }
+      }
+      @media screen and (min-width: 1900px) {
+        .large-hero__title {
+          font-size: 5.6rem;
+        }
+        .large-hero__content {
+          max-width: 42%;
+          top: 18%;
+          padding-left: 5%;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header class="site-header">
-        <div class="site-header__top-banner">
-                <ul>
-                    <div><li>Mehr als 30 Jahre Erfahrung</li></div>
-                    <div><li>2x in Berlin</li></div>
-                    <div><li>über 25.000 Kunden</li></div>
-                    <div><li>über 40.000 Gutachten</li></div>
-                </ul>  
+      <div class="site-header__top-banner">
+        <ul>
+          <div><li>Mehr als 30 Jahre Erfahrung</li></div>
+          <div><li>2x in Berlin</li></div>
+          <div><li>über 25.000 Kunden</li></div>
+          <div><li>über 40.000 Gutachten</li></div>
+        </ul>
+      </div>
+
+      <nav class="site-header__nav">
+        <div class="site-header__logo">
+          <img src="assets/images/logo.svg" alt="" />
         </div>
 
-        <nav class="site-header__nav">
-            <div class="site-header__logo">
-                <img src="assets/images/logo.svg" alt="">
-            </div>
-     
-            <input class="site-header__menu-btn" type="checkbox" id="menu-btn">
-            <label class="site-header__menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <input class="site-header__menu-btn" type="checkbox" id="menu-btn" />
+        <label class="site-header__menu-icon" for="menu-btn"
+          ><span class="navicon"></span
+        ></label>
 
-            <div class="site-header__form site-header__form--menu"></div>
-           
-            <ul class="site-header__menu">
-                <li><a class="site-header__menu-item" href="#leistungen">Leistungen</a></li>
-                <li><a class="site-header__menu-item" href="#ueber-uns">Über uns</a></li>
-                <li><a class="site-header__menu-item" href="#kontakt">Kontakt</a></li>
-                <li><a class="site-header__menu-item" href="#termin-buchen">Termin buchen</a></li>
-                <li><a class="site-header__menu-item" href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
+        <div class="site-header__form site-header__form--menu"></div>
+
+        <ul class="site-header__menu">
+          <li>
+            <a class="site-header__menu-item" href="#leistungen">Leistungen</a>
+          </li>
+          <li>
+            <a class="site-header__menu-item" href="#ueber-uns">Über uns</a>
+          </li>
+          <li><a class="site-header__menu-item" href="#kontakt">Kontakt</a></li>
+          <li>
+            <a class="site-header__menu-item" href="#termin-buchen"
+              >Termin buchen</a
+            >
+          </li>
+          <li><a class="site-header__menu-item" href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
     </header>
-    
+
     <div class="large-hero">
-        <div class="large-hero__blue-form"></div>
-        <div class="large-hero__triangle"></div>
-        
-        <picture>
-            <source media="(min-width: 1200px)" data-srcset="assets/images/titelbild--desktop.webp 1x, assets/images/titelbild--desktop@2x.webp 2x">
-            <source media="(min-width: 1200px)" data-srcset="assets/images/titelbild--desktop.jpg 1x, assets/images/titelbild--desktop@2x.jpg 2x">
-            <source media="(min-width: 1024px)" data-srcset="assets/images/titelbild--large.webp 1x, assets/images/titelbild--large@2x.webp 2x">
-            <source media="(min-width: 1024px)" data-srcset="assets/images/titelbild--large.jpg 1x, assets/images/titelbild--large@2x.jpg 2x">
-            <source media="(min-width: 545px)" data-srcset="assets/images/titelbild--medium.webp 1x, assets/images/titelbild--medium@2x.webp 2x">
-            <source media="(min-width: 545px)" data-srcset="assets/images/titelbild--medium.jpg 1x, assets/images/titelbild--medium@2x.jpg 2x">
-            <source data-srcset="assets/images/titelbild.webp 1x, assets/images/titelbild@2x.webp 2x">
-            <source data-srcset="assets/images/titelbild.jpg 1x, assets/images/titelbild@2x.jpg 2x">
-            <img class="lazyload large-hero__heroimg" data-src="assets/images/titelbild.jpg" alt="titelbild">
-        </picture>
+      <div class="large-hero__blue-form"></div>
+      <div class="large-hero__triangle"></div>
+
+      <picture>
+        <source
+          media="(min-width: 1200px)"
+          data-srcset="assets/images/titelbild--desktop.webp 1x, assets/images/titelbild--desktop@2x.webp 2x"
+        />
+        <source
+          media="(min-width: 1200px)"
+          data-srcset="assets/images/titelbild--desktop.jpg 1x, assets/images/titelbild--desktop@2x.jpg 2x"
+        />
+        <source
+          media="(min-width: 1024px)"
+          data-srcset="assets/images/titelbild--large.webp 1x, assets/images/titelbild--large@2x.webp 2x"
+        />
+        <source
+          media="(min-width: 1024px)"
+          data-srcset="assets/images/titelbild--large.jpg 1x, assets/images/titelbild--large@2x.jpg 2x"
+        />
+        <source
+          media="(min-width: 545px)"
+          data-srcset="assets/images/titelbild--medium.webp 1x, assets/images/titelbild--medium@2x.webp 2x"
+        />
+        <source
+          media="(min-width: 545px)"
+          data-srcset="assets/images/titelbild--medium.jpg 1x, assets/images/titelbild--medium@2x.jpg 2x"
+        />
+        <source
+          data-srcset="assets/images/titelbild.webp 1x, assets/images/titelbild@2x.webp 2x"
+        />
+        <source
+          data-srcset="assets/images/titelbild.jpg 1x, assets/images/titelbild@2x.jpg 2x"
+        />
+        <img
+          class="lazyload large-hero__heroimg"
+          data-src="assets/images/titelbild.jpg"
+          alt="titelbild"
+        />
+      </picture>
     </div>
 
     <div class="large-hero__content">
-            <h1 class="large-hero__title">Das Unabhängige Unfallgutachten für Ihr Fahrzeug</h1>
-            <p class="large-hero__text">Seit 1987 sind wir als Kfz-Gutachter in Berlin für Sie tätig, um nach einem Verkehrsunfall die Höhe des entstandenen Schadens zu bestimmen. Unsere oberste Prämisse ist es, neutral, objektiv und unabhängig von Versicherungen zu agieren.</p>
-            <br>
-            <p class="large-hero__text">Bei uns bekommen Sie ein anerkanntes Gutachten, dass den Schaden vollständig beziffert und zur Vorlage bei der Versicherung oder vor Gericht verwendet werden kann. Ist die Schuldfrage noch ungeklärt, erhalten Sie eine kostenlose Beweissicherung und Beratung.</p>
-            
-            <a class="btn" href="#">
-                <div class="btn__container">
-                    <p class="btn__text">kontaktieren Sie uns</p>
-                </div>
-            </a>    
-        <div class="large-hero__triangle--revert"></div>
+      <h1 class="large-hero__title">
+        Das Unabhängige Unfallgutachten für Ihr Fahrzeug
+      </h1>
+      <p class="large-hero__text">
+        Seit 1987 sind wir als Kfz-Gutachter in Berlin für Sie tätig, um nach
+        einem Verkehrsunfall die Höhe des entstandenen Schadens zu bestimmen.
+        Unsere oberste Prämisse ist es, neutral, objektiv und unabhängig von
+        Versicherungen zu agieren.
+      </p>
+      <br />
+      <p class="large-hero__text">
+        Bei uns bekommen Sie ein anerkanntes Gutachten, dass den Schaden
+        vollständig beziffert und zur Vorlage bei der Versicherung oder vor
+        Gericht verwendet werden kann. Ist die Schuldfrage noch ungeklärt,
+        erhalten Sie eine kostenlose Beweissicherung und Beratung.
+      </p>
+
+      <a class="btn" href="#">
+        <div class="btn__container">
+          <p class="btn__text">kontaktieren Sie uns</p>
+        </div>
+      </a>
+      <div class="large-hero__triangle--revert"></div>
     </div>
-    
+
     <section id="leistungen" class="leistungen">
-                    <div class="container-fluid leistungen__container">
-                    <div class="row">
-                            <h2 class="col-12 headline headline--left headline--none">Wussten Sie, dass...</h2>
-                            <div class="site-header__form site-header__form--revert"></div>
- 
-                            <div class="leistungen__md-container">
-                                <h2 class="headline headline--xl">Wussten Sie, dass...</h2>
-                                <div class="large-hero__triangle--lighter"></div>
-                                <div class="large-hero__triangle--mirror"></div>
+      <div class="container-fluid leistungen__container">
+        <div class="row">
+          <h2 class="col-12 headline headline--left headline--none">
+            Wussten Sie, dass...
+          </h2>
+          <div class="site-header__form site-header__form--revert"></div>
 
-                                
-                                <div class="leistungen__form_top-left"></div>
-                                <div class="leistungen__form_bottom-left"></div>
+          <div class="leistungen__md-container">
+            <h2 class="headline headline--xl">Wussten Sie, dass...</h2>
+            <div class="large-hero__triangle--lighter"></div>
+            <div class="large-hero__triangle--mirror"></div>
 
-                                    <div class="leistungen__form-lg"></div>
+            <div class="leistungen__form_top-left"></div>
+            <div class="leistungen__form_bottom-left"></div>
 
-                                <ul class="leistungen__list">
-                                    <li>dass ein Gutachten vor allem der Beweissicherung dient, um Ihren vollumfänglichen Anspruch gegenüber der Versicherung zu begründen?</li>
-                                    <li>dass die Kosten für das Kfz-Gutachten im Falle geklärter Schuldfrage von der Versicherung bezahlt wird?</li>
-                                    <li>Sie die freie Wahl haben, in welcher Werkstatt Sie Ihren Unfall reparieren lassen wollen?</li>
-                                    <li>Sie die freie Wahl haben, ob Sie den Schaden überhaupt reparieren lassen wollen?</li>
-                                    <li>man sich den Schadenersatz auch auszahlen lassen kann ohne zu reparieren?</li>
-                                    <li>Sie einen eigenen Sachverständigen einschalten dürfen und nicht auf die Schadensschätzung durch den Versicherer vertrauen müssen?</li>
-                                    <li>die Versicherung Ihnen für die Zeit der Reparatur ein Ersatzfahrzeug bzw. eine Nutzungsausfallentschädigung zahlen muss?</li>
-                                    <li>Sie auch die Kosten für einen Anwalt erstattet bekommen?</li>
-                                    <li>dass der Gutachter auch prüft, ob trotz fachgerechter Reparatur ein Minderwert verbleiben würde? Dieser steht Ihnen auch ohne Reparatur zu.</li>
-                                </ul>
+            <div class="leistungen__form-lg"></div>
 
-                                
-                                <div class="leistungen__form_top-left leistungen__form_top-left--right"></div>
-                                <div class="leistungen__form_bottom-left leistungen__form_bottom-left--right"></div>
-                                    
-                                    <div class="leistungen__form-lg leistungen__form-lg--right"></div>
-                            </div>
-                        </div>
-                    </div>
+            <ul class="leistungen__list">
+              <li>
+                dass ein Gutachten vor allem der Beweissicherung dient, um Ihren
+                vollumfänglichen Anspruch gegenüber der Versicherung zu
+                begründen?
+              </li>
+              <li>
+                dass die Kosten für das Kfz-Gutachten im Falle geklärter
+                Schuldfrage von der Versicherung bezahlt wird?
+              </li>
+              <li>
+                Sie die freie Wahl haben, in welcher Werkstatt Sie Ihren Unfall
+                reparieren lassen wollen?
+              </li>
+              <li>
+                Sie die freie Wahl haben, ob Sie den Schaden überhaupt
+                reparieren lassen wollen?
+              </li>
+              <li>
+                man sich den Schadenersatz auch auszahlen lassen kann ohne zu
+                reparieren?
+              </li>
+              <li>
+                Sie einen eigenen Sachverständigen einschalten dürfen und nicht
+                auf die Schadensschätzung durch den Versicherer vertrauen
+                müssen?
+              </li>
+              <li>
+                die Versicherung Ihnen für die Zeit der Reparatur ein
+                Ersatzfahrzeug bzw. eine Nutzungsausfallentschädigung zahlen
+                muss?
+              </li>
+              <li>Sie auch die Kosten für einen Anwalt erstattet bekommen?</li>
+              <li>
+                dass der Gutachter auch prüft, ob trotz fachgerechter Reparatur
+                ein Minderwert verbleiben würde? Dieser steht Ihnen auch ohne
+                Reparatur zu.
+              </li>
+            </ul>
 
-                    <div class="container-fluid leistungen__form-container">
-                        <div class="site-header__form site-header__form--lighter"></div>
-                    </div>
-                    
-                    <div class="container-fluid leistungen__crash">
-                        <div class="row">
-                            <div class="leistungen__md-title-container">
-                                <h2 class="headline headline--white headline--picture">Unfall!<br> und was nun?</h2>
-                                
-                                <picture>
-                                        <source media="(min-width: 992px)" data-srcset="assets/images/unfall--large.webp 1x, assets/images/unfall--large@2x.webp 2x">
-                                        <source media="(min-width: 992px)" data-srcset="assets/images/unfall--large.jpg 1x, assets/images/unfall--large@2x.jpg 2x">
-                                        <source media="(min-width: 415px)" data-srcset="assets/images/unfall--medium.webp 1x, assets/images/unfall--medium@2x.webp 2x">
-                                        <source media="(min-width: 414px)" data-srcset="assets/images/unfall--medium.jpg 1x, assets/images/unfall--medium@2x.jpg 2x">
-                                        <source data-srcset="assets/images/unfall--small.webp 1x, assets/images/unfall--small@2x.webp 2x">
-                                        <source data-srcset="assets/images/unfall--small.jpg 1x, assets/images/unfall--small@2x.jpg 2x">
-                                        <img class="lazyload leistungen__unfallImg" data-src="assets/images/unfall--small.jpg" alt="unfallbild">
-                                </picture>
+            <div
+              class="leistungen__form_top-left leistungen__form_top-left--right"
+            ></div>
+            <div
+              class="leistungen__form_bottom-left leistungen__form_bottom-left--right"
+            ></div>
 
-                                <div class="leistungen__wrapper">
-                                    <h2 class="headline headline--white headline--md-none">Unfall! und was nun?</h2>
-                                    <span class="leistungen__question-icon leistungen__question-icon--question-mark">?</span>
-                                        <div class="leistungen__messagebox leistungen__messagebox--speech">
-                                                <h4 class="leistungen__title">Welche Rente habe ich im Schadensfall?</h4>
-                                                <p class="leistungen__message-text">Ein Autounfall tritt selten auf – durchschnittlich alle sieben Jahre pro Autofahrer. Viele wissen daher nicht, welche Möglichkeiten sie in diesem Fall haben. Unsicherheit und Hilflosigkeit sind die Folge.</p>
-                                        </div>
-    
-                                        <div class="leistungen__messagebox leistungen__messagebox--speech">
-                                                <h4 class="leistungen__title">Darf ich überhaupt einen Gutachter beauftragen?</h4>
-                                                <p class="leistungen__message-text">Fehlende Sachkenntnis im Schadensfall und falsche Informationen verunsichern und verleiten dazu, die Sache aus der Hand zu geben. Begegnen Sie der Versicherung auf Augenhöhe und verhelfen Sie sich zu Ihrem Recht.</p>
-                                        </div>
-    
-                                        <div class="leistungen__messagebox leistungen__messagebox--speech">
-                                            <h4 class="leistungen__title">Wer hilft mir dabei fair entschädigt zu werden?</h4>
-                                            <p class="leistungen__message-text">Wer in einen Unfall verwickelt ist, steht unter Stress. Dass Sie dennoch das Beste aus der Situation machen wollen, ist Ihr gutes Recht. Hier kommt es auf einen unabhängigen und erfahrenen Kfz-Gutachter an.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                    <div class="leistungen__our-experience">
-                        <div class="leistungen__wrapper leistungen__wrapper--white">
-                            <h2 class="headline headline--experience">Vertrauen Sie auf unsere Erfahrung</h2>
-                            
-                            <picture>
-                                <source media="(min-width: 1400px)" data-srcset="assets/images/trio--cropped.webp 1x, assets/images/trio--cropped@2x.webp 2x">
-                                <source media="(min-width: 1400px)" data-srcset="assets/images/trio--cropped.jpg 1x, assets/images/trio--cropped@2x.jpg 2x">
-                                <source media="(min-width: 900px)" data-srcset="assets/images/trio--large.webp 1x, assets/images/trio--large@2x.webp 2x">
-                                <source media="(min-width: 900px)" data-srcset="assets/images/trio--large.jpg 1x, assets/images/trio--large@2x.jpg 2x">
-                                <source  media="(min-width: 415px)" data-srcset="assets/images/trio--medium.webp 1x, assets/images/trio--medium@2x.webp 2x">
-                                <source  media="(min-width: 415px)" data-srcset="assets/images/trio--medium.jpg 1x, assets/images/trio--cropped--medium@2x.jpg 2x">        
-                                <source  data-srcset="assets/images/trio.webp 1x, assets/images/trio@2x.webp 2x">
-                                <source  data-srcset="assets/images/trio.jpg 1x, assets/images/trio@2x.jpg 2x">     
-                                <img class="lazyload leistungen__trioImg" data-src="assets/images/trio.jpg" alt="trio uhrbanke">
-                            </picture>
-                            
-                                <div class="leistungen__messagebox leistungen__messagebox--lightBg leistungen__messagebox--right">
-                                    <h4>Beratung, Begutachtung und Betreuung</h4>
-                                    <p>… aus einer Hand. Durch unsere jahrelange Erfahrung, kennen wir Ihre Fragen und Sorgen, aber auch Ihre Ansprüche. Sie können sicher sein, den fairen Betrag zu erhalten, der Ihnen zusteht.</p>
-                                </div>
-                                <div class="leistungen__messagebox leistungen__messagebox--lightBg leistungen__messagebox--right">
-                                    <h4>Unsere Erfahrung - Ihr Vorteil</h4>
-                                    <p>Mit uns als kompetente Partner an Ihrer Seite, begegnen Sie der Versicherung auf Augenhöhe. So verschaffen Sie sich einen Vorteil und machen das Beste aus der Situation.</p>
-                                </div>
-                                <div class="leistungen__messagebox leistungen__messagebox--lightBg leistungen__messagebox--right">
-                                    <h4>Ein qualifiziertes Gutachten mit optimalem Ergebnis</h4>
-                                    <p>Ob zur Vorlage bei der Versicherung, vor Gericht oder den Behörden - Sie bekommen ein umfassendes und offiziell anerkanntes Gutachten. Sie können sicher sein, das Thema an Experten mit Sachverstand abzugeben.</p>
-                                </div>
-                                <span class="leistungen__question-icon leistungen__question-icon--right">!</span>
-                        </div>
-                    </div>
-        
-                    <div class="leistungen__our-priority">
-                        
-                        <h2 class="headline headline--left headline--md-center headline--priority">Unser oberstes Gebot: Unabhängig&nbsp;und Neutralität</h2>
-                        
-                        <div class="leistungen__our-priority-wrapper">
-                            <div class="leistungen__our-priority-column leistungen__nopadding">
-                                <picture>
-                                    <source media="(min-width: 1200px)" data-srcset="assets/images/unfallbegutachtung--desktop.webp 1x, assets/images/unfallbegutachtung--desktop@2x.webp 2x">
-                                    <source media="(min-width: 1200px)" data-srcset="assets/images/unfallbegutachtung--desktop.jpg 1x, assets/images/unfallbegutachtung--desktop@2x.jpg 2x">
-                                    <source media="(min-width: 768px)" data-srcset="assets/images/unfallbegutachtung--large.webp 1x, assets/images/unfallbegutachtung--large@2x.webp 2x">
-                                    <source media="(min-width: 768px)" data-srcset="assets/images/unfallbegutachtung--large.jpg 1x, assets/images/unfallbegutachtung--large@2x.jpg 2x">
-                                    <source media="(min-width: 415px)" data-srcset="assets/images/unfallbegutachtung--medium.webp 1x, assets/images/unfallbegutachtung--medium@2x.webp 2x">
-                                    <source media="(min-width: 415px)" data-srcset="assets/images/unfallbegutachtung--medium.jpg 1x, assets/images/unfallbegutachtung--medium@2x.jpg 2x">
-                                    <source data-srcset="assets/images/unfallbegutachtung.webp 1x, assets/images/unfallbegutachtung@2x.webp 2x">
-                                    <source data-srcset="assets/images/unfallbegutachtung.jpg 1x, assets/images/unfallbegutachtung@2x.jpg 2x">
-                                    <img class="lazyload leistungen__unfallbegutachtungImg" data-src="assets/images/unfallbegutachtung.jpg" alt="unfallbegutachtung">
-                                </picture>
-                            </div>
+            <div class="leistungen__form-lg leistungen__form-lg--right"></div>
+          </div>
+        </div>
+      </div>
 
-                            <div class="leistungen__our-priority-container">
-                                <div class="leistungen__our-priority-text-box">
-                                    <h4 class="our-priority__title">Unbeeinflusst und objektiv</h4>
-                                    <p>Versicherungen sind bei der Ermittlung der Schadenersatzkosten befangen, da sie die eigene Finanzlage berücksichtigen. Bei uns erhalten Sie eine sachliche und ganzheitliche Bewertung, die all Ihre Ansprüche abdeckt.</p>
-                                    <div class="site-header__form site-header__form--our-priority"></div>
-                                </div>
-                                
-                                <div class="leistungen__our-priority-text-box leistungen__our-priority-text-box--reverse">
-                                    <h4 class="our-priority__title">Qualifizierte Experten</h4>
-                                    <p>Häufig verzichten Versicherungen auf die Erstellung eines umfangreichen Gutachtens. Die Folge: Beweise werden vernichtet und Teile Ihres Anspruchs verfallen. Mit unseren Gutachten können Sie gewiss sein, fair entschädigt zu werden.</p>
-                                    <div class="site-header__form site-header__form--our-priority-revert"></div>
-                                </div>
-                
-                                <div class="leistungen__our-priority-text-box">
-                                    <h4 class="our-priority__title">Kundenorientierte Arbeitsweise</h4>
-                                    <p>Vereinbaren Sie mit uns einen Termin, und wir begutachten Ihr Fahrzeug sorgfältig sowie fachkundig. Wir nehmen sämtliche Daten Ihres Fahrzeugs auf, dokumentieren den Zustand und erstellen Fotos. Ihr Ergebnis: Ein umfangreiches Gutachten, dass alle Schäden berücksichtigt.</p>
-                                    <div class="site-header__form site-header__form--our-priority-custom"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="container leistungen__know-how">
-                        <div class="row">
-                            <h2 class="headline headline--know-how">Fundiertes Know-How und Serviceorientierung</h2>
-                            
-                            <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
-                                <div class="leistungen__card">
-                                    <div class="card__img">
-                                        <img class="lazyload" data-src="assets/images/know-how--icon1.svg" alt="Mail Icon">
-                                    </div>
-                                    <p>Ob PKW, LKW oder motorisiertes Zweirad – als Kunde können Sie sich auf ein fachkundiges Gutachten verlassen.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
-                                <div class="leistungen__card">
-                                    <div class="card__img">
-                                        <img class="lazyload" data-src="assets/images/know-how--icon2.svg" alt="Verkehrsmittel Icon">
-                                    </div>
-                                    <p>Unsere Gutachter verfügen über einen Ingenieursgrad und somit über weitreichende technische Kenntnisse.</p>
-                                </div>
-                            </div>
+      <div class="container-fluid leistungen__form-container">
+        <div class="site-header__form site-header__form--lighter"></div>
+      </div>
 
-                            <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
-                                <div class="leistungen__card">
-                                    <div class="card__img">
-                                        <img class="lazyload" data-src="assets/images/know-how--icon3.svg" alt="Zertifikat Icon">
-                                    </div>
-                                    <p>Wir arbeiten mit den größten Schadenserfassungssystemen, die 98 % aller Fahrzeuge abdecken.</p>
-                                </div>    
-                            </div>
- 
-                            <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
-                                <div class="leistungen__card">
-                                    <div class="card__img">
-                                        <img class="lazyload" data-src="assets/images/know-how--icon4.svg" alt="Computer Icon">
-                                    </div>
-                                    <p>Sie profitieren von einem Full-Service, denn wir versenden das Gutachten direkt an die Versicherung.</p>
-                                </div>
-                            </div>
+      <div class="container-fluid leistungen__crash">
+        <div class="row">
+          <div class="leistungen__md-title-container">
+            <h2 class="headline headline--white headline--picture">
+              Unfall!<br />
+              und was nun?
+            </h2>
 
-                            <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
-                                <div class="leistungen__card">
-                                    <div class="card__img">
-                                        <img class="lazyload" data-src="assets/images/know-how--icon5.svg" alt="Team Icon">
-                                    </div>
-                                    <p>Dank unseres großen Teams besichtigen wir Ihr Fahrzeug meist noch am Tag der Beauftragung.</p>
-                                </div>    
-                            </div>
-                            
-                            <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
-                                <div class="leistungen__card">
-                                    <div class="card__img">
-                                        <img class="lazyload" data-src="assets/images/know-how--icon6.svg" alt="Standort Icon">
-                                    </div>
-                                    <p>Unsere Sachverständigen finden Sie an mehreren Standorten in Berlin.</p>
-                                </div>    
-                            </div>
-   
-                            <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
-                                <div class="leistungen__card">
-                                    <div class="card__img">
-                                        <img class="lazyload" data-src="assets/images/know-how--icon7.svg" alt="Lupe Icon">
-                                    </div>
-                                    <p>Durch die von Versicherungen unabhängige Arbeit bewerten wir die Situation absolut neutral und objektiv.</p>
-                                </div>    
-                            </div>
-  
-                            <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
-                                <div class="leistungen__card">
-                                    <div class="card__img">
-                                        <img class="lazyload" data-src="assets/images/know-how--icon8.svg" alt="Waage Icon">
-                                    </div>
-                                    <p>Dank unserer engen Zusammenarbeit mit Juristen, basieren unsere Gutachten stetig auf der aktuellsten Rechtsprechung.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>   
+            <picture>
+              <source
+                media="(min-width: 992px)"
+                data-srcset="assets/images/unfall--large.webp 1x, assets/images/unfall--large@2x.webp 2x"
+              />
+              <source
+                media="(min-width: 992px)"
+                data-srcset="assets/images/unfall--large.jpg 1x, assets/images/unfall--large@2x.jpg 2x"
+              />
+              <source
+                media="(min-width: 415px)"
+                data-srcset="assets/images/unfall--medium.webp 1x, assets/images/unfall--medium@2x.webp 2x"
+              />
+              <source
+                media="(min-width: 414px)"
+                data-srcset="assets/images/unfall--medium.jpg 1x, assets/images/unfall--medium@2x.jpg 2x"
+              />
+              <source
+                data-srcset="assets/images/unfall--small.webp 1x, assets/images/unfall--small@2x.webp 2x"
+              />
+              <source
+                data-srcset="assets/images/unfall--small.jpg 1x, assets/images/unfall--small@2x.jpg 2x"
+              />
+              <img
+                class="lazyload leistungen__unfallImg"
+                data-src="assets/images/unfall--small.jpg"
+                alt="unfallbild"
+              />
+            </picture>
+
+            <div class="leistungen__wrapper">
+              <h2 class="headline headline--white headline--md-none">
+                Unfall! und was nun?
+              </h2>
+              <span
+                class="leistungen__question-icon leistungen__question-icon--question-mark"
+                >?</span
+              >
+              <div
+                class="leistungen__messagebox leistungen__messagebox--speech"
+              >
+                <h4 class="leistungen__title">
+                  Welche Rente habe ich im Schadensfall?
+                </h4>
+                <p class="leistungen__message-text">
+                  Ein Autounfall tritt selten auf – durchschnittlich alle sieben
+                  Jahre pro Autofahrer. Viele wissen daher nicht, welche
+                  Möglichkeiten sie in diesem Fall haben. Unsicherheit und
+                  Hilflosigkeit sind die Folge.
+                </p>
+              </div>
+
+              <div
+                class="leistungen__messagebox leistungen__messagebox--speech"
+              >
+                <h4 class="leistungen__title">
+                  Darf ich überhaupt einen Gutachter beauftragen?
+                </h4>
+                <p class="leistungen__message-text">
+                  Fehlende Sachkenntnis im Schadensfall und falsche
+                  Informationen verunsichern und verleiten dazu, die Sache aus
+                  der Hand zu geben. Begegnen Sie der Versicherung auf Augenhöhe
+                  und verhelfen Sie sich zu Ihrem Recht.
+                </p>
+              </div>
+
+              <div
+                class="leistungen__messagebox leistungen__messagebox--speech"
+              >
+                <h4 class="leistungen__title">
+                  Wer hilft mir dabei fair entschädigt zu werden?
+                </h4>
+                <p class="leistungen__message-text">
+                  Wer in einen Unfall verwickelt ist, steht unter Stress. Dass
+                  Sie dennoch das Beste aus der Situation machen wollen, ist Ihr
+                  gutes Recht. Hier kommt es auf einen unabhängigen und
+                  erfahrenen Kfz-Gutachter an.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="leistungen__our-experience">
+        <div class="leistungen__wrapper leistungen__wrapper--white">
+          <h2 class="headline headline--experience">
+            Vertrauen Sie auf unsere Erfahrung
+          </h2>
+
+          <picture>
+            <source
+              media="(min-width: 1400px)"
+              data-srcset="assets/images/trio--cropped.webp 1x, assets/images/trio--cropped@2x.webp 2x"
+            />
+            <source
+              media="(min-width: 1400px)"
+              data-srcset="assets/images/trio--cropped.jpg 1x, assets/images/trio--cropped@2x.jpg 2x"
+            />
+            <source
+              media="(min-width: 900px)"
+              data-srcset="assets/images/trio--large.webp 1x, assets/images/trio--large@2x.webp 2x"
+            />
+            <source
+              media="(min-width: 900px)"
+              data-srcset="assets/images/trio--large.jpg 1x, assets/images/trio--large@2x.jpg 2x"
+            />
+            <source
+              media="(min-width: 415px)"
+              data-srcset="assets/images/trio--medium.webp 1x, assets/images/trio--medium@2x.webp 2x"
+            />
+            <source
+              media="(min-width: 415px)"
+              data-srcset="assets/images/trio--medium.jpg 1x, assets/images/trio--cropped--medium@2x.jpg 2x"
+            />
+            <source
+              data-srcset="assets/images/trio.webp 1x, assets/images/trio@2x.webp 2x"
+            />
+            <source
+              data-srcset="assets/images/trio.jpg 1x, assets/images/trio@2x.jpg 2x"
+            />
+            <img
+              class="lazyload leistungen__trioImg"
+              data-src="assets/images/trio.jpg"
+              alt="trio uhrbanke"
+            />
+          </picture>
+
+          <div
+            class="leistungen__messagebox leistungen__messagebox--lightBg leistungen__messagebox--right"
+          >
+            <h4>Beratung, Begutachtung und Betreuung</h4>
+            <p>
+              … aus einer Hand. Durch unsere jahrelange Erfahrung, kennen wir
+              Ihre Fragen und Sorgen, aber auch Ihre Ansprüche. Sie können
+              sicher sein, den fairen Betrag zu erhalten, der Ihnen zusteht.
+            </p>
+          </div>
+          <div
+            class="leistungen__messagebox leistungen__messagebox--lightBg leistungen__messagebox--right"
+          >
+            <h4>Unsere Erfahrung - Ihr Vorteil</h4>
+            <p>
+              Mit uns als kompetente Partner an Ihrer Seite, begegnen Sie der
+              Versicherung auf Augenhöhe. So verschaffen Sie sich einen Vorteil
+              und machen das Beste aus der Situation.
+            </p>
+          </div>
+          <div
+            class="leistungen__messagebox leistungen__messagebox--lightBg leistungen__messagebox--right"
+          >
+            <h4>Ein qualifiziertes Gutachten mit optimalem Ergebnis</h4>
+            <p>
+              Ob zur Vorlage bei der Versicherung, vor Gericht oder den Behörden
+              - Sie bekommen ein umfassendes und offiziell anerkanntes
+              Gutachten. Sie können sicher sein, das Thema an Experten mit
+              Sachverstand abzugeben.
+            </p>
+          </div>
+          <span
+            class="leistungen__question-icon leistungen__question-icon--right"
+            >!</span
+          >
+        </div>
+      </div>
+
+      <div class="leistungen__our-priority">
+        <h2
+          class="headline headline--left headline--md-center headline--priority"
+        >
+          Unser oberstes Gebot: Unabhängig&nbsp;und Neutralität
+        </h2>
+
+        <div class="leistungen__our-priority-wrapper">
+          <div class="leistungen__our-priority-column leistungen__nopadding">
+            <picture>
+              <source
+                media="(min-width: 1200px)"
+                data-srcset="assets/images/unfallbegutachtung--desktop.webp 1x, assets/images/unfallbegutachtung--desktop@2x.webp 2x"
+              />
+              <source
+                media="(min-width: 1200px)"
+                data-srcset="assets/images/unfallbegutachtung--desktop.jpg 1x, assets/images/unfallbegutachtung--desktop@2x.jpg 2x"
+              />
+              <source
+                media="(min-width: 768px)"
+                data-srcset="assets/images/unfallbegutachtung--large.webp 1x, assets/images/unfallbegutachtung--large@2x.webp 2x"
+              />
+              <source
+                media="(min-width: 768px)"
+                data-srcset="assets/images/unfallbegutachtung--large.jpg 1x, assets/images/unfallbegutachtung--large@2x.jpg 2x"
+              />
+              <source
+                media="(min-width: 415px)"
+                data-srcset="assets/images/unfallbegutachtung--medium.webp 1x, assets/images/unfallbegutachtung--medium@2x.webp 2x"
+              />
+              <source
+                media="(min-width: 415px)"
+                data-srcset="assets/images/unfallbegutachtung--medium.jpg 1x, assets/images/unfallbegutachtung--medium@2x.jpg 2x"
+              />
+              <source
+                data-srcset="assets/images/unfallbegutachtung.webp 1x, assets/images/unfallbegutachtung@2x.webp 2x"
+              />
+              <source
+                data-srcset="assets/images/unfallbegutachtung.jpg 1x, assets/images/unfallbegutachtung@2x.jpg 2x"
+              />
+              <img
+                class="lazyload leistungen__unfallbegutachtungImg"
+                data-src="assets/images/unfallbegutachtung.jpg"
+                alt="unfallbegutachtung"
+              />
+            </picture>
+          </div>
+
+          <div class="leistungen__our-priority-container">
+            <div class="leistungen__our-priority-text-box">
+              <h4 class="our-priority__title">Unbeeinflusst und objektiv</h4>
+              <p>
+                Versicherungen sind bei der Ermittlung der Schadenersatzkosten
+                befangen, da sie die eigene Finanzlage berücksichtigen. Bei uns
+                erhalten Sie eine sachliche und ganzheitliche Bewertung, die all
+                Ihre Ansprüche abdeckt.
+              </p>
+              <div
+                class="site-header__form site-header__form--our-priority"
+              ></div>
+            </div>
+
+            <div
+              class="leistungen__our-priority-text-box leistungen__our-priority-text-box--reverse"
+            >
+              <h4 class="our-priority__title">Qualifizierte Experten</h4>
+              <p>
+                Häufig verzichten Versicherungen auf die Erstellung eines
+                umfangreichen Gutachtens. Die Folge: Beweise werden vernichtet
+                und Teile Ihres Anspruchs verfallen. Mit unseren Gutachten
+                können Sie gewiss sein, fair entschädigt zu werden.
+              </p>
+              <div
+                class="site-header__form site-header__form--our-priority-revert"
+              ></div>
+            </div>
+
+            <div class="leistungen__our-priority-text-box">
+              <h4 class="our-priority__title">
+                Kundenorientierte Arbeitsweise
+              </h4>
+              <p>
+                Vereinbaren Sie mit uns einen Termin, und wir begutachten Ihr
+                Fahrzeug sorgfältig sowie fachkundig. Wir nehmen sämtliche Daten
+                Ihres Fahrzeugs auf, dokumentieren den Zustand und erstellen
+                Fotos. Ihr Ergebnis: Ein umfangreiches Gutachten, dass alle
+                Schäden berücksichtigt.
+              </p>
+              <div
+                class="site-header__form site-header__form--our-priority-custom"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container leistungen__know-how">
+        <div class="row">
+          <h2 class="col-12 headline headline--know-how">
+            Fundiertes Know-How &<br class="kontakt__break-none"/>
+            Serviceorientierung
+          </h2>
+
+          <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
+            <div class="leistungen__card leistungen__card-height">
+              <div class="card__img">
+                <img
+                  class="lazyload"
+                  data-src="assets/images/know-how--icon2.svg"
+                  alt="Mail Icon"
+                />
+              </div>
+              <p>
+                Ob PKW, LKW oder motorisiertes Zweirad – als Kunde können Sie
+                sich auf ein fachkundiges Gutachten verlassen.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
+            <div class="leistungen__card leistungen__card-height">
+              <div class="card__img">
+                <img
+                  class="lazyload"
+                  data-src="assets/images/know-how--icon3.svg"
+                  alt="Verkehrsmittel Icon"
+                />
+              </div>
+              <p>
+                Unsere Gutachter verfügen über einen Ingenieursgrad und somit
+                über weitreichende technische Kenntnisse.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
+            <div class="leistungen__card leistungen__card-height">
+              <div class="card__img">
+                <img
+                  class="lazyload"
+                  data-src="assets/images/know-how--icon4.svg"
+                  alt="Zertifikat Icon"
+                />
+              </div>
+              <p>
+                Wir arbeiten mit den größten Schadenserfassungssystemen, die 98
+                % aller Fahrzeuge abdecken.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
+            <div class="leistungen__card leistungen__card-height">
+              <div class="card__img">
+                <img
+                  class="lazyload"
+                  data-src="assets/images/know-how--icon1.svg"
+                  alt="Computer Icon"
+                />
+              </div>
+              <p>
+                Sie profitieren von einem Full-Service, denn wir versenden das
+                Gutachten direkt an die Versicherung.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
+            <div class="leistungen__card leistungen__card-height">
+              <div class="card__img">
+                <img
+                  class="lazyload"
+                  data-src="assets/images/know-how--icon5.svg"
+                  alt="Team Icon"
+                />
+              </div>
+              <p>
+                Dank unseres großen Teams besichtigen wir Ihr Fahrzeug meist
+                noch am Tag der Beauftragung.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
+            <div class="leistungen__card leistungen__card-height">
+              <div class="card__img">
+                <img
+                  class="lazyload"
+                  data-src="assets/images/know-how--icon6.svg"
+                  alt="Standort Icon"
+                />
+              </div>
+              <p>
+                Unsere Sachverständigen finden Sie an mehreren Standorten in
+                Berlin.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
+            <div class="leistungen__card leistungen__card-height">
+              <div class="card__img">
+                <img
+                  class="lazyload"
+                  data-src="assets/images/know-how--icon7.svg"
+                  alt="Lupe Icon"
+                />
+              </div>
+              <p>
+                Durch die von Versicherungen unabhängige Arbeit bewerten wir die
+                Situation absolut neutral und objektiv.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-3 leistungen__dropshadow">
+            <div class="leistungen__card leistungen__card-height">
+              <div class="card__img">
+                <img
+                  class="lazyload"
+                  data-src="assets/images/know-how--icon8.svg"
+                  alt="Waage Icon"
+                />
+              </div>
+              <p>
+                Dank unserer engen Zusammenarbeit mit Juristen, basieren unsere
+                Gutachten stetig auf der aktuellsten Rechtsprechung.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="ueber-uns" class="ueber-uns">
-        <h2 class="headline headline--left headline--white headline--ueber-uns">Aus Leidenschaft für das Auto</h2>
-        <div class="site-header__form site-header__form--revert site-header__form--ueber-uns"></div>
+      <h2 class="headline headline--left headline--white headline--ueber-uns">
+        Aus Leidenschaft für das Auto
+      </h2>
+      <div
+        class="site-header__form site-header__form--revert site-header__form--ueber-uns"
+      ></div>
 
-        <picture>
-            <source media="(min-width: 1024px)" data-srcset="assets/images/team--desktop.webp 1x, assets/images/team--desktop@2x.webp 2x">
-            <source media="(min-width: 1024px)" data-srcset="assets/images/team--desktop.jpg 1x, assets/images/team--desktop@2x.jpg 2x">
-            <source media="(min-width: 415px)" data-srcset="assets/images/team--medium.webp 1x, assets/images/team--medium@2x.webp 2x">
-            <source media="(min-width: 415px)" data-srcset="assets/images/team--medium.jpg 1x, assets/images/team--medium@2x.jpg 2x">
-            <source data-srcset="assets/images/team.webp 1x, assets/images/team@2x.webp 2x">
-            <source data-srcset="assets/images/team.jpg 1x, assets/images/team@2x.jpg 2x">
-            <img class="lazyload mx-auto" data-src="assets/images/team.jpg" alt="das Team">
-        </picture>
+      <picture>
+        <source
+          media="(min-width: 1024px)"
+          data-srcset="assets/images/team--desktop.webp 1x, assets/images/team--desktop@2x.webp 2x"
+        />
+        <source
+          media="(min-width: 1024px)"
+          data-srcset="assets/images/team--desktop.jpg 1x, assets/images/team--desktop@2x.jpg 2x"
+        />
+        <source
+          media="(min-width: 415px)"
+          data-srcset="assets/images/team--medium.webp 1x, assets/images/team--medium@2x.webp 2x"
+        />
+        <source
+          media="(min-width: 415px)"
+          data-srcset="assets/images/team--medium.jpg 1x, assets/images/team--medium@2x.jpg 2x"
+        />
+        <source
+          data-srcset="assets/images/team.webp 1x, assets/images/team@2x.webp 2x"
+        />
+        <source
+          data-srcset="assets/images/team.jpg 1x, assets/images/team@2x.jpg 2x"
+        />
+        <img
+          class="lazyload mx-auto"
+          data-src="assets/images/team.jpg"
+          alt="das Team"
+        />
+      </picture>
 
-        <div class="container-fluid ueber-uns__blue-bg">
-            <div class="row ueber-uns__text-container">
-                <div class="col-12 col-xl-6">
-                    <p>
-                        <span class="ueber-uns__capital-letter">T</span>agtäglich passiert es, dass Versicherungen Geschädigte nach einem Verkehrsunfall unfair behandeln. Der Antrieb unseres Unternehmensgründers Gottfried Urbanke war es, hier für Gerechtigkeit zu sorgen und unseren Kunden als vertrauensvoller Ansprechpartner zur Seite zu stehen. Diese Überzeugung, die wir auch heute noch vertreten und leben, gab er an seinen Sohn weiter, der das Team seit 2006 unterstützt - zusammen mit unserem langjährigen Partner Herrn Freyberg,
-                    </p>
-                </div>
-                <div class="col-12 col-xl-6">
-                    <p>
-                        der die Filiale im Wedding betreut. Im Jahr 1987 entstand der Betrieb aus der Kfz-Werkstatt Gottfried Urbankes in Berlin-Wedding. Seine Begeisterung für Autos und die Beseitigung von Schäden bewegte ihn dazu, sich auf das Erstellen von automatisierten Kfz- Gutachten zu spezialisieren. Dank der hohen Zufriedenheit und Nachfrage unserer Kunden konnten wir unsere Tätigkeit seitdem regelmäßig ausweiten, weshalb wir 1996 ein Zweitbüro in Kreuzberg eröffneten.
-                    </p>
-                </div>
-            </div>
+      <div class="ueber-uns__blue-bg">
+        <div class="row ueber-uns__text-container">
+          <div class="col-12 col-xl-6">
+            <p>
+              <span class="ueber-uns__capital-letter">T</span>agtäglich passiert
+              es, dass Versicherungen Geschädigte nach einem Verkehrsunfall
+              unfair behandeln. Der Antrieb unseres Unternehmensgründers
+              Gottfried Urbanke war es, hier für Gerechtigkeit zu sorgen und
+              unseren Kunden als vertrauensvoller Ansprechpartner zur Seite zu
+              stehen. Diese Überzeugung, die wir auch heute noch vertreten und
+              leben, gab er an seinen Sohn weiter, der das Team seit 2006
+              unterstützt - zusammen mit unserem langjährigen Partner Herrn
+              Freyberg,
+            </p>
+          </div>
+          <div class="col-12 col-xl-6">
+            <p>
+              der die Filiale im Wedding betreut. Im Jahr 1987 entstand der
+              Betrieb aus der Kfz-Werkstatt Gottfried Urbankes in
+              Berlin-Wedding. Seine Begeisterung für Autos und die Beseitigung
+              von Schäden bewegte ihn dazu, sich auf das Erstellen von
+              automatisierten Kfz- Gutachten zu spezialisieren. Dank der hohen
+              Zufriedenheit und Nachfrage unserer Kunden konnten wir unsere
+              Tätigkeit seitdem regelmäßig ausweiten, weshalb wir 1996 ein
+              Zweitbüro in Kreuzberg eröffneten.
+            </p>
+          </div>
         </div>
-        
-        <div class="container ueber-uns__mitarbeiter">
-            <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 ueber-uns__column-center">
-                        
-                        <picture>
-                            <source data-srcset="assets/images/mitarbeiter1.webp 1x, assets/images/mitarbeiter1@2x.webp 2x">
-                            <source data-srcset="assets/images/mitarbeiter1.jpg 1x, assets/images/mitarbeiter1@2x.jpg 2x">
-                            <img class="lazyload ueber-uns__mitarbeiterImg" data-src="assets/images/mitarbeiter1.jpg" alt="ein Mitarbeiter">
-                        </picture>
-                        
-                        <p class="ueber-uns__name"><span class="ueber-uns__abschluss">Dipl.-Ing. (FH)</span><br> O. Freyberg</p>
-                        <p class="ueber-uns__bereich">Kfz-Sachverständiger</p>
-                        <ul class="ueber-uns__liste">
-                            <li>Büro-Wedding</li>
-                            <li><a href="tel:0157 757 22 000">0157 757 22 000</a></li>
-                            <li><a href="mailto:FB@urbanke.net">FB@urbanke.net</a></li>
-                        </ul>
-                    </div>
+      </div>
 
-                    <div class="col-12 col-md-6 col-lg-4 ueber-uns__column-center">
-                        
-                            <picture>
-                                <source data-srcset="assets/images/mitarbeiter3.webp 1x, assets/images/mitarbeiter3@2x.webp 2x">
-                                <source data-srcset="assets/images/mitarbeiter3.jpg 1x, assets/images/mitarbeiter3@2x.jpg 2x">
-                                <img class="lazyload ueber-uns__mitarbeiterImg" data-src="assets/images/mitarbeiter3.jpg" alt="ein Mitarbeiter">
-                            </picture>
-                        
-                        <p class="ueber-uns__name"><span class="ueber-uns__abschluss">staatl. gepr. Techniker (KFZ)</span><br> E. Heinicke</p>
-                        <p class="ueber-uns__bereich">Kfz-Sachverständiger</p>
-                        <ul class="ueber-uns__liste">
-                            <li>Büro-Wedding</li>
-                            <li><a href="tel:0160 9051 9051">0160 9051 9051</a></li>
-                            <li><a href="mailto:HE@urbanke.net">HE@urbanke.net</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-12 col-md-12 col-lg-4 ueber-uns__column-center">
-                        
-                        <picture>
-                            <source data-srcset="assets/images/mitarbeiter2.webp 1x, assets/images/mitarbeiter2@2x.webp 2x">
-                            <source data-srcset="assets/images/mitarbeiter2.jpg 1x, assets/images/mitarbeiter2@2x.jpg 2x">
-                            <img class="lazyload ueber-uns__mitarbeiterImg" data-src="assets/images/mitarbeiter2.jpg" alt="ein Mitarbeiter">
-                        </picture>
-                
-                    <p class="ueber-uns__name"><span class="ueber-uns__abschluss">Dipl.-Ing. (FH)</span><br> B. Feuerhahn</p>
-                    <p class="ueber-uns__bereich">Kfz-Sachverständiger</p>
-                    <ul class="ueber-uns__liste">
-                        <li>Büro-Wedding</li>
-                        <li><a href="tel:0174 5600800">0174 5600800</a></li>
-                        <li><a href="mailto:BF@urbanke.net">BF@urbanke.net</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-6 ueber-uns__column-center">
-                    
-                        <picture>
-                            <source data-srcset="assets/images/mitarbeiter4.webp 1x, assets/images/mitarbeiter4@2x.webp 2x">
-                            <source data-srcset="assets/images/mitarbeiter4.jpg 1x, assets/images/mitarbeiter4@2x.jpg 2x">
-                            <img class="lazyload ueber-uns__mitarbeiterImg" data-src="assets/images/mitarbeiter4.jpg" alt="ein Mitarbeiter">
-                        </picture>
-                    
-                    <p class="ueber-uns__name">C. White</p>
-                    <p class="ueber-uns__bereich">Bürofachkraft</p>
-                    <ul class="ueber-uns__liste">
-                        <li>Büro-Wedding</li>
-                        <li><a href="tel:030 494 87 88">030 494 87 88</a></li>
-                        <li><a href="mailto:DH@urbanke.net">DH@urbanke.net</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-6 ueber-uns__column-center">
-                    
-                        <picture>
-                            <source data-srcset="assets/images/mitarbeiter5.webp 1x, assets/images/mitarbeiter5@2x.webp 2x">
-                            <source data-srcset="assets/images/mitarbeiter5.jpg 1x, assets/images/mitarbeiter5@2x.jpg 2x">
-                            <img class="lazyload ueber-uns__mitarbeiterImg" data-src="assets/images/mitarbeiter5.jpg" alt="ein Mitarbeiter">
-                        </picture>
-                  
-                    <p class="ueber-uns__name">C. Hiller</p>
-                    <p class="ueber-uns__bereich">Bürofachkraft</p>
-                    <ul class="ueber-uns__liste">
-                        <li>Büro-Wedding</li>
-                        <li><a href="tel:030 692 22 44">030 692 22 44</a></li>
-                        <li><a href="mailto:BL@urbanke.net">BL@urbanke.net</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="ueber-uns__banner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-6 order-lg-1 ueber-uns__text-column">
-                        <h2 class="ueber-uns__title">Zeitnah, kompetent und zuverlässig</h2>
-                        <ul>
-                            <li>Besichtigung noch am Tag der Beauftragung in und um Berlin</li>
-                            <li>vollumfängliches anerkanntes Gutachten zur Vorlage bei der Versicherung</li>
-                            <li>Beratung, Begutachtung und Betreuung aus einer Hand</li>
-                            <li>schnelle und faire Entschädigung</li>
-                        </ul>
-                    </div>
-    
-                    <div class="col-12 col-lg-6 order-lg-0 ueber-uns__img-column">
-                        <img class="lazyload ueber-uns__abzeichenImg" data-src="assets/images/abzeichen.svg" alt="Abzeichen Icon">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container ueber-uns__weitere-leistungen">
-            <div class="row">
-                <h2 class="headline headline--weitere-leistungen">weitere Leistungen</h2>
-                <h2 class="col-12 ueber-uns__subtitle">Neben Unfallgutachten als unsere Kernkompetenz<br class="ueber-uns__xl-none">bieten wir zusätzlich:</h2>
-                    
-                    <div class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen">
-                        <div class="ueber-uns__img">
-                            <img class="lazyload" data-src="assets/images/leistungen--icon1.svg" alt="Gutachten Icon">
-                        </div>
-                        <div class="ueber-uns__text">
-                            <h4>Kurz-Gutachten </h4>
-                            <p>Auch bei kleinsten Schäden wie Kratzer oder Dellen werden wir für Sie tätig. Unser Kurz-Gutachten erfüllt die Kriterien eines Kostenvoranschlags. Die hierfür anfallenden Kosten, werden, trotz anderslautender Argumente, von der Versicherung übernommen.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen">
-                        <div class="ueber-uns__img">
-                            <img class="lazyload" data-src="assets/images/leistungen--icon2.svg" alt="KFZ-Wertgutachten Icon">
-                        </div>
-                        <div class="ueber-uns__text">
-                            <h4>KFZ-Wertgutachten</h4>
-                            <p>Sie möchten Ihr Auto verkaufen, als Oldtimer versichern oder müssen dem Finanzamt oder Ihrer Versicherung nachweisen was Ihr Fahrzeug wert ist? Wir erstellen Ihnen ein umfangreiches und allseits anerkanntes Kfz-Wertgutachten (mit Fotos).</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen">
-                        <div class="ueber-uns__img">
-                            <img class="lazyload" data-src="assets/images/leistungen--icon3.svg" alt="Kamera Icon">
-                        </div>
-                        <div class="ueber-uns__text">
-                            <h4>Gebrauchtwagenprüfung</h4>
-                            <p>Minimieren Sie das Risiko beim Gebrauchtwagenkauf und lassen sie sich Ihren Favoriten von uns auf eventuelle Vorschäden, technische Mängel oder sonstige Auffälligkeiten hin untersuchen. Kosten fallen erst bei Anfahrt oder einer schriftlichen Ausarbeitung an.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen">
-                        <div class="ueber-uns__img">
-                            <img class="lazyload" data-src="assets/images/leistungen--icon4.svg" alt="Todo-listen Icon">
-                        </div>
-                        <div class="ueber-uns__text">
-                            <h4>Vorschadenanalyse</h4>
-                            <p>Unter Verwendung technischer Geräte und unserer jahrelangen Erfahrung führen wir innerhalb weniger Minuten eine kostenlose Vorschaden-Analyse an Ihrem Fahrzeug durch. Außerdem können wir mit Hilfe eines Online-Abgleichs auf passende Daten von Referenzfällen zugreifen.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen">
-                        <div class="ueber-uns__img">
-                            <img class="lazyload" data-src="assets/images/leistungen--icon5.svg" alt="Lupen Icon">
-                        </div>
-                        <div class="ueber-uns__text">
-                            <h4>Beweissicherung</h4>
-                            <p>Bei unklarer Schuldfrage oder sonstigen strittigen Fällen in Kfz-Angelegenheiten stehen wir mit Rat und Tat zur Seite. Zur juristischen Geltendmachung erstellen wir Ihnen, soweit es die technischen Erfordernisse zulassen, Beweissicherungen jeglicher Art.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen">
-                        <div class="ueber-uns__img">
-                            <img class="lazyload" data-src="assets/images/leistungen--icon6.svg" alt="Reparaturlisten Icon">
-                        </div>
-                        <div class="ueber-uns__text">
-                            <h4>Reperaturbestätigung</h4>
-                            <p>Nach behobenen Schaden, an Ihrem Fahrzeug, bekommen Sie von uns einen Reparatur-Nachweis. Damit können Sie Ihren Anspruch auf Erstattung der Nutzungsausfallentschädigung geltend machen.</p>
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </section>
-   
-    <section id="kontakt" class="kontakt">
-        <div class="kontakt__banner">
+      <div class="container ueber-uns__mitarbeiter">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 ueber-uns__column-center">
             <picture>
-                <source media="(min-width: 1024px)" data-srcset="assets/images/lesender_mann--desktop.webp 1x, assets/images/lesender_mann--desktop@2x.webp 2x">
-                <source media="(min-width: 1024px)" data-srcset="assets/images/lesender_mann--desktop.jpg 1x, assets/images/lesender_mann--desktop@2x.jpg 2x">
-                <source media="(min-width: 768px)" data-srcset="assets/images/lesender_mann--large.webp 1x, assets/images/lesender_mann--large@2x.webp 2x">
-                <source media="(min-width: 768px)" data-srcset="assets/images/lesender_mann--large.jpg 1x, assets/images/lesender_mann--large@2x.jpg 2x">
-                <source media="(min-width: 460px)" data-srcset="assets/images/lesender_mann--medium.webp 1x, assets/images/lesender_mann--medium@2x.webp 2x">
-                <source media="(min-width: 460px)" data-srcset="assets/images/lesender_mann--medium.jpg 1x, assets/images/lesender_mann--medium@2x.jpg 2x">
-                <source data-srcset="assets/images/lesender_mann.webp 1x, assets/images/lesender_mann@2x.webp 2x">
-                <source data-srcset="assets/images/lesender_mann.jpg 1x,  assets/images/lesender_mann@2x.jpg 2x">
-                <img class="lazyload" data-src="assets/images/lesender_mann.jpg" alt="Mann liest zettel">
+              <source
+                data-srcset="assets/images/mitarbeiter1.webp 1x, assets/images/mitarbeiter1@2x.webp 2x"
+              />
+              <source
+                data-srcset="assets/images/mitarbeiter1.jpg 1x, assets/images/mitarbeiter1@2x.jpg 2x"
+              />
+              <img
+                class="lazyload ueber-uns__mitarbeiterImg"
+                data-src="assets/images/mitarbeiter1.jpg"
+                alt="ein Mitarbeiter"
+              />
             </picture>
-            <div class="leistungen__card leistungen__card--kontakt">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <h4 class="headline headline--white headline--left headline--kontakt">Der einfache Weg zu Ihrem Gutachten</h4>
-                        <ul>
-                            <li>› Termin vereinbaren online oder telefonisch. IdR. noch am Tag der Beauftragung.</li>
-                            <li>› Begutachtung bei uns vor dem Büro oder an einer gewünschten Adresse.</li>
-                            <li>› Ausarbeitung des umfangreichens Gutachtens innerhalb weniger Tage.</li>
-                            <li>› Versand an die zuständige Versicherung und eine Kopie an Sie.</li>
-                            <li>› Schadenersatz: Im optimalen Fall erhalten Sie Geld innerhalb weniger Tage.</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="ueber-uns__mitarbeiter-container">
+              <p class="ueber-uns__name">
+                <span class="ueber-uns__abschluss">Dipl.-Ing. (FH)</span><br />
+                O. Freyberg
+              </p>
+              <p class="ueber-uns__bereich">Kfz-Sachverständiger</p>
+              <ul class="ueber-uns__liste">
+                <li>Büro-Wedding</li>
+                <li><a href="tel:0157 757 22 000">0157 757 22 000</a></li>
+                <li><a href="mailto:FB@urbanke.net">FB@urbanke.net</a></li>
+              </ul>
             </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 ueber-uns__column-center">
+            <picture>
+              <source
+                data-srcset="assets/images/mitarbeiter3.webp 1x, assets/images/mitarbeiter3@2x.webp 2x"
+              />
+              <source
+                data-srcset="assets/images/mitarbeiter3.jpg 1x, assets/images/mitarbeiter3@2x.jpg 2x"
+              />
+              <img
+                class="lazyload ueber-uns__mitarbeiterImg"
+                data-src="assets/images/mitarbeiter3.jpg"
+                alt="ein Mitarbeiter"
+              />
+            </picture>
+            <div class="ueber-uns__mitarbeiter-container1">
+              <p class="ueber-uns__name">
+                <span class="ueber-uns__abschluss"
+                  >staatl. gepr. Techniker (KFZ)</span
+                ><br />
+                E. Heinicke
+              </p>
+              <p class="ueber-uns__bereich">Kfz-Sachverständiger</p>
+              <ul class="ueber-uns__liste">
+                <li>Büro-Wedding</li>
+                <li><a href="tel:0160 9051 9051">0160 9051 9051</a></li>
+                <li><a href="mailto:HE@urbanke.net">HE@urbanke.net</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-12 col-lg-4 ueber-uns__column-center">
+            <picture>
+              <source
+                data-srcset="assets/images/mitarbeiter2.webp 1x, assets/images/mitarbeiter2@2x.webp 2x"
+              />
+              <source
+                data-srcset="assets/images/mitarbeiter2.jpg 1x, assets/images/mitarbeiter2@2x.jpg 2x"
+              />
+              <img
+                class="lazyload ueber-uns__mitarbeiterImg"
+                data-src="assets/images/mitarbeiter2.jpg"
+                alt="ein Mitarbeiter"
+              />
+            </picture>
+            <div class="ueber-uns__mitarbeiter-container2">
+              <p class="ueber-uns__name">
+                <span class="ueber-uns__abschluss">Dipl.-Ing. (FH)</span><br />
+                B. Feuerhahn
+              </p>
+              <p class="ueber-uns__bereich">Kfz-Sachverständiger</p>
+              <ul class="ueber-uns__liste">
+                <li>Büro-Wedding</li>
+                <li><a href="tel:0174 5600800">0174 5600800</a></li>
+                <li><a href="mailto:BF@urbanke.net">BF@urbanke.net</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-6 ueber-uns__column-center">
+            <picture>
+              <source
+                data-srcset="assets/images/mitarbeiter4.webp 1x, assets/images/mitarbeiter4@2x.webp 2x"
+              />
+              <source
+                data-srcset="assets/images/mitarbeiter4.jpg 1x, assets/images/mitarbeiter4@2x.jpg 2x"
+              />
+              <img
+                class="lazyload ueber-uns__mitarbeiterImg"
+                data-src="assets/images/mitarbeiter4.jpg"
+                alt="ein Mitarbeiter"
+              />
+            </picture>
+            <div class="ueber-uns__mitarbeiter-container3">
+              <p class="ueber-uns__name">C. White</p>
+              <p class="ueber-uns__bereich">Bürofachkraft</p>
+              <ul class="ueber-uns__liste">
+                <li>Büro-Wedding</li>
+                <li><a href="tel:030 494 87 88">030 494 87 88</a></li>
+                <li><a href="mailto:DH@urbanke.net">DH@urbanke.net</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-6 ueber-uns__column-center">
+            <picture>
+              <source
+                data-srcset="assets/images/mitarbeiter5.webp 1x, assets/images/mitarbeiter5@2x.webp 2x"
+              />
+              <source
+                data-srcset="assets/images/mitarbeiter5.jpg 1x, assets/images/mitarbeiter5@2x.jpg 2x"
+              />
+              <img
+                class="lazyload ueber-uns__mitarbeiterImg"
+                data-src="assets/images/mitarbeiter5.jpg"
+                alt="ein Mitarbeiter"
+              />
+            </picture>
+            <div class="ueber-uns__mitarbeiter-container4">
+              <p class="ueber-uns__name">C. Hiller</p>
+              <p class="ueber-uns__bereich">Bürofachkraft</p>
+              <ul class="ueber-uns__liste">
+                <li>Büro-Wedding</li>
+                <li><a href="tel:030 692 22 44">030 692 22 44</a></li>
+                <li><a href="mailto:BL@urbanke.net">BL@urbanke.net</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
 
-
+      <div class="ueber-uns__banner">
         <div class="container">
-            <div class="row">
-                <h2 class="col-12 headline headline--big headline--space">Das gewisse Extra – <br class="kontakt__break-none"> unser „Mehr“ an Leistung</h2>
-                    <div class="col-12 col-xl-4 text-center kontakt__trio">
-                        <img class="lazyload mx-auto" data-src="assets/images/kontakt--icon1.svg" alt="Konversation icon">
-                        <h4>Sie zahlen nichts</h4>
-                        <p>Die Versicherung, mit der wir direkt und unkompliziert abrechnen, übernimmt die Kosten für Ihr Gutachten.</p>
-                    </div>
-                    <div class="col-12 col-lg-6 col-xl-4 text-center kontakt__trio">
-                        <img class="lazyload mx-auto" data-src="assets/images/kontakt--icon2.svg" alt="Haus icon">
-                        <h4>Vor-Ort Service</h4>
-                        <p>Auf Wunsch besichtigen wir Ihr Fahrzeug auch an einer von Ihnen gewünschten Adresse in Berlin und Umgebung.</p>
-                    </div>
-                    <div class="col-12 col-lg-6 col-xl-4 text-center kontakt__trio">
-                        <img class="lazyload mx-auto" data-src="assets/images/kontakt--icon3.svg" alt="Kalender icon">
-                        <h4>Jederzeit für Sie da</h4>
-                        <p>Ihre Zeit ist kostbar! Das wissen wir und bieten Ihnen nach Absprache gerne an, auch außerhalb unserer Öffnungszeiten Termine zu vereinbaren.</p>
-                    </div>
-                </div>
+          <div class="row">
+            <div class="col-12 col-lg-6 order-lg-1 ueber-uns__text-column">
+              <h2 class="ueber-uns__title">
+                Zeitnah, kompetent und zuverlässig
+              </h2>
+              <ul class="ueber-uns__banner-list">
+                <li>
+                  Besichtigung noch am Tag der Beauftragung in und um Berlin
+                </li>
+                <li>
+                  vollumfängliches anerkanntes Gutachten zur Vorlage bei der
+                  Versicherung
+                </li>
+                <li>Beratung, Begutachtung und Betreuung aus einer Hand</li>
+                <li>schnelle und faire Entschädigung</li>
+              </ul>
             </div>
 
-        <div id="test" class="kontakt__unfall-banner">    
-                <picture>
-                    <source media="(min-width: 1008px)" data-srcset="assets/images/autoschaden--desktop.webp 1x, assets/images/autoschaden--desktop@2x.webp 2x">
-                    <source media="(min-width: 1008px)" data-srcset="assets/images/autoschaden--desktop.jpg 1x, assets/images/autoschaden--desktop@2x.jpg 2x">
-                    <source media="(min-width: 768px)" data-srcset="assets/images/autoschaden--large.webp 1x, assets/images/autoschaden--large@2x.webp 2x">
-                    <source media="(min-width: 768px)" data-srcset="assets/images/autoschaden--large.jpg 1x, assets/images/autoschaden--large@2x.jpg 2x">
-                    <source media="(min-width: 382px)" data-srcset="assets/images/autoschaden--medium.webp 1x, assets/images/autoschaden--medium@2x.webp 2x">
-                    <source media="(min-width: 382px)" data-srcset="assets/images/autoschaden--medium.jpg 1x, assets/images/autoschaden--medium@2x.jpg 2x">
-                    <source data-srcset="assets/images/autoschaden.webp 1x, assets/images/autoschaden@2x.webp 2x">
-                    <source data-srcset="assets/images/autoschaden.jpg 1x, assets/images/autoschaden@2x.jpg 2x">
-                    <img class="lazyload kontakt__unfallImg" data-src="assets/images/autoschaden.jpg" alt="Kennzeichnung des Unfallschadens">
-                </picture>
-            <div class="kontakt__form">
-                <h2 class="headline headline--white headline--left">Besser schnell handeln!</h2>
-                <p>Sorgen Sie für eine schnelle Beweissicherung und verhindern Sie so, dass (potentiell) entscheidende (frische) Kontaktspuren verwittern. Unmittelbar nach Begutachtung können Sie Ihr Fahrzeug reparieren lassen oder verkaufen. Einwände der Versicherung, die Schadennebenkosten unnötig in die Höhe zu treiben, greifen Sie durch die zeitnahe Inanspruchnahme eines Gutachters/schnelles Handeln vor.<br><br>Verhelfen Sie sich noch heute zu Ihrem Recht!</p>
-                <a class="btn btn--kontakt" href="#">
-                    <div class="btn__container btn__container--kontakt">
-                        <p class="btn__text btn__text--kontakt">kontaktieren Sie uns</p>
-                    </div>
+            <div class="col-12 col-lg-6 order-lg-0 ueber-uns__img-column">
+              <img
+                class="lazyload ueber-uns__abzeichenImg"
+                data-src="assets/images/abzeichen.svg"
+                alt="Abzeichen Icon"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container ueber-uns__weitere-leistungen">
+        <div class="row">
+          <h2 class="headline headline--weitere-leistungen">
+            weitere Leistungen
+          </h2>
+          <h2 class="col-12 ueber-uns__subtitle">
+            Neben Unfallgutachten als unsere Kernkompetenz<br
+              class="ueber-uns__xl-none"
+            />bieten wir zusätzlich:
+          </h2>
+
+          <div
+            class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen"
+          >
+            <div class="ueber-uns__img">
+              <img
+                class="lazyload"
+                data-src="assets/images/leistungen--icon1.svg"
+                alt="Gutachten Icon"
+              />
+            </div>
+            <div class="ueber-uns__text">
+              <h4>Kurz-Gutachten</h4>
+              <p>
+                Auch bei kleinsten Schäden wie Kratzer oder Dellen werden wir
+                für Sie tätig. Unser Kurz-Gutachten erfüllt die Kriterien eines
+                Kostenvoranschlags. Die hierfür anfallenden Kosten, werden,
+                trotz anderslautender Argumente, von der Versicherung
+                übernommen.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen"
+          >
+            <div class="ueber-uns__img">
+              <img
+                class="lazyload"
+                data-src="assets/images/leistungen--icon2.svg"
+                alt="KFZ-Wertgutachten Icon"
+              />
+            </div>
+            <div class="ueber-uns__text">
+              <h4>KFZ-Wertgutachten</h4>
+              <p>
+                Sie möchten Ihr Auto verkaufen, als Oldtimer versichern oder
+                müssen dem Finanzamt oder Ihrer Versicherung nachweisen was Ihr
+                Fahrzeug wert ist? Wir erstellen Ihnen ein umfangreiches und
+                allseits anerkanntes Kfz-Wertgutachten (mit Fotos).
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen"
+          >
+            <div class="ueber-uns__img">
+              <img
+                class="lazyload"
+                data-src="assets/images/leistungen--icon4.svg"
+                alt="Kamera Icon"
+              />
+            </div>
+            <div class="ueber-uns__text">
+              <h4>Gebrauchtwagenprüfung</h4>
+              <p>
+                Minimieren Sie das Risiko beim Gebrauchtwagenkauf und lassen sie
+                sich Ihren Favoriten von uns auf eventuelle Vorschäden,
+                technische Mängel oder sonstige Auffälligkeiten hin untersuchen.
+                Kosten fallen erst bei Anfahrt oder einer schriftlichen
+                Ausarbeitung an.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen"
+          >
+            <div class="ueber-uns__img">
+              <img
+                class="lazyload"
+                data-src="assets/images/leistungen--icon5.svg"
+                alt="Todo-listen Icon"
+              />
+            </div>
+            <div class="ueber-uns__text">
+              <h4>Vorschadenanalyse</h4>
+              <p>
+                Unter Verwendung technischer Geräte und unserer jahrelangen
+                Erfahrung führen wir innerhalb weniger Minuten eine kostenlose
+                Vorschaden-Analyse an Ihrem Fahrzeug durch. Außerdem können wir
+                mit Hilfe eines Online-Abgleichs auf passende Daten von
+                Referenzfällen zugreifen.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen"
+          >
+            <div class="ueber-uns__img">
+              <img
+                class="lazyload"
+                data-src="assets/images/leistungen--icon3.svg"
+                alt="Lupen Icon"
+              />
+            </div>
+            <div class="ueber-uns__text">
+              <h4>Beweissicherung</h4>
+              <p>
+                Bei unklarer Schuldfrage oder sonstigen strittigen Fällen in
+                Kfz-Angelegenheiten stehen wir mit Rat und Tat zur Seite. Zur
+                juristischen Geltendmachung erstellen wir Ihnen, soweit es die
+                technischen Erfordernisse zulassen, Beweissicherungen jeglicher
+                Art.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-xl-6 leistungen__card leistungen__card--weitere-leistungen"
+          >
+            <div class="ueber-uns__img">
+              <img
+                class="lazyload"
+                data-src="assets/images/leistungen--icon6.svg"
+                alt="Reparaturlisten Icon"
+              />
+            </div>
+            <div class="ueber-uns__text">
+              <h4>Reperaturbestätigung</h4>
+              <p>
+                Nach behobenen Schaden, an Ihrem Fahrzeug, bekommen Sie von uns
+                einen Reparatur-Nachweis. Damit können Sie Ihren Anspruch auf
+                Erstattung der Nutzungsausfallentschädigung geltend machen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="kontakt">
+      <div class="kontakt__banner">
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            data-srcset="assets/images/lesender_mann--desktop.webp 1x, assets/images/lesender_mann--desktop@2x.webp 2x"
+          />
+          <source
+            media="(min-width: 1024px)"
+            data-srcset="assets/images/lesender_mann--desktop.jpg 1x, assets/images/lesender_mann--desktop@2x.jpg 2x"
+          />
+          <source
+            media="(min-width: 768px)"
+            data-srcset="assets/images/lesender_mann--large.webp 1x, assets/images/lesender_mann--large@2x.webp 2x"
+          />
+          <source
+            media="(min-width: 768px)"
+            data-srcset="assets/images/lesender_mann--large.jpg 1x, assets/images/lesender_mann--large@2x.jpg 2x"
+          />
+          <source
+            media="(min-width: 460px)"
+            data-srcset="assets/images/lesender_mann--medium.webp 1x, assets/images/lesender_mann--medium@2x.webp 2x"
+          />
+          <source
+            media="(min-width: 460px)"
+            data-srcset="assets/images/lesender_mann--medium.jpg 1x, assets/images/lesender_mann--medium@2x.jpg 2x"
+          />
+          <source
+            data-srcset="assets/images/lesender_mann.webp 1x, assets/images/lesender_mann@2x.webp 2x"
+          />
+          <source
+            data-srcset="assets/images/lesender_mann.jpg 1x,  assets/images/lesender_mann@2x.jpg 2x"
+          />
+          <img
+            class="lazyload kontakt__mann-liestImg"
+            data-src="assets/images/lesender_mann.jpg"
+            alt="Mann liest zettel"
+          />
+        </picture>
+        <div class="leistungen__card leistungen__card--kontakt">
+          <div class="container">
+            <div class="row justify-content-center">
+              <h4
+                class="headline headline--white headline--left headline--kontakt"
+              >
+                Der einfache Weg zu Ihrem Gutachten
+              </h4>
+              <ul>
+                <li>
+                  › Termin vereinbaren online oder telefonisch. IdR. noch am Tag
+                  der Beauftragung.
+                </li>
+                <li>
+                  › Begutachtung bei uns vor dem Büro oder an einer gewünschten
+                  Adresse.
+                </li>
+                <li>
+                  › Ausarbeitung des umfangreichens Gutachtens innerhalb weniger
+                  Tage.
+                </li>
+                <li>
+                  › Versand an die zuständige Versicherung und eine Kopie an
+                  Sie.
+                </li>
+                <li>
+                  › Schadenersatz: Im optimalen Fall erhalten Sie Geld innerhalb
+                  weniger Tage.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <h2 class="col-12 headline headline--big headline--space">
+            Das gewisse Extra – <br class="kontakt__break-none" />
+            unser „Mehr“ an Leistung
+          </h2>
+          <div class="col-12 col-xl-4 text-center kontakt__trio">
+            <img
+              class="lazyload mx-auto"
+              data-src="assets/images/kontakt--icon1.svg"
+              alt="Konversation icon"
+            />
+            <h4>Sie zahlen nichts</h4>
+            <p>
+              Die Versicherung, mit der wir direkt und unkompliziert abrechnen,
+              übernimmt die Kosten für Ihr Gutachten.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-4 text-center kontakt__trio">
+            <img
+              class="lazyload mx-auto"
+              data-src="assets/images/kontakt--icon2.svg"
+              alt="Haus icon"
+            />
+            <h4>Vor-Ort Service</h4>
+            <p>
+              Auf Wunsch besichtigen wir Ihr Fahrzeug auch an einer von Ihnen
+              gewünschten Adresse in Berlin und Umgebung.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6 col-xl-4 text-center kontakt__trio">
+            <img
+              class="lazyload mx-auto"
+              data-src="assets/images/kontakt--icon3.svg"
+              alt="Kalender icon"
+            />
+            <h4>Jederzeit für Sie da</h4>
+            <p>
+              Ihre Zeit ist kostbar! Das wissen wir und bieten Ihnen nach
+              Absprache gerne an, auch außerhalb unserer Öffnungszeiten Termine
+              zu vereinbaren.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="kontakt__unfall-banner">
+        <picture>
+          <source
+            media="(min-width: 1008px)"
+            data-srcset="assets/images/autoschaden--desktop.webp 1x, assets/images/autoschaden--desktop@2x.webp 2x"
+          />
+          <source
+            media="(min-width: 1008px)"
+            data-srcset="assets/images/autoschaden--desktop.jpg 1x, assets/images/autoschaden--desktop@2x.jpg 2x"
+          />
+          <source
+            media="(min-width: 768px)"
+            data-srcset="assets/images/autoschaden--large.webp 1x, assets/images/autoschaden--large@2x.webp 2x"
+          />
+          <source
+            media="(min-width: 768px)"
+            data-srcset="assets/images/autoschaden--large.jpg 1x, assets/images/autoschaden--large@2x.jpg 2x"
+          />
+          <source
+            media="(min-width: 382px)"
+            data-srcset="assets/images/autoschaden--medium.webp 1x, assets/images/autoschaden--medium@2x.webp 2x"
+          />
+          <source
+            media="(min-width: 382px)"
+            data-srcset="assets/images/autoschaden--medium.jpg 1x, assets/images/autoschaden--medium@2x.jpg 2x"
+          />
+          <source
+            data-srcset="assets/images/autoschaden.webp 1x, assets/images/autoschaden@2x.webp 2x"
+          />
+          <source
+            data-srcset="assets/images/autoschaden.jpg 1x, assets/images/autoschaden@2x.jpg 2x"
+          />
+          <img
+            class="lazyload kontakt__unfallImg"
+            data-src="assets/images/autoschaden.jpg"
+            alt="Kennzeichnung des Unfallschadens"
+          />
+        </picture>
+        <div class="kontakt__form">
+          <h2 class="headline headline--white headline--left">
+            Besser schnell handeln!
+          </h2>
+          <p>
+            Sorgen Sie für eine schnelle Beweissicherung und verhindern Sie so,
+            dass (potentiell) entscheidende (frische) Kontaktspuren verwittern.
+            Unmittelbar nach Begutachtung können Sie Ihr Fahrzeug reparieren
+            lassen oder verkaufen. Einwände der Versicherung, die
+            Schadennebenkosten unnötig in die Höhe zu treiben, greifen Sie durch
+            die zeitnahe Inanspruchnahme eines Gutachters/schnelles Handeln
+            vor.<br /><br />Verhelfen Sie sich noch heute zu Ihrem Recht!
+          </p>
+          <a class="btn btn--kontakt" href="#">
+            <div class="btn__container btn__container--kontakt">
+              <p class="btn__text btn__text--kontakt">kontaktieren Sie uns</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="kontakt__our-benefits">
+        <h2 class="headline headline--benefits">
+          Noch unsicher? Überzeugen Sie sich von unseren Vorteilen
+        </h2>
+        <div class="leistungen__card leistungen__card--kontakt-outer">
+          <div class="leistungen__card--kontakt-wrapper">
+            <div class="leistungen__dropshadow">
+              <div class="leistungen__card leistungen__card--kontakt-inner">
+                <h4>Gutachten auch bei Kleinschäden</h4>
+                <p>
+                  Versicherungen verunsichern gerne mit der
+                  Bagatellschadengrenze unter der ein Gutachten nicht erstattet
+                  wird. Wir geben Ihnen eine Kostengarantie! Bei kleinsten
+                  Schäden wie Kratzer oder Dellen erstellen wir Ihnen, ähnlich
+                  eines Kostenvoranschlags, ein Kurz-Gutachten und rechnen eine
+                  geringe Gebühr direkt mit der Versicherung ab. Sollte diese
+                  sich doch einmal querstellen, berechnen wir Ihnen unsere
+                  Kosten nicht!
+                </p>
+              </div>
+            </div>
+            <div class="leistungen__dropshadow">
+              <div class="leistungen__card leistungen__card--kontakt-inner">
+                <h4>Schuldfrage nicht geklärt?</h4>
+                <p>
+                  Profitieren Sie von unserem kostenfreien „Gutachten auf
+                  Warteliste“. Dabei notieren wir die Daten von Ihren Fahrzeug,
+                  protokollieren den Schadenumfang und sichern Beweise in Form
+                  von Fotos. Die Daten werden bei uns im System gespeichert.
+                  Können Sie später Ansprüche geltend machen, genügt ein Anruf,
+                  und wir beginnen mit der Arbeit. Ihr Vorteil: Eine
+                  umfangreiche/fundierte Beweissicherung ohne Kostenrisiko und
+                  Sie können sofort mit der Reparatur beginnen bzw. das Fahrzeug
+                  verkaufen.
+                </p>
+              </div>
+            </div>
+            <span class="kontakt__ausrufezeichen">!</span>
+            <div class="leistungen__dropshadow">
+              <div class="leistungen__card leistungen__card--kontakt-inner">
+                <h4>Wer profitiert von unseren Services?</h4>
+                <p>
+                  Neben Privatkunden werden wir auch für Rechtsanwälte,
+                  Werkstätten, Taxi-Betriebe und sonstige Unternehmen tätig.
+                  Auch Gerichte geben Gutachten bei uns in Auftrag. Unser
+                  Angebot richtet sich in erster Linie an Unfallgeschädigte.
+                  Aber auch in der Kaskoversicherung kann die Hinzuziehung eines
+                  unabhängigen Gutachters sinnvoll sein, wenn es um die
+                  Durchsetzung von Ansprüchen bei einer zu geringen
+                  Schadensbemessung durch die eigene Versicherung geht.
+                </p>
+              </div>
+            </div>
+            <div class="leistungen__dropshadow">
+              <div class="leistungen__card leistungen__card--kontakt-inner">
+                <h4>Keine Kosten</h4>
+                <p>
+                  Das Haftpflichtschadensrecht in Deutschland sieht vor, dass
+                  bei unverschuldetem Unfall, die Kosten für das
+                  Schadensgutachten, von der Versicherung des Unfallgegners als
+                  Teil des Gesamtschadens zu erstatten ist. Eine Vorausbezahlung
+                  durch sie ist nicht erforderlich, denn wir rechnen direkt mit
+                  der Versicherung ab. Als Nachweis über die durchgeführte
+                  Reparatur erstellen wir Ihnen im Nachhinein eine kostenfreie
+                  Reparaturbestätigung.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="termin-buchen" class="kontakt__kontakt-form">
+        <h2 class="text-md-center headline headline--kontakt-form">
+          Gleich unverbindlich von uns beraten lassen
+        </h2>
+        <div class="kontakt__form-container">
+          <div class="kontakt__custom-container">
+            <div class="row mx-auto">
+              <div class="col-12 col-md-6 col-xl-3 kontakt__inner-column">
+                <div class="kontakt__text-wrapper">
+                  <p>
+                    BÜRO-WEDDING<br />
+                    Drontheimer Str. 20<br />
+                    13359 Berlin
+                  </p>
+                  <br />
+                  <p>(030) 494 87 88</p>
+                  <br />
+                  <p>DH@urbanke.net</p>
+                </div>
+                <a href="#">
+                  <picture>
+                    <source
+                      data-srcset="assets/images/karte1.webp 1x, assets/images/karte1@2x.webp 2x"
+                    />
+                    <source
+                      data-srcset="assets/images/karte1.jpg 1x, assets/images/karte1@2x.jpg 2x"
+                    />
+                    <img
+                      class="lazyload kontakt__karteImg"
+                      data-src="assets/images/karte1.jpg"
+                      alt="google maps karte"
+                    />
+                  </picture>
                 </a>
+                <a class="btn btn--kontakt-form" href="#">
+                  <div class="btn__container btn__container--kontakt-form">
+                    <p class="btn__text btn__text--kontakt">Zur Karte</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-12 col-md-6 col-xl-3 kontakt__inner-column">
+                <div class="kontakt__text-wrapper">
+                  <p>
+                    BÜRO-Kreuzberg<br />
+                    Blücher Str. 66a<br />
+                    10961 Berlin
+                  </p>
+                  <br />
+                  <p>(030) 692 22 44</p>
+                  <br />
+                  <p>BL@urbanke.net</p>
+                </div>
+                <a href="#">
+                  <picture>
+                    <source
+                      data-srcset="assets/images/karte2.webp 1x, assets/images/karte2@2x.webp 2x"
+                    />
+                    <source
+                      data-srcset="assets/images/karte2.jpg 1x, assets/images/karte2@2x.jpg 2x"
+                    />
+                    <img
+                      class="lazyload kontakt__karteImg"
+                      data-src="assets/images/karte2.jpg"
+                      alt="google maps karte"
+                    />
+                  </picture>
+                </a>
+                <a class="btn btn--kontakt-form" href="#">
+                  <div class="btn__container btn__container--kontakt-form">
+                    <p class="btn__text btn__text--kontakt">Zur Karte</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-12 col-md-6 col-xl-3 kontakt__inner-column">
+                <div
+                  class="kontakt__text-wrapper kontakt__text-wrapper--lineheight"
+                >
+                  <ul>
+                    <li>Öffnungszeiten:</li>
+                    <li>Montag <span>8:00 - 18:00 Uhr</span></li>
+                    <li>Dienstag <span>8:00 - 18:00 Uhr</span></li>
+                    <li>Mittwoch <span>8:00 - 18:00 Uhr</span></li>
+                    <li>Donnerstag <span>8:00 - 18:00 Uhr</span></li>
+                    <li>Freitag <span>8:00 - 18:00 Uhr</span></li>
+                    <li class="customPadding">
+                      Samstag <span>Geschlossen</span>
+                    </li>
+                    <li class="customPadding">
+                      Sonntag <span>Geschlossen</span>
+                    </li>
+                    <br />
+                    <li class="customPaddingdown">und nach Vereinbarung</li>
+                    <li>Direkt einen Termin buchen:</li>
+                  </ul>
+                  <a
+                    class="btn btn--kontakt-form btn--customMarginTop"
+                    href="#"
+                  >
+                    <div
+                      class="btn__container btn__container--kontakt-form btn__container--mgl0"
+                    >
+                      <p class="btn__text btn__text--kontakt">Termin buchen</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-xl-3 kontakt__inner-column">
+                <form action="formMail.php" method="post" id="formular">
+                  <label for="office">Büro*</label>
+                  <select id="office" name="office" required>
+                    <option>Wedding</option>
+                    <option>Kreuzberg</option>
+                  </select>
+                  <label for="name">Name*</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    maxlength="60"
+                    autocomplete="off"
+                    required
+                  />
+
+                  <label for="email">Email*</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    maxlength="60"
+                    autocomplete="off"
+                    required
+                  />
+
+                  <label for="phone">Telefon</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    pattern="^[0-9-+\s()]*$"
+                    maxlength="60"
+                    autocomplete="off"
+                  />
+
+                  <label for="message">Nachricht</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    maxlength="500"
+                  ></textarea>
+
+                  <a
+                    id="form-btn"
+                    class="btn btn--kontakt-form btn--customMarginTop"
+                    type="submit"
+                    name="submit"
+                  >
+                    <div
+                      class="btn__container btn__container--kontakt-form btn__container--mgl0"
+                    >
+                      <p class="btn__text btn__text--kontakt">Absenden</p>
+                    </div>
+                  </a>
+
+                  <label class="ohnohoney" for="realname"></label>
+                  <input
+                    class="ohnohoney"
+                    autocomplete="off"
+                    type="text"
+                    id="realname"
+                    name="realname"
+                    placeholder="Your name here"
+                  />
+                  <label class="ohnohoney" for="realemail"></label>
+                  <input
+                    class="ohnohoney"
+                    autocomplete="off"
+                    type="email"
+                    id="realemail"
+                    name="realemail"
+                    placeholder="Your e-mail here"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="headline headline--faq">Häufig gestellte Fragen</h2>
+      <div class="kontakt__faq-bg">
+        <div id="faq" class="kontakt__faq">
+          <div class="kontakt__accordion">
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc"
+                >Was ist ein Gutachten und wozu benötige ich das?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Das Gutachten hat zwei wesentliche Funktionen. Zum einen dient
+                  es der Beweissicherung, zum anderen wird mit dem Gutachten der
+                  zur Schadenersatzleistung erforderliche Geldbetrag ermittelt.
+                  Unsere Gutachten sind modern und umfassend erarbeitet. Wir
+                  erfassen alle wesentlichen Fahrzeug- und Schadendaten,
+                  beschreiben den Schadenumfang sowie eventuelle Vorschäden,
+                  prüfen die Plausibilität, erstellen Fotos und ermitteln
+                  sämtliche fahrzeugbezogene Schadensersatzkosten, die Sie vom
+                  Unfallgegner bzw. dessen Versicherung beanspruchen können.
+                  Unsere Gutachten sind allgemein anerkannt und eignen sich zur
+                  gerichtlichen Durchsetzung.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc1" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc1"
+                >Wann brauche ich ein Gutachten?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Im Falle eines unverschuldeten Verkehrsunfalls können Sie den
+                  eingetretenen Schaden von einem unabhängigen
+                  Kfz-Sachverständigen auf Kosten des Verursachers bzw. seiner
+                  Versicherung schätzen lassen. Das Gutachten dient auch zur
+                  Beweissicherung der eingetretenen Schäden, was im Streitfall
+                  bei einer gerichtlichen Auseinandersetzung hilfreich sein
+                  kann. Vor allem die Unabhängigkeit des Kfz-Sachverständigen
+                  gewährleistet eine neutrale und vollumfängliche Bezifferung
+                  aller fahrzeugbezogenen Schadenspositionen.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc3" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc3"
+                >Wer bezahlt das Gutachten?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Im Kfz-Haftpflichtschadenfall, also wenn ein anderer einen
+                  Schaden an Ihrem Fahrzeug verursacht hat, sind die Kosten für
+                  das Gutachten Teil des Gesamtschadens. Sie müssen auch nicht
+                  in Vorleistung gehen. Das Sachverständigenhonorar können wir
+                  mittels einer sicherungsweisen Abtretungserklärung direkt mit
+                  dem eintrittspflichtigen Versicherer abrechnen.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc4" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc4"
+                >Wieviel kostet ein Gutachten?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Das Sachverständigenhonorar richtet sich nach der
+                  Schadenshöhe. Eine einheitliche Honorarforderung wie bei
+                  Rechtsanwälten gibt es nicht. Unser Honorar entspricht der
+                  Üblichkeit. Die Bemessung orientiert sich an der aktuellen
+                  BVSK Honorarbefragung 2018 und entspricht somit der BGH
+                  Rechtsprechung BGH 28.02.2017 Az.VI ZR 76/16).
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc5" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc5"
+                >Die Versicherung hat mein Fahrzeug schon besichtigt. Kann ich
+                mir trotzdem eine zweite Meinung einholen?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Ja. Eine bereits durchgeführte Besichtigung Ihres Fahrzeugs
+                  durch die Versicherung tangiert Ihr Recht auf einen eigens
+                  beauftragten unabhängigen Kfz-Gutachter nicht. Das gilt auch
+                  dann, wenn Ihnen die Schadensbezifferung der Versicherung
+                  bereits vorliegt. Selbst wenn das eigene Gutachten zu dem
+                  gleichen Ergebnis kommt, muss es von der Versicherung
+                  erstattet werden.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc6" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc6"
+                >Was ist bei einem Kaskoschaden zu beachten?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Bei Kasko- oder Teilkasko-Fällen, also wenn die eigene
+                  Fahrzeugversicherung in Anspruch genommen wird, gilt das
+                  Vertragsrecht. In der Regel sind die Kosten für einen eigens
+                  beauftragten Kfz-Gutachter nicht in den Vertragsbedingungen
+                  eingeschlossen. Wenden Sie sich daher bitte zuerst an Ihren
+                  Versicherer. Einen unabhängigen Kfz-Sachverständigen auf
+                  Versicherungskosten können Sie wählen wenn:
+                </p>
+                <ul>
+                  <li>
+                    Sie die Zusage Ihres Versicherers haben (möglichst
+                    schriftlich geben lassen),
+                  </li>
+                  <li>
+                    sich die Schadensbezifferung des Versicherers als zu gering
+                    oder fehlerhaft erweist,
+                  </li>
+                  <li>
+                    der Versicherer Ihnen keinen Begutachtungstermin in
+                    akzeptabler zeitlicher Nähe anbieten kann.
+                  </li>
+                </ul>
+                <p>
+                  Es kann sich auch lohnen ein Kfz-Gutachten auf eigene Kosten
+                  zu beauftragen, wenn die Versicherung das Gutachtenergebnis
+                  übernimmt.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc7" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc7"
+                >Reicht nicht ein Kostenvoranschlag einer Werkstatt?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Häufig verlangen Versicherungen lediglich ein
+                  Kostenvoranschlag zur Ermittlung der Reparaturkosten. Damit
+                  spart diese bares Geld, möglicherweise auf Ihre Kosten. Denn,
+                  ein Kostenvoranschlag enthält keine Angaben zum merkantilen
+                  Minderwert, nimmt keinerlei Differenzierung zu überlagernden
+                  Alt- und Vorschäden vor und umfasst keine Angaben zu
+                  Nebenkosten wie Nutzungsausfall oder voraussichtliche
+                  Werkstatt Standzeit. Zuletzt hat ein Kostenvoranschlag keine
+                  beweissichernde Funktion, da er in der Regel keine
+                  Fotodokumentation umfasst.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc22" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc22"
+                >Was mache ich bei Kleinschäden wie Kratzer oder Dellen?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Bei Schäden unterhalb der Bagatellschadengrenze (~750 Euro)
+                  erstellen wir Ihnen ein Kurz-Gutachten. Dieses umfasst neben
+                  der Schadensbezifferung auch eine beweissichernde
+                  Fotodokumentation sowie eine Kausalitätsprüfung. Die Kosten
+                  unserer Kurzgutachten entsprechen denen eines
+                  Kostenvoranschlags und werden von den Versicherungen
+                  übernommen. Eine direktabrechnung unserer Kosten bieten wir
+                  auch bei bagatellschäden gerne an.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc23" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc23"
+                >Die Schuldfrage ist nicht geklärt. Was kann ich tun?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Bei ungeklärter Schuldfrage oder unbekanntem Verursacher
+                  besteht für Sie das Risiko, dass Sie auf den Kosten für das
+                  Gutachten sitzen bleiben. Wir bieten Ihnen deshalb eine
+                  Vorab-Beweisaufnahme an. Hierbei erstellen wir Fotos vom
+                  Fahrzeug und von den Beschädigungen, nehmen sämtliche Daten
+                  auf und speichern diese in unserem System.
+                  <span
+                    >Die komplette Aufnahme ist für Sie bis dahin
+                    kostenlos</span
+                  >. Können Sie später Ansprüche geltend machen, genügt eine
+                  kurze telefonische Beauftragung zur Ausarbeitung des
+                  Gutachtens. Die dann erst entstehenden Gebühren rechnen wir
+                  direkt mit der Versicherung des Unfallgegners ab.
+                </p>
+              </div>
+            </div>
+            <h2>Vor-Gutachten</h2>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc24" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc24"
+                >Wo wird mein Fahrzeug besichtigt?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Zur Begutachtung können Sie Ihr Fahrzeug an eines unserer
+                  Büroadressen vorfahren. Natürlich kann ein Besichtigungstermin
+                  auch bei Ihnen zu Hause, auf Ihrer Arbeit oder in einer
+                  Werkstatt Ihrer Wahl vereinbart werden. In Einzelfällen kann
+                  eine weitere Besichtigung Ihres Fahrzeugs im teilweise
+                  demontierten Zustand ratsam sein, um den vollständigen
+                  Schadenumfang zu erfassen.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc25" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc25"
+                >Wie lange dauert die Besichtigung?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Der Aufwand der Besichtigung ist abhängig vom Schadenumfang.
+                  In der Regel reichen 15-30 Minuten hierfür aus.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc26" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc26"
+                >Wie schnell bekomme ich einen Termin?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Nutzen Sie den Vorteil der Flexibilität unserer beiden Büros.
+                  Wir garantieren die Besichtigung Ihres Fahrzeugs in Berlin und
+                  Umgebung noch am selben, spätestens aber am Folgewerktag. Wenn
+                  gewünscht, können Sie auch einen Besichtigungstermin außerhalb
+                  der Bürozeiten mit unseren Sachverständigen vereinbaren.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc27" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc27"
+                >Was muss ich zur Besichtigung mitbringen?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Bezüglich Ihrem Fahrzeug benötigen wir mindestens:
+                </p>
+                <ul>
+                  <li>Zulassungsbescheinigung Teil I oder Teil II,</li>
+                  <li>
+                    Eigentumsnachweis / Kaufvertrag (wenn Sie nicht Halter des
+                    Fahrzeugs sind),
+                  </li>
+                  <li>
+                    Polizeiliche Unfallmitteilung und/oder Daten zum
+                    Unfallverursacher.
+                  </li>
+                  <li>
+                    Gegebenenfalls: Reparatur oder Wartungsbelege sowie Belege
+                    über frühere Schäden an Ihrem Fahrzeug.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc28" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc28"
+                >Darf ich mein Fahrzeug vor der Besichtigung reinigen?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Es ist empfehlenswert, den Schadensbereich zunächst in
+                  unverändertem Zustand vom Kfz-Sachverständigen dokumentieren
+                  zu lassen. Abwaschbare Kontaktmängel stellen zwar keine
+                  Schäden im eigentlich Sinn dar, können aber wichtig für die
+                  Einordnung der Plausibilität des Schadenanspruchs sein. Sofern
+                  eine Reinigung zur weiteren Begutachtung notwendig ist, kann
+                  diese im Zuge der Besichtigung erfolgen.
+                </p>
+              </div>
+            </div>
+            <h2>Nach-Gutachten</h2>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc29" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc29"
+                >Wie lange dauert es bis das Gutachten fertig ist?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Die Bearbeitungszeit hängt vom Schadenumfang ab. In der Regel
+                  erstellen wir Ihr Gutachten innerhalb weniger Tage. Die
+                  Bearbeitung von Bagatellschäden, für die wir ein
+                  Kurz-Gutachten erstellen, ist in der Regel innerhalb eines
+                  Werktags möglich. Damit Sie Ihr Gutachten noch schneller
+                  erhalten, senden wir Ihnen dieses auf Wunsch gerne per E-Mail
+                  zu.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc30" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc30"
+                >Wie lange dauert es bis ich mein Geld erhalte?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Auf die Bearbeitungsdauer der Versicherungen haben wir leider
+                  keinen Einfluss. Bei geklärter Schuldfrage ist ein Zeitraum
+                  von ca. 4 Wochen üblich. Im optimalen Fall erfolgt die
+                  Erstattung auch schon nach wenigen Tagen.<br />
+                  Ist die Schuldfrage offen oder der Unfallgegner hat den
+                  Schaden nicht bei seiner Versicherung gemeldet, wird
+                  gegebenenfalls die Akte der Polizei angefordert. Die
+                  Herausgabe erfolgt in Berlin erfahrungsgemäß erst nach etwa
+                  6-8 Wochen. Sofern die Polizei selbst noch ermittelt, kann die
+                  Herausgabe auch Monate in Anspruch nehmen. Bei gerichtlicher
+                  Auseinandersetzung ist der Abschluss des Vorgangs abhängig von
+                  der Verfahrensdauer.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc31" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc31"
+                >Wann kann ich mein Fahrzeug reparieren/verkaufen?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Nach Erhalt des Gutachtens können Sie die Reparatur oder den
+                  Verkauf ihres Fahrzeugs in die Wege leiten. Sofern Wir ihnen
+                  die Reparaturwürdigkeit bereits bei der Besichtigung
+                  bestätigen, können Sie unmittelbar nach Abschluss der
+                  Besichtigung mit der Wiederherstellung beginnen. Im
+                  eindeutigen Totalschadenfall sollten mit dem Verkauf des
+                  Fahrzeugs bis zum Erhalt des Gutachtens warten, um sicher zu
+                  gehen nicht unter Restwert zu veräußern. Grundsätzlich sind
+                  Sie nicht verpflichtet auf Erlaubnis der Versicherung zu
+                  warten.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc32" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc32"
+                >Mein Fahrzeug hat einen Reparaturfall erlitten. Was bekomme
+                ich?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Im Reparaturfall bekommen Sie die Kosten erstattet, die zur
+                  Wiederherstellung des Schadens erforderlich sind.
+                  Grundsätzlich sind Sie nicht zur Reparatur verpflichtet und
+                  können sich die Reparaturkosten abzgl. der Mehrwertsteuer auch
+                  einfach auszahlen lassen (fiktive Abrechnung). Darüber hinaus
+                  haben Sie auch bei der fiktiven Abrechnung gegebenenfalls
+                  Anspruch auf eine Wertminderung. Nach Durchführung der
+                  Reparatur können Sie zudem eine Nutzungsausfallentschädigung
+                  für die Zeit, die der Wagen Ihnen nicht zur Verfügung steht,
+                  einfordern. Eine allgemeine Kostenpauschale steht Ihnen immer
+                  zu.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc33" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc33"
+                >Muss ich mein Fahrzeug reparieren?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Nein. Sofern das Gutachten die Empfehlung der
+                  Wiederherstellung ausspricht, können Sie die theoretisch
+                  erforderlichen Reparaturkosten verlangen, ohne Ihr Fahrzeug
+                  tatsächlich reparieren zu lassen.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc34" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc34"
+                >Mein Fahrzeug hat einen Totalschaden erlitten. Was bekomme
+                ich?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Ein Totalschadenfall liegt im Wesentlichen dann vor, wenn die
+                  Wiederherstellungskosten höher sind als die Kosten für eine
+                  Ersatzbeschaffung eines vergleichbaren Gebrauchtfahrzeugs. In
+                  diesem Fall erstattet Ihnen die Versicherung die Kosten für
+                  den Wiederbeschaffungsaufwand. Dieser besteht bei fiktiver
+                  Abrechnung aus der Differenz zwischen dem netto
+                  Wiederbeschaffungswert des Fahrzeugs unmittelbar vor dem
+                  Schadenereignis sowie dem Restwert des Fahrzeugs nach
+                  Schadeneintritt. Gegebenenfalls können Sie weitere Nebenkosten
+                  wie Ab- und Anmeldekosten, Kosten für erforderliche
+                  Umbauarbeiten und eine Nutzungsausfallentschädigung geltend
+                  machen. Die Beurteilung, ob und wann ein Totalschaden vorliegt
+                  ist nicht immer eindeutig. Lassen Sie sich hierzu von uns
+                  beraten.
+                </p>
+              </div>
+            </div>
+            <div class="kontakt__accordion--tab">
+              <input type="radio" id="acc35" name="rd" />
+              <label class="kontakt__accordion--tab-label" for="acc35"
+                >Bei Totalschaden: Muss ich mein Fahrzeug verkaufen?</label
+              >
+              <div class="kontakt__accordion--tab-content">
+                <p class="panel">
+                  Nein, Sie sind nicht verpflichtet Ihr Fahrzeug abzugeben. Ein
+                  möglicherweise von der Versicherung abgegebenes
+                  Verkaufsangebot (Restwertangebot) dient lediglich der fiktiven
+                  Abrechnung. Sie haben die freie Wahl, ob und an wann Sie ihr
+                  Fahrzeug verkaufen möchten.
+                </p>
+              </div>
             </div>
         </div>
-
-        <div class="kontakt__our-benefits">
-            <h2 class="headline headline--benefits">Noch unsicher? Überzeugen Sie sich von unseren Vorteilen</h2>
-            <div class="leistungen__card leistungen__card--kontakt-outer">
-                <div class="leistungen__card--kontakt-wrapper">
-                    <div class="leistungen__card leistungen__card--kontakt-inner">
-                        <h4>Gutachten auch bei Kleinschäden</h4>
-                        <p>Versicherungen verunsichern gerne mit der Bagatellschadengrenze unter der ein Gutachten nicht erstattet wird. Wir geben Ihnen eine Kostengarantie! Bei kleinsten Schäden wie Kratzer oder Dellen erstellen wir Ihnen, ähnlich eines Kostenvoranschlags, ein Kurz-Gutachten und rechnen eine geringe Gebühr direkt mit der Versicherung ab. Sollte diese sich doch einmal querstellen, berechnen wir Ihnen unsere Kosten nicht!</p>
-                    </div>
-                    <div class="leistungen__card leistungen__card--kontakt-inner">
-                        <h4>Schuldfrage nicht geklärt?</h4>
-                        <p>Profitieren Sie von unserem kostenfreien „Gutachten auf Warteliste“. Dabei notieren wir die Daten von Ihren Fahrzeug, protokollieren den Schadenumfang und sichern Beweise in Form von Fotos. Die Daten werden bei uns im System gespeichert. Können Sie später Ansprüche geltend machen, genügt ein Anruf, und wir beginnen mit der Arbeit. Ihr Vorteil: Eine umfangreiche/fundierte Beweissicherung ohne Kostenrisiko und Sie können sofort mit der Reparatur beginnen bzw. das Fahrzeug verkaufen.</p>
-                    </div>
-                    <span class="kontakt__ausrufezeichen">!</span>
-                    <div class="leistungen__card leistungen__card--kontakt-inner">
-                        <h4>Wer profitiert von unseren Services?</h4>
-                        <p>Neben Privatkunden werden wir auch für Rechtsanwälte, Werkstätten, Taxi-Betriebe und sonstige Unternehmen tätig. Auch Gerichte geben Gutachten bei uns in Auftrag. Unser Angebot richtet sich in erster Linie an Unfallgeschädigte. Aber auch in der Kaskoversicherung kann die Hinzuziehung eines unabhängigen Gutachters sinnvoll sein, wenn es um die Durchsetzung von Ansprüchen bei einer zu geringen Schadensbemessung durch die eigene Versicherung geht.</p>
-                    </div>
-                    <div class="leistungen__card leistungen__card--kontakt-inner">
-                        <h4>Keine Kosten</h4>
-                        <p>Das Haftpflichtschadensrecht in Deutschland sieht vor, dass bei unverschuldetem Unfall, die Kosten für das Schadensgutachten, von der Versicherung des Unfallgegners als Teil des Gesamtschadens zu erstatten ist. Eine Vorausbezahlung durch sie ist nicht erforderlich, denn wir rechnen direkt mit der Versicherung ab. Als Nachweis über die durchgeführte Reparatur erstellen wir Ihnen im Nachhinein eine kostenfreie Reparaturbestätigung.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div id="termin-buchen" class="kontakt__kontakt-form"> 
-            <h2 class="text-md-center headline headline--kontakt-form">Gleich unverbindlich von uns beraten lassen</h2>
-            <div class="kontakt__form-container">
-                <div class="container">
-                <div class="row mx-auto">
-                    <div class="col-12 col-md-6 col-xl-3">
-                        <div class="kontakt__text-wrapper">
-                                <p>BÜRO-WEDDING<br>
-                                Drontheimer Str. 20<br>
-                                13359 Berlin</p><br>
-                                <p>(030) 494 87 88</p><br>
-                                <p>DH@urbanke.net</p>
-                        </div>
-                        <a href="#">
-                            <picture>
-                                <source data-srcset="assets/images/karte1.webp 1x, assets/images/karte1@2x.webp 2x">
-                                <source data-srcset="assets/images/karte1.jpg 1x, assets/images/karte1@2x.jpg 2x">
-                                <img class="lazyload" data-src="assets/images/karte1.jpg" alt="google maps karte">
-                            </picture>
-                        </a>
-                        <a class="btn btn--kontakt-form" href="#">
-                            <div class="btn__container btn__container--kontakt-form">
-                                <p class="btn__text btn__text--kontakt">Zur Karte</p>
-                            </div>
-                        </a>   
-                    </div>
-
-                    <div class="col-12 col-md-6 col-xl-3">
-                        <div class="kontakt__text-wrapper">
-                                <p>BÜRO-Kreuzberg<br>
-                                Blücher Str. 66a<br>
-                                10961 Berlin</p><br>
-                                <p>(030) 692 22 44</p><br>
-                                <p>BL@urbanke.net</p>
-                        </div>
-                        <a href="#">
-                            <picture>
-                                <source data-srcset="assets/images/karte2.webp 1x, assets/images/karte2@2x.webp 2x">
-                                <source data-srcset="assets/images/karte2.jpg 1x, assets/images/karte2@2x.jpg 2x">
-                                <img class="lazyload" data-src="assets/images/karte2.jpg" alt="google maps karte">
-                            </picture>
-                        </a>
-                        <a class="btn btn--kontakt-form" href="#">
-                            <div class="btn__container btn__container--kontakt-form">
-                                <p class="btn__text btn__text--kontakt">Zur Karte</p>
-                            </div>
-                        </a>   
-                    </div>
-
-                    <div class="col-12 col-md-6 col-xl-3">
-                        <div class="kontakt__text-wrapper kontakt__text-wrapper--lineheight">
-                        <ul>
-                        <li>Öffnungszeiten:</li>            
-                        <li>Montag <span>8:00 - 18:00 Uhr</span></li>                       
-                        <li>Dienstag <span>8:00 - 18:00 Uhr</span></li>                       
-                        <li>Mittwoch <span>8:00 - 18:00 Uhr</span></li>                       
-                        <li>Donnerstag <span>8:00 - 18:00 Uhr</span></li>                      
-                        <li>Freitag <span>8:00 - 18:00 Uhr</span></li>                       
-                        <li class="customPadding">Samstag <span>Geschlossen</span></li>                       
-                        <li class="customPadding">Sonntag <span>Geschlossen</span></li><br>
-                        <li class="customPaddingdown">und nach Vereinbarung</li>
-                        <li>Direkt einen Termin buchen:</li>
-                        </ul>
-                        <a class="btn btn--kontakt-form btn--customMarginTop" href="#">
-                            <div class="btn__container btn__container--kontakt-form btn__container--mgl0">
-                                <p class="btn__text btn__text--kontakt">Termin buchen</p>
-                            </div>
-                        </a>
-                        </div> 
-                    </div>
-                
-
-                    <div class="col-12 col-md-6 col-xl-3">
-                        <form action="formMail.php" method="post" id="formular">                         
-                            <label for="office">Büro*</label>
-                            <select id="office" name="office" required>
-                                <option>Wedding</option>
-                                <option>Kreuzberg</option>
-                            </select>
-                            <label for="name">Name*</label>
-                            <input type="text" id="name" name="name" maxlength="60" autocomplete="off" required>
-                            
-                            <label for="email">Email*</label>
-                            <input type="email" id="email" name="email" maxlength="60" autocomplete="off" required> 
-                            
-                            <label for="phone">Telefon</label>
-                            <input type="tel" id="phone" name="phone" pattern="^[0-9-+\s()]*$" maxlength="60" autocomplete="off">
-                            
-                            <label for="message">Nachricht</label>
-                            <textarea id="message" name="message" maxlength="500"></textarea>
-
-                            <a id="form-btn" class="btn btn--kontakt-form btn--customMarginTop" type="submit" name="submit">
-                                <div class="btn__container btn__container--kontakt-form btn__container--mgl0">
-                                    <p class="btn__text btn__text--kontakt">Absenden</p>
-                                </div>
-                            </a>
-                    
-                            <label class="ohnohoney" for="realname"></label>
-                            <input class="ohnohoney" autocomplete="off" type="text" id="realname" name="realname" placeholder="Your name here">
-                            <label class="ohnohoney" for="realemail"></label>
-                            <input class="ohnohoney" autocomplete="off" type="email" id="realemail" name="realemail" placeholder="Your e-mail here">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-       
-
-        <div id="faq" class="container kontakt__faq">
-            <!-- <div class="row"> -->
-                <h2 class="headline">Häufig gestellte Fragen</h2>
-                    <div class="kontakt__accordion">          
-                        
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc">Was ist ein Gutachten und wozu benötige ich das?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Das Gutachten hat zwei wesentliche Funktionen. Zum einen dient es der
-                                    Beweissicherung, zum anderen wird mit dem Gutachten der zur Schadenersatzleistung
-                                    erforderliche Geldbetrag ermittelt.
-                                    Unsere Gutachten sind modern und umfassend erarbeitet. Wir erfassen alle
-                                    wesentlichen Fahrzeug- und Schadendaten, beschreiben den Schadenumfang sowie
-                                    eventuelle Vorschäden, prüfen die Plausibilität, erstellen Fotos und ermitteln sämtliche
-                                    fahrzeugbezogene Schadensersatzkosten, die Sie vom Unfallgegner bzw. dessen
-                                    Versicherung beanspruchen können. Unsere Gutachten sind allgemein anerkannt und
-                                    eignen sich zur gerichtlichen Durchsetzung.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc1" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc1">Wann brauche ich ein Gutachten?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Im Falle eines unverschuldeten Verkehrsunfalls können Sie den eingetretenen
-                                    Schaden von einem unabhängigen Kfz-Sachverständigen auf Kosten des
-                                    Verursachers bzw. seiner Versicherung schätzen lassen. Das Gutachten dient auch
-                                    zur Beweissicherung der eingetretenen Schäden, was im Streitfall bei einer
-                                    gerichtlichen Auseinandersetzung hilfreich sein kann.
-                                    Vor allem die Unabhängigkeit des Kfz-Sachverständigen gewährleistet eine neutrale
-                                    und vollumfängliche Bezifferung aller fahrzeugbezogenen Schadenspositionen.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc2" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc2">Wann brauche ich ein Gutachten?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Im Falle eines unverschuldeten Verkehrsunfalls können Sie den eingetretenen
-                                    Schaden von einem unabhängigen Kfz-Sachverständigen auf Kosten des
-                                    Verursachers bzw. seiner Versicherung schätzen lassen. Das Gutachten dient auch
-                                    zur Beweissicherung der eingetretenen Schäden, was im Streitfall bei einer
-                                    gerichtlichen Auseinandersetzung hilfreich sein kann.
-                                    Vor allem die Unabhängigkeit des Kfz-Sachverständigen gewährleistet eine neutrale
-                                    und vollumfängliche Bezifferung aller fahrzeugbezogenen Schadenspositionen.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc3" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc3">Wer bezahlt das Gutachten?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Im Kfz-Haftpflichtschadenfall, also wenn ein anderer einen Schaden an Ihrem
-                                    Fahrzeug verursacht hat, sind die Kosten für das Gutachten Teil des
-                                    Gesamtschadens. Sie müssen auch nicht in Vorleistung gehen. Das
-                                    Sachverständigenhonorar können wir mittels einer sicherungsweisen
-                                    Abtretungserklärung direkt mit dem eintrittspflichtigen Versicherer abrechnen.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc4" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc4">Wieviel kostet ein Gutachten?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Das Sachverständigenhonorar richtet sich nach der Schadenshöhe. Eine einheitliche
-                                    Honorarforderung wie bei Rechtsanwälten gibt es nicht. Unser Honorar entspricht der
-                                    Üblichkeit. Die Bemessung orientiert sich an der aktuellen BVSK Honorarbefragung
-                                    2018 und entspricht somit der BGH Rechtsprechung BGH 28.02.2017 Az.VI ZR
-                                    76/16).
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc5" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc5">Die Versicherung hat mein Fahrzeug schon besichtigt.
-                            Kann ich mir trotzdem eine zweite Meinung einholen?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Ja. Eine bereits durchgeführte Besichtigung Ihres Fahrzeugs durch die Versicherung
-                                    tangiert Ihr Recht auf einen eigens beauftragten unabhängigen Kfz-Gutachter nicht.
-                                    Das gilt auch dann, wenn Ihnen die Schadensbezifferung der Versicherung bereits
-                                    vorliegt.
-                                    Selbst wenn das eigene Gutachten zu dem gleichen Ergebnis kommt, muss es von
-                                    der Versicherung erstattet werden.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc6" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc6">Was ist bei einem Kaskoschaden zu beachten?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Bei Kasko- oder Teilkasko-Fällen, also wenn die eigene Fahrzeugversicherung in
-                                    Anspruch genommen wird, gilt das Vertragsrecht. In der Regel sind die Kosten für
-                                    einen eigens beauftragten Kfz-Gutachter nicht in den Vertragsbedingungen
-                                    eingeschlossen. Wenden Sie sich daher bitte zuerst an Ihren Versicherer. Einen
-                                    unabhängigen Kfz-Sachverständigen auf Versicherungskosten können Sie wählen
-                                    wenn:       
-                                </p>
-                                <ul>
-                                    <li>Sie die Zusage Ihres Versicherers haben (möglichst schriftlich geben lassen),</li>
-                                    <li>sich die Schadensbezifferung des Versicherers als zu gering oder fehlerhaft
-                                        erweist,</li>
-                                    <li>der Versicherer Ihnen keinen Begutachtungstermin in akzeptabler zeitlicher
-                                        Nähe anbieten kann.</li>
-                                </ul>
-                                <p>Es kann sich auch lohnen ein Kfz-Gutachten auf eigene Kosten zu beauftragen,
-                                    wenn die Versicherung das Gutachtenergebnis übernimmt.</p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc7" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc7">Reicht nicht ein Kostenvoranschlag einer Werkstatt?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Häufig verlangen Versicherungen lediglich ein Kostenvoranschlag zur Ermittlung der
-                                    Reparaturkosten. Damit spart diese bares Geld, möglicherweise auf Ihre Kosten.
-                                    Denn, ein Kostenvoranschlag enthält keine Angaben zum merkantilen Minderwert,
-                                    nimmt keinerlei Differenzierung zu überlagernden Alt- und Vorschäden vor und
-                                    umfasst keine Angaben zu Nebenkosten wie Nutzungsausfall oder voraussichtliche
-                                    Werkstatt Standzeit.
-                                    Zuletzt hat ein Kostenvoranschlag keine beweissichernde Funktion, da er in der
-                                    Regel keine Fotodokumentation umfasst.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc22" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc22">Was mache ich bei Kleinschäden wie Kratzer oder Dellen?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Bei Schäden unterhalb der Bagatellschadengrenze (~750 Euro) erstellen wir Ihnen
-                                    ein Kurz-Gutachten. Dieses umfasst neben der Schadensbezifferung auch eine
-                                    beweissichernde Fotodokumentation sowie eine Kausalitätsprüfung.
-                                    Die Kosten unserer Kurzgutachten entsprechen denen eines Kostenvoranschlags
-                                    und werden von den Versicherungen übernommen. Eine direktabrechnung unserer
-                                    Kosten bieten wir auch bei bagatellschäden gerne an.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc23" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc23">Die Schuldfrage ist nicht geklärt. Was kann ich tun?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Bei ungeklärter Schuldfrage oder unbekanntem Verursacher besteht für Sie das Risiko,
-                                    dass Sie auf den Kosten für das Gutachten sitzen bleiben. Wir bieten Ihnen deshalb eine
-                                    Vorab-Beweisaufnahme an. Hierbei erstellen wir Fotos vom Fahrzeug und von den
-                                    Beschädigungen, nehmen sämtliche Daten auf und speichern diese in unserem System.
-                                    <span>Die komplette Aufnahme ist für Sie bis dahin kostenlos</span>. Können Sie später Ansprüche
-                                    geltend machen, genügt eine kurze telefonische Beauftragung zur Ausarbeitung des
-                                    Gutachtens. Die dann erst entstehenden Gebühren rechnen wir direkt mit der
-                                    Versicherung des Unfallgegners ab.
-                            </p>
-                        </div>
-                    </div>
-                    <h2>Vor-Gutachten</h2>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc24" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc24">Wo wird mein Fahrzeug besichtigt?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Zur Begutachtung können Sie Ihr Fahrzeug an eines unserer Büroadressen
-                                    vorfahren. Natürlich kann ein Besichtigungstermin auch bei Ihnen zu Hause, auf Ihrer
-                                    Arbeit oder in einer Werkstatt Ihrer Wahl vereinbart werden.
-                                    In Einzelfällen kann eine weitere Besichtigung Ihres Fahrzeugs im teilweise
-                                    demontierten Zustand ratsam sein, um den vollständigen Schadenumfang zu
-                                    erfassen.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc25" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc25">Wie lange dauert die Besichtigung?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Der Aufwand der Besichtigung ist abhängig vom Schadenumfang. In der Regel
-                                    reichen 15-30 Minuten hierfür aus.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc26" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc26">Wie schnell bekomme ich einen Termin?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Nutzen Sie den Vorteil der Flexibilität unserer beiden Büros. Wir garantieren die
-                                    Besichtigung Ihres Fahrzeugs in Berlin und Umgebung noch am selben, spätestens
-                                    aber am Folgewerktag.
-                                    Wenn gewünscht, können Sie auch einen Besichtigungstermin außerhalb der
-                                    Bürozeiten mit unseren Sachverständigen vereinbaren.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc27" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc27">Was muss ich zur Besichtigung mitbringen?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Bezüglich Ihrem Fahrzeug benötigen wir mindestens:
-                                </p>
-                                <ul>
-                                    <li>Zulassungsbescheinigung Teil I oder Teil II,</li>
-                                    <li>Eigentumsnachweis / Kaufvertrag (wenn Sie nicht Halter des Fahrzeugs
-                                        sind),</li>
-                                    <li>Polizeiliche Unfallmitteilung und/oder Daten zum Unfallverursacher.</li>
-                                    <li>Gegebenenfalls: Reparatur oder Wartungsbelege sowie Belege über frühere
-                                        Schäden an Ihrem Fahrzeug.</li>
-                                </ul>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc28" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc28">Darf ich mein Fahrzeug vor der Besichtigung reinigen?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Es ist empfehlenswert, den Schadensbereich zunächst in unverändertem Zustand
-                                    vom Kfz-Sachverständigen dokumentieren zu lassen. Abwaschbare Kontaktmängel
-                                    stellen zwar keine Schäden im eigentlich Sinn dar, können aber wichtig für die
-                                    Einordnung der Plausibilität des Schadenanspruchs sein.
-                                    Sofern eine Reinigung zur weiteren Begutachtung notwendig ist, kann diese im Zuge
-                                    der Besichtigung erfolgen.
-                            </p>
-                        </div>
-                    </div>
-                    <h2>Nach-Gutachten</h2>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc29" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc29">Wie lange dauert es bis das Gutachten fertig ist?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Die Bearbeitungszeit hängt vom Schadenumfang ab. In der Regel erstellen wir Ihr
-                                    Gutachten innerhalb weniger Tage. Die Bearbeitung von Bagatellschäden, für die wir
-                                    ein Kurz-Gutachten erstellen, ist in der Regel innerhalb eines Werktags möglich.
-                                    Damit Sie Ihr Gutachten noch schneller erhalten, senden wir Ihnen dieses auf
-                                    Wunsch gerne per E-Mail zu.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc30" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc30">Wie lange dauert es bis ich mein Geld erhalte?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Auf die Bearbeitungsdauer der Versicherungen haben wir leider keinen Einfluss. Bei
-                                    geklärter Schuldfrage ist ein Zeitraum von ca. 4 Wochen üblich. Im optimalen Fall
-                                    erfolgt die Erstattung auch schon nach wenigen Tagen.<br>
-                                    Ist die Schuldfrage offen oder der Unfallgegner hat den Schaden nicht bei seiner
-                                    Versicherung gemeldet, wird gegebenenfalls die Akte der Polizei angefordert. Die
-                                    Herausgabe erfolgt in Berlin erfahrungsgemäß erst nach etwa 6-8 Wochen. Sofern
-                                    die Polizei selbst noch ermittelt, kann die Herausgabe auch Monate in Anspruch
-                                    nehmen. Bei gerichtlicher Auseinandersetzung ist der Abschluss des Vorgangs abhängig von
-                                    der Verfahrensdauer.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc31" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc31">Wann kann ich mein Fahrzeug reparieren/verkaufen?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Nach Erhalt des Gutachtens können Sie die Reparatur oder den Verkauf ihres
-                                    Fahrzeugs in die Wege leiten.
-                                    Sofern Wir ihnen die Reparaturwürdigkeit bereits bei der Besichtigung bestätigen,
-                                    können Sie unmittelbar nach Abschluss der Besichtigung mit der Wiederherstellung
-                                    beginnen. Im eindeutigen Totalschadenfall sollten mit dem Verkauf des Fahrzeugs
-                                    bis zum Erhalt des Gutachtens warten, um sicher zu gehen nicht unter Restwert zu
-                                    veräußern. Grundsätzlich sind Sie nicht verpflichtet auf Erlaubnis der Versicherung
-                                    zu warten.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc32" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc32">Mein Fahrzeug hat einen Reparaturfall erlitten. Was
-                            bekomme ich?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Im Reparaturfall bekommen Sie die Kosten erstattet, die zur Wiederherstellung des
-                                    Schadens erforderlich sind. Grundsätzlich sind Sie nicht zur Reparatur verpflichtet
-                                    und können sich die Reparaturkosten abzgl. der Mehrwertsteuer auch einfach
-                                    auszahlen lassen (fiktive Abrechnung).
-                                    Darüber hinaus haben Sie auch bei der fiktiven Abrechnung gegebenenfalls
-                                    Anspruch auf eine Wertminderung. Nach Durchführung der Reparatur können Sie
-                                    zudem eine Nutzungsausfallentschädigung für die Zeit, die der Wagen Ihnen nicht
-                                    zur Verfügung steht, einfordern. Eine allgemeine Kostenpauschale steht Ihnen immer
-                                    zu.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc33" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc33">Muss ich mein Fahrzeug reparieren?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Nein. Sofern das Gutachten die Empfehlung der Wiederherstellung ausspricht, können
-                                    Sie die theoretisch erforderlichen Reparaturkosten verlangen, ohne Ihr Fahrzeug
-                                    tatsächlich reparieren zu lassen.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc34" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc34">Mein Fahrzeug hat einen Totalschaden erlitten. Was
-                            bekomme ich?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Ein Totalschadenfall liegt im Wesentlichen dann vor, wenn die
-                                    Wiederherstellungskosten höher sind als die Kosten für eine Ersatzbeschaffung
-                                    eines vergleichbaren Gebrauchtfahrzeugs. In diesem Fall erstattet Ihnen die
-                                    Versicherung die Kosten für den Wiederbeschaffungsaufwand. Dieser besteht bei
-                                    fiktiver Abrechnung aus der Differenz zwischen dem netto Wiederbeschaffungswert
-                                    des Fahrzeugs unmittelbar vor dem Schadenereignis sowie dem Restwert des
-                                    Fahrzeugs nach Schadeneintritt. Gegebenenfalls können Sie weitere Nebenkosten wie Ab- und Anmeldekosten,
-                                    Kosten für erforderliche Umbauarbeiten und eine Nutzungsausfallentschädigung
-                                    geltend machen.
-                                    Die Beurteilung, ob und wann ein Totalschaden vorliegt ist nicht immer eindeutig.
-                                    Lassen Sie sich hierzu von uns beraten.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kontakt__accordion--tab">
-                        <input type="radio" id="acc35" name="rd">
-                        <label class="kontakt__accordion--tab-label" for="acc35">Bei Totalschaden: Muss ich mein Fahrzeug verkaufen?</label>
-                        <div class="kontakt__accordion--tab-content">
-                                <p class="panel">
-                                    Nein, Sie sind nicht verpflichtet Ihr Fahrzeug abzugeben. Ein möglicherweise von der
-                                    Versicherung abgegebenes Verkaufsangebot (Restwertangebot) dient lediglich der
-                                    fiktiven Abrechnung. Sie haben die freie Wahl, ob und an wann Sie ihr Fahrzeug
-                                    verkaufen möchten.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            <!-- </div>  -->
-        </div>
+      </div>
     </section>
 
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 footer__st-color">
-                    <p>Konzept, Design & Umsetzung: Helix Media GmbH</p>
-                </div>  
-                <div class="col-12 col-xl-6 footer__delimiter">
-                    <p><a href="#">Impressum</a> <span>|</span> <a href="#">Datenschutz</a> <span>|</span> <a href="#">Sitemap</a> <span>|</span> <a href="#">Downloads</a></p>
-                </div>
-                <div class="col-12 col-xl-6">
-                    <p>Copyright © 2020 Urbanke & Partner. Alle Rechte vorbehalten.</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 footer__st-color">
+            <p>
+              Konzept, Design & Umsetzung:
+              <a href="https://helix-media.de/">Helix Media GmbH</a>
+            </p>
+          </div>
+          <div class="col-12 col-xl-6 footer__delimiter">
+            <p>
+              <a href="#">Impressum</a> <span>|</span>
+              <a href="#">Datenschutz</a> <span>|</span>
+              <a href="#">Sitemap</a> <span>|</span> <a href="#">Downloads</a>
+            </p>
+          </div>
+          <div class="col-12 col-xl-6">
+            <p>
+              Copyright ©
+              <script type="text/javascript">
+                document.write(new Date().getFullYear());
+              </script>
+              Urbanke & Partner. Alle Rechte vorbehalten.
+            </p>
+          </div>
         </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

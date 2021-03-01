@@ -48,6 +48,13 @@ h3 {
 h4 {
   font-size: 2rem;
   font-style: normal;
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1358px !important;
+  }
 }
 
 
@@ -83,6 +90,10 @@ h4 {
 
   }
 
+  &--faq {
+    padding: 5rem 0 4rem;
+  }
+
   &--weitere-leistungen {
     padding: 4.1rem;
 
@@ -114,12 +125,22 @@ h4 {
   }
   
   &--md-center {
-    text-align: center;
+    
     margin: 0 auto;
+  }
+  @media screen and (min-width: 768px) {
+    &--md-center {
+     text-align: center;
+    }
   }
 
   &--space {
     padding: 7rem 0 8.5rem;
+  }
+  @media screen and (min-width: 1200px) {
+    &--space {
+      padding-bottom: 12.9rem;
+    }
   }
 
   &--benefits {
@@ -163,6 +184,17 @@ h4 {
        z-index: 2;
       }
     }
+    @media screen and (min-width: 1500px) {
+      & {
+       top: 5vh;
+       padding: 2.4rem 0;
+      }
+    }
+    @media screen and (min-width: 1900px) {
+      & {
+       left: 6vw;
+      }
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -177,6 +209,7 @@ h4 {
 
       &--benefits {
         padding: 5rem 3.2rem 2rem;
+        text-align: center;
       }
     }
 
@@ -209,7 +242,7 @@ h4 {
     }
 
     &--xl {
-      max-width: 81%;
+      max-width: 962px;
       margin: 0 auto;
       text-align: left;
       padding-top: 7rem;
@@ -222,6 +255,18 @@ h4 {
 
     &--picture {
       display: none;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    &--benefits {
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 1900px) {
+    &--xl {
+      max-width: 1100px;
     }
   }
 
