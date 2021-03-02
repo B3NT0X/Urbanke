@@ -20,29 +20,31 @@
   }
 
   &__container {
-    width: 285px;
-    background-color: $footerBlue;
-    clip-path: polygon(0 0, 100% 0%, 87% 100%, 0% 100%);
     position: relative;
+    clip-path: polygon(0 0, 100% 0%, 87% 100%, 0% 100%);
+    max-width: 285px;
+    /* height: 51px; */
+    padding: 1.3rem 4.9rem 1.3rem 3.3rem;
+    background-color: $footerBlue;
 
     &:before {
       content: "";
       width: calc(100% - 8px);
       height: calc(100% - 4px);
-      clip-path: polygon(0 0, 100% 0%, calc(100% - 34px) 100%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%);
       background-color: #fff;
       display: block;
       position: absolute;
       top: 2px;
       left: 3px;
     }
-
-    /* &:hover {
-      background-color: #fff;
+    &:hover > .btn__text{
+      color: #fff;
     }
-    &:hover:before {
-      background-color: $crashBlue;
-    } */
+    &:hover:before{ 
+     background-color: $crashBlue;
+    }
+    
 
     @mixin atLarge {
         & {
@@ -51,34 +53,39 @@
         &:before {
           background-color: $crashBlue;
         }
-        &:hover {
-          background-color: $crashBlue;
+        &:hover > .btn__text{
           color: $crashBlue;
-        } 
-        &:hover:before {
-          background-color: #fff;
+        }
+        &:hover:before{ 
+         background-color: #fff;
         }
     }
 
     &--kontakt {
       background-color: #fff;
+      max-width: 269px;
+      /* height: 46px; */
+      padding: 1.5rem 4rem 1.5rem 1.5rem;
+
 
       &:before {
         background-color: $crashBlue;
+        clip-path: polygon(0 0, 100% 0%, calc(100% - 28px) 100%, 0% 100%);
       }
 
-      &:hover {
-        background-color: $crashBlue;
+      &:hover > .btn__text--kontakt{
+        color: $crashBlue;
       }
-      &:hover:before {
-        background-color: #fff;
+      &:hover:before{ 
+       background-color: #fff;
       }
     }
 
     &--kontakt-form {
-      width: 205px;
-      min-height: 40px;
+      width: 184px;
+      /* height: 40px; */
       margin-left: 4.5rem;
+      padding: 1.3rem 4rem 1.3rem 1.3rem;
       background-color: #fff;
       clip-path: polygon(0 0, 100% 0%, 78% 100%, 0% 100%);
 
@@ -86,7 +93,7 @@
         content: "";
         width: calc(100% - 8px);
         height: calc(100% - 4px);
-        clip-path: polygon(0 0, 100% 0%, calc(100% - 42px) 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, calc(100% - 37px) 100%, 0% 100%);
         background-color: #fff;
         display: block;
         position: absolute;
@@ -94,11 +101,11 @@
         left: 3px;
         background-color: $footerBlue;
       }
-      &:hover {
-        background-color: $footerBlue;
+      &:hover > .btn__text--kontakt{
+        color: $footerBlue;
       }
-      &:hover:before {
-        background-color: #fff;
+      &:hover:before{ 
+       background-color: #fff;
       }
 
       @mixin atMedium {
@@ -114,31 +121,19 @@
   &__text {
     font-family: "Poppins";
     position: relative;
-    max-width: 90%;
-    padding: 1.3rem;
+    /* max-width: 90%; */
+    /* padding: 1.3rem; */
     font-size: 1.6rem;
     font-style: italic;
     color: $footerBlue;
     text-align: center;
-
-    /* &:hover {
-      color: #fff;
-    }*/
-
-    @mixin atLarge {
-      &:hover {
-        color: $footerBlue;
-      }
-    }
+    margin: 0;
 
     &--kontakt {
-      max-width: 90% !important;
+      /* max-width: 90% !important; */
       color: #fff;
       margin: 0;
-
-      &:hover {
-        color: $crashBlue;
-      }
+      line-height: 1;
     }
   }
 

@@ -60,6 +60,10 @@
     padding-right: 0 !important;
   }
 
+  &__unfallImg, &__trioImg {
+    min-width: 100%;
+  }
+
   &__wrapper {
     display: inline-block;
     width: 100%;
@@ -370,9 +374,9 @@
           );
         }
       }
-      @mixin atMedium {
+      /* @mixin atMedium {
         min-width: 100%;
-      }
+      } */
 
       @mixin atExtraLarge {
         display: flex;
@@ -906,7 +910,7 @@
       margin-left: 25rem;
     }
     .leistungen__wrapper .leistungen__messagebox--right:nth-of-type(2) {
-      top: 48.5%;
+      top: 48%;
       margin-left: 19rem;
       padding-bottom: 0.3rem;
     }
