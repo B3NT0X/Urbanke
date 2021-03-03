@@ -13,6 +13,25 @@
 
   &--kontakt-form {
     margin: 3rem 0 8rem;
+    @mixin atMedium {
+      margin: 2.4rem 0 8rem;
+    }
+  }
+
+  .kontakt__inner-column:nth-of-type(2) &--kontakt-form {
+    @mixin atMediumLarge {
+      margin: 2.4rem 0 8rem 5rem;
+    }
+    @mixin atExtraLarge {
+      margin: 2.4rem 0 8rem 0rem;
+    }
+  }
+
+  .kontakt__inner-column:nth-of-type(3) &__container--kontakt-form {
+      width: 218px;
+      &:before {
+        clip-path: polygon(0 0, 100% 0%, calc(100% - 44px) 100%, 0% 100%);
+      }
   }
 
   &--customMarginTop {
@@ -64,7 +83,6 @@
     &--kontakt {
       background-color: #fff;
       max-width: 269px;
-      /* height: 46px; */
       padding: 1.5rem 4rem 1.5rem 1.5rem;
 
 
@@ -82,8 +100,7 @@
     }
 
     &--kontakt-form {
-      width: 184px;
-      /* height: 40px; */
+      width: 197px;
       margin-left: 4.5rem;
       padding: 1.3rem 4rem 1.3rem 1.3rem;
       background-color: #fff;
@@ -93,7 +110,7 @@
         content: "";
         width: calc(100% - 8px);
         height: calc(100% - 4px);
-        clip-path: polygon(0 0, 100% 0%, calc(100% - 37px) 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, calc(100% - 40px) 100%, 0% 100%);
         background-color: #fff;
         display: block;
         position: absolute;
@@ -121,8 +138,6 @@
   &__text {
     font-family: "Poppins";
     position: relative;
-    /* max-width: 90%; */
-    /* padding: 1.3rem; */
     font-size: 1.6rem;
     font-style: italic;
     color: $footerBlue;
@@ -130,17 +145,14 @@
     margin: 0;
 
     &--kontakt {
-      /* max-width: 90% !important; */
       color: #fff;
+      font-style: italic;
       margin: 0;
       line-height: 1;
     }
   }
 
   @mixin atLarge {
-    & {
-      margin-top: 1rem;
-    }
     &__text {
       color: $navLink;
     }

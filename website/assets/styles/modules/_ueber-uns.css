@@ -81,6 +81,9 @@
   }
 
   @mixin atLarge {  
+    &__mitarbeiter-container1 {
+      width: 85%;
+    }
     &__mitarbeiter-container, &__mitarbeiter-container2 {
         width: 60%;
     }

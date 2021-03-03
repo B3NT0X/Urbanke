@@ -5,7 +5,7 @@
   scroll-margin-top: 100px;
 }
 #faq {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 300px;
 }
 .kontakt {
   &__banner {
@@ -203,9 +203,14 @@
     color: #fff;
 
     .kontakt__custom-container {
+      padding-top: 2.3rem;
+      max-width: 374px;
+      margin: 0 auto;
+
       @mixin atMedium {
         max-width: 604px;
         margin: 0 auto;
+        padding-top: 3.1rem;
       }
       @mixin atMediumLarge {
         max-width: 656px;
@@ -230,19 +235,27 @@
         }
       }
     }
+    .kontakt__inner-column:nth-of-type(2) .kontakt__text-wrapper {
+      @mixin atMediumLarge {
+        margin-left: 4.5rem;
+      }
+      @mixin atExtraLarge {
+        margin-left: 0;
+      }
+  }
     .kontakt__text-wrapper {
       padding: 0 4.5rem 0rem;
 
       @mixin atMedium {
         padding: 0;
-
-        ul {
+        &--lineheight ul {
+          margin-top: 0;
           padding-left: 0;
         }
       }
 
       @mixin atExtraLarge {
-        ul {
+        &--lineheight ul {
           margin-top: 2rem;
         }
       }
@@ -260,7 +273,7 @@
         padding-bottom: 7.5rem;
 
         @mixin atMedium {
-          padding-bottom: 11rem;
+          padding-bottom: 13.7rem;
         }
 
         @mixin atExtraLarge {
@@ -276,6 +289,15 @@
       }
     }
 
+    .kontakt__inner-column:nth-of-type(2) .kontakt__karteImg {
+        @mixin atMediumLarge {
+            margin-left: auto;
+        }
+        @mixin atExtraLarge {
+          margin-left: 0; 
+        }
+    }
+
     .kontakt__narrow {
       padding: 0;
     }
@@ -286,9 +308,11 @@
 
     form textarea {
       display: block;
+      font-family: "Roboto Slab";
       width: 100%;
-      min-width: 324px;
-      min-height: 100px;
+      /* min-width: 324px; */
+      min-height: 90px;
+      margin-top: 0.7rem;
       resize: vertical;
       border: none;
       @mixin atExtraLarge {
@@ -300,7 +324,7 @@
       display: block;
       font-family: "Roboto Slab";
       width: 100%;
-      min-width: 324px;
+      /* min-width: 324px; */
       height: 24px;
       padding: 0.5rem;
       margin-top: 0.7rem;
@@ -314,6 +338,11 @@
       font-size: 1.4rem;
       padding-top: 0.2rem;
       padding-bottom: 0.2rem;
+    }
+
+    form label {
+      font-family: "Roboto Slab";
+      font-size: 1.6rem;
     }
 
       #submit {
@@ -330,10 +359,6 @@
       color: #fff;
       font-size: 1.6rem;
       text-transform: uppercase;
-
-      @mixin atExtraLarge {
-        margin-top: 1rem;
-      }
 
       &::before {
         content: "";
@@ -356,11 +381,6 @@
       
     }
 
-    form label {
-      font-family: "Roboto Slab";
-      font-size: 1.6rem;
-    }
-
     form input:invalid {
       border-color: red;
     }
@@ -368,16 +388,23 @@
       border-color: green;
     }
 
+    form {
+      max-width: 328px;
+    }
     @mixin atMedium {
       form {
         max-width: 250px;
       }
     }
-
+    @mixin atMediumLarge {
+      form {
+        margin-left: auto;
+      }
+    }
     @mixin atExtraLarge {
       form {
         padding-top: 1.6rem;
-        max-width: 275px;
+        max-width: 278px;
       }
     }
 
@@ -419,7 +446,7 @@
         width: 1em;
         height: 1em;
         text-align: center;
-        transition: all 0.35s;
+        transition: max-height ease-out 0.5s;
       }
     }
     &-content {
@@ -427,6 +454,7 @@
       color: $mainBlue;
       background: white;
       transition: all 0.35s;
+      padding: 0 1rem 0 1rem;
 
       ul {
         list-style-type: initial;
@@ -434,6 +462,11 @@
       }
       ul li {
         color: $mainBlue;
+      }
+    }
+    @media screen and (min-width: 500px) {
+      &-content {
+          padding: 1rem 1.6rem;
       }
     }
   }
@@ -447,12 +480,6 @@
     }
     ~ .kontakt__accordion--tab-content {
       max-height: 100vh;
-      padding: 0 1rem 0 1rem;
-    }
-    @media screen and (min-width: 500px) {
-      ~ .kontakt__accordion--tab-content {
-          padding: 1rem 1.6rem;
-      }
     }
   }
 

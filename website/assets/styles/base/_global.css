@@ -1,21 +1,8 @@
-/* *{
-  box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    font-size: 62.5%;
-}
-  
-body {
-  color:#0055A6;
-}
-
 img {
   display: block;
   max-width: 100%;
   height: auto;
-} */
+}
 
 h1, h2, h3, h4 {
   font-family: 'Poppins';
@@ -111,7 +98,7 @@ h4 {
 
   &--priority {
     margin-top: 0;
-    padding: 0.3rem 1.6rem 2rem;
+    padding: 1rem 2rem 4rem;
 
     @media screen and (min-width: 768px) {
       & {

@@ -40,14 +40,23 @@ let cssConfig = {
   ],
 };
 
+let pages = fse.readdirSync('./website').filter(function(file) {
+  return file.endsWith('.html')
+}).map(function(page) {
+  return new HtmlWebpackPlugin({
+    filename: page,
+    template: `./website/${page}`
+  });
+});
+
 let config = {
   entry: "./website/assets/scripts/app.js",
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "./website/index.html",
-    }),
-  ],
+  plugins: pages,
+    // new HtmlWebpackPlugin({
+    //   filename: "index.html",
+    //   template: "./website/index.html",
+    // }),
+  
   module: {
     rules: [
       cssConfig,
