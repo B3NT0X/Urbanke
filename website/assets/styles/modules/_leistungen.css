@@ -1,5 +1,8 @@
 #leistungen {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 400px;
+  @mixin atLarge {
+    scroll-margin-top: 100px;
+  }
 }
 .leistungen {
   position: relative;
@@ -161,6 +164,12 @@
       &:nth-of-type(2) {
         padding-top: 2.5rem;
         padding-bottom: 4rem;
+        @mixin atMedium {
+          & {
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+        }
       }
       &:last-of-type {
         padding-bottom: 0.4rem;
@@ -273,7 +282,7 @@
         }
       }
 
-      @media screen and (min-width: 1395px) {
+      @media screen and (min-width: 1440px) {
         & {
           max-width: 691px !important;
         }
@@ -343,6 +352,7 @@
     }
 
     &--kontakt-wrapper {
+      min-width: 100%;
       .leistungen__dropshadow:nth-of-type(1), 
       .leistungen__dropshadow:nth-of-type(3) {
         .leistungen__card--kontakt-inner {
@@ -567,7 +577,7 @@
 
     &__our-priority-text-box {
       max-width: 385px;
-      padding: 8.4rem 0 2.4rem;
+      padding: 8.4rem 0 8.4rem;
       margin-left: 9.8rem;
 
       &--reverse {
@@ -604,12 +614,12 @@
     .large-hero {
       &__triangle--lighter {
         border-color: $secondaryBlue transparent transparent transparent;
-        border-width: 550px 370px 0 0;
+        border-width: 450px 370px 0 0;
         opacity: 0.8;
       }
       &__triangle--mirror {
         border-color: transparent transparent transparent $secondaryBlue;
-        border-width: 550px 0 0 370px;
+        border-width: 450px 0 0 370px;
         opacity: 0.8;
       }
     }
@@ -713,18 +723,31 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 410px;
-        height: 630px;
+        width: 310px;
+        height: 530px;
         margin-left: -340px;
         opacity: 0.7;
         background-color: $lightBlue;
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: $lightBlue;
+          transform-origin: top left;
+          transform: skew(33deg, 0deg);
+        }
 
         &--right {
           position: absolute;
           bottom: 22%;
           right: 0;
-          width: 358px;
-          height: 550px;
+          width: 258px;
+          height: 400px;
           margin-left: -230px;
           opacity: 0.7;
           background-color: $lightBlue;
@@ -742,6 +765,18 @@
             transform: skew(33deg, 0deg);
           }
         }
+      }
+
+      .leistungen__form_bottom-left {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 331px;
+        height: 563px;
+        margin-right: -496px;
+        opacity: 0.7;
+        background-color: $secondaryBlue;
+
         &::after {
           content: "";
           position: absolute;
@@ -750,28 +785,17 @@
           height: 100%;
           top: 0;
           left: 0;
-          background-color: $lightBlue;
-          transform-origin: top left;
+          background-color: $secondaryBlue;
+          transform-origin: bottom left;
           transform: skew(33deg, 0deg);
         }
-      }
-
-      .leistungen__form_bottom-left {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 431px;
-        height: 663px;
-        margin-right: -496px;
-        opacity: 0.7;
-        background-color: $secondaryBlue;
 
         &--right {
           position: absolute;
-          top: 26%;
+          top: 22%;
           right: 0;
-          width: 358px;
-          height: 546px;
+          width: 258px;
+          height: 396px;
           margin-right: -250px;
           opacity: 0.7;
           background-color: $secondaryBlue;
@@ -788,19 +812,6 @@
             transform-origin: bottom left;
             transform: skew(33deg, 0deg);
           }
-        }
-
-        &::after {
-          content: "";
-          position: absolute;
-          display: block;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          background-color: $secondaryBlue;
-          transform-origin: bottom left;
-          transform: skew(33deg, 0deg);
         }
       }
     }
@@ -831,7 +842,7 @@
 
       &--reverse {
         margin-left: auto;
-        margin-right: 0;
+        margin-right: 1.6rem;
       }
     }
   }
@@ -884,6 +895,7 @@
         margin-left: 6rem;
       &--reverse {
         margin-left: auto;
+        margin-right: 6rem;
       }
     }
 

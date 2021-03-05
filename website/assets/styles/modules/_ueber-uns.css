@@ -1,5 +1,8 @@
 #ueber-uns {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 400px;
+  @mixin atLarge {
+    scroll-margin-top: 100px;
+  }
 }
 .ueber-uns {
   position: relative;
@@ -47,6 +50,7 @@
   }
 
   &__mitarbeiterImg {
+    width: 252px;
     margin: 0 auto;
     @mixin atExtraLarge {
       width: 310px;
@@ -67,34 +71,11 @@
   &__column-center {
     text-align: center;
     padding-top: 6.1rem;
-
-    @mixin atLarge {
-      display: flex;
-      flex-direction: column;
-      &:first-of-type {
-        align-items: flex-start;
-      }
-      &:nth-of-type(3) {
-        align-items: flex-end;
-      }
-    }
   }
-
-  @mixin atLarge {  
-    &__mitarbeiter-container1 {
-      width: 85%;
-    }
-    &__mitarbeiter-container, &__mitarbeiter-container2 {
-        width: 60%;
-    }
-    &__mitarbeiter-container2 {
-      margin-right: 4.8rem;
-    }
-    &__mitarbeiter-containe3, &__mitarbeiter-container4 {
-      width: 100%;
-    }
-   }
-
+  &__mitarbeiter-container, &__mitarbeiter-container1, &__mitarbeiter-container2, &__mitarbeiter-container3, &__mitarbeiter-container4 {
+    max-width: 285px;
+    margin: 0 auto;
+  }
   &__bereich {
     color: $boxBlue;
     margin-top: 0;
@@ -109,9 +90,9 @@
 
     li {
       text-align: left;
-      max-width: 136px;
-      margin: 0 auto;
-      padding-left: 1.8rem;
+      /* max-width: 136px;
+      margin: 0 auto; */
+      padding-left: 9.2rem;
       padding-bottom: 1.4rem;
     }
 
@@ -121,14 +102,17 @@
     }
 
     li:first-of-type {
-      list-style-image: url("../images/013-location.svg");
+      /* list-style-image: url("../images/013-location.svg"); */
+      background: url('../images/013-location.svg') 23% 25% no-repeat;
     }
 
     li:nth-of-type(2) {
-      list-style-image: url("../images/004-phone.svg");
+      /* list-style-image: url("../images/004-phone.svg"); */
+      background: url('../images/004-phone.svg') 23% 25% no-repeat;
     }
     li:last-of-type {
-      list-style-image: url("../images/001-mail.svg");
+      /* list-style-image: url("../images/001-mail.svg"); */
+      background: url('../images/001-mail.svg') 23% 25% no-repeat;
     }
   }
 
@@ -227,7 +211,7 @@
       }
     }
 
-    @media screen and (min-width: 1395px) {
+    @media screen and (min-width: 1440px) {
       & {
         max-width: 1422px !important;
       }

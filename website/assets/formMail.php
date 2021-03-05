@@ -10,7 +10,8 @@ $message = htmlspecialchars(stripslashes(trim($_POST['message'])));
 $honeypotname = htmlspecialchars(stripslashes(trim($_POST['realname'])));
 $honeypotemail = htmlspecialchars(stripslashes(trim($_POST['realemail'])));
 
-$recipient = "bennet@commun-it.net";
+$recipient1 = "DH@urbanke.net";
+$recipient2 = "BL@urbanke.net";
 $subject = "Nachricht von ".$name;
 $headers = "MIME-Version: 1.0" ."\r\n";
 $headers .="Content-Type:text/html;charset=UTF-8" . "\r\n";
@@ -24,11 +25,14 @@ $body = '<h3>Kontakt Form</h3>
 				';
 
 
-if (!empty($honeypotname) || !empty($honeypotemail)) {
-  return false;
-} else {
-  mail($recipient, $subject, $body, $headers);
-}
+  if($office == 'wedding') {
+    mail($recipient1, $subject, $body, $headers);
+  } elseif (!empty($honeypotname) || !empty($honeypotemail)) {
+    return false;
+  } else {
+    mail($recipient2, $subject, $body, $headers); 
+  }
+
 
 // if(!preg_match("/^[A-Za-z .'-]+$/", $name)){
 //   return false;

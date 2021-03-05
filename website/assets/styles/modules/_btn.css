@@ -4,6 +4,10 @@
   text-transform: uppercase;
   margin: 4.4rem 0 3.9rem 0rem;
 
+  @mixin atExtraLarge {
+    margin: 2.2rem 0 3.9rem 0
+  }
+
   &--kontakt {
     margin: 0 0 2rem;
     @mixin atLarge {
@@ -40,17 +44,17 @@
 
   &__container {
     position: relative;
-    clip-path: polygon(0 0, 100% 0%, 87% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
     max-width: 285px;
-    /* height: 51px; */
     padding: 1.3rem 4.9rem 1.3rem 3.3rem;
     background-color: $footerBlue;
+    user-select: none;
 
     &:before {
       content: "";
       width: calc(100% - 8px);
       height: calc(100% - 4px);
-      clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0%, calc(100% - 37px) 100%, 0% 100%);
       background-color: #fff;
       display: block;
       position: absolute;
@@ -71,6 +75,7 @@
         }
         &:before {
           background-color: $crashBlue;
+          clip-path: polygon(0 0, 100% 0%, calc(100% - 34px) 100%, 0% 100%);
         }
         &:hover > .btn__text{
           color: $crashBlue;
@@ -78,6 +83,12 @@
         &:hover:before{ 
          background-color: #fff;
         }
+    }
+
+    @mixin atExtraLarge {
+      & {
+        padding: 1.3rem 3.9rem 1.3rem 1.8rem;
+      }
     }
 
     &--kontakt {
@@ -88,7 +99,7 @@
 
       &:before {
         background-color: $crashBlue;
-        clip-path: polygon(0 0, 100% 0%, calc(100% - 28px) 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0%, calc(100% - 33px) 100%, 0% 100%);
       }
 
       &:hover > .btn__text--kontakt{

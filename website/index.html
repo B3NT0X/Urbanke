@@ -17,17 +17,19 @@
       body {
         color: #0055a6;
       }
-      .site-header .site-header__top-banner ul {
+      .site-header__top-banner ul {
         display: none;
+        list-style: none;
+        margin: 0;
       }
-      .site-header .site-header__top-banner ul li {
+      .site-header__top-banner ul li {
         font-family: "Poppins";
         font-size: 1.4rem;
         font-style: italic;
         color: #2172c0;
       }
       @media screen and (min-width: 768px) {
-        .site-header .site-header__top-banner ul {
+        .site-header__top-banner ul {
           font-family: "Poppins";
           height: 52px;
           display: flex;
@@ -36,7 +38,7 @@
           align-items: center;
           background-color: #f6f6f6;
         }
-        .site-header .site-header__top-banner ul li:before {
+        .site-header__top-banner ul li:before {
           content: '';
           display: inline-block;
           margin-right: 1rem;
@@ -47,30 +49,39 @@
         }
       }
       @media screen and (min-width: 992px) {
-        .site-header .site-header__top-banner ul li {
+        .site-header__top-banner ul li {
           font-size: 1.6rem;
         }
       }
       .site-header {
+        position: sticky;
+        top: 0;
         background-color: #fff;
         box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
-        position: fixed;
         width: 100%;
         z-index: 3;
       }
-      .site-header ul {
+      @media screen and (min-width: 1024px) {
+        .site-header {
+          overflow: hidden;
+        }
+      }
+      .site-header__menu {
+        display: flex;
+        flex-direction: column;
         margin: 0;
         padding: 0;
         list-style: none;
         overflow: hidden;
       }
-      .site-header ul li a {
+      .site-header__menu li a {
         display: block;
         padding: 2rem 2rem;
         text-decoration: none;
+        user-select: none;
       }
       .site-header__nav {
-        position: relative;
+        /* position: relative; */
         min-height: 100%;
       }
       .site-header__logo {
@@ -80,7 +91,7 @@
       }
       @media screen and (min-width: 768px) {
         .site-header__logo {
-          padding: 1.8rem 0 1.6rem 1.9rem;
+          padding: 1.8rem 0 1.6rem 2%;
         }
       }
       .site-header__logo img {
@@ -143,10 +154,10 @@
           align-items: center;
           justify-content: space-between;
         }
-        .site-header ul {
+        .site-header__menu {
           overflow: visible;
         }
-        .site-header ul li a {
+        .site-header__menu li a {
           color: #fff;
           padding: 3.3rem 2.5rem;
         }
@@ -155,10 +166,10 @@
         }
       }
       @media screen and (min-width: 1400px) {
-        .site-header ul li a {
+        .site-header__menu li a {
           padding: 2.5rem 6.5rem 3rem;
         }
-        .site-header ul li:last-of-type a {
+        .site-header__menu li:last-of-type a {
           padding-right: 14.3rem;
         }
       }
@@ -168,19 +179,16 @@
         max-height: 0;
         transition: max-height 0.2s ease-out;
       }
-      .site-header__menu li:nth-of-type(5) {
+      .site-header__menu li:nth-of-type(1) {
         background-color: #a6ccf0;
       }
-      .site-header__menu li:nth-of-type(4) {
+      .site-header__menu li:nth-of-type(2) {
         background-color: #79b2e8;
       }
       .site-header__menu li:nth-of-type(3) {
         background-color: #418fd9;
       }
-      .site-header__menu li:nth-of-type(2) {
-        background-color: #2172c0;
-      }
-      .site-header__menu li:nth-of-type(1) {
+      .site-header__menu li:nth-of-type(4) {
         background-color: #0055a6;
       }
       .site-header__menu li a {
@@ -254,12 +262,13 @@
           display: none;
         }
         .site-header__menu {
-          clear: none;
-          float: right;
+          /* clear: none;
+          float: right; */
+          flex-direction: row;
           max-height: none;
         }
         .site-header__menu li {
-          display: table;
+          /* display: table; */
           float: left;
           transform: skew(-30deg);
         }
@@ -285,24 +294,18 @@
           background-color: rgb(59, 129, 195);
         }
         .site-header__menu li:nth-of-type(4) {
-          background-color: #2172c0;
-        }
-        .site-header__menu li:nth-of-type(4):hover {
-          background-color: rgb(30, 103, 173);
-        }
-        .site-header__menu li:nth-of-type(5) {
           width: 168px;
           background-color: #0055a6;
           margin-right: -2.8rem;
         }
-        .site-header__menu li:nth-of-type(5):hover {
+        .site-header__menu li:nth-of-type(4):hover {
           background-color: rgb(0, 77, 149);
         }
       }
 
       .large-hero {
         position: relative;
-        padding-top: 6rem;
+        /* padding-top: 6rem; */
       }
       .large-hero__content {
         padding-left: 1.6rem;
@@ -325,9 +328,14 @@
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 300px 190px 0 0;
+        border-width: 200px 130px 0 0;
         border-color: #0055a6 transparent transparent transparent;
         opacity: 0.8;
+      }
+      @media screen and (min-width: 560px) {
+        .large-hero__triangle {
+          border-width: 300px 230px 0 0;
+        }
       }
       @media screen and (min-width: 673px) {
         .large-hero__heroimg {
@@ -335,9 +343,6 @@
         }
       }
       @media screen and (min-width: 768px) {
-        .large-hero {
-          padding-top: 12.6rem;
-        }
         .large-hero__text {
           max-width: 550px;
         }
@@ -354,7 +359,7 @@
           min-height: 738px;
         }
         .large-hero__triangle {
-          border-width: 600px 320px 0 0;
+          border-width: 600px 350px 0 0;
         }
         .large-hero__triangle--revert {
           position: absolute;
@@ -369,7 +374,7 @@
       }
       @media screen and (min-width: 992px) {
         .large-hero__triangle {
-          border-width: 645px 476px 0 0;
+          border-width: 645px 430px 0 0;
         }
         .large-hero__triangle--revert {
           top: -38px;
@@ -377,17 +382,6 @@
         }
       }
       @media screen and (min-width: 1024px) {
-        .large-hero {
-          padding-top: 14.5rem;
-        }
-        /* .large-hero__content {
-          position: absolute;
-          top: 20%;
-          max-width: 58%;
-          padding-left: 2%;
-          font-size: 1.4rem;
-          color: #fff;
-        } */
         .large-hero__heroimg {
           object-position: center;
         }
@@ -398,7 +392,7 @@
           max-width: 80%;
         }
         .large-hero__text:nth-of-type(2) {
-          max-width: 70%;
+          max-width: 62%;
         }
         .large-hero__triangle {
           display: none;
@@ -416,7 +410,7 @@
       }
       @media screen and (min-width: 1200px) {
           .large-hero__blue-form {
-            width: 70vw;
+            width: 60vw;
             clip-path: polygon(0 0, 100% 0, 30% 100%, 0% 100%);
           }
           .large-hero__triangle--revert {
@@ -441,11 +435,6 @@
           max-width: 46%;
         }
       }
-      @media screen and (min-width: 1400px) {
-        .large-hero {
-          padding-top: 13.4rem;
-        }
-      }
       @media screen and (min-width: 1900px) {
         .large-hero__title {
           font-size: 5.6rem;
@@ -456,13 +445,12 @@
           padding-left: 5%;
         }
         .large-hero__blue-form {
-            width: 57vw;
+            width: 56.5vw;
           }
       }
     </style>
   </head>
   <body>
-    <header class="site-header">
       <div class="site-header__top-banner">
         <ul>
           <div><li>Mehr als 30 Jahre Erfahrung</li></div>
@@ -471,7 +459,8 @@
           <div><li>über 40.000 Gutachten</li></div>
         </ul>
       </div>
-
+      
+    <header class="site-header">
       <nav class="site-header__nav">
         <div class="site-header__logo">
           <img src="assets/images/logo.svg" alt="" />
@@ -492,11 +481,22 @@
             <a class="site-header__menu-item" href="#ueber-uns">Über uns</a>
           </li>
           <li><a class="site-header__menu-item" href="#kontakt">Kontakt</a></li>
-          <li>
-            <a class="site-header__menu-item" href="#"
-              >Termin buchen</a
-            >
-          </li>
+          <div class="modal-container">
+            <input id="modal-toggle" type="checkbox">
+            <label for="modal-toggle" class="click-me"><span>Termin buchen</span></label> 
+              <div class="modal-backdrop">
+                <div class="modal-content">
+                  <p>Wo möchten Sie Ihren Termin buchen?</p>
+                  <h2>Bitte Standort auswählen</h2>
+                  <div class="row">
+                    <ul class="modal__list">
+                      <li class="col-12 col-lg-6 modal__list--item"><a href="https://urbanke-wedding.appointlet.com/">Standort Wedding</a></li>
+                      <li class="col-12 col-lg-6 modal__list--item"><a href="https://urbanke-kreuzberg.appointlet.com/">Standort Kreuzberg</a></li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+          </div>
           <li><a class="site-header__menu-item" href="#faq">FAQ</a></li>
         </ul>
       </nav>
@@ -599,14 +599,14 @@
                 dass die Kosten für das Kfz-Gutachten im Falle geklärter
                 Schuldfrage von der Versicherung bezahlt wird?
               </li>
-              <li>
+              <!-- <li>
                 Sie die freie Wahl haben, in welcher Werkstatt Sie Ihren Unfall
                 reparieren lassen wollen?
-              </li>
-              <li>
+              </li> -->
+              <!-- <li>
                 Sie die freie Wahl haben, ob Sie den Schaden überhaupt
                 reparieren lassen wollen?
-              </li>
+              </li> -->
               <li>
                 man sich den Schadenersatz auch auszahlen lassen kann ohne zu
                 reparieren?
@@ -616,12 +616,12 @@
                 auf die Schadensschätzung durch den Versicherer vertrauen
                 müssen?
               </li>
-              <li>
+              <!-- <li>
                 die Versicherung Ihnen für die Zeit der Reparatur ein
                 Ersatzfahrzeug bzw. eine Nutzungsausfallentschädigung zahlen
                 muss?
               </li>
-              <li>Sie auch die Kosten für einen Anwalt erstattet bekommen?</li>
+              <li>Sie auch die Kosten für einen Anwalt erstattet bekommen?</li> -->
               <li>
                 dass der Gutachter auch prüft, ob trotz fachgerechter Reparatur
                 ein Minderwert verbleiben würde? Dieser steht Ihnen auch ohne
@@ -695,7 +695,7 @@
                 class="leistungen__messagebox leistungen__messagebox--speech"
               >
                 <h4 class="leistungen__title">
-                  Welche Rente habe ich im Schadensfall?
+                  Welche Rechte habe ich im Schadensfall?
                 </h4>
                 <p class="leistungen__message-text">
                   Ein Autounfall tritt selten auf – durchschnittlich alle sieben
@@ -823,7 +823,7 @@
         <h2
           class="headline headline--left headline--md-center headline--priority"
         >
-          Unser oberstes Gebot: Unabhängig&nbsp;und Neutralität
+          Unser oberstes Gebot: Unabhängigkeit&nbsp;und Neutralität
         </h2>
 
         <div class="leistungen__our-priority-wrapper">
@@ -1167,18 +1167,16 @@
                 alt="ein Mitarbeiter"
               />
             </picture>
-            <div class="ueber-uns__mitarbeiter-container1">
+            <div class="ueber-uns__mitarbeiter-container2">
               <p class="ueber-uns__name">
-                <span class="ueber-uns__abschluss"
-                  >staatl. gepr. Techniker (KFZ)</span
-                ><br />
-                E. Heinicke
+                <span class="ueber-uns__abschluss">Dipl.-Ing. (FH)</span><br />
+                B. Feuerhahn
               </p>
               <p class="ueber-uns__bereich">Kfz-Sachverständiger</p>
               <ul class="ueber-uns__liste">
-                <li>Büro-Wedding</li>
-                <li><a href="tel:0160 9051 9051">0160 9051 9051</a></li>
-                <li><a href="mailto:HE@urbanke.net">HE@urbanke.net</a></li>
+                <li>Büro-Kreuzberg</li>
+                <li><a href="tel:0174 5600800">0174 5600800</a></li>
+                <li><a href="mailto:BF@urbanke.net">BF@urbanke.net</a></li>
               </ul>
             </div>
           </div>
@@ -1199,16 +1197,18 @@
                 alt="ein Mitarbeiter"
               />
             </picture>
-            <div class="ueber-uns__mitarbeiter-container2">
+            <div class="ueber-uns__mitarbeiter-container1">
               <p class="ueber-uns__name">
-                <span class="ueber-uns__abschluss">Dipl.-Ing. (FH)</span><br />
-                B. Feuerhahn
+                <span class="ueber-uns__abschluss"
+                  >staatl. gepr. Techniker (KFZ)</span
+                ><br />
+                E. Heinicke
               </p>
               <p class="ueber-uns__bereich">Kfz-Sachverständiger</p>
               <ul class="ueber-uns__liste">
-                <li>Büro-Wedding</li>
-                <li><a href="tel:0174 5600800">0174 5600800</a></li>
-                <li><a href="mailto:BF@urbanke.net">BF@urbanke.net</a></li>
+                <li>Büro-Kreuzberg</li>
+                <li><a href="tel:0160 9051 9051">0160 9051 9051</a></li>
+                <li><a href="mailto:HE@urbanke.net">HE@urbanke.net</a></li>
               </ul>
             </div>
           </div>
@@ -1260,7 +1260,7 @@
               <p class="ueber-uns__name">C. Hiller</p>
               <p class="ueber-uns__bereich">Bürofachkraft</p>
               <ul class="ueber-uns__liste">
-                <li>Büro-Wedding</li>
+                <li>Büro-Kreuzberg</li>
                 <li><a href="tel:030 692 22 44">030 692 22 44</a></li>
                 <li><a href="mailto:BL@urbanke.net">BL@urbanke.net</a></li>
               </ul>
@@ -1308,7 +1308,7 @@
           <h2 class="col-12 ueber-uns__subtitle">
             Neben Unfallgutachten als unsere Kernkompetenz<br
               class="ueber-uns__xl-none"
-            />bieten wir zusätzlich:
+            /> bieten wir zusätzlich:
           </h2>
 
           <div
@@ -1739,7 +1739,7 @@
                 <div class="kontakt__text-wrapper">
                   <p>
                     BÜRO-Kreuzberg<br />
-                    Blücher Str. 66a<br />
+                    Blücherstr. 66a<br />
                     10961 Berlin
                   </p>
                   <br />
@@ -1790,16 +1790,16 @@
                     <li class="customPaddingdown">und nach Vereinbarung</li>
                     <li>Direkt einen Termin buchen:</li>
                   </ul>
-                  <a
-                    class="btn btn--kontakt-form btn--customMarginTop"
-                    href="#"
-                  >
+                  <label for="modal-toggle">
+                    <a
+                    class="btn btn--kontakt-form btn--customMarginTop">
                     <div
                       class="btn__container btn__container--kontakt-form btn__container--mgl0"
                     >
                       <p class="btn__text btn__text--kontakt">Termin buchen</p>
                     </div>
                   </a>
+                  </label>
                 </div>
               </div>
 
@@ -1807,8 +1807,9 @@
                 <form action="formMail.php" method="post" id="formular">
                   <label for="office">Büro*</label>
                   <select id="office" name="office" required>
-                    <option>Wedding</option>
-                    <option>Kreuzberg</option>
+                    <option value="" disabled selected>Bitte wählen</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="kreuzberg">Kreuzberg</option>
                   </select>
                   <label for="name">Name*</label>
                   <input

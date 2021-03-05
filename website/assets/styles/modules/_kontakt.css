@@ -1,11 +1,14 @@
 #kontakt {
-  scroll-margin-top: 100px;
-}
-#termin-buchen {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 350px;
+  @mixin atLarge {
+    scroll-margin-top: 100px;
+  }
 }
 #faq {
-  scroll-margin-top: 300px;
+  scroll-margin-top: 550px;
+  @mixin atLarge {
+    scroll-margin-top: 300px;
+  }
 }
 .kontakt {
   &__banner {
@@ -359,6 +362,7 @@
       color: #fff;
       font-size: 1.6rem;
       text-transform: uppercase;
+      user-select: none;
 
       &::before {
         content: "";
@@ -454,7 +458,12 @@
       color: $mainBlue;
       background: white;
       transition: all 0.35s;
-      padding: 0 1rem 0 1rem;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
+
+      .panel {
+        margin-bottom: 0;
+      }
 
       ul {
         list-style-type: initial;
@@ -462,11 +471,6 @@
       }
       ul li {
         color: $mainBlue;
-      }
-    }
-    @media screen and (min-width: 500px) {
-      &-content {
-          padding: 1rem 1.6rem;
       }
     }
   }
@@ -480,6 +484,16 @@
     }
     ~ .kontakt__accordion--tab-content {
       max-height: 100vh;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__accordion--tab:nth-of-type(6) input:checked {
+    @media screen and (max-width: 500px) {
+      ~ .kontakt__accordion--tab-content {
+        max-height: 125vh;
+      }
     }
   }
 
