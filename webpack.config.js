@@ -61,25 +61,27 @@ let config = {
     rules: [
       cssConfig,
       {
-        test: /\.(jpg|webp|svg)$/,
+        test: /\.(jpg|webp)$/,
         use: [
           {
             loader: "url-loader",
             options: {
               limit: 10000,
-              name: "images/[name].[ext]",
+              name: "[name].[ext]",
+              outputPath: 'assets/images'
             },
           },
         ],
       },
       {
-        test: /\.(woff|woff2|eot|ttf)$/,
+        test: /\.(woff|woff2|eot|ttf|svg)$/,
         use: [
           {
             loader: "url-loader",
             options: {
               limit: 10000,
-              name: "fonts/[name].[ext]",
+              name: "[name].[ext]",
+              outputPath: 'assets/fonts'
             },
           },
         ],

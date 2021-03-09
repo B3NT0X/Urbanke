@@ -67,27 +67,24 @@
     &:hover:before{ 
      background-color: $crashBlue;
     }
-    
-
-    @mixin atLarge {
-        & {
-          background-color: #fff;
-        }
-        &:before {
-          background-color: $crashBlue;
-          clip-path: polygon(0 0, 100% 0%, calc(100% - 34px) 100%, 0% 100%);
-        }
-        &:hover > .btn__text{
-          color: $crashBlue;
-        }
-        &:hover:before{ 
-         background-color: #fff;
-        }
-    }
 
     @mixin atExtraLarge {
       & {
+        background-color: #fff;
         padding: 1.3rem 3.9rem 1.3rem 1.8rem;
+      }
+      &:before {
+        background-color: $crashBlue;
+        clip-path: polygon(0 0, 100% 0%, calc(100% - 34px) 100%, 0% 100%);
+      }
+      .btn__text {
+        color: $navLink;
+      }
+      &:hover > .btn__text{
+        color: $crashBlue;
+      }
+      &:hover:before{ 
+       background-color: #fff;
       }
     }
 
@@ -160,12 +157,6 @@
       font-style: italic;
       margin: 0;
       line-height: 1;
-    }
-  }
-
-  @mixin atLarge {
-    &__text {
-      color: $navLink;
     }
   }
 }

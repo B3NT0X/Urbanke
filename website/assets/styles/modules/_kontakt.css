@@ -13,7 +13,6 @@
 .kontakt {
   &__banner {
     .kontakt__mann-liestImg {
-      /* min-width: 360px; */
       min-height: 168px;
       object-fit: cover;
     }
@@ -483,17 +482,9 @@
       }
     }
     ~ .kontakt__accordion--tab-content {
-      max-height: 100vh;
+      max-height: fit-content;
       padding-top: 2rem;
       padding-bottom: 2rem;
-    }
-  }
-
-  &__accordion--tab:nth-of-type(6) input:checked {
-    @media screen and (max-width: 500px) {
-      ~ .kontakt__accordion--tab-content {
-        max-height: 125vh;
-      }
     }
   }
 

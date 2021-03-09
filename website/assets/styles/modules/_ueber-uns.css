@@ -7,6 +7,11 @@
 .ueber-uns {
   position: relative;
 
+  &__teamImg {
+    width: 100%;
+    margin: 0 auto;
+  }
+
   &__blue-bg {
     margin-top: 0.8rem;
     padding-top: 0.7rem;

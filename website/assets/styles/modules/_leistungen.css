@@ -614,12 +614,12 @@
     .large-hero {
       &__triangle--lighter {
         border-color: $secondaryBlue transparent transparent transparent;
-        border-width: 450px 370px 0 0;
+        border-width: 402px 370px 0 0;
         opacity: 0.8;
       }
       &__triangle--mirror {
         border-color: transparent transparent transparent $secondaryBlue;
-        border-width: 450px 0 0 370px;
+        border-width: 402px 0 0 370px;
         opacity: 0.8;
       }
     }
